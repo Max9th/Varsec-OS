@@ -65,11 +65,14 @@ func maximize_window() -> void:
 		old_unmaximized_size = size
 		
 		var new_size: Vector2 
+		var new_position: Vector2
+		new_position.x = 0
+		new_position.y = 59
 		new_size.x = 384
-		new_size.y = 216
+		new_size.y = 193
+	
 		var tween: Tween = create_tween()
 		tween.set_parallel(true)
 		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, "global_position", Vector2.ZERO, 0.25)
+		tween.tween_property(self, "global_position", new_position, 0.25)
 		await tween.tween_property(self, "size", new_size, 0.25).finished
-		resizehandle.window_resized.emit()

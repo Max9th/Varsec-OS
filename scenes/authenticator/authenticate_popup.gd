@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var incorrect: Label = $INCORRECT
-@onready var text_edit: TextEdit = $TextEdit
+@onready var line_edit: LineEdit = $LineEdit
 @onready var timer: Timer = $Timer
 @onready var authenticate_popup: Panel = $"."
 
@@ -23,19 +23,10 @@ func _on_timer_timeout() -> void:
 	incorrect.visible = false
 
 func _on_confirm_pressed() -> void:
-	if text_edit.text == "cubigor":
-		authenticate_popup.visible = false
-		get_tree().call_group("authentication","_on_authenticate_popup_authenticated")
-	if text_edit.text == "max9th":
-		authenticate_popup.visible = false
-		get_tree().call_group("authentication","_on_authenticated")
-	elif text_edit.text != "cubigor" and text_edit.text != "max9th":
-		incorrect.visible = true
-		timer.start()
-		text_edit.text = ""
+	authenticate()
 
 
-func _on_draghandle_gui_input(event: InputEvent) -> void:
+func _on_resizehandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
 		if event.is_pressed():
 			is_dragging = true
@@ -51,3 +42,19 @@ func clamp_window_inside_viewport() -> void:
 	if (size.x > game_window_size.x):
 		size.x = game_window_size.x
 	
+
+
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	authenticate()
+
+func authenticate():
+	if line_edit.text == "cubigor":
+		authenticate_popup.visible = false
+		get_tree().call_group("authentication","_on_authenticate_popup_authenticated")
+	if line_edit.text == "max9th":
+		authenticate_popup.visible = false
+		get_tree().call_group("authentication","_on_authenticated")
+	elif line_edit.text != "cubigor" and line_edit.text != "max9th":
+		incorrect.visible = true
+		timer.start()
+		line_edit.text = ""

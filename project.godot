@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Portifólio de artess"
-config/description="O portifólio de Miguel Jorge Freitas de Oliveiras"
+config/name="Vasec OS"
+config/description="A fanstasy OS made as an art projectS"
 run/main_scene="res://scenes/main menu/main-menu.tscn"
 config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -20,6 +20,10 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[autoload]
+
+Toolkit="*res://addons/godottoolkit/toolkit.gd"
+
 [display]
 
 window/size/mode=2
@@ -27,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg")
+enabled=PackedStringArray("res://addons/godottoolkit/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg", "res://addons/script-tabs/plugin.cfg")
 
 [file_customization]
 

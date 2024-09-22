@@ -97,13 +97,14 @@ one_shot = true
 
 [node name="aula_select" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 55.3971
+offset_left = 104.277
 offset_top = 0.000335693
-offset_right = 179.397
+offset_right = 228.277
 offset_bottom = 56.0003
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("5_4akqb")
 script = ExtResource("6_v7rke")
+metadata/_edit_group_ = true
 
 [node name="window_name" type="Label" parent="aula_select"]
 layout_mode = 0

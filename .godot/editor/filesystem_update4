@@ -1,14 +1,9 @@
 res://scenes/main menu/main-menu.tscn
 res://scenes/main menu/main_menu.gd
+res://scenes/authenticator/passwordinputbox.tres
 res://scenes/Aulas/aulas_button.tscn
 res://scenes/authenticator/folderlocked_button.tscn
 res://scenes/cubigor/prettygaytbh.tscn
 res://scenes/examples/folder.tscn
-res://scenes/examples/window.gd
-res://resources/invisible.tres
-res://scenes/examples/draghandle.gd
-res://scenes/authenticator/folderlocked.gd
-res://scenes/cubigor/prettygaytbh.gd
-res://scenes/cubigor/cubigor.gd
 res://scenes/cubigor/cubigor.tscn
-res://scenes/authenticator/authenticate_popup.gd
+res://scenes/splash/splash_screen.tscn

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brx8sg8p6a6pp"]
+[gd_scene load_steps=18 format=3 uid="uid://brx8sg8p6a6pp"]
 
 [ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://sprites/folder.png" id="1_egd73"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://sprites/folderopen.png" id="3_etd47"]
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_bejof"]
 [ext_resource type="Script" path="res://scenes/examples/window.gd" id="6_urli5"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://scenes/authenticator/passwordinputbox.tres" id="7_5f5pc"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_3hha4"]
 [ext_resource type="Script" path="res://scenes/examples/draghandle.gd" id="9_oydpv"]
@@ -27,21 +28,27 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_etf32"]
 font = ExtResource("3_0hike")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0s1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 10
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+
 [sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
 font = ExtResource("3_0hike")
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
 font = ExtResource("3_0hike")
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmjlb"]
-bg_color = Color(0.128631, 0.152905, 0.219597, 1)
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -119,12 +126,28 @@ offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="window"]
+layout_mode = 0
+offset_left = 65.6667
+offset_top = 15.3333
+offset_right = 84.6667
+offset_bottom = 34.3333
+theme_override_styles/panel = SubResource("StyleBoxFlat_fk0s1")
+
+[node name="TextureRect" type="TextureRect" parent="window/Panel"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("10_vi70a")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="bodytext" type="Label" parent="window"]
 layout_mode = 0
-offset_left = 3.66667
-offset_top = 13.3333
-offset_right = 102.667
-offset_bottom = 27.3333
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 106.0
+offset_bottom = 24.0
 scale = Vector2(0.5, 0.5)
 text = "Placeholder
 "
@@ -149,19 +172,14 @@ label_settings = SubResource("LabelSettings_xcy33")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="window"]
+[node name="LineEdit" type="LineEdit" parent="window"]
 layout_mode = 0
-offset_left = 3.66666
-offset_top = 20.3333
-offset_right = 280.667
-offset_bottom = 57.3333
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 281.0
+offset_bottom = 58.0
 scale = Vector2(0.2, 0.2)
-theme_override_fonts/font = ExtResource("3_0hike")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_fmjlb")
-context_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
+theme_override_styles/normal = ExtResource("7_5f5pc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="window"]
 layout_mode = 1
@@ -234,16 +252,6 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = ExtResource("8_3hha4")
 script = ExtResource("9_oydpv")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 264.0
-offset_top = -14.0
-offset_right = 323.0
-offset_bottom = 45.0
-texture = ExtResource("10_vi70a")
-expand_mode = 1
-stretch_mode = 4
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

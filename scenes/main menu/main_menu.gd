@@ -3,12 +3,12 @@ extends Control
 @onready var crt: ColorRect = $crt
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var splash_screen: CanvasLayer = $splash_screen
-@onready var audio_disabled_texture: TextureRect = $desktop/panel/audio_disabled_texture
-@onready var time_label: Label = $desktop/panel/time
-@onready var date_label: Label = $desktop/panel/date
+@onready var audio_disabled_texture: TextureRect = $desktop/Panel/audio_disabled_texture
 @onready var background: Panel = $desktop/background
 @onready var takecare: AudioStreamPlayer = $takecare
-@onready var selectom: Sprite2D = $gaytscn
+@onready var selectom: Sprite2D = $sas
+@onready var time: Label = $desktop/Panel/time
+@onready var date: Label = $desktop/Panel/time/date
 
 var playaudio: bool = true
 
@@ -25,10 +25,11 @@ func _process(_delta: float) -> void:
 	elif audio_stream_player.playing == true and playaudio == false:
 		audio_disabled_texture.visible = true
 		audio_stream_player.playing = false
-	var time = Time.get_time_dict_from_system()
-	var date = Time.get_date_string_from_system()
-	time_label.text = str("%02d:%02d:%02d" % [time.hour, time.minute, time.second])
-	date_label.text = date
+	var timefunc = Time.get_time_dict_from_system()
+	var datefunc = Time.get_date_string_from_system()
+	
+	time.text = str("%02d:%02d:%02d" % [timefunc.hour, timefunc.minute, timefunc.second])
+	date.text = datefunc
 
 func _on_sound_button_pressed() -> void:
 	playaudio = !playaudio

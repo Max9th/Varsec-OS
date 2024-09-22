@@ -98,7 +98,7 @@ font = ExtResource("6_1fxpe")
 font_size = 32
 font_color = Color(0.403922, 0.415686, 0.568627, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pf8x5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf3s5"]
 shader = ExtResource("3_5f70m")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.22
@@ -117,7 +117,7 @@ shader_parameter/static_noise_intensity = 0.06
 shader_parameter/aberration = 0.015
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.382
+shader_parameter/warp_amount = 0.157
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
@@ -220,18 +220,14 @@ label_settings = SubResource("LabelSettings_dy2l2")
 
 [node name="crt" type="ColorRect" parent="."]
 visible = false
-material = SubResource("ShaderMaterial_pf8x5")
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
+material = SubResource("ShaderMaterial_yf3s5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="middle" type="Marker2D" parent="."]
 position = Vector2(576, 324)
