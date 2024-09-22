@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://sprites/folderopenwithfile.png" id="2_fr6q5"]
 [ext_resource type="Script" path="res://scenes/Aulas/aulas.gd" id="3_w04ev"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="4_u02bm"]
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="5_4akqb"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_4akqb"]
 [ext_resource type="Script" path="res://scenes/Aulas/aula_select.gd" id="6_v7rke"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://button.tres" id="7_5fmhi"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="8_teyc5"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_5fmhi"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_teyc5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4df"]
 bg_color = Color(1, 1, 1, 1)
@@ -97,13 +97,14 @@ one_shot = true
 
 [node name="aula_select" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = -50.0
-offset_right = 187.0
-offset_bottom = 6.0
+offset_left = 55.3971
+offset_top = 0.000335693
+offset_right = 179.397
+offset_bottom = 56.0003
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("5_4akqb")
 script = ExtResource("6_v7rke")
+metadata/_edit_group_ = true
 
 [node name="window_name" type="Label" parent="aula_select"]
 layout_mode = 0

@@ -12,6 +12,7 @@ extends CanvasLayer
 
 @export var Full_boot = true
 
+var clicknumber = 0
 var seconds_passed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,17 +26,21 @@ func _ready() -> void:
 		splash_subscreen.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if clicknumber == 2:
+		finish_boot()
 func _on_if_gtimer_timeout() -> void:
 	max_node.visible = true
 	ifg.visible = false
 	shineanimator.play("shine")
 func _on_changescene_timeout() -> void:
-	splash_subscreen.visible = false
-	sfx.playing = false
+	finish_boot()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	changescenetimer.start()
 
-func _on_timer_timeout() -> void:
-	seconds_passed += 0.1
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		clicknumber += 1
+func finish_boot():
+	splash_subscreen.visible = false
+	sfx.playing = false

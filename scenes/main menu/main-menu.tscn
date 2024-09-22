@@ -152,7 +152,7 @@ anchor_bottom = 0.833
 offset_left = -0.128
 offset_top = -0.0320015
 offset_right = 0.12793
-offset_bottom = 0.0319672
+offset_bottom = 0.0319901
 theme_override_styles/panel = SubResource("StyleBoxFlat_yma61")
 
 [node name="time" type="Label" parent="desktop/panel"]
@@ -162,8 +162,8 @@ anchor_left = 0.463542
 anchor_top = 0.25
 anchor_right = 0.536458
 anchor_bottom = 0.541667
-offset_left = 10.0
-offset_right = -10.0001
+offset_left = -0.000427246
+offset_right = 0.000366211
 grow_horizontal = 2
 grow_vertical = 2
 text = "10:18:15
@@ -171,7 +171,6 @@ text = "10:18:15
 label_settings = SubResource("LabelSettings_4jkf1")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="date" type="Label" parent="desktop/panel"]
 layout_mode = 1
@@ -181,6 +180,7 @@ anchor_top = 0.541667
 anchor_right = 0.545139
 anchor_bottom = 0.75
 offset_left = 3.05176e-05
+offset_top = -3.05176e-05
 offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 0
@@ -188,7 +188,6 @@ text = "09/02/1995"
 label_settings = SubResource("LabelSettings_uhrpj")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="IFg_logo" type="TextureRect" parent="desktop/panel"]
 layout_mode = 0
