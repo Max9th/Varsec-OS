@@ -98,6 +98,7 @@ metadata/_edit_vertical_guides_ = [-80.0]
 [node name="cubigor" parent="." instance=ExtResource("12_xo21c")]
 
 [node name="gaytscn" parent="." instance=ExtResource("3_fpams")]
+position = Vector2(568, 324)
 
 [node name="desktop" type="Control" parent="."]
 layout_mode = 1

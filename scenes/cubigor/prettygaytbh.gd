@@ -3,7 +3,7 @@ extends Node2D
 var gay_mode: bool = false
 @onready var max: Sprite2D = $Max
 signal cubigorbk
-func cubigor_spawner():
+func gay_spawner():
 	if gay_mode:
 		if not gay_theme.playing:
 			gay_theme.play()
@@ -18,4 +18,4 @@ func cubigor_spawner():
 func _on_authenticated() -> void:
 		gay_mode = true
 		#window.visible = false
-		cubigor_spawner()
+		gay_spawner()
