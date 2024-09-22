@@ -27,10 +27,17 @@ func _on_confirm_pressed() -> void:
 	if text_edit.text == "cubigor":
 		authenticate_popup.visible = false
 		get_tree().call_group("authentication","_on_authenticate_popup_authenticated")
-	else:
+	if text_edit.text == "max9th":
+		authenticate_popup.visible = false
+		get_tree().call_group("authentication","_on_authenticated")
+	if text_edit.text == "delta":
+		authenticate_popup.visible = false
+		get_tree().call_group("authentication","")
+	elif text_edit.text != "cubigor" and text_edit.text != "max9th" and text_edit.text != "delta":
 		incorrect.visible = true
 		timer.start()
 		text_edit.text = ""
+
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:

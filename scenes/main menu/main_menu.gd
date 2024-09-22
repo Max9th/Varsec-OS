@@ -8,6 +8,7 @@ extends Control
 @onready var date_label: Label = $desktop/panel/date
 @onready var background: Panel = $desktop/background
 @onready var takecare: AudioStreamPlayer = $takecare
+@onready var selectom: Node2D = $gaytscn
 
 var playaudio: bool = true
 
@@ -36,5 +37,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 func _on_cubigor_cubigorbk() -> void: #signal emmited by cubigor after it gets enabled. Disables the background
+	background.visible = false
+	audio_disabled_texture.visible = false
+	selectom.visibe = false
+
+
+func _on_gaytscn_cubigorbk() -> void:
 	background.visible = false
 	audio_disabled_texture.visible = false

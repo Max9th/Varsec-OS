@@ -1,17 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726985992
+::res://::1726986918
 icon.png::CompressedTexture2D::4325821954945949704::1726976752::1726985993::1::::<><>::
 README.md::TextFile::-1::1726985514::0::1::::<><>::
 ::res://addons/::1726933197
 ::res://addons/script-tabs/::1726933197
 plugin.cfg::TextFile::-1::1726933197::0::1::::<><>::
 plugin.gd::GDScript::-1::1726933197::0::1::::<>EditorPlugin<>::
-::res://audio/::1726979941
+::res://audio/::1726986787
 ambientloop.wav::AudioStreamWAV::4544460957760417650::1726945401::1726985994::1::::<><>::
 boot.mp3::AudioStreamMP3::5179401441604969089::1726940715::1726985993::1::::<><>::
 Cubigor theme.mp3::AudioStreamMP3::2055926052554640242::1726955287::1726985993::1::::<><>::
+idk.mp3::AudioStreamMP3::929360868989925929::1726986779::1726986787::1::::<><>::
 Take Care.mp3::AudioStreamMP3::3950293397565862554::1726979932::1726985993::1::::<><>::
-::res://fonts/::1726937895
+::res://fonts/::1726985993
 Comfortaa-VariableFont_wght.ttf::FontFile::4807574788773054225::1725491480::1726985993::1::::<><>::
 Vermin Vibes 1989.ttf::FontFile::5851201523234187091::1356759786::1726985993::1::::<><>::
 ::res://resources/::1726985966
@@ -24,19 +25,20 @@ nelixwindow.tres::StyleBoxTexture::5016684260048425605::1726949702::0::1::::<><>
 aulas.gd::GDScript::-1::1726979489::0::1::::<>Control<>::
 aulas_button.tscn::PackedScene::913893430492174217::1726985223::0::1::::<><>::uid://ch8stip28flkd::::res://sprites/folderwithfile.png<>uid://cdvuptxyankmj::::res://sprites/folderopenwithfile.png<>res://scenes/Aulas/aulas.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://betterwindow.tres<>res://scenes/Aulas/aula_select.gd<>uid://cqwcpaf5fy6a7::::res://button.tres<>uid://djpqbyxyro8sk::::res://invisible.tres
 aula_select.gd::GDScript::-1::1726979522::0::1::::<>Panel<>::
-::res://scenes/authenticator/::1726985223
-authenticate_popup.gd::GDScript::-1::1726984294::0::1::::<>Panel<>::
+::res://scenes/authenticator/::1726986467
+authenticate_popup.gd::GDScript::-1::1726986467::0::1::::<>Panel<>::
 folderlocked.gd::GDScript::-1::1726984017::0::1::::<>Control<>::
 folderlocked_button.tscn::PackedScene::3074607752244208002::1726985223::0::1::::<><>::uid://dimp6o2obpb2w::::res://sprites/folderlocked.png<>res://scenes/authenticator/folderlocked.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://betterwindow.tres<>res://scenes/authenticator/authenticate_popup.gd<>uid://cqwcpaf5fy6a7::::res://button.tres<>uid://cw5fjbt1la28f::::res://shaders/color_replace_shader.res<>uid://jt6tdmef2yl4::::res://sprites/checkmark-symbolic.svg<>uid://djpqbyxyro8sk::::res://invisible.tres
-::res://scenes/cubigor/::1726985223
+::res://scenes/cubigor/::1726986681
 cubigor.gd::GDScript::-1::1726985220::0::1::::<>Node3D<>::
 cubigor.tscn::PackedScene::5842962669231694659::1726985223::0::1::::<><>::res://scenes/cubigor/cubigor.gd<>uid://dxef4wd2s67rq::::res://sprites/Igor.png<>uid://4j52i1pkdhjm::::res://audio/Cubigor theme.mp3
+prettygaytbh.tscn::PackedScene::3345386263757006928::1726986681::0::1::::<><>::uid://dkow4je6633ak::::res://sprites/snake.jpg<>uid://7jyybp4vryia::::res://sprites/gay.png
 ::res://scenes/examples/::1726985224
 folder.gd::GDScript::-1::1726978646::0::1::::<>Control<>::
 folder.tscn::PackedScene::3629147885776248601::1726985224::0::1::::<><>::uid://binyoo4xwctip::::res://sprites/folder.png<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>res://scenes/examples/folder.gd<>uid://bgcl5cn4pi0xu::::res://sprites/folderopen.png<>uid://db2rsd8ficf4o::::res://betterwindow.tres<>res://scenes/examples/window.gd<>uid://cqwcpaf5fy6a7::::res://button.tres<>uid://djpqbyxyro8sk::::res://invisible.tres
 window.gd::GDScript::-1::1726979372::0::1::::<>Panel<>::
-::res://scenes/main menu/::1726985223
-main-menu.tscn::PackedScene::3339970118271826746::1726985223::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://butnmpkhfwho4::::res://sprites/logo.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://b1jp30ai5f8kp::::res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png<>uid://bab8yt52b1a3o::::res://sprites/power.png<>uid://bp3nh64ldrpw2::::res://sprites/audio.png<>uid://bx0dlqek77v1i::::res://sprites/audiodisabled.png<>uid://btl1e5x4iv3p5::::res://scenes/splash/splash_screen.tscn<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://djpqbyxyro8sk::::res://invisible.tres<>uid://b50muw4vmi0ug::::res://audio/ambientloop.wav<>uid://bin6va1btyxpn::::res://scenes/pessoais/pessoais_button.tscn<>uid://cpim0hfyc3kr0::::res://scenes/cubigor/cubigor.tscn<>uid://bj2mltt8gsqow::::res://scenes/authenticator/folderlocked_button.tscn<>uid://clsapeh5doyoe::::res://scenes/nelix/play_nelix_button.tscn<>res://scenes/music_player/musicplayer.gd<>uid://bwjs0w57phcsg::::res://audio/Take Care.mp3<>uid://naxxreavcae8::::res://scenes/Aulas/aulas_button.tscn
+::res://scenes/main menu/::1726986681
+main-menu.tscn::PackedScene::3339970118271826746::1726986681::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://butnmpkhfwho4::::res://sprites/logo.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://b1jp30ai5f8kp::::res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png<>uid://bab8yt52b1a3o::::res://sprites/power.png<>uid://bp3nh64ldrpw2::::res://sprites/audio.png<>uid://bx0dlqek77v1i::::res://sprites/audiodisabled.png<>uid://btl1e5x4iv3p5::::res://scenes/splash/splash_screen.tscn<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://b50muw4vmi0ug::::res://audio/ambientloop.wav<>uid://bin6va1btyxpn::::res://scenes/pessoais/pessoais_button.tscn<>uid://cpim0hfyc3kr0::::res://scenes/cubigor/cubigor.tscn<>uid://bj2mltt8gsqow::::res://scenes/authenticator/folderlocked_button.tscn<>uid://clsapeh5doyoe::::res://scenes/nelix/play_nelix_button.tscn<>res://scenes/music_player/musicplayer.gd<>uid://bwjs0w57phcsg::::res://audio/Take Care.mp3<>uid://naxxreavcae8::::res://scenes/Aulas/aulas_button.tscn
 main_menu.gd::GDScript::-1::1726980070::0::1::::<>Control<>::
 ::res://scenes/music_player/::1726985223
 musicplayer.gd::GDScript::-1::1726982313::0::1::::<>Control<>::
@@ -62,11 +64,11 @@ posterized_light2D.gdshader::Shader::-1::1726874471::0::1::::<><>::
 proto1.tres::Environment::703933166409764294::1725656896::0::1::::<><>::
 proto2.tres::Environment::1782652626468238671::1725656939::0::1::::<><>::
 shake2D.gdshader::Shader::-1::1726874471::0::1::::<><>::
-::res://shaders/kenney_pattern-pack/::1726881559
+::res://shaders/kenney_pattern-pack/::1726985993
 License.txt::TextFile::-1::1721957810::0::1::::<><>::
 Preview.png::CompressedTexture2D::6846927850478127896::1648039122::1726985993::1::::<><>::
 ::res://shaders/kenney_pattern-pack/PNG/::1721957788
-::res://shaders/kenney_pattern-pack/PNG/Default/::1726881559
+::res://shaders/kenney_pattern-pack/PNG/Default/::1726985993
 pattern_01.png::CompressedTexture2D::1583222013113095720::1721958388::1726985993::1::::<><>::
 pattern_02.png::CompressedTexture2D::414973140695381504::1721958388::1726985993::1::::<><>::
 pattern_03.png::CompressedTexture2D::8904644552113005214::1721958388::1726985993::1::::<><>::
@@ -151,7 +153,7 @@ pattern_81.png::CompressedTexture2D::3908028826848648426::1721958386::1726985993
 pattern_82.png::CompressedTexture2D::6116503761576921142::1721958388::1726985993::1::::<><>::
 pattern_83.png::CompressedTexture2D::7756824061719675437::1721958388::1726985993::1::::<><>::
 pattern_84.png::CompressedTexture2D::6736517943272453959::1721958388::1726985993::1::::<><>::
-::res://shaders/kenney_pattern-pack/PNG/Double/::1726881559
+::res://shaders/kenney_pattern-pack/PNG/Double/::1726985993
 pattern_01.png::CompressedTexture2D::823217918668832448::1721958410::1726985993::1::::<><>::
 pattern_02.png::CompressedTexture2D::2148292586215528512::1721958388::1726985993::1::::<><>::
 pattern_03.png::CompressedTexture2D::5624297688505883251::1721958388::1726985993::1::::<><>::
@@ -236,10 +238,10 @@ pattern_81.png::CompressedTexture2D::8318421677831817628::1721958408::1726985993
 pattern_82.png::CompressedTexture2D::4658301007379168365::1721958408::1726985993::1::::<><>::
 pattern_83.png::CompressedTexture2D::5823583357873606859::1721958410::1726985993::1::::<><>::
 pattern_84.png::CompressedTexture2D::15772042235030153::1721958410::1726985993::1::::<><>::
-::res://shaders/kenney_pattern-pack/Tilesheet/::1726881560
+::res://shaders/kenney_pattern-pack/Tilesheet/::1726985994
 patternPack_tilesheet.png::CompressedTexture2D::2815876455808424708::1721957702::1726985993::1::::<><>::
 patternPack_tilesheet@2.png::CompressedTexture2D::1738983512558123093::1721957722::1726985994::1::::<><>::
-::res://shaders/kenney_pattern-pack/Vector/::1726881559
+::res://shaders/kenney_pattern-pack/Vector/::1726985993
 pattern_01.svg::CompressedTexture2D::6349609359484338345::1721958330::1726985993::1::::<><>::
 pattern_02.svg::CompressedTexture2D::7846176984615553126::1721958330::1726985993::1::::<><>::
 pattern_03.svg::CompressedTexture2D::426014105731546355::1721958330::1726985993::1::::<><>::
@@ -334,7 +336,7 @@ palette_swap_posprocess.gdshader::Shader::-1::1717609137::0::1::::<><>::
 vignette_postprocess.gdshader::Shader::-1::1717609137::0::1::::<><>::
 ::res://shaders/screen_transitions/::1717906222
 circle_screen_transition.gdshader::Shader::-1::1717609137::0::1::::<><>::
-::res://sprites/::1726969661
+::res://sprites/::1726986923
 audio.png::CompressedTexture2D::3497859410368226331::1726946863::1726985993::1::::<><>::
 audiodisabled.png::CompressedTexture2D::4052576172981813392::1726946846::1726985993::1::::<><>::
 checkmark-symbolic.svg::CompressedTexture2D::672839103226596763::1726963356::1726985993::1::::<><>::
@@ -347,6 +349,7 @@ folderwithfile.png::CompressedTexture2D::5333415019320323291::1726963036::172698
 Igor.png::CompressedTexture2D::8782219500157544330::1726960408::1726985993::1::::<><>::
 Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png::CompressedTexture2D::4230872088676877167::1726937323::1726985993::1::::<><>::
 logo.png::CompressedTexture2D::3830232287837606517::1726969658::1726985993::1::::<><>::
+max.jpg::CompressedTexture2D::4617233860298436083::1726986909::1726986933::1::::<><>::
 maxlogo.png::CompressedTexture2D::8860565269074506199::1726939359::1726985993::1::::<><>::
 maxthelogo.png::CompressedTexture2D::3702298981810286099::1725591561::1726985993::1::::<><>::
 nelix.png::CompressedTexture2D::455099217016667260::1726458876::1726985993::1::::<><>::

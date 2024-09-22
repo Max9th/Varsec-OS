@@ -1,15 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=29 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_xfcrf"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://sprites/logo.png" id="2_dediy"]
 [ext_resource type="Shader" path="res://shaders/post_processing/crt_postprocess.gdshader" id="3_8mgm0"]
+[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://scenes/cubigor/prettygaytbh.tscn" id="3_fpams"]
 [ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png" id="4_jtiqu"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://sprites/power.png" id="5_amkwd"]
 [ext_resource type="Texture2D" uid="uid://bp3nh64ldrpw2" path="res://sprites/audio.png" id="5_l40gv"]
 [ext_resource type="Texture2D" uid="uid://bx0dlqek77v1i" path="res://sprites/audiodisabled.png" id="6_3cicx"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://scenes/splash/splash_screen.tscn" id="7_0yxcy"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="7_hxvmw"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="8_fcre7"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_fcre7"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://audio/ambientloop.wav" id="8_qc6vo"]
 [ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://scenes/pessoais/pessoais_button.tscn" id="11_dan5j"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://scenes/cubigor/cubigor.tscn" id="12_xo21c"]
@@ -95,6 +96,8 @@ script = ExtResource("1_xfcrf")
 metadata/_edit_vertical_guides_ = [-80.0]
 
 [node name="cubigor" parent="." instance=ExtResource("12_xo21c")]
+
+[node name="gaytscn" parent="." instance=ExtResource("3_fpams")]
 
 [node name="desktop" type="Control" parent="."]
 layout_mode = 1
@@ -368,6 +371,7 @@ Full_boot = false
 stream = ExtResource("8_qc6vo")
 
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
+[connection signal="cubigorbk" from="gaytscn" to="." method="_on_gaytscn_cubigorbk"]
 [connection signal="pressed" from="desktop/Folders/musicplayer" to="desktop/Folders/musicplayer" method="_on_pressed"]
 [connection signal="timeout" from="desktop/Folders/musicplayer/Timer" to="desktop/Folders/musicplayer" method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/sound_button" to="." method="_on_sound_button_pressed"]

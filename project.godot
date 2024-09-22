@@ -35,6 +35,7 @@ folder_colors={
 "res://addons/": "red",
 "res://audio/": "orange",
 "res://fonts/": "green",
+"res://resources/": "teal",
 "res://scenes/": "blue",
 "res://shaders/": "purple",
 "res://sprites/": "pink"
