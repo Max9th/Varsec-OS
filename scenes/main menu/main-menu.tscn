@@ -238,11 +238,14 @@ grow_vertical = 2
 
 [node name="pessoais" parent="desktop/Folders" instance=ExtResource("11_dan5j")]
 layout_mode = 1
-anchor_left = 0.0546875
-anchor_top = 0.395062
-anchor_right = 0.0894097
-anchor_bottom = 0.45679
-offset_top = 0.0
+anchor_left = 0.001
+anchor_top = 0.0
+anchor_right = 0.001
+anchor_bottom = 0.0
+offset_left = 61.848
+offset_top = 256.0
+offset_right = 101.848
+offset_bottom = 296.0
 
 [node name="aulas" parent="desktop/Folders" instance=ExtResource("20_e8l5l")]
 layout_mode = 0
