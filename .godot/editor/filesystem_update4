@@ -5,3 +5,4 @@ res://scenes/cubigor/prettygaytbh.gd
 res://scenes/main menu/main_menu.gd
 res://scenes/Aulas/aulas_button.tscn
 res://scenes/splash/splash_screen.gd
+res://scenes/authenticator/folderlocked_button.tscn
