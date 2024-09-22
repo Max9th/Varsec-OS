@@ -12,7 +12,6 @@ var mouse_start_drag_position: Vector2
 
 func _ready() -> void:
 	authenticate_popup.visible = false
-
 func _process(delta: float) -> void:
 	if is_dragging:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)

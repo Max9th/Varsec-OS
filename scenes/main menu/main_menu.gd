@@ -36,12 +36,11 @@ func _on_sound_button_pressed() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
-func _on_cubigor_cubigorbk() -> void: #signal emmited by cubigor after it gets enabled. Disables the background
+func _on_cubigor_cubigorbk() -> void:
 	background.visible = false
 	audio_disabled_texture.visible = false
 	selectom.visible = false
 
-
-func _on_gaytscn_cubigorbk() -> void:
+func _on_gaytscn_disablebk() -> void:
 	background.visible = false
 	audio_disabled_texture.visible = false

@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 	if is_dragging:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
 		clamp_window_inside_viewport()
+
 func _on_close_pressed() -> void:
 	window.visible = false
 
@@ -40,51 +41,35 @@ func _on_draghandle_gui_input(event: InputEvent) -> void:
 			is_dragging = false
 
 func clamp_window_inside_viewport() -> void:
-	var game_window_size: Vector2 = get_viewport_rect().size
-	if (size.y > game_window_size.y - 40):
-		size.y = game_window_size.y - 40
-	if (size.x > game_window_size.x):
-		size.x = game_window_size.x
-	
-
+	var viewport_size = get_viewport().get_visible_rect().size
+	var position = global_position
+	var object_size = size * 3
+	position.x = clamp(position.x, 0, viewport_size.x - object_size.x)
+	position.y = clamp(position.y, 0, viewport_size.y - object_size.y)
+	global_position = position
 
 func _on_maximize_pressed() -> void:
 	maximize_window()
 
-	clamp_window_inside_viewport()
 func maximize_window() -> void:
 	if is_maximized:
 		is_maximized = !is_maximized
-		
 		var tween: Tween = create_tween()
 		tween.set_parallel(true)
 		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 		tween.tween_property(self, "global_position", old_unmaximized_position, 0.25)
 		await tween.tween_property(self, "size", old_unmaximized_size, 0.25).finished
-		
-		resizehandle.window_resized.emit()
 	else:
 		is_maximized = !is_maximized
-		
 		old_unmaximized_position = global_position
 		old_unmaximized_size = size
 		
 		var new_size: Vector2 
 		new_size.x = 384
 		new_size.y = 216
-	
-	
 		var tween: Tween = create_tween()
 		tween.set_parallel(true)
 		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 		tween.tween_property(self, "global_position", Vector2.ZERO, 0.25)
 		await tween.tween_property(self, "size", new_size, 0.25).finished
 		resizehandle.window_resized.emit()
-
-func _on_viewport_size_changed() -> void:
-	if is_maximized:
-		var new_size: Vector2 
-		new_size.x = 1152
-		new_size.y = 648
-		global_position = Vector2.ZERO
-		size = new_size

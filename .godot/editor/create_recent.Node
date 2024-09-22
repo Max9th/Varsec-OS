@@ -1,4 +1,7 @@
-Control
 HBoxContainer
+Node3D
+Node
+TextureRect
+Control
 Camera2D
 AudioStreamPlayer

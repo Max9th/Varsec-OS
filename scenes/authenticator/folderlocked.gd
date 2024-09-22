@@ -1,7 +1,7 @@
 extends Control
 
-@onready var selected_panel: Panel = $selected_panel2
-@onready var timer: Timer = $Timer2
+@onready var selected_panel: Panel = $selected
+@onready var timer: Timer = $Timer
 @onready var filename: Label = $filename
 @onready var authenticate_popup: Panel = $authenticate_popup
 

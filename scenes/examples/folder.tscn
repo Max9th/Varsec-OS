@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brx8sg8p6a6pp"]
+[gd_scene load_steps=17 format=3 uid="uid://brx8sg8p6a6pp"]
 
 [ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://sprites/folder.png" id="1_egd73"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_3hha4"]
 [ext_resource type="Script" path="res://scenes/examples/draghandle.gd" id="9_oydpv"]
+[ext_resource type="Texture2D" uid="uid://cawxvxqr1lt7h" path="res://icon.svg" id="10_vi70a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
 bg_color = Color(1, 1, 1, 1)
@@ -218,6 +219,7 @@ grow_horizontal = 2
 theme_override_styles/panel = ExtResource("8_3hha4")
 
 [node name="resizehandle" type="Panel" parent="window"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -232,6 +234,16 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = ExtResource("8_3hha4")
 script = ExtResource("9_oydpv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -14.0
+offset_right = 323.0
+offset_bottom = 45.0
+texture = ExtResource("10_vi70a")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,13 +1,17 @@
 extends Node2D
+
 @onready var gay_theme: AudioStreamPlayer = $gaytheme
-var gay_mode: bool = false
 @onready var max: Sprite2D = $Max
-signal cubigorbk
+
+var gay_mode: bool = false
+
+signal Disablebk
+
 func gay_spawner():
 	if gay_mode:
 		if not gay_theme.playing:
 			gay_theme.play()
-		cubigorbk.emit()
+		Disablebk.emit()
 		#background.visible = false
 		#audio_disabled_texture.visible = false
 	else:

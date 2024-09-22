@@ -78,7 +78,7 @@ stretch_mode = 0
 script = ExtResource("2_7ak7n")
 metadata/_edit_use_anchors_ = true
 
-[node name="selected_panel2" type="Panel" parent="."]
+[node name="selected" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.2
@@ -109,8 +109,8 @@ label_settings = SubResource("LabelSettings_8oeka")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 0.3
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
 one_shot = true
 
 [node name="authenticate_popup" type="Panel" parent="." groups=["authentication"]]
@@ -121,7 +121,6 @@ offset_right = 220.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("4_i0u4u")
 script = ExtResource("5_7g1ax")
-metadata/_edit_group_ = true
 
 [node name="password" type="Label" parent="authenticate_popup"]
 layout_mode = 0

@@ -6,3 +6,9 @@ res://scenes/cubigor/prettygaytbh.tscn
 res://scenes/examples/folder.tscn
 res://scenes/examples/window.gd
 res://resources/invisible.tres
+res://scenes/examples/draghandle.gd
+res://scenes/authenticator/folderlocked.gd
+res://scenes/cubigor/prettygaytbh.gd
+res://scenes/cubigor/cubigor.gd
+res://scenes/cubigor/cubigor.tscn
+res://scenes/authenticator/authenticate_popup.gd
