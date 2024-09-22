@@ -1,0 +1,182 @@
+[gd_scene load_steps=15 format=3 uid="uid://brx8sg8p6a6pp"]
+
+[ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://sprites/folder.png" id="1_egd73"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
+[ext_resource type="Script" path="res://scenes/examples/folder.gd" id="3_5kliy"]
+[ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://sprites/folderopen.png" id="3_etd47"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="5_bejof"]
+[ext_resource type="Script" path="res://scenes/examples/window.gd" id="6_urli5"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://button.tres" id="7_wyo10"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="8_3hha4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_etf32"]
+font = ExtResource("3_0hike")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
+font = ExtResource("3_0hike")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
+font = ExtResource("3_0hike")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmjlb"]
+bg_color = Color(0.128631, 0.152905, 0.219597, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
+bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="folder" type="TextureButton"]
+offset_left = 62.0
+offset_top = 178.0
+offset_right = 102.0
+offset_bottom = 218.0
+pivot_offset = Vector2(20, 20)
+texture_normal = ExtResource("1_egd73")
+texture_hover = ExtResource("3_etd47")
+stretch_mode = 0
+script = ExtResource("3_5kliy")
+
+[node name="selected_panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = -2.6
+offset_top = 1.0
+offset_right = -2.6
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xpere")
+
+[node name="filename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.99
+anchor_right = 1.0
+anchor_bottom = 1.34
+offset_left = -0.4
+offset_top = 2.0
+offset_right = -0.400002
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_etf32")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="window" type="Panel" parent="." groups=["authentication"]]
+layout_mode = 0
+offset_left = 53.0
+offset_top = -56.0
+offset_right = 177.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = ExtResource("5_bejof")
+script = ExtResource("6_urli5")
+
+[node name="bodytext" type="Label" parent="window"]
+layout_mode = 0
+offset_left = 3.66667
+offset_top = 13.3333
+offset_right = 102.667
+offset_bottom = 27.3333
+scale = Vector2(0.5, 0.5)
+text = "Placeholder
+"
+label_settings = SubResource("LabelSettings_wnq2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="windowname" type="Label" parent="window"]
+layout_mode = 0
+offset_left = 24.5
+offset_top = 2.0
+offset_right = 126.5
+offset_bottom = 16.0
+scale = Vector2(0.5, 0.5)
+text = "placeholder
+"
+label_settings = SubResource("LabelSettings_xcy33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="window"]
+layout_mode = 0
+offset_left = 3.66666
+offset_top = 20.3333
+offset_right = 280.667
+offset_bottom = 57.3333
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("3_0hike")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmjlb")
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="button" type="Button" parent="window"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 281.0
+offset_bottom = 69.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/hover = ExtResource("7_wyo10")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
+theme_override_styles/normal = ExtResource("7_wyo10")
+
+[node name="close" type="Button" parent="window"]
+layout_mode = 0
+offset_left = 114.667
+offset_top = 2.0
+offset_right = 122.667
+offset_bottom = 10.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("8_3hha4")
+theme_override_styles/pressed = ExtResource("8_3hha4")
+theme_override_styles/normal = ExtResource("8_3hha4")
+
+[node name="draghandle" type="Panel" parent="window"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 99.0
+offset_bottom = 10.0
+theme_override_styles/panel = ExtResource("8_3hha4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="gui_input" from="window" to="window" method="_on_gui_input"]
+[connection signal="pressed" from="window/button" to="window" method="_on_confirm_pressed"]
+[connection signal="pressed" from="window/close" to="window" method="_on_close_pressed"]
+[connection signal="gui_input" from="window/draghandle" to="window" method="_on_draghandle_gui_input"]

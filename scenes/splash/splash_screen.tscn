@@ -1,0 +1,252 @@
+[gd_scene load_steps=24 format=3 uid="uid://btl1e5x4iv3p5"]
+
+[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://fonts/Comfortaa-VariableFont_wght.ttf" id="1_ex30y"]
+[ext_resource type="Script" path="res://scenes/splash/splash_screen.gd" id="1_yxwjt"]
+[ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png" id="2_b36d3"]
+[ext_resource type="Shader" path="res://shaders/post_processing/crt_postprocess.gdshader" id="3_5f70m"]
+[ext_resource type="Texture2D" uid="uid://dyiehlbsbsixj" path="res://sprites/maxlogo.png" id="3_36slr"]
+[ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://sprites/maxthelogo.png" id="3_j3kro"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="6_1fxpe"]
+[ext_resource type="AudioStream" uid="uid://cf168qxl8ldor" path="res://audio/boot.mp3" id="7_o50mx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63reo"]
+bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nski4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_2umt0"]
+font = ExtResource("1_ex30y")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kclic"]
+atlas = ExtResource("3_36slr")
+region = Rect2(0, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g00m"]
+atlas = ExtResource("3_36slr")
+region = Rect2(610, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgvb0"]
+atlas = ExtResource("3_36slr")
+region = Rect2(1220, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug425"]
+atlas = ExtResource("3_36slr")
+region = Rect2(1830, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuwws"]
+atlas = ExtResource("3_36slr")
+region = Rect2(2440, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w17yi"]
+atlas = ExtResource("3_36slr")
+region = Rect2(3050, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ospco"]
+atlas = ExtResource("3_36slr")
+region = Rect2(3660, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wykfx"]
+atlas = ExtResource("3_36slr")
+region = Rect2(4270, 0, 610, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igm0h"]
+atlas = ExtResource("3_36slr")
+region = Rect2(4880, 0, 610, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7wn3"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_kclic")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6g00m")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mgvb0")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ug425")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_yuwws")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_w17yi")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ospco")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_wykfx")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_igm0h")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy2l2"]
+font = ExtResource("6_1fxpe")
+font_size = 32
+font_color = Color(0.403922, 0.415686, 0.568627, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pf8x5"]
+shader = ExtResource("3_5f70m")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.22
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 12.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.015
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.382
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="splash_screen" type="CanvasLayer"]
+script = ExtResource("1_yxwjt")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_63reo")
+
+[node name="IFG" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = -800.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="IFG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(88, 112)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nski4")
+
+[node name="Label" type="Label" parent="IFG"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 224.0
+offset_top = 64.0
+offset_right = 930.0
+offset_bottom = 191.0
+pivot_offset = Vector2(-120, 64)
+text = " 27/09/2024
+Instituto Federal de Educação, Ciência e Tecnologia do Goiás
+Campûs: Valparaíso de Goiás 
+		Curso: Técnico Integrado em Automação Industrial 1 
+2º Bimestre de Arte I regido pelo Mestre Igor Carvalho Rodrigues"
+label_settings = SubResource("LabelSettings_2umt0")
+
+[node name="IFg_logo" type="TextureRect" parent="IFG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -86.0
+offset_right = 100.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(92, 86)
+texture = ExtResource("2_b36d3")
+
+[node name="MAX" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Maxthelogo" type="Sprite2D" parent="MAX"]
+position = Vector2(344, 321)
+scale = Vector2(7, 7)
+texture = ExtResource("3_j3kro")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MAX"]
+position = Vector2(592, 320)
+scale = Vector2(0.618033, 0.606667)
+sprite_frames = SubResource("SpriteFrames_x7wn3")
+animation = &"shine"
+
+[node name="Label" type="Label" parent="MAX"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 370.0
+offset_right = 792.0
+offset_bottom = 398.0
+text = "Miguel Jorge Freitas de O."
+label_settings = SubResource("LabelSettings_dy2l2")
+
+[node name="crt" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_pf8x5")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="middle" type="Marker2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="IFGtimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="changescene" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o50mx")
+
+[connection signal="animation_finished" from="MAX/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="IFGtimer" to="." method="_on_if_gtimer_timeout"]
+[connection signal="timeout" from="changescene" to="." method="_on_changescene_timeout"]

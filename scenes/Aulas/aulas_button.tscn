@@ -1,0 +1,218 @@
+[gd_scene load_steps=14 format=3 uid="uid://naxxreavcae8"]
+
+[ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://sprites/folderwithfile.png" id="1_v38wl"]
+[ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://sprites/folderopenwithfile.png" id="2_fr6q5"]
+[ext_resource type="Script" path="res://scenes/Aulas/aulas.gd" id="3_w04ev"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="4_u02bm"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="5_4akqb"]
+[ext_resource type="Script" path="res://scenes/Aulas/aula_select.gd" id="6_v7rke"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://button.tres" id="7_5fmhi"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="8_teyc5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4df"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_g58ae"]
+font = ExtResource("4_u02bm")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4lyr"]
+font = ExtResource("4_u02bm")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
+font = ExtResource("4_u02bm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybr6"]
+bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="aulas" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.0694444
+anchor_top = 0.481481
+anchor_right = 0.101411
+anchor_bottom = 0.54321
+offset_right = 3.17496
+offset_bottom = 3.05176e-05
+scale = Vector2(0.920626, 1)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("1_v38wl")
+texture_pressed = ExtResource("1_v38wl")
+texture_hover = ExtResource("2_fr6q5")
+stretch_mode = 0
+script = ExtResource("3_w04ev")
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -0.999969
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8c4df")
+
+[node name="filename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.99
+anchor_right = 1.0
+anchor_bottom = 1.34
+offset_left = -8.0
+offset_top = 2.4
+offset_right = 10.0
+offset_bottom = 19.4
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aulas"
+label_settings = SubResource("LabelSettings_g58ae")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="aula_select" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = -50.0
+offset_right = 187.0
+offset_bottom = 6.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = ExtResource("5_4akqb")
+script = ExtResource("6_v7rke")
+
+[node name="window_name" type="Label" parent="aula_select"]
+layout_mode = 0
+offset_left = 24.5
+offset_top = 2.0
+offset_right = 126.5
+offset_bottom = 16.0
+scale = Vector2(0.5, 0.5)
+text = "Escolha
+"
+label_settings = SubResource("LabelSettings_u4lyr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="body_text" type="Label" parent="aula_select"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 18.0
+offset_right = 148.0
+offset_bottom = 32.0
+scale = Vector2(0.5, 0.5)
+text = "Escolha a aula"
+label_settings = SubResource("LabelSettings_qfedf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aula" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 10.6667
+offset_top = 36.6667
+offset_right = 100.667
+offset_bottom = 76.6667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Aula 1"
+
+[node name="aula2" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 36.6667
+offset_right = 122.0
+offset_bottom = 76.6667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Aula 1"
+
+[node name="aula3" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 53.3333
+offset_top = 36.6667
+offset_right = 143.333
+offset_bottom = 76.6667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Aula 1"
+
+[node name="aula4" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 74.6667
+offset_top = 36.6667
+offset_right = 164.667
+offset_bottom = 76.6667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Aula 1"
+
+[node name="aula5" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 36.6667
+offset_right = 186.0
+offset_bottom = 76.6667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Aula 1"
+
+[node name="close" type="Button" parent="aula_select"]
+layout_mode = 0
+offset_left = 114.667
+offset_top = 2.0
+offset_right = 122.667
+offset_bottom = 10.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("8_teyc5")
+theme_override_styles/pressed = ExtResource("8_teyc5")
+theme_override_styles/normal = ExtResource("8_teyc5")
+
+[node name="draghandle" type="Panel" parent="aula_select"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 99.0
+offset_bottom = 10.0
+theme_override_styles/panel = ExtResource("8_teyc5")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="aula_select/close" to="aula_select" method="_on_close_pressed"]
+[connection signal="gui_input" from="aula_select/draghandle" to="aula_select" method="_on_draghandle_gui_input"]

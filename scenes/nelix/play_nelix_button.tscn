@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://clsapeh5doyoe"]
+
+[ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://sprites/nelix.png" id="1_0hnt3"]
+[ext_resource type="Script" path="res://scenes/nelix/play_nelix.gd" id="2_frl7q"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="4_6b041"]
+[ext_resource type="Script" path="res://scenes/nelix/nelix_window.gd" id="5_1iusj"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="6_efi44"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
+font = ExtResource("3_pt81c")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fp8mg"]
+font = ExtResource("3_pt81c")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sw7t1"]
+font = ExtResource("3_pt81c")
+font_color = Color(0, 0, 0, 1)
+
+[node name="play nelix" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.326389
+anchor_top = 0.148148
+anchor_right = 0.362847
+anchor_bottom = 0.212963
+offset_right = 98.0
+offset_bottom = 98.0001
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("1_0hnt3")
+texture_pressed = ExtResource("1_0hnt3")
+texture_hover = ExtResource("1_0hnt3")
+stretch_mode = 1
+script = ExtResource("2_frl7q")
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = 28.0
+offset_top = -10.5001
+offset_right = -53.0
+offset_bottom = 27.4998
+theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
+
+[node name="filename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.798743
+anchor_top = 1.49975
+anchor_right = 0.101257
+anchor_bottom = 1.84975
+offset_left = 111.824
+offset_top = -69.9657
+offset_right = 129.824
+offset_bottom = -45.9657
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play NELIX"
+label_settings = SubResource("LabelSettings_yb2ti")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="doubleclicktimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="nelix_window" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.94604
+anchor_top = -0.67372
+anchor_right = -4.94604
+anchor_bottom = -0.67372
+offset_left = -107.555
+offset_top = 27.6543
+offset_right = 16.4446
+offset_bottom = 83.6543
+scale = Vector2(6, 6)
+theme_override_styles/panel = ExtResource("4_6b041")
+script = ExtResource("5_1iusj")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="body_text" type="Label" parent="nelix_window"]
+layout_mode = 0
+offset_left = 35.5555
+offset_top = 23.3333
+offset_right = 126.556
+offset_bottom = 54.3333
+scale = Vector2(0.5, 0.5)
+text = "Indisponivel
+no momento"
+label_settings = SubResource("LabelSettings_fp8mg")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="window_name" type="Label" parent="nelix_window"]
+layout_mode = 0
+offset_left = 24.5
+offset_top = 2.0
+offset_right = 126.5
+offset_bottom = 16.0
+scale = Vector2(0.5, 0.5)
+text = "Info
+"
+label_settings = SubResource("LabelSettings_sw7t1")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="close" type="Button" parent="nelix_window"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 2.0
+offset_right = 123.0
+offset_bottom = 13.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("6_efi44")
+theme_override_styles/pressed = ExtResource("6_efi44")
+theme_override_styles/normal = ExtResource("6_efi44")
+metadata/_edit_use_anchors_ = true
+
+[node name="draghandle" type="Panel" parent="nelix_window"]
+offset_left = 1.0
+offset_right = 99.0
+offset_bottom = 10.0
+theme_override_styles/panel = ExtResource("6_efi44")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="nelix_window/close" to="nelix_window" method="_on_close_pressed"]
+[connection signal="gui_input" from="nelix_window/draghandle" to="nelix_window" method="_on_draghandle_gui_input"]
