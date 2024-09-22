@@ -12,4 +12,3 @@ script = ExtResource("1_fbit4")
 
 [node name="gaytheme" type="AudioStreamPlayer" parent="." groups=["authentication"]]
 stream = ExtResource("2_i6i65")
-stream_paused = true

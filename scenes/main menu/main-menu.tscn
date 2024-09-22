@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=30 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_xfcrf"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://sprites/logo.png" id="2_dediy"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scenes/music_player/musicplayer.gd" id="17_gyd0p"]
 [ext_resource type="AudioStream" uid="uid://bwjs0w57phcsg" path="res://audio/Take Care.mp3" id="18_373ej"]
 [ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://scenes/Aulas/aulas_button.tscn" id="20_e8l5l"]
+[ext_resource type="PackedScene" uid="uid://brx8sg8p6a6pp" path="res://scenes/examples/folder.tscn" id="20_vruqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qgy"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -38,6 +39,12 @@ font_size = 32
 font = ExtResource("7_hxvmw")
 font_size = 22
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
@@ -54,12 +61,6 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_etf32"]
 font = ExtResource("7_hxvmw")
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3j3e"]
 shader = ExtResource("3_8mgm0")
@@ -201,6 +202,54 @@ texture = ExtResource("4_jtiqu")
 expand_mode = 1
 stretch_mode = 1
 
+[node name="audio_button_texture" type="TextureRect" parent="desktop/panel"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 31.0
+offset_right = 146.0
+offset_bottom = 71.0
+texture = ExtResource("5_l40gv")
+
+[node name="audio_disabled_texture" type="TextureRect" parent="desktop/panel"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 31.0
+offset_right = 146.0
+offset_bottom = 71.0
+texture = ExtResource("6_3cicx")
+
+[node name="Power_button_texture" type="TextureRect" parent="desktop/panel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 31.0
+offset_right = 89.0
+offset_bottom = 71.0
+texture = ExtResource("5_amkwd")
+
+[node name="sound_button" type="Button" parent="desktop/panel"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 44.0
+offset_right = 155.0
+offset_bottom = 85.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("8_fcre7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
+[node name="power_button" type="Button" parent="desktop/panel"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 49.0
+offset_right = 116.0
+offset_bottom = 90.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("8_fcre7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
 [node name="Folders" type="Control" parent="desktop"]
 layout_mode = 1
 anchors_preset = 15
@@ -299,53 +348,12 @@ anchor_top = 0.197531
 anchor_right = 0.946181
 anchor_bottom = 0.262346
 
-[node name="audio_button_texture" type="TextureRect" parent="desktop"]
+[node name="folder" parent="desktop/Folders" instance=ExtResource("20_vruqn")]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 31.0
-offset_right = 146.0
-offset_bottom = 71.0
-texture = ExtResource("5_l40gv")
-
-[node name="audio_disabled_texture" type="TextureRect" parent="desktop"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 31.0
-offset_right = 146.0
-offset_bottom = 71.0
-texture = ExtResource("6_3cicx")
-
-[node name="Power_button_texture" type="TextureRect" parent="desktop"]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 31.0
-offset_right = 89.0
-offset_bottom = 71.0
-texture = ExtResource("5_amkwd")
-
-[node name="sound_button" type="Button" parent="desktop"]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 44.0
-offset_right = 155.0
-offset_bottom = 85.0
-focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("8_fcre7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
-toggle_mode = true
-
-[node name="power_button" type="Button" parent="desktop"]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 49.0
-offset_right = 116.0
-offset_bottom = 90.0
-focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("8_fcre7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
-toggle_mode = true
+offset_left = 256.0
+offset_top = 341.0
+offset_right = 296.0
+offset_bottom = 381.0
 
 [node name="crt" type="ColorRect" parent="."]
 visible = false
@@ -371,7 +379,7 @@ stream = ExtResource("8_qc6vo")
 
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
 [connection signal="cubigorbk" from="gaytscn" to="." method="_on_gaytscn_cubigorbk"]
+[connection signal="pressed" from="desktop/panel/sound_button" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="desktop/panel/power_button" to="." method="_on_power_button_pressed"]
 [connection signal="pressed" from="desktop/Folders/musicplayer" to="desktop/Folders/musicplayer" method="_on_pressed"]
 [connection signal="timeout" from="desktop/Folders/musicplayer/Timer" to="desktop/Folders/musicplayer" method="_on_timer_timeout"]
-[connection signal="pressed" from="desktop/sound_button" to="." method="_on_sound_button_pressed"]
-[connection signal="pressed" from="desktop/power_button" to="." method="_on_power_button_pressed"]

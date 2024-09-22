@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://brx8sg8p6a6pp"]
+[gd_scene load_steps=16 format=3 uid="uid://brx8sg8p6a6pp"]
 
 [ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://sprites/folder.png" id="1_egd73"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
 [ext_resource type="Script" path="res://scenes/examples/folder.gd" id="3_5kliy"]
 [ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://sprites/folderopen.png" id="3_etd47"]
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="5_bejof"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_bejof"]
 [ext_resource type="Script" path="res://scenes/examples/window.gd" id="6_urli5"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://button.tres" id="7_wyo10"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="8_3hha4"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_3hha4"]
+[ext_resource type="Script" path="res://scenes/examples/draghandle.gd" id="9_oydpv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
 bg_color = Color(1, 1, 1, 1)
@@ -93,17 +94,29 @@ label_settings = SubResource("LabelSettings_etf32")
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.7
 one_shot = true
 
 [node name="window" type="Panel" parent="." groups=["authentication"]]
+custom_minimum_size = Vector2(123, 57)
 layout_mode = 0
 offset_left = 53.0
 offset_top = -56.0
-offset_right = 177.0
+offset_right = 176.0
+offset_bottom = 1.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("5_bejof")
 script = ExtResource("6_urli5")
+
+[node name="body" type="Control" parent="window"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
 
 [node name="bodytext" type="Label" parent="window"]
 layout_mode = 0
@@ -119,11 +132,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="windowname" type="Label" parent="window"]
-layout_mode = 0
-offset_left = 24.5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.1667
 offset_top = 2.0
-offset_right = 126.5
+offset_right = 158.833
 offset_bottom = 16.0
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "placeholder
 "
@@ -145,6 +162,38 @@ context_menu_enabled = false
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="HBoxContainer" type="HBoxContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="window/HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("8_3hha4")
+theme_override_styles/pressed = ExtResource("8_3hha4")
+theme_override_styles/normal = ExtResource("8_3hha4")
+
+[node name="close" type="Button" parent="window/HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 1
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("8_3hha4")
+theme_override_styles/pressed = ExtResource("8_3hha4")
+theme_override_styles/normal = ExtResource("8_3hha4")
+
 [node name="button" type="Button" parent="window"]
 layout_mode = 0
 offset_left = 4.0
@@ -156,27 +205,39 @@ theme_override_styles/hover = ExtResource("7_wyo10")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
 theme_override_styles/normal = ExtResource("7_wyo10")
 
-[node name="close" type="Button" parent="window"]
-layout_mode = 0
-offset_left = 114.667
-offset_top = 2.0
-offset_right = 122.667
-offset_bottom = 10.0
-focus_mode = 0
-theme_override_styles/hover = ExtResource("8_3hha4")
-theme_override_styles/pressed = ExtResource("8_3hha4")
-theme_override_styles/normal = ExtResource("8_3hha4")
-
 [node name="draghandle" type="Panel" parent="window"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 99.0
-offset_bottom = 10.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.8333
+offset_top = 1.66667
+offset_right = 36.1667
+offset_bottom = 8.66667
+grow_horizontal = 2
 theme_override_styles/panel = ExtResource("8_3hha4")
+
+[node name="resizehandle" type="Panel" parent="window"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -8.66667
+offset_right = 1.0
+offset_bottom = 1.33333
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("8_3hha4")
+script = ExtResource("9_oydpv")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="window" to="window" method="_on_gui_input"]
+[connection signal="pressed" from="window/HBoxContainer/maximize" to="window" method="_on_maximize_pressed"]
+[connection signal="pressed" from="window/HBoxContainer/close" to="window" method="_on_close_pressed"]
 [connection signal="pressed" from="window/button" to="window" method="_on_confirm_pressed"]
-[connection signal="pressed" from="window/close" to="window" method="_on_close_pressed"]
 [connection signal="gui_input" from="window/draghandle" to="window" method="_on_draghandle_gui_input"]
+[connection signal="gui_input" from="window/resizehandle" to="window/resizehandle" method="_on_gui_input"]
