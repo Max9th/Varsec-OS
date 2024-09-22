@@ -30,10 +30,7 @@ func _on_confirm_pressed() -> void:
 	if text_edit.text == "max9th":
 		authenticate_popup.visible = false
 		get_tree().call_group("authentication","_on_authenticated")
-	if text_edit.text == "delta":
-		authenticate_popup.visible = false
-		get_tree().call_group("authentication","")
-	elif text_edit.text != "cubigor" and text_edit.text != "max9th" and text_edit.text != "delta":
+	elif text_edit.text != "cubigor" and text_edit.text != "max9th":
 		incorrect.visible = true
 		timer.start()
 		text_edit.text = ""
