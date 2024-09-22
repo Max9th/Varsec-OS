@@ -365,7 +365,6 @@ gizmo_extents = 353.4
 
 [node name="splash_screen" parent="." instance=ExtResource("7_0yxcy")]
 visible = false
-Full_boot = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qc6vo")
