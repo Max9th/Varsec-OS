@@ -1,26 +1,12 @@
 res://scenes/main menu/main-menu.tscn
 res://scenes/main menu/main_menu.gd
 res://resources/betterwindow.tres
+res://resources/button.tres
 res://scenes/authenticator/passwordinputbox.tres
 res://scenes/Aulas/aulas_button.tscn
 res://scenes/examples/folder.tscn
 res://scenes/authenticator/folderlocked_button.tscn
-res://scenes/cubigor/prettygaytbh.tscn
-res://scenes/splash/splash_screen.tscn
-res://scenes/file_manager/file_manager.tscn
-res://scenes/nelix/play_nelix_button.tscn
-res://resources/button.tres
-res://scenes/Aulas/aula_select.gd
-res://scenes/authenticator/authenticate_popup.gd
-res://scenes/Aulas/aulas.gd
-res://scenes/examples/window.gd
-res://resources/invisible.tres
-res://scenes/source_link/source_code_link.tscn
-res://scenes/Aulas/button_manager.gd
-res://scenes/examples/folder.gd
-res://scenes/authenticator/folderlocked.gd
-res://scenes/nelix/play_nelix.gd
-res://scenes/music_player/musicplayer.gd
-res://scenes/source_link/source_code_link.gd
 res://scenes/pessoais/pessoais_button.tscn
-res://scenes/pessoais/pessoais.gd
+res://scenes/nelix/play_nelix_button.tscn
+res://scenes/source_link/source_code_link.tscn
+res://scenes/cubigor/cubigor.tscn

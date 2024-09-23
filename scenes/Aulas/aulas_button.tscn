@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://naxxreavcae8"]
+[gd_scene load_steps=23 format=3 uid="uid://naxxreavcae8"]
 
 [ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://sprites/folderwithfile.png" id="1_v38wl"]
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://sprites/folderopenwithfile.png" id="2_fr6q5"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="7_vn0b8"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_teyc5"]
 [ext_resource type="Script" path="res://scenes/Aulas/button_manager.gd" id="8_wv8es"]
+[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://fonts/Comfortaa-VariableFont_wght.ttf" id="9_kgm3f"]
 [ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://sprites/maxthelogo.png" id="9_w2pnq"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="11_t3tjb"]
 
@@ -43,8 +44,17 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
+[sub_resource type="LabelSettings" id="LabelSettings_pkmob"]
 font = ExtResource("4_u02bm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fu78"]
+font = ExtResource("4_u02bm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_803rj"]
+font = ExtResource("4_u02bm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
+font = ExtResource("9_kgm3f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed4ht"]
 bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
@@ -125,9 +135,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -37.6033
+offset_left = -28.8445
 offset_top = 2.0
-offset_right = 64.3967
+offset_right = 83.1555
 offset_bottom = 16.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
@@ -138,6 +148,7 @@ vertical_alignment = 1
 
 [node name="aula1" type="Button" parent="aula_select"]
 custom_minimum_size = Vector2(90, 40)
+layout_mode = 0
 offset_left = 4.43718
 offset_top = 70.6668
 offset_right = 94.4372
@@ -151,24 +162,26 @@ theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Cubigor"
 
 [node name="recentes" type="Label" parent="aula_select"]
+layout_mode = 0
 offset_left = 3.96539
 offset_top = 65.0
 offset_right = 81.9654
 offset_bottom = 79.0
 scale = Vector2(0.25, 0.25)
 text = "Recentes:"
-label_settings = SubResource("LabelSettings_qfedf")
+label_settings = SubResource("LabelSettings_pkmob")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="selecione" type="Label" parent="aula_select"]
+layout_mode = 0
 offset_left = 3.96539
 offset_top = 11.6667
 offset_right = 81.9654
 offset_bottom = 25.6667
 scale = Vector2(0.25, 0.25)
 text = "Selecione:"
-label_settings = SubResource("LabelSettings_qfedf")
+label_settings = SubResource("LabelSettings_2fu78")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -180,33 +193,30 @@ offset_right = 80.2305
 offset_bottom = 25.3334
 scale = Vector2(0.5, 0.5)
 text = "Selecione a aula"
-label_settings = SubResource("LabelSettings_qfedf")
+label_settings = SubResource("LabelSettings_803rj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="body_text2" type="Label" parent="aula_select/body_text"]
-offset_left = 70.2421
-offset_top = 43.3333
-offset_right = 648.242
-offset_bottom = 346.333
+layout_mode = 0
+offset_left = 69.518
+offset_top = 21.3334
+offset_right = 627.518
+offset_bottom = 181.333
 scale = Vector2(0.5, 0.5)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in voluptatem."
 label_settings = SubResource("LabelSettings_qfedf")
 autowrap_mode = 2
 
 [node name="body_text" type="Label" parent="aula_select/body_text"]
-offset_left = 1.0
-offset_top = 76.0
-offset_right = 729.0
-offset_bottom = 379.0
+layout_mode = 0
+offset_left = -2.89649
+offset_top = 86.0001
+offset_right = 725.104
+offset_bottom = 435.0
 scale = Vector2(0.5, 0.5)
 text = "
-
 Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis ut et voluptates et dolores nasci fatemur e.
-
-Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea.
-
-Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis.
 "
 label_settings = SubResource("LabelSettings_qfedf")
 autowrap_mode = 2
@@ -316,6 +326,7 @@ grow_horizontal = 2
 theme_override_styles/panel = ExtResource("8_teyc5")
 
 [node name="separator 2" type="Panel" parent="aula_select"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 61.0
 offset_right = 27.0

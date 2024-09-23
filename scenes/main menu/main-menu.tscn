@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=36 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_xfcrf"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://sprites/logo.png" id="2_dediy"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cs5wyhy0rqja4" path="res://sprites/crtdisabled.png" id="11_x4v7k"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://scenes/cubigor/cubigor.tscn" id="12_xo21c"]
 [ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://scenes/authenticator/folderlocked_button.tscn" id="13_j8r1x"]
+[ext_resource type="Texture2D" uid="uid://3n8n63mdhm2" path="res://sprites/audio_selected.png" id="15_judgo"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="15_vgqm5"]
 [ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://scenes/nelix/play_nelix_button.tscn" id="16_fhs21"]
 [ext_resource type="Script" path="res://scenes/music_player/musicplayer.gd" id="17_gyd0p"]
@@ -127,7 +128,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m1qgy")
 
 [node name="portfolio" type="TextureRect" parent="desktop"]
-custom_minimum_size = Vector2(106, 40)
+custom_minimum_size = Vector2(106, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -135,9 +136,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -53.0
-offset_top = -20.0
+offset_top = 12.0
 offset_right = 53.0
-offset_bottom = 20.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -289,7 +290,7 @@ offset_bottom = 296.0
 pivot_offset = Vector2(20, 20)
 texture_normal = ExtResource("5_l40gv")
 texture_pressed = ExtResource("5_l40gv")
-texture_hover = ExtResource("5_l40gv")
+texture_hover = ExtResource("15_judgo")
 stretch_mode = 0
 script = ExtResource("17_gyd0p")
 

@@ -5,11 +5,11 @@ extends Control
 @onready var splash_screen: CanvasLayer = $splash_screen
 @onready var audio_disabled_texture: TextureRect = $desktop/Panel/audio_disabled_texture
 @onready var background: Panel = $desktop/background
-@onready var takecare: AudioStreamPlayer = $takecare
 @onready var selectom: Sprite2D = $sas
 @onready var time: Label = $desktop/Panel/time
 @onready var date: Label = $desktop/Panel/time/date
 @onready var crt_disabled_texture: TextureRect = $desktop/Panel/crt_disabled_texture
+@onready var takecare: AudioStreamPlayer = $desktop/Folders/musicplayer/takecare
 
 var playaudio: bool = true
 
@@ -43,6 +43,7 @@ func _on_cubigor_cubigorbk() -> void:
 	background.visible = false
 	audio_disabled_texture.visible = false
 	selectom.visible = false
+	takecare.playing = false
 
 func _on_gaytscn_disablebk() -> void:
 	background.visible = false
