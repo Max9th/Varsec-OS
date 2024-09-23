@@ -4,7 +4,8 @@
 
  Fantasy OS made as an art project
 
-play the fantasy OS here:
+
+**play the fantasy OS here:**
 
 https://max9th.github.io/Varsec-OS-web/
 
