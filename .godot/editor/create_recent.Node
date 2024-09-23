@@ -1,7 +1,7 @@
+Panel
 TextureRect
 AudioStreamPlayer
 AudioStreamPlayer2D
-Panel
 VBoxContainer
 TextureButton
 LinkButton

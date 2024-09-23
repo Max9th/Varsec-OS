@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var gay_theme: AudioStreamPlayer = $gaytheme
-@onready var max: Sprite2D = $Max
 
 var gay_mode: bool = false
 

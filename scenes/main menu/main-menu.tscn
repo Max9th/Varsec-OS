@@ -107,8 +107,8 @@ metadata/_edit_vertical_guides_ = [-80.0]
 [node name="cubigor" parent="." instance=ExtResource("12_xo21c")]
 
 [node name="sas" parent="." instance=ExtResource("3_fpams")]
-position = Vector2(576.5, 325.25)
-scale = Vector2(0.592078, 0.250964)
+position = Vector2(576, 324)
+scale = Vector2(9.52066, 4)
 
 [node name="desktop" type="Control" parent="."]
 layout_mode = 1
@@ -197,7 +197,7 @@ label_settings = SubResource("LabelSettings_uhrpj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IFg_logo" type="TextureRect" parent="desktop/Panel"]
+[node name="IFg" type="TextureRect" parent="desktop/Panel"]
 material = SubResource("ShaderMaterial_x83uk")
 layout_mode = 0
 offset_left = 1049.0

@@ -13,7 +13,7 @@ var mouse_start_drag_position: Vector2
 
 func _ready() -> void:
 	authenticate_popup.visible = false
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
 		clamp_window_inside_viewport()
@@ -39,14 +39,14 @@ func _on_resizehandle_gui_input(event: InputEvent) -> void:
 
 func clamp_window_inside_viewport() -> void:
 	var viewport_size = get_viewport().get_visible_rect().size
-	var position = global_position
+	var position2 = global_position
 	var object_size = size * 3
 	
-	position.x = clamp(position.x, 0, viewport_size.x - object_size.x)
-	position.y = clamp(position.y, 0, viewport_size.y - object_size.y)
-	global_position = position
+	position2.x = clamp(position2.x, 0, viewport_size.x - object_size.x)
+	position2.y = clamp(position2.y, 0, viewport_size.y - object_size.y)
+	global_position = position2
 
-func _on_line_edit_text_submitted(new_text: String) -> void:
+func _on_line_edit_text_submitted(_new_text: String) -> void:
 	authenticate()
 
 func authenticate():
@@ -56,7 +56,10 @@ func authenticate():
 	if line_edit.text == "max9th":
 		authenticate_popup.visible = false
 		get_tree().call_group("authentication","_on_authenticated")
-	elif line_edit.text != "cubigor" and line_edit.text != "max9th":
+	if line_edit.text == "nelix":
+		authenticate_popup.visible = false
+		get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
+	elif line_edit.text != "cubigor" and line_edit.text != "max9th" and line_edit.text != "nelix":
 		incorrect.visible = true
 		timer.start()
 		line_edit.text = ""

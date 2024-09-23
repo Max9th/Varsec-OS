@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://sprites/folderopenwithfile.png" id="2_fr6q5"]
 [ext_resource type="Script" path="res://scenes/Aulas/aulas.gd" id="3_w04ev"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="4_u02bm"]
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_4akqb"]
-[ext_resource type="Script" path="res://scenes/Aulas/aula_select.gd" id="6_v7rke"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_5fmhi"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="7_vn0b8"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_teyc5"]
-[ext_resource type="Script" path="res://scenes/Aulas/button_manager.gd" id="8_wv8es"]
-[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://fonts/Comfortaa-VariableFont_wght.ttf" id="9_kgm3f"]
-[ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://sprites/maxthelogo.png" id="9_w2pnq"]
-[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="11_t3tjb"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="5_07f6p"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="6_0kmv4"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_535et"]
+[ext_resource type="Script" path="res://scenes/windows/aula_select/aula_select.gd" id="7_xaqfn"]
+[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://fonts/Comfortaa-VariableFont_wght.ttf" id="8_i8m5o"]
+[ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://sprites/maxthelogo.png" id="9_85dau"]
+[ext_resource type="Script" path="res://scenes/Aulas/button_manager.gd" id="10_r7kjd"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_pq30d"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="12_dho78"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4df"]
 bg_color = Color(1, 1, 1, 1)
@@ -31,11 +31,11 @@ anti_aliasing = false
 font = ExtResource("4_u02bm")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_u4lyr"]
+[sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
 font = ExtResource("4_u02bm")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybr6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
@@ -44,19 +44,19 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="LabelSettings" id="LabelSettings_pkmob"]
+[sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
 font = ExtResource("4_u02bm")
 
-[sub_resource type="LabelSettings" id="LabelSettings_2fu78"]
+[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
 font = ExtResource("4_u02bm")
 
-[sub_resource type="LabelSettings" id="LabelSettings_803rj"]
+[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
 font = ExtResource("4_u02bm")
 
-[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
-font = ExtResource("9_kgm3f")
+[sub_resource type="LabelSettings" id="LabelSettings_wvchx"]
+font = ExtResource("8_i8m5o")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed4ht"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
 bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -117,6 +117,9 @@ autowrap_mode = 2
 wait_time = 0.7
 one_shot = true
 
+[node name="select_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_07f6p")
+
 [node name="aula_select" type="Panel" parent="."]
 custom_minimum_size = Vector2(217, 115)
 layout_mode = 0
@@ -124,13 +127,10 @@ offset_left = 104.0
 offset_right = 321.0
 offset_bottom = 115.0
 scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("5_4akqb")
-script = ExtResource("6_v7rke")
+theme_override_styles/panel = ExtResource("6_0kmv4")
+script = ExtResource("7_xaqfn")
 
-[node name="select_audio" type="AudioStreamPlayer" parent="aula_select"]
-stream = ExtResource("7_vn0b8")
-
-[node name="window_name" type="Label" parent="aula_select"]
+[node name="windowname" type="Label" parent="aula_select"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -142,11 +142,11 @@ offset_bottom = 16.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "class manager"
-label_settings = SubResource("LabelSettings_u4lyr")
+label_settings = SubResource("LabelSettings_2xelb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="aula1" type="Button" parent="aula_select"]
+[node name="aula" type="Button" parent="aula_select"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 0
 offset_left = 4.43718
@@ -156,9 +156,9 @@ offset_bottom = 110.667
 scale = Vector2(0.2, 0.2)
 theme_override_fonts/font = ExtResource("4_u02bm")
 theme_override_font_sizes/font_size = 0
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Cubigor"
 
 [node name="recentes" type="Label" parent="aula_select"]
@@ -169,7 +169,7 @@ offset_right = 81.9654
 offset_bottom = 79.0
 scale = Vector2(0.25, 0.25)
 text = "Recentes:"
-label_settings = SubResource("LabelSettings_pkmob")
+label_settings = SubResource("LabelSettings_wrkym")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -181,7 +181,7 @@ offset_right = 81.9654
 offset_bottom = 25.6667
 scale = Vector2(0.25, 0.25)
 text = "Selecione:"
-label_settings = SubResource("LabelSettings_2fu78")
+label_settings = SubResource("LabelSettings_dbcny")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -193,7 +193,7 @@ offset_right = 80.2305
 offset_bottom = 25.3334
 scale = Vector2(0.5, 0.5)
 text = "Selecione a aula"
-label_settings = SubResource("LabelSettings_803rj")
+label_settings = SubResource("LabelSettings_60y8t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -205,20 +205,20 @@ offset_right = 627.518
 offset_bottom = 181.333
 scale = Vector2(0.5, 0.5)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in voluptatem."
-label_settings = SubResource("LabelSettings_qfedf")
+label_settings = SubResource("LabelSettings_wvchx")
 autowrap_mode = 2
 
 [node name="body_text" type="Label" parent="aula_select/body_text"]
 layout_mode = 0
-offset_left = -2.89649
-offset_top = 86.0001
-offset_right = 725.104
+offset_left = -3.0
+offset_top = 86.0
+offset_right = 736.0
 offset_bottom = 435.0
 scale = Vector2(0.5, 0.5)
 text = "
 Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis ut et voluptates et dolores nasci fatemur e.
 "
-label_settings = SubResource("LabelSettings_qfedf")
+label_settings = SubResource("LabelSettings_wvchx")
 autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="aula_select/body_text"]
@@ -227,7 +227,7 @@ offset_left = 2.0
 offset_top = 23.0
 offset_right = 67.0
 offset_bottom = 85.0
-texture = ExtResource("9_w2pnq")
+texture = ExtResource("9_85dau")
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="aula_select"]
@@ -237,52 +237,52 @@ offset_top = 16.0001
 offset_right = 94.4372
 offset_bottom = 232.0
 scale = Vector2(0.2, 0.2)
-script = ExtResource("8_wv8es")
+script = ExtResource("10_r7kjd")
 metadata/_edit_group_ = true
 
 [node name="aula1" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Aula 1"
 
 [node name="aula2" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Aula 2"
 
 [node name="aula3" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Aula 3"
 
 [node name="aula4" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Aula 4"
 
 [node name="aula5" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
-theme_override_styles/hover = ExtResource("7_5fmhi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
-theme_override_styles/normal = ExtResource("7_5fmhi")
+theme_override_styles/hover = ExtResource("7_535et")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("7_535et")
 text = "Aula 5"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="aula_select"]
@@ -302,17 +302,17 @@ metadata/_edit_group_ = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("8_teyc5")
-theme_override_styles/pressed = ExtResource("8_teyc5")
-theme_override_styles/normal = ExtResource("8_teyc5")
+theme_override_styles/hover = ExtResource("11_pq30d")
+theme_override_styles/pressed = ExtResource("11_pq30d")
+theme_override_styles/normal = ExtResource("11_pq30d")
 
 [node name="close" type="Button" parent="aula_select/HBoxContainer"]
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("8_teyc5")
-theme_override_styles/pressed = ExtResource("8_teyc5")
-theme_override_styles/normal = ExtResource("8_teyc5")
+theme_override_styles/hover = ExtResource("11_pq30d")
+theme_override_styles/pressed = ExtResource("11_pq30d")
+theme_override_styles/normal = ExtResource("11_pq30d")
 
 [node name="draghandle" type="Panel" parent="aula_select"]
 layout_mode = 1
@@ -323,27 +323,27 @@ offset_left = -105.5
 offset_right = 88.5
 offset_bottom = 10.0
 grow_horizontal = 2
-theme_override_styles/panel = ExtResource("8_teyc5")
+theme_override_styles/panel = ExtResource("11_pq30d")
 
-[node name="separator 2" type="Panel" parent="aula_select"]
+[node name="separator" type="Panel" parent="aula_select"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 61.0
 offset_right = 27.0
 offset_bottom = 82.0
 rotation = 1.5708
-theme_override_styles/panel = SubResource("StyleBoxFlat_ed4ht")
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
-[node name="separator1" type="Panel" parent="aula_select"]
+[node name="separator2" type="Panel" parent="aula_select"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 11.0
 offset_right = 29.0
 offset_bottom = 112.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ed4ht")
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="aula_select"]
-stream = ExtResource("11_t3tjb")
+stream = ExtResource("12_dho78")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="aula_select/VBoxContainer/aula1" to="aula_select/VBoxContainer" method="_on_aula_1_pressed"]

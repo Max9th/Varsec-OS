@@ -4,7 +4,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var selected_panel: Panel = $selected_panel
 @onready var aula_select: Panel = $aula_select
-@onready var select_audio: AudioStreamPlayer = $aula_select/select_audio
+@onready var select_audio: AudioStreamPlayer = $select_audio
 
 var selected: bool = false
 var timer_running: bool = false

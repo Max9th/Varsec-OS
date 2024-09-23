@@ -2,10 +2,9 @@ extends Control
 
 @onready var timer: Timer = $doubleclicktimer
 @onready var filename: Label = $filename
-@onready var nelix_window: Panel = $nelix_window
+@onready var window: Panel = $window
 @onready var selected_panel: Panel = $selected_panel
-@onready var select_audio: AudioStreamPlayer = $nelix_window/select_audio
-@onready var close_audio: AudioStreamPlayer = $nelix_window/close_audio
+@onready var select_audio: AudioStreamPlayer = $select_audio
 
 var selected: bool = false
 var timer_running: bool = false
@@ -33,5 +32,6 @@ func _on_pressed() -> void:
 	select()
 
 func spawnwindow():
-		nelix_window.visible = true
+	get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
+	#window.visible = true
 	

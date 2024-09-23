@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="4_i0u4u"]
 [ext_resource type="Script" path="res://scenes/authenticator/authenticate_popup.gd" id="5_7g1ax"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="6_hykfn"]
-[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://scenes/authenticator/passwordinputbox.tres" id="7_7b21h"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="7_7b21h"]
 [ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="7_bamtq"]
 [ext_resource type="Texture2D" uid="uid://jt6tdmef2yl4" path="res://sprites/checkmark-symbolic.svg" id="8_tcno7"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="9_vpqa7"]

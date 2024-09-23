@@ -38,7 +38,7 @@ func _on_changescene_timeout() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	changescenetimer.start()
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		clicknumber += 1
 func finish_boot():

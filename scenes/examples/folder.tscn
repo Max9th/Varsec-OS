@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://sprites/folderopen.png" id="3_etd47"]
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_bejof"]
 [ext_resource type="Script" path="res://scenes/examples/window.gd" id="6_urli5"]
-[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://scenes/authenticator/passwordinputbox.tres" id="7_5f5pc"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="7_5f5pc"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="7_fjroi"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="8_0g4q1"]
@@ -123,16 +123,6 @@ stream = ExtResource("7_fjroi")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="window"]
 stream = ExtResource("8_0g4q1")
-
-[node name="body" type="Control" parent="window"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="window"]
 layout_mode = 0

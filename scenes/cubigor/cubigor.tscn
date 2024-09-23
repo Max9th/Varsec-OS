@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpim0hfyc3kr0"]
+[gd_scene load_steps=12 format=3 uid="uid://cpim0hfyc3kr0"]
 
 [ext_resource type="Script" path="res://scenes/cubigor/cubigor.gd" id="1_txcu6"]
 [ext_resource type="Texture2D" uid="uid://dxef4wd2s67rq" path="res://sprites/Igor.png" id="1_xcgny"]
@@ -19,6 +19,9 @@ size = Vector3(23, 23, 23)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4vhm5"]
 size = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jq0g1"]
+size = Vector3(15, 15, 15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bg0v7"]
 size = Vector3(14, 14, 14)
@@ -54,25 +57,25 @@ mesh = SubResource("BoxMesh_4vhm5")
 skeleton = NodePath("../mesh")
 
 [node name="mesh2" type="MeshInstance3D" parent="objects"]
-transform = Transform3D(-0.0196141, -0.235972, -0.971562, 0.893211, -0.44074, 0.0890144, -0.449211, -0.866064, 0.219417, 35.0393, 32.5876, 27.2089)
+transform = Transform3D(0.184681, 0.179111, -0.966339, 0.974115, 0.0970572, 0.204157, 0.130357, -0.97903, -0.15655, 76.6301, 44.6216, 60.4008)
 material_override = SubResource("StandardMaterial3D_c4qmo")
-mesh = SubResource("BoxMesh_4vhm5")
+mesh = SubResource("BoxMesh_jq0g1")
 skeleton = NodePath("../mesh")
 
 [node name="mesh3" type="MeshInstance3D" parent="objects"]
-transform = Transform3D(0.329841, -0.772799, 0.542205, -0.0755703, 0.55089, 0.831149, -0.941007, -0.315122, 0.123306, -29.8774, 52.1188, 75.8681)
+transform = Transform3D(0.329841, -0.772799, 0.542205, -0.0755703, 0.55089, 0.831149, -0.941007, -0.315122, 0.123306, -31.6295, 94.2147, 76.296)
 material_override = SubResource("StandardMaterial3D_c4qmo")
 mesh = SubResource("BoxMesh_bg0v7")
 skeleton = NodePath("../mesh2")
 
 [node name="mesh4" type="MeshInstance3D" parent="objects"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -50.6208, 31.9531, 30.8681)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -50.6208, 45.8419, 30.8681)
 material_override = SubResource("StandardMaterial3D_c4qmo")
 mesh = SubResource("BoxMesh_bg0v7")
 skeleton = NodePath("../mesh2")
 
 [node name="mesh5" type="MeshInstance3D" parent="objects"]
-transform = Transform3D(0.812104, 0.412606, 0.412606, -0.516653, 0.837106, 0.179786, -0.271214, -0.359179, 0.892992, -50.6208, -16.268, 30.8681)
+transform = Transform3D(0.812104, 0.412606, 0.412606, -0.516653, 0.837106, 0.179786, -0.271214, -0.359179, 0.892992, -82.198, -16.268, 30.8681)
 material_override = SubResource("StandardMaterial3D_c4qmo")
 mesh = SubResource("BoxMesh_bg0v7")
 skeleton = NodePath("../mesh2")
@@ -83,7 +86,8 @@ skeleton = NodePath("../mesh2")
 environment = SubResource("Environment_tqw1p")
 
 [node name="Camera3D" type="Camera3D" parent="others"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -37.9224)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -37.9224)
+fov = 102.1
 
 [node name="Cubigor_theme" type="AudioStreamPlayer" parent="others"]
 stream = ExtResource("4_rgf8c")
