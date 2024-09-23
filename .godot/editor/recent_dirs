@@ -1,12 +1,12 @@
+/home/miguel/Documents/GitHub/Varsec-OS/exported/web
+/home/miguel/Documents/GitHub/Varsec-OS/exported/linux
+/home/miguel/Documents/GitHub/Varsec-OS/exported/windows
 res://fonts
 res://scenes/nelix_game/components/characters/enemies
 res://scenes/nelix_game/components/ui/pausemenu
 res://scenes/nelix_game/components/characters/mc
 res://scenes/nelix_game/components/levels
 res://scenes/windows/aula_select
-/home/miguel/Documents/GitHub/Varsec-OS/exported/web
-/home/miguel/Documents/GitHub/Varsec-OS/exported/windows
-/home/miguel/Documents/GitHub/Varsec-OS/exported/linux
 res://shaders
 res://scenes/file_manager
 res://resources
