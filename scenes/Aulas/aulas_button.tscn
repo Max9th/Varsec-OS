@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://naxxreavcae8"]
+[gd_scene load_steps=19 format=3 uid="uid://naxxreavcae8"]
 
 [ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://sprites/folderwithfile.png" id="1_v38wl"]
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://sprites/folderopenwithfile.png" id="2_fr6q5"]
@@ -7,7 +7,11 @@
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_4akqb"]
 [ext_resource type="Script" path="res://scenes/Aulas/aula_select.gd" id="6_v7rke"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_5fmhi"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="7_vn0b8"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_teyc5"]
+[ext_resource type="Script" path="res://scenes/Aulas/button_manager.gd" id="8_wv8es"]
+[ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://sprites/maxthelogo.png" id="9_w2pnq"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="11_t3tjb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4df"]
 bg_color = Color(1, 1, 1, 1)
@@ -30,9 +34,6 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("4_u02bm")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
-font = ExtResource("4_u02bm")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybr6"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
 border_width_bottom = 2
@@ -41,6 +42,17 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfedf"]
+font = ExtResource("4_u02bm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed4ht"]
+bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [node name="aulas" type="TextureButton"]
 anchors_preset = -1
@@ -96,51 +108,129 @@ wait_time = 0.7
 one_shot = true
 
 [node name="aula_select" type="Panel" parent="."]
+custom_minimum_size = Vector2(217, 115)
 layout_mode = 0
-offset_left = 104.277
-offset_top = 0.000335693
-offset_right = 228.277
-offset_bottom = 56.0003
+offset_left = 104.0
+offset_right = 321.0
+offset_bottom = 115.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("5_4akqb")
 script = ExtResource("6_v7rke")
-metadata/_edit_group_ = true
+
+[node name="select_audio" type="AudioStreamPlayer" parent="aula_select"]
+stream = ExtResource("7_vn0b8")
 
 [node name="window_name" type="Label" parent="aula_select"]
-layout_mode = 0
-offset_left = 24.5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.6033
 offset_top = 2.0
-offset_right = 126.5
+offset_right = 64.3967
 offset_bottom = 16.0
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-text = "Escolha
-"
+text = "class manager"
 label_settings = SubResource("LabelSettings_u4lyr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aula1" type="Button" parent="aula_select"]
+custom_minimum_size = Vector2(90, 40)
+offset_left = 4.43718
+offset_top = 70.6668
+offset_right = 94.4372
+offset_bottom = 110.667
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("4_u02bm")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/hover = ExtResource("7_5fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
+theme_override_styles/normal = ExtResource("7_5fmhi")
+text = "Cubigor"
+
+[node name="recentes" type="Label" parent="aula_select"]
+offset_left = 3.96539
+offset_top = 65.0
+offset_right = 81.9654
+offset_bottom = 79.0
+scale = Vector2(0.25, 0.25)
+text = "Recentes:"
+label_settings = SubResource("LabelSettings_qfedf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="selecione" type="Label" parent="aula_select"]
+offset_left = 3.96539
+offset_top = 11.6667
+offset_right = 81.9654
+offset_bottom = 25.6667
+scale = Vector2(0.25, 0.25)
+text = "Selecione:"
+label_settings = SubResource("LabelSettings_qfedf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="body_text" type="Label" parent="aula_select"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 18.0
-offset_right = 148.0
-offset_bottom = 32.0
+offset_left = 31.2305
+offset_top = 11.3334
+offset_right = 80.2305
+offset_bottom = 25.3334
 scale = Vector2(0.5, 0.5)
-text = "Escolha a aula"
+text = "Selecione a aula"
 label_settings = SubResource("LabelSettings_qfedf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="aula_select"]
+[node name="body_text2" type="Label" parent="aula_select/body_text"]
+offset_left = 70.2421
+offset_top = 43.3333
+offset_right = 648.242
+offset_bottom = 346.333
+scale = Vector2(0.5, 0.5)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in voluptatem."
+label_settings = SubResource("LabelSettings_qfedf")
+autowrap_mode = 2
+
+[node name="body_text" type="Label" parent="aula_select/body_text"]
+offset_left = 1.0
+offset_top = 76.0
+offset_right = 729.0
+offset_bottom = 379.0
+scale = Vector2(0.5, 0.5)
+text = "
+
+Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis ut et voluptates et dolores nasci fatemur e.
+
+Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea.
+
+Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis.
+"
+label_settings = SubResource("LabelSettings_qfedf")
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="aula_select/body_text"]
 layout_mode = 0
-offset_left = 16.2933
-offset_top = 34.6667
-offset_right = 482.293
-offset_bottom = 74.6667
+offset_left = 2.0
+offset_top = 23.0
+offset_right = 67.0
+offset_bottom = 85.0
+texture = ExtResource("9_w2pnq")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="aula_select"]
+layout_mode = 0
+offset_left = 4.43718
+offset_top = 16.0001
+offset_right = 94.4372
+offset_bottom = 232.0
 scale = Vector2(0.2, 0.2)
+script = ExtResource("8_wv8es")
 metadata/_edit_group_ = true
 
-[node name="aula1" type="Button" parent="aula_select/HBoxContainer"]
+[node name="aula1" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
@@ -149,7 +239,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
 theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Aula 1"
 
-[node name="aula2" type="Button" parent="aula_select/HBoxContainer"]
+[node name="aula2" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
@@ -158,7 +248,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
 theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Aula 2"
 
-[node name="aula3" type="Button" parent="aula_select/HBoxContainer"]
+[node name="aula3" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
@@ -167,7 +257,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
 theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Aula 3"
 
-[node name="aula4" type="Button" parent="aula_select/HBoxContainer"]
+[node name="aula4" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
@@ -176,7 +266,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
 theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Aula 4"
 
-[node name="aula5" type="Button" parent="aula_select/HBoxContainer"]
+[node name="aula5" type="Button" parent="aula_select/VBoxContainer"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_u02bm")
@@ -185,24 +275,67 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ybr6")
 theme_override_styles/normal = ExtResource("7_5fmhi")
 text = "Aula 5"
 
-[node name="close" type="Button" parent="aula_select"]
-layout_mode = 0
-offset_left = 114.667
-offset_top = 2.0
-offset_right = 122.667
-offset_bottom = 10.0
+[node name="HBoxContainer" type="HBoxContainer" parent="aula_select"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.7678
+offset_top = 2.33345
+offset_right = -0.767838
+offset_bottom = 9.33345
+grow_horizontal = 0
+theme_override_constants/separation = 2
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="aula_select/HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = ExtResource("8_teyc5")
+theme_override_styles/pressed = ExtResource("8_teyc5")
+theme_override_styles/normal = ExtResource("8_teyc5")
+
+[node name="close" type="Button" parent="aula_select/HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
 focus_mode = 0
 theme_override_styles/hover = ExtResource("8_teyc5")
 theme_override_styles/pressed = ExtResource("8_teyc5")
 theme_override_styles/normal = ExtResource("8_teyc5")
 
 [node name="draghandle" type="Panel" parent="aula_select"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 99.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.5
+offset_right = 88.5
 offset_bottom = 10.0
+grow_horizontal = 2
 theme_override_styles/panel = ExtResource("8_teyc5")
 
+[node name="separator 2" type="Panel" parent="aula_select"]
+offset_left = 24.0
+offset_top = 61.0
+offset_right = 27.0
+offset_bottom = 82.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_ed4ht")
+
+[node name="separator1" type="Panel" parent="aula_select"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 11.0
+offset_right = 29.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ed4ht")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="aula_select"]
+stream = ExtResource("11_t3tjb")
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="pressed" from="aula_select/close" to="aula_select" method="_on_close_pressed"]
+[connection signal="pressed" from="aula_select/VBoxContainer/aula1" to="aula_select/VBoxContainer" method="_on_aula_1_pressed"]
+[connection signal="pressed" from="aula_select/HBoxContainer/maximize" to="aula_select" method="_on_maximize_pressed"]
+[connection signal="pressed" from="aula_select/HBoxContainer/close" to="aula_select" method="_on_close_pressed"]
 [connection signal="gui_input" from="aula_select/draghandle" to="aula_select" method="_on_draghandle_gui_input"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj2mltt8gsqow"]
+[gd_scene load_steps=21 format=3 uid="uid://bj2mltt8gsqow"]
 
 [ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://sprites/folderlocked.png" id="1_6jop3"]
 [ext_resource type="Script" path="res://scenes/authenticator/folderlocked.gd" id="2_7ak7n"]
@@ -10,6 +10,9 @@
 [ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="7_bamtq"]
 [ext_resource type="Texture2D" uid="uid://jt6tdmef2yl4" path="res://sprites/checkmark-symbolic.svg" id="8_tcno7"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="9_vpqa7"]
+[ext_resource type="AudioStream" uid="uid://bec51h6ctq2uo" path="res://audio/wrong.wav" id="11_uhjgk"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="12_vbpju"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="13_10182"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuoey"]
 bg_color = Color(1, 1, 1, 1)
@@ -199,13 +202,16 @@ texture = ExtResource("8_tcno7")
 [node name="INCORRECT" type="Label" parent="authenticate_popup"]
 visible = false
 layout_mode = 0
-offset_left = 40.0
+offset_left = 24.6666
 offset_top = 37.3332
-offset_right = 312.0
+offset_right = 296.667
 offset_bottom = 65.3332
 scale = Vector2(0.2, 0.2)
 text = "!!Senha incorreta!!"
 label_settings = SubResource("LabelSettings_85uop")
+
+[node name="wrong" type="AudioStreamPlayer" parent="authenticate_popup/INCORRECT"]
+stream = ExtResource("11_uhjgk")
 
 [node name="Timer" type="Timer" parent="authenticate_popup"]
 wait_time = 3.0
@@ -216,6 +222,12 @@ offset_left = 1.0
 offset_right = 99.0
 offset_bottom = 10.0
 theme_override_styles/panel = ExtResource("9_vpqa7")
+
+[node name="select_audio" type="AudioStreamPlayer" parent="authenticate_popup"]
+stream = ExtResource("12_vbpju")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="authenticate_popup"]
+stream = ExtResource("13_10182")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="authenticate_popup/HBoxContainer/close" to="authenticate_popup" method="_on_close_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brx8sg8p6a6pp"]
+[gd_scene load_steps=20 format=3 uid="uid://brx8sg8p6a6pp"]
 
 [ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://sprites/folder.png" id="1_egd73"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
@@ -7,7 +7,9 @@
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_bejof"]
 [ext_resource type="Script" path="res://scenes/examples/window.gd" id="6_urli5"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://scenes/authenticator/passwordinputbox.tres" id="7_5f5pc"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="7_fjroi"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="8_0g4q1"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_3hha4"]
 [ext_resource type="Script" path="res://scenes/examples/draghandle.gd" id="9_oydpv"]
 [ext_resource type="Texture2D" uid="uid://cawxvxqr1lt7h" path="res://icon.svg" id="10_vi70a"]
@@ -27,6 +29,7 @@ anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_etf32"]
 font = ExtResource("3_0hike")
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0s1"]
 bg_color = Color(1, 1, 1, 1)
@@ -71,7 +74,6 @@ stretch_mode = 0
 script = ExtResource("3_5kliy")
 
 [node name="selected_panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.2
@@ -110,11 +112,17 @@ custom_minimum_size = Vector2(123, 57)
 layout_mode = 0
 offset_left = 53.0
 offset_top = -56.0
-offset_right = 176.0
+offset_right = 188.0
 offset_bottom = 1.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("5_bejof")
 script = ExtResource("6_urli5")
+
+[node name="select" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("7_fjroi")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("8_0g4q1")
 
 [node name="body" type="Control" parent="window"]
 layout_mode = 1

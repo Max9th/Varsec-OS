@@ -1,15 +1,16 @@
 extends Panel
 
-@onready var incorrect: Label = $INCORRECT
 @onready var text_edit: TextEdit = $TextEdit
 @onready var timer: Timer = $Timer
 @onready var window: Panel = $"."
 @onready var maximize: Button = $maximize
 @onready var resizehandle: Panel = $resizehandle
+@onready var close_audio: AudioStreamPlayer = $close_audio
 
 var is_dragging: bool
 var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
+
 var is_maximized: bool
 var old_unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
@@ -24,12 +25,7 @@ func _process(delta: float) -> void:
 
 func _on_close_pressed() -> void:
 	window.visible = false
-
-func _on_timer_timeout() -> void:
-	incorrect.visible = false
-
-func _on_confirm_pressed() -> void:
-	pass
+	close_audio.play()
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:

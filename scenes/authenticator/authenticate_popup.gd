@@ -4,7 +4,8 @@ extends Panel
 @onready var line_edit: LineEdit = $LineEdit
 @onready var timer: Timer = $Timer
 @onready var authenticate_popup: Panel = $"."
-
+@onready var wrong: AudioStreamPlayer = $INCORRECT/wrong
+@onready var close_audio: AudioStreamPlayer = $close_audio
 
 var is_dragging: bool
 var start_drag_position: Vector2
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 		clamp_window_inside_viewport()
 func _on_close_pressed() -> void:
 	authenticate_popup.visible = false
+	close_audio.play()
 
 func _on_timer_timeout() -> void:
 	incorrect.visible = false
@@ -36,13 +38,13 @@ func _on_resizehandle_gui_input(event: InputEvent) -> void:
 			is_dragging = false
 
 func clamp_window_inside_viewport() -> void:
-	var game_window_size: Vector2 = get_viewport_rect().size
-	if (size.y > game_window_size.y - 40):
-		size.y = game_window_size.y - 40
-	if (size.x > game_window_size.x):
-		size.x = game_window_size.x
+	var viewport_size = get_viewport().get_visible_rect().size
+	var position = global_position
+	var object_size = size * 3
 	
-
+	position.x = clamp(position.x, 0, viewport_size.x - object_size.x)
+	position.y = clamp(position.y, 0, viewport_size.y - object_size.y)
+	global_position = position
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	authenticate()
@@ -58,3 +60,4 @@ func authenticate():
 		incorrect.visible = true
 		timer.start()
 		line_edit.text = ""
+		wrong.play()

@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Vasec OS"
-config/description="A fanstasy OS made as an art projectS"
+config/name="Varsec OS"
+config/description="A fanstasy OS made as an art project"
+config/version="v0.3-indev"
 run/main_scene="res://scenes/main menu/main-menu.tscn"
 config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -19,6 +20,8 @@ boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
+boot_splash/version="v0.3-indev"
+boot_splash/description="A fanstasy OS made as an art project"
 
 [autoload]
 
@@ -38,6 +41,7 @@ enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg")
 folder_colors={
 "res://addons/": "red",
 "res://audio/": "orange",
+"res://exported/": "yellow",
 "res://fonts/": "green",
 "res://resources/": "teal",
 "res://scenes/": "blue",

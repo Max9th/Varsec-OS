@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://clsapeh5doyoe"]
+[gd_scene load_steps=14 format=3 uid="uid://clsapeh5doyoe"]
 
 [ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://sprites/nelix.png" id="1_0hnt3"]
+[ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://sprites/nelix_selected.png" id="2_1tobn"]
 [ext_resource type="Script" path="res://scenes/nelix/play_nelix.gd" id="2_frl7q"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://betterwindow.tres" id="4_6b041"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="4_6b041"]
 [ext_resource type="Script" path="res://scenes/nelix/nelix_window.gd" id="5_1iusj"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://invisible.tres" id="6_efi44"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_efi44"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="8_8oens"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="9_h3wjy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
 bg_color = Color(1, 1, 1, 1)
@@ -45,8 +48,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource("1_0hnt3")
 texture_pressed = ExtResource("1_0hnt3")
-texture_hover = ExtResource("1_0hnt3")
-stretch_mode = 1
+texture_hover = ExtResource("2_1tobn")
+stretch_mode = 0
 script = ExtResource("2_frl7q")
 metadata/_edit_use_anchors_ = true
 
@@ -144,10 +147,17 @@ theme_override_styles/normal = ExtResource("6_efi44")
 metadata/_edit_use_anchors_ = true
 
 [node name="draghandle" type="Panel" parent="nelix_window"]
+layout_mode = 0
 offset_left = 1.0
 offset_right = 99.0
 offset_bottom = 10.0
 theme_override_styles/panel = ExtResource("6_efi44")
+
+[node name="select_audio" type="AudioStreamPlayer" parent="nelix_window"]
+stream = ExtResource("8_8oens")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="nelix_window"]
+stream = ExtResource("9_h3wjy")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="nelix_window/close" to="nelix_window" method="_on_close_pressed"]

@@ -9,6 +9,7 @@ extends Control
 @onready var selectom: Sprite2D = $sas
 @onready var time: Label = $desktop/Panel/time
 @onready var date: Label = $desktop/Panel/time/date
+@onready var crt_disabled_texture: TextureRect = $desktop/Panel/crt_disabled_texture
 
 var playaudio: bool = true
 
@@ -17,7 +18,8 @@ func _on_power_button_pressed() -> void:
 
 func _ready() -> void:
 	crt.visible = true
-
+	crt_disabled_texture.visible = false
+	audio_disabled_texture.visible = false
 func _process(_delta: float) -> void:
 	if splash_screen.visible == false and audio_stream_player.playing == false and background.visible == true and playaudio == true:
 		audio_stream_player.playing = true
@@ -45,3 +47,11 @@ func _on_cubigor_cubigorbk() -> void:
 func _on_gaytscn_disablebk() -> void:
 	background.visible = false
 	audio_disabled_texture.visible = false
+
+
+func _on_crt_button_pressed() -> void:
+	crt.visible = !crt.visible
+	if crt.visible == false:
+		crt_disabled_texture.visible = true
+	else:
+		crt_disabled_texture.visible = false

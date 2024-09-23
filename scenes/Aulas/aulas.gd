@@ -4,6 +4,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var selected_panel: Panel = $selected_panel
 @onready var aula_select: Panel = $aula_select
+@onready var select_audio: AudioStreamPlayer = $aula_select/select_audio
 
 var selected: bool = false
 var timer_running: bool = false
@@ -20,6 +21,7 @@ func select():
 			selected_panel.visible = true
 			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
 			timer.start() # Start the timer
+			select_audio.play()
 		else:
 			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
 			selected_panel.visible = false

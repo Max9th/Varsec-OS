@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bin6va1btyxpn"]
+[gd_scene load_steps=9 format=3 uid="uid://bin6va1btyxpn"]
 
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://sprites/personalfolder.png" id="1_vk3yy"]
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://sprites/folderopenpersonal.png" id="2_1kli8"]
 [ext_resource type="Script" path="res://scenes/pessoais/pessoais.gd" id="3_oxt5l"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://fonts/Vermin Vibes 1989.ttf" id="4_32slq"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://audio/blipSelect.wav" id="5_n1ouu"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://audio/close.wav" id="6_8msoo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dto36"]
 bg_color = Color(1, 1, 1, 1)
@@ -72,5 +74,11 @@ autowrap_mode = 2
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="select_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n1ouu")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8msoo")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

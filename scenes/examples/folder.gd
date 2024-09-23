@@ -20,6 +20,7 @@ func select():
 			selected_panel.visible = true
 			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
 			timer.start() # Start the timer
+			select_audio.play()
 		else:
 			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
 			selected_panel.visible = false
