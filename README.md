@@ -5,4 +5,4 @@
  Fantasy OS made as an art project
 
 play the fantasy OS here:
-![Play](https://github.com/Max9th/Varsec-OS-web)
+https://github.com/Max9th/Varsec-OS-web
