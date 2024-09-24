@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://csy6ws8le2cha"]
+[gd_scene load_steps=9 format=3 uid="uid://csy6ws8le2cha"]
 
 [ext_resource type="Script" path="res://scenes/nelix_game/components/levels/proto1.gd" id="1_xa2o0"]
 [ext_resource type="PackedScene" uid="uid://xy8es4l67t4a" path="res://scenes/nelix_game/components/characters/mc/player.tscn" id="2_dtrbb"]
 [ext_resource type="PackedScene" uid="uid://n76iuhlj8qgt" path="res://scenes/nelix_game/components/characters/enemies/protoenem.tscn" id="3_2p6un"]
-[ext_resource type="Texture2D" uid="uid://cnobu828g6x6d" path="res://scenes/nelix_game/sprites/kenney_prototype_textures/dark/texture_01.png" id="4_bbug4"]
 [ext_resource type="Texture2D" uid="uid://bvuqfapk30isl" path="res://scenes/nelix_game/sprites/kenney_prototype_textures/dark/texture_03.png" id="4_tcqj8"]
 
 [sub_resource type="Environment" id="Environment_oc25d"]
@@ -16,16 +15,12 @@ glow_enabled = true
 adjustment_saturation = 0.01
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_caw6g"]
-vertices = PackedVector3Array(-19.4847, 0.5, -19.5437, -19.4847, 0.5, 19.4563, 19.5153, 0.5, 19.4563, 19.5153, 0.5, -19.5437, -13.9847, 9, -9.79373, -13.9847, 9, 12.2063, 5.01531, 9, 12.2063, 5.01531, 9, -9.79373)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+vertices = PackedVector3Array(-19.4847, 0.5, -19.5437, -19.4847, 0.5, 19.4563, 19.5153, 0.5, 19.4563, 19.5153, 0.5, -19.5437)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_max_slope = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnnbx"]
 albedo_texture = ExtResource("4_tcqj8")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds37e"]
-albedo_texture = ExtResource("4_bbug4")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5tei"]
@@ -58,12 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0153122, -1, -0.0437279)
 material_override = SubResource("StandardMaterial3D_dnnbx")
 use_collision = true
 size = Vector3(40, 2, 40)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="set/NavigationRegion3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44367, 8.63943, 1.30344)
-material_override = SubResource("StandardMaterial3D_ds37e")
-use_collision = true
-size = Vector3(19.6367, 2, 22.8623)
 
 [node name="Area3D" type="Area3D" parent="set"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)

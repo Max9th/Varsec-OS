@@ -1,9 +1,9 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1727117104
-export_presets.cfg::TextFile::-1::1727063857::0::1::::<><>::
-icon.png::CompressedTexture2D::9061742761844799816::1726976752::1727044159::1::::<><>::
+::res://::1727145270
+export_presets.cfg::TextFile::-1::1727119202::0::1::::<><>::
+icon.png::CompressedTexture2D::8322300048594460988::1726976752::1727145221::1::::<><>::
 icon.svg::CompressedTexture2D::4819692904042674987::1711577737::1727032331::1::::<><>::
-README.md::TextFile::-1::1726985514::0::1::::<><>::
+README.md::TextFile::-1::1727121204::0::1::::<><>::
 ::res://addons/::1727044373
 ::res://addons/script-tabs/::1726933197
 plugin.cfg::TextFile::-1::1726933197::0::1::::<><>::
@@ -18,67 +18,67 @@ idk.mp3::AudioStreamMP3::929360868989925929::1726986779::1726986787::1::::<><>::
 Take Care.mp3::AudioStreamMP3::3950293397565862554::1726979932::1726985993::1::::<><>::
 wrong.wav::AudioStreamWAV::2673173169847181266::1727060918::1727060931::1::::<><>::
 ::res://exported/::1727063847
-::res://exported/linux/::1727063817
-::res://exported/web/::1727117827
-Varsec OS.apple-touch-icon.png::CompressedTexture2D::6063985852302858376::1727117827::1727117827::1::::<><>::
-Varsec OS.icon.png::CompressedTexture2D::2653067145963914092::1727117827::1727117827::1::::<><>::
-Varsec OS.png::CompressedTexture2D::7338951090417282922::1727117827::1727117827::1::::<><>::
-::res://exported/windows/::1727063834
+::res://exported/linux/::1727117921
+::res://exported/web/::1727145287
+index.apple-touch-icon.png::CompressedTexture2D::7204394786145336683::1727145287::1727145287::1::::<><>::
+index.icon.png::CompressedTexture2D::8052782821597993000::1727145287::1727145287::1::::<><>::
+index.png::CompressedTexture2D::5715701759408608865::1727145287::1727145288::1::::<><>::
+::res://exported/windows/::1727117885
 ::res://fonts/::1726985993
 Comfortaa-VariableFont_wght.ttf::FontFile::4807574788773054225::1725491480::1726985993::1::::<><>::
 Vermin Vibes 1989.ttf::FontFile::5851201523234187091::1356759786::1726985993::1::::<><>::
-::res://resources/::1727106348
-betterwindow.tres::StyleBoxTexture::7286253636030816876::1727105514::0::1::::<><>::uid://u37075llycfy::::res://sprites/UItileset.png
-button.tres::StyleBoxFlat::5941427406172887340::1727105514::0::1::::<><>::
+::res://resources/::1727142033
+betterwindow.tres::StyleBoxTexture::7286253636030816876::1727142033::0::1::::<><>::uid://u37075llycfy::::res://sprites/UItileset.png
+button.tres::StyleBoxFlat::5941427406172887340::1727142033::0::1::::<><>::
 invisible.tres::StyleBoxFlat::7822901865015321522::1727059836::0::1::::<><>::
 nelixwindow.tres::StyleBoxTexture::5016684260048425605::1726949702::0::1::::<><>::uid://u37075llycfy::::res://sprites/UItileset.png
 passwordinputbox.tres::StyleBoxFlat::4710766169864821979::1727105514::0::1::::<><>::
 ::res://scenes/::1727103285
-::res://scenes/Aulas/::1727115250
+::res://scenes/Aulas/::1727145245
 aulas.gd::GDScript::-1::1727102399::0::1::::<>Control<>::
-aulas_button.tscn::PackedScene::913893430492174217::1727115250::0::1::::<><>::uid://ch8stip28flkd::::res://sprites/folderwithfile.png<>uid://cdvuptxyankmj::::res://sprites/folderopenwithfile.png<>res://scenes/Aulas/aulas.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>res://scenes/windows/aula_select/aula_select.gd<>uid://caq3b34gdt0oj::::res://fonts/Comfortaa-VariableFont_wght.ttf<>uid://bs0ok80xfyuid::::res://sprites/maxthelogo.png<>res://scenes/Aulas/button_manager.gd<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://cn8sj2ajke2r6::::res://audio/close.wav
+aulas_button.tscn::PackedScene::913893430492174217::1727145245::0::1::::<><>::uid://ch8stip28flkd::::res://sprites/folderwithfile.png<>uid://cdvuptxyankmj::::res://sprites/folderopenwithfile.png<>res://scenes/Aulas/aulas.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>res://scenes/windows/aula_select/aula_select.gd<>uid://caq3b34gdt0oj::::res://fonts/Comfortaa-VariableFont_wght.ttf<>uid://bs0ok80xfyuid::::res://sprites/maxthelogo.png<>res://scenes/Aulas/button_manager.gd<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://cn8sj2ajke2r6::::res://audio/close.wav
 button_manager.gd::GDScript::-1::1727107591::0::1::::<>VBoxContainer<>::
-::res://scenes/authenticator/::1727115250
+::res://scenes/authenticator/::1727145245
 authenticate_popup.gd::GDScript::-1::1727107830::0::1::::<>Panel<>::
 folderlocked.gd::GDScript::-1::1727061952::0::1::::<>Control<>::
-folderlocked_button.tscn::PackedScene::3074607752244208002::1727115250::0::1::::<><>::uid://dimp6o2obpb2w::::res://sprites/folderlocked.png<>res://scenes/authenticator/folderlocked.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>res://scenes/authenticator/authenticate_popup.gd<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>uid://b8d6vo61he8cd::::res://resources/passwordinputbox.tres<>uid://cw5fjbt1la28f::::res://shaders/color_replace_shader.res<>uid://jt6tdmef2yl4::::res://sprites/checkmark-symbolic.svg<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://bec51h6ctq2uo::::res://audio/wrong.wav<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cn8sj2ajke2r6::::res://audio/close.wav
-::res://scenes/cubigor/::1727115250
+folderlocked_button.tscn::PackedScene::3074607752244208002::1727145245::0::1::::<><>::uid://dimp6o2obpb2w::::res://sprites/folderlocked.png<>res://scenes/authenticator/folderlocked.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>res://scenes/authenticator/authenticate_popup.gd<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>uid://b8d6vo61he8cd::::res://resources/passwordinputbox.tres<>uid://cw5fjbt1la28f::::res://shaders/color_replace_shader.res<>uid://jt6tdmef2yl4::::res://sprites/checkmark-symbolic.svg<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://bec51h6ctq2uo::::res://audio/wrong.wav<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cn8sj2ajke2r6::::res://audio/close.wav
+::res://scenes/cubigor/::1727145245
 cubigor.gd::GDScript::-1::1727036602::0::1::::<>Node3D<>::
-cubigor.tscn::PackedScene::5842962669231694659::1727115250::0::1::::<><>::res://scenes/cubigor/cubigor.gd<>uid://dxef4wd2s67rq::::res://sprites/Igor.png<>uid://4j52i1pkdhjm::::res://audio/Cubigor theme.mp3
+cubigor.tscn::PackedScene::5842962669231694659::1727145245::0::1::::<><>::res://scenes/cubigor/cubigor.gd<>uid://dxef4wd2s67rq::::res://sprites/Igor.png<>uid://4j52i1pkdhjm::::res://audio/Cubigor theme.mp3
 prettygaytbh.gd::GDScript::-1::1727107599::0::1::::<>Node2D<>::
-prettygaytbh.tscn::PackedScene::3345386263757006928::1727115250::0::1::::<><>::res://scenes/cubigor/prettygaytbh.gd<>uid://nigo5atu6650::::res://audio/idk.mp3<>uid://b61vfxfoeqjxb::::res://sprites/max.jpg
-::res://scenes/examples/::1727115250
+prettygaytbh.tscn::PackedScene::3345386263757006928::1727145245::0::1::::<><>::res://scenes/cubigor/prettygaytbh.gd<>uid://nigo5atu6650::::res://audio/idk.mp3<>uid://b61vfxfoeqjxb::::res://sprites/max.jpg
+::res://scenes/examples/::1727145245
 draghandle.gd::GDScript::-1::1727036159::0::1::::<>Panel<>::
 folder.gd::GDScript::-1::1727062012::0::1::::<>Control<>::
-folder.tscn::PackedScene::3629147885776248601::1727115250::0::1::::<><>::uid://binyoo4xwctip::::res://sprites/folder.png<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>res://scenes/examples/folder.gd<>uid://bgcl5cn4pi0xu::::res://sprites/folderopen.png<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>res://scenes/examples/window.gd<>uid://b8d6vo61he8cd::::res://resources/passwordinputbox.tres<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>uid://cn8sj2ajke2r6::::res://audio/close.wav<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>res://scenes/examples/draghandle.gd<>uid://cawxvxqr1lt7h::::res://icon.svg
+folder.tscn::PackedScene::3629147885776248601::1727145245::0::1::::<><>::uid://binyoo4xwctip::::res://sprites/folder.png<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>res://scenes/examples/folder.gd<>uid://bgcl5cn4pi0xu::::res://sprites/folderopen.png<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>res://scenes/examples/window.gd<>uid://b8d6vo61he8cd::::res://resources/passwordinputbox.tres<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cqwcpaf5fy6a7::::res://resources/button.tres<>uid://cn8sj2ajke2r6::::res://audio/close.wav<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>res://scenes/examples/draghandle.gd<>uid://cawxvxqr1lt7h::::res://icon.svg
 window.gd::GDScript::-1::1727107636::0::1::::<>Panel<>::
 ::res://scenes/file_manager/::1727059870
 file_manager.tscn::PackedScene::3937232041607296624::1727059870::0::1::::<><>::uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://djpqbyxyro8sk::::res://resources/invisible.tres
-::res://scenes/main menu/::1727115250
-main-menu.tscn::PackedScene::3339970118271826746::1727115250::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://butnmpkhfwho4::::res://sprites/logo.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://bnwsa1t40yf5q::::res://scenes/cubigor/prettygaytbh.tscn<>uid://b1jp30ai5f8kp::::res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png<>uid://bab8yt52b1a3o::::res://sprites/power.png<>uid://bp3nh64ldrpw2::::res://sprites/audio.png<>uid://bx0dlqek77v1i::::res://sprites/audiodisabled.png<>uid://cw5fjbt1la28f::::res://shaders/color_replace_shader.res<>uid://btl1e5x4iv3p5::::res://scenes/splash/splash_screen.tscn<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://b50muw4vmi0ug::::res://audio/ambientloop.wav<>uid://yx7brorivehg::::res://sprites/crt.png<>uid://bin6va1btyxpn::::res://scenes/pessoais/pessoais_button.tscn<>uid://cs5wyhy0rqja4::::res://sprites/crtdisabled.png<>uid://cpim0hfyc3kr0::::res://scenes/cubigor/cubigor.tscn<>uid://bj2mltt8gsqow::::res://scenes/authenticator/folderlocked_button.tscn<>uid://3n8n63mdhm2::::res://sprites/audio_selected.png<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://clsapeh5doyoe::::res://scenes/nelix/play_nelix_button.tscn<>res://scenes/music_player/musicplayer.gd<>uid://8b1r3i26bgog::::res://scenes/source_link/source_code_link.tscn<>uid://bwjs0w57phcsg::::res://audio/Take Care.mp3<>uid://naxxreavcae8::::res://scenes/Aulas/aulas_button.tscn
-main_menu.gd::GDScript::-1::1727107414::0::1::::<>Control<>::
+::res://scenes/main menu/::1727145244
+main-menu.tscn::PackedScene::3339970118271826746::1727145244::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://butnmpkhfwho4::::res://sprites/logo.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://bnwsa1t40yf5q::::res://scenes/cubigor/prettygaytbh.tscn<>uid://b1jp30ai5f8kp::::res://sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png<>uid://bab8yt52b1a3o::::res://sprites/power.png<>uid://bp3nh64ldrpw2::::res://sprites/audio.png<>uid://bx0dlqek77v1i::::res://sprites/audiodisabled.png<>uid://cw5fjbt1la28f::::res://shaders/color_replace_shader.res<>uid://btl1e5x4iv3p5::::res://scenes/splash/splash_screen.tscn<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>uid://b50muw4vmi0ug::::res://audio/ambientloop.wav<>uid://yx7brorivehg::::res://sprites/crt.png<>uid://bin6va1btyxpn::::res://scenes/pessoais/pessoais_button.tscn<>uid://cs5wyhy0rqja4::::res://sprites/crtdisabled.png<>uid://cpim0hfyc3kr0::::res://scenes/cubigor/cubigor.tscn<>uid://bj2mltt8gsqow::::res://scenes/authenticator/folderlocked_button.tscn<>uid://3n8n63mdhm2::::res://sprites/audio_selected.png<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://clsapeh5doyoe::::res://scenes/nelix/play_nelix_button.tscn<>res://scenes/music_player/musicplayer.gd<>uid://8b1r3i26bgog::::res://scenes/source_link/source_code_link.tscn<>uid://bwjs0w57phcsg::::res://audio/Take Care.mp3<>uid://naxxreavcae8::::res://scenes/Aulas/aulas_button.tscn
+main_menu.gd::GDScript::-1::1727142033::0::1::::<>Control<>::
 ::res://scenes/music_player/::1727061637
 musicplayer.gd::GDScript::-1::1727061637::0::1::::<>Control<>::
 musicplayer.tscn::PackedScene::3629147885776248601::1726985223::0::1::::<><>::uid://bp3nh64ldrpw2::::res://sprites/audio.png<>res://scenes/music_player/musicplayer.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://bwjs0w57phcsg::::res://audio/Take Care.mp3
 window.gd::GDScript::-1::1726979372::0::1::::<>Panel<>::
-::res://scenes/nelix/::1727115250
+::res://scenes/nelix/::1727145245
 nelix_window.gd::GDScript::-1::1726979318::0::1::::<>Panel<>::
 play_nelix.gd::GDScript::-1::1727108130::0::1::::<>Control<>::
-play_nelix_button.tscn::PackedScene::5582104456160889440::1727115250::0::1::::<><>::uid://gqpog044tklw::::res://sprites/nelix.png<>uid://cdns0yv2jl36l::::res://sprites/nelix_selected.png<>res://scenes/nelix/play_nelix.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>res://scenes/examples/window.gd<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cn8sj2ajke2r6::::res://audio/close.wav
+play_nelix_button.tscn::PackedScene::5582104456160889440::1727145245::0::1::::<><>::uid://gqpog044tklw::::res://sprites/nelix.png<>uid://cdns0yv2jl36l::::res://sprites/nelix_selected.png<>res://scenes/nelix/play_nelix.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://db2rsd8ficf4o::::res://resources/betterwindow.tres<>uid://djpqbyxyro8sk::::res://resources/invisible.tres<>res://scenes/examples/window.gd<>uid://bsm2hpebhmopm::::res://audio/blipSelect.wav<>uid://cn8sj2ajke2r6::::res://audio/close.wav
 ::res://scenes/nelix_game/::1727103505
 ::res://scenes/nelix_game/audio/::1727103433
 pause.wav::AudioStreamWAV::8085467335274107224::1725662833::1727103433::1::::<><>::
 ::res://scenes/nelix_game/components/::1727108158
 ::res://scenes/nelix_game/components/characters/::1725669145
-::res://scenes/nelix_game/components/characters/enemies/::1727115250
+::res://scenes/nelix_game/components/characters/enemies/::1727145245
 protoenem.gd::GDScript::-1::1727108922::0::1::::<>CharacterBody3D<>::
-protoenem.tscn::PackedScene::980412630345099607::1727115250::0::1::::<><>::res://scenes/nelix_game/components/characters/enemies/protoenem.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://beh53re7feh53::::res://scenes/nelix_game/sprites/thydepre.png
-::res://scenes/nelix_game/components/characters/mc/::1727115250
+protoenem.tscn::PackedScene::980412630345099607::1727145245::0::1::::<><>::res://scenes/nelix_game/components/characters/enemies/protoenem.gd<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://beh53re7feh53::::res://scenes/nelix_game/sprites/thydepre.png
+::res://scenes/nelix_game/components/characters/mc/::1727145245
 player.gd::GDScript::-1::1727108652::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::1665900264471219766::1727115250::0::1::::<><>::res://scenes/nelix_game/components/characters/mc/player.gd<>res://scenes/nelix_game/components/ui/pausemenu/UI.gd<>uid://dngwp3mjtu6si::::res://scenes/nelix_game/audio/pause.wav<>uid://dane6p1wnkwhi::::res://scenes/nelix_game/sprites/ui/headers/pause.png<>uid://cktbt6pfj0cad::::res://scenes/nelix_game/sprites/ui/play/play_n.png<>uid://buybd2oa5wk8s::::res://scenes/nelix_game/sprites/ui/play/play-p.png<>uid://b1n1tht150gw::::res://scenes/nelix_game/sprites/ui/play/play-h.png<>uid://vlwc2nt0ro0a::::res://scenes/nelix_game/sprites/ui/options/options_n.png<>uid://dweyrm5ypbdwe::::res://scenes/nelix_game/sprites/ui/options/options-p.png<>uid://cqghawdqj1pad::::res://scenes/nelix_game/sprites/ui/options/options-h.png<>uid://pq6m13dxfvpb::::res://scenes/nelix_game/sprites/ui/quit/quit_n.png<>uid://55ld3nonqtij::::res://scenes/nelix_game/sprites/ui/quit/quit-p.png<>uid://divmsii5acjr8::::res://scenes/nelix_game/sprites/ui/quit/quit-h.png<>uid://bph5nnssbwqjl::::res://scenes/nelix_game/sprites/ui/headers/configs.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://dis1j3rgmktgy::::res://scenes/nelix_game/sprites/ui/back/back_n.png<>uid://bxulre1cni4oh::::res://scenes/nelix_game/sprites/ui/back/back_p.png<>uid://cx8pumpb0vfdd::::res://scenes/nelix_game/sprites/ui/back/back_h.png<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://c1ue0xfek7rth::::res://scenes/nelix_game/sprites/ui/crosshair.png<>uid://cy6mvupjji8dm::::res://scenes/nelix_game/sprites/ui/UItileset.png
-::res://scenes/nelix_game/components/levels/::1727115250
+player.tscn::PackedScene::1665900264471219766::1727145245::0::1::::<><>::res://scenes/nelix_game/components/characters/mc/player.gd<>res://scenes/nelix_game/components/ui/pausemenu/UI.gd<>uid://dngwp3mjtu6si::::res://scenes/nelix_game/audio/pause.wav<>uid://dane6p1wnkwhi::::res://scenes/nelix_game/sprites/ui/headers/pause.png<>uid://cktbt6pfj0cad::::res://scenes/nelix_game/sprites/ui/play/play_n.png<>uid://buybd2oa5wk8s::::res://scenes/nelix_game/sprites/ui/play/play-p.png<>uid://b1n1tht150gw::::res://scenes/nelix_game/sprites/ui/play/play-h.png<>uid://vlwc2nt0ro0a::::res://scenes/nelix_game/sprites/ui/options/options_n.png<>uid://dweyrm5ypbdwe::::res://scenes/nelix_game/sprites/ui/options/options-p.png<>uid://cqghawdqj1pad::::res://scenes/nelix_game/sprites/ui/options/options-h.png<>uid://pq6m13dxfvpb::::res://scenes/nelix_game/sprites/ui/quit/quit_n.png<>uid://55ld3nonqtij::::res://scenes/nelix_game/sprites/ui/quit/quit-p.png<>uid://divmsii5acjr8::::res://scenes/nelix_game/sprites/ui/quit/quit-h.png<>uid://bph5nnssbwqjl::::res://scenes/nelix_game/sprites/ui/headers/configs.png<>res://shaders/post_processing/crt_postprocess.gdshader<>uid://dis1j3rgmktgy::::res://scenes/nelix_game/sprites/ui/back/back_n.png<>uid://bxulre1cni4oh::::res://scenes/nelix_game/sprites/ui/back/back_p.png<>uid://cx8pumpb0vfdd::::res://scenes/nelix_game/sprites/ui/back/back_h.png<>uid://cpmmo07pbocsh::::res://fonts/Vermin Vibes 1989.ttf<>uid://c1ue0xfek7rth::::res://scenes/nelix_game/sprites/ui/crosshair.png<>uid://cy6mvupjji8dm::::res://scenes/nelix_game/sprites/ui/UItileset.png
+::res://scenes/nelix_game/components/levels/::1727145245
 proto1.gd::GDScript::-1::1727107657::0::1::::<>Node3D<>::
-proto1.tscn::PackedScene::6087708130114934830::1727115250::0::1::::<><>::res://scenes/nelix_game/components/levels/proto1.gd<>uid://xy8es4l67t4a::::res://scenes/nelix_game/components/characters/mc/player.tscn<>uid://n76iuhlj8qgt::::res://scenes/nelix_game/components/characters/enemies/protoenem.tscn<>uid://cnobu828g6x6d::::res://scenes/nelix_game/sprites/kenney_prototype_textures/dark/texture_01.png<>uid://bvuqfapk30isl::::res://scenes/nelix_game/sprites/kenney_prototype_textures/dark/texture_03.png
+proto1.tscn::PackedScene::6087708130114934830::1727145245::0::1::::<><>::res://scenes/nelix_game/components/levels/proto1.gd<>uid://xy8es4l67t4a::::res://scenes/nelix_game/components/characters/mc/player.tscn<>uid://n76iuhlj8qgt::::res://scenes/nelix_game/components/characters/enemies/protoenem.tscn<>uid://bvuqfapk30isl::::res://scenes/nelix_game/sprites/kenney_prototype_textures/dark/texture_03.png
 ::res://scenes/nelix_game/components/ui/::1727108176
 ::res://scenes/nelix_game/components/ui/mainmenu/::1727057500
 main_menu.gd::GDScript::-1::1726720086::0::1::::<>Control<>::
@@ -105,8 +105,7 @@ palette_swap_posprocess.gdshader::Shader::-1::1717609137::0::1::::<><>::
 vignette_postprocess.gdshader::Shader::-1::1717609137::0::1::::<><>::
 ::res://scenes/nelix_game/shaders/screen_transitions/::1717906222
 circle_screen_transition.gdshader::Shader::-1::1717609137::0::1::::<><>::
-::res://scenes/nelix_game/sprites/::1727103431
-icon.png::CompressedTexture2D::1735453642860855445::1717904553::1727103431::1::::<><>::
+::res://scenes/nelix_game/sprites/::1727145166
 thydepre.png::CompressedTexture2D::2683499115072931748::1726168106::1727103431::1::::<><>::
 ::res://scenes/nelix_game/sprites/kenney_prototype_textures/::1727103525
 LICENSE.txt::TextFile::-1::1726795269::0::1::::<><>::
@@ -152,10 +151,9 @@ texture_10.png::CompressedTexture2D::6496461543264928366::1726795270::1727103431
 texture_11.png::CompressedTexture2D::3032954232154525864::1726795270::1727103432::1::::<><>::
 texture_12.png::CompressedTexture2D::2103477138734992978::1726795270::1727103432::1::::<><>::
 texture_13.png::CompressedTexture2D::716078113123023102::1726795270::1727103432::1::::<><>::
-::res://scenes/nelix_game/sprites/ui/::1727103431
+::res://scenes/nelix_game/sprites/ui/::1727145216
 bk.png::CompressedTexture2D::5141290836294822450::1726346096::1727103431::1::::<><>::
 crosshair.png::CompressedTexture2D::6639327585832386353::1717270326::1727103431::1::::<><>::
-cursor.png::CompressedTexture2D::5648792825916931972::1723928809::1727103431::1::::<><>::
 UItileset.png::CompressedTexture2D::6522136504720400422::1726679723::1727103431::1::::<><>::
 ::res://scenes/nelix_game/sprites/ui/back/::1727103431
 back_h.png::CompressedTexture2D::6456256361246457493::1726612728::1727103431::1::::<><>::
@@ -208,7 +206,7 @@ chromatic_abberation_postprocess.gdshader::Shader::-1::1717609137::0::1::::<><>:
 crt_postprocess.gdshader::Shader::-1::1726874471::0::1::::<><>::
 glitch-effect.gdshader::Shader::-1::1726874471::0::1::::<><>::
 vignette_postprocess.gdshader::Shader::-1::1717609137::0::1::::<><>::
-::res://sprites/::1727115384
+::res://sprites/::1727145220
 audio.png::CompressedTexture2D::3497859410368226331::1727066748::1727066884::1::::<><>::
 audiodisabled.png::CompressedTexture2D::4052576172981813392::1727098555::1727066778::1::::<><>::
 audio_selected.png::CompressedTexture2D::58651561199342439::1727098417::1727066778::1::::<><>::
@@ -216,6 +214,7 @@ chain-link-symbolic.svg::CompressedTexture2D::5073687631412989651::1727060084::1
 checkmark-symbolic.svg::CompressedTexture2D::672839103226596763::1726963356::1726985993::1::::<><>::
 crt.png::CompressedTexture2D::1733958580526721228::1727098462::1727098623::1::::<><>::
 crtdisabled.png::CompressedTexture2D::6099550924285157617::1727098475::1727098623::1::::<><>::
+cursor.png::CompressedTexture2D::3795639859605796214::1723928809::1727145220::1::::<><>::
 file.png::CompressedTexture2D::7887526885256996275::1727055043::1727055044::1::::<><>::
 file_selected.png::CompressedTexture2D::552800745702010683::1727055012::1727054987::1::::<><>::
 folder.png::CompressedTexture2D::2976251333741945979::1726962139::1726985993::1::::<><>::

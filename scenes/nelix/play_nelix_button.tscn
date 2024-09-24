@@ -98,6 +98,7 @@ one_shot = true
 [node name="window" type="Panel" parent="." groups=["authentication"]]
 visible = false
 custom_minimum_size = Vector2(123, 57)
+layout_mode = 0
 offset_left = -880.0
 offset_top = 36.667
 offset_right = -757.0

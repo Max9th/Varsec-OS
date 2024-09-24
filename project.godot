@@ -27,6 +27,7 @@ boot_splash/description="A fanstasy OS made as an art project"
 
 window/size/mode=2
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://sprites/cursor.png"
 
 [editor_plugins]
 

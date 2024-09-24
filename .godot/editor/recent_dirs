@@ -1,4 +1,5 @@
 /home/miguel/Documents/GitHub/Varsec-OS/exported/web
+res://sprites
 /home/miguel/Documents/GitHub/Varsec-OS/exported/linux
 /home/miguel/Documents/GitHub/Varsec-OS/exported/windows
 res://fonts
@@ -15,7 +16,6 @@ res://scenes/source_link
 /home/miguel/Documents/GitHub/Varsec-OS/exported
 res://
 res://scenes/authenticator
-res://sprites
 /home/miguel/Documents/GitHub/Varsec-OS
 res://scenes/examples
 res://scenes/cubigor
