@@ -1,0 +1,249 @@
+[gd_scene load_steps=14 format=3 uid="uid://clsapeh5doyoe"]
+
+[ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://resources/sprites/nelix.png" id="1_0hnt3"]
+[ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="2_1tobn"]
+[ext_resource type="Script" path="res://resources/scenes/nelix/play_nelix.gd" id="2_frl7q"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="4_6b041"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_efi44"]
+[ext_resource type="Script" path="res://resources/scenes/examples/window.gd" id="7_jmfni"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="8_8oens"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="9_h3wjy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
+font = ExtResource("3_pt81c")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_06psj"]
+font = ExtResource("3_pt81c")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_03pvy"]
+font = ExtResource("3_pt81c")
+font_color = Color(0, 0, 0, 1)
+
+[node name="play nelix" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.326389
+anchor_top = 0.148148
+anchor_right = 0.362847
+anchor_bottom = 0.212963
+offset_right = 98.0
+offset_bottom = 98.0001
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("1_0hnt3")
+texture_pressed = ExtResource("1_0hnt3")
+texture_hover = ExtResource("2_1tobn")
+stretch_mode = 0
+script = ExtResource("2_frl7q")
+metadata/_edit_use_anchors_ = true
+
+[node name="select_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8oens")
+
+[node name="selected_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = 28.0
+offset_top = -10.5001
+offset_right = -53.0
+offset_bottom = 27.4998
+theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
+
+[node name="filename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.798743
+anchor_top = 1.49975
+anchor_right = 0.101257
+anchor_bottom = 1.84975
+offset_left = 111.824
+offset_top = -69.9657
+offset_right = 129.824
+offset_bottom = -45.9657
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play NELIX"
+label_settings = SubResource("LabelSettings_yb2ti")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="doubleclicktimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="window" type="Panel" parent="." groups=["authentication"]]
+visible = false
+custom_minimum_size = Vector2(123, 57)
+layout_mode = 0
+offset_left = -880.0
+offset_top = 36.667
+offset_right = -757.0
+offset_bottom = 93.667
+scale = Vector2(7, 7)
+theme_override_styles/panel = ExtResource("4_6b041")
+script = ExtResource("7_jmfni")
+metadata/_edit_group_ = true
+
+[node name="select" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("8_8oens")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("9_h3wjy")
+
+[node name="bodytext" type="Label" parent="window"]
+layout_mode = 0
+offset_left = 15.9999
+offset_top = 16.0667
+offset_right = 196.0
+offset_bottom = 75.0667
+scale = Vector2(0.5, 0.5)
+text = "!!Indisponivel 
+no momento!!
+"
+label_settings = SubResource("LabelSettings_06psj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="windowname" type="Label" parent="window"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.1667
+offset_top = 2.0
+offset_right = 158.833
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "nelix
+"
+label_settings = SubResource("LabelSettings_03pvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.90475
+offset_top = 2.0
+offset_right = 6.09525
+offset_bottom = 9.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+metadata/_edit_group_ = true
+
+[node name="close" type="Button" parent="window/HBoxContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_styles/hover = ExtResource("6_efi44")
+theme_override_styles/pressed = ExtResource("6_efi44")
+theme_override_styles/normal = ExtResource("6_efi44")
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+text = ""
+icon = null
+flat = false
+alignment = 1
+text_overrun_behavior = 0
+autowrap_mode = 0
+clip_text = false
+icon_alignment = 0
+vertical_icon_alignment = 1
+expand_icon = false
+text_direction = 0
+language = ""
+script = null
+
+[node name="draghandle" type="Panel" parent="window"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.8333
+offset_top = 1.66667
+offset_right = 36.1667
+offset_bottom = 8.66667
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_efi44")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="gui_input" from="window" to="window" method="_on_gui_input"]
+[connection signal="pressed" from="window/HBoxContainer/close" to="window" method="_on_close_pressed"]
+[connection signal="gui_input" from="window/draghandle" to="window" method="_on_draghandle_gui_input"]

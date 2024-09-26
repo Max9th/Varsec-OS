@@ -1,0 +1,464 @@
+[gd_scene load_steps=20 format=3 uid="uid://brx8sg8p6a6pp"]
+
+[ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://resources/sprites/folder.png" id="1_egd73"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_0hike"]
+[ext_resource type="Script" path="res://resources/scenes/examples/folder.gd" id="3_5kliy"]
+[ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://resources/sprites/folderopen.png" id="3_etd47"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="5_bejof"]
+[ext_resource type="Script" path="res://resources/scenes/examples/window.gd" id="6_urli5"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="7_5f5pc"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="7_fjroi"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="7_wyo10"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_0g4q1"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_3hha4"]
+[ext_resource type="Script" path="res://resources/scenes/examples/draghandle.gd" id="9_oydpv"]
+[ext_resource type="Texture2D" uid="uid://cawxvxqr1lt7h" path="res://icon.svg" id="10_vi70a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_etf32"]
+font = ExtResource("3_0hike")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0s1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 10
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
+font = ExtResource("3_0hike")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
+font = ExtResource("3_0hike")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
+bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="folder" type="TextureButton"]
+offset_left = 62.0
+offset_top = 178.0
+offset_right = 102.0
+offset_bottom = 218.0
+pivot_offset = Vector2(20, 20)
+texture_normal = ExtResource("1_egd73")
+texture_hover = ExtResource("3_etd47")
+stretch_mode = 0
+script = ExtResource("3_5kliy")
+
+[node name="selected_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = -2.6
+offset_top = 1.0
+offset_right = -2.6
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xpere")
+
+[node name="filename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.99
+anchor_right = 1.0
+anchor_bottom = 1.34
+offset_left = -0.4
+offset_top = 2.0
+offset_right = -0.400002
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_etf32")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="window" type="Panel" parent="." groups=["authentication"]]
+custom_minimum_size = Vector2(123, 57)
+layout_mode = 0
+offset_left = 53.0
+offset_top = -56.0
+offset_right = 188.0
+offset_bottom = 1.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = ExtResource("5_bejof")
+script = ExtResource("6_urli5")
+
+[node name="select" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("7_fjroi")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="window"]
+stream = ExtResource("8_0g4q1")
+
+[node name="Panel" type="Panel" parent="window"]
+layout_mode = 0
+offset_left = 65.6667
+offset_top = 15.3333
+offset_right = 84.6667
+offset_bottom = 34.3333
+theme_override_styles/panel = SubResource("StyleBoxFlat_fk0s1")
+
+[node name="TextureRect" type="TextureRect" parent="window/Panel"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("10_vi70a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bodytext" type="Label" parent="window"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 106.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+text = "Placeholder
+"
+label_settings = SubResource("LabelSettings_wnq2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="windowname" type="Label" parent="window"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.1667
+offset_top = 2.0
+offset_right = 158.833
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "placeholder
+"
+label_settings = SubResource("LabelSettings_xcy33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="window"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 281.0
+offset_bottom = 58.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = ExtResource("7_5f5pc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="window/HBoxContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_styles/hover = ExtResource("8_3hha4")
+theme_override_styles/pressed = ExtResource("8_3hha4")
+theme_override_styles/normal = ExtResource("8_3hha4")
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+text = ""
+icon = null
+flat = false
+alignment = 1
+text_overrun_behavior = 0
+autowrap_mode = 0
+clip_text = false
+icon_alignment = 0
+vertical_icon_alignment = 1
+expand_icon = false
+text_direction = 0
+language = ""
+script = null
+
+[node name="close" type="Button" parent="window/HBoxContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_styles/hover = ExtResource("8_3hha4")
+theme_override_styles/pressed = ExtResource("8_3hha4")
+theme_override_styles/normal = ExtResource("8_3hha4")
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+text = ""
+icon = null
+flat = false
+alignment = 1
+text_overrun_behavior = 0
+autowrap_mode = 0
+clip_text = false
+icon_alignment = 0
+vertical_icon_alignment = 1
+expand_icon = false
+text_direction = 0
+language = ""
+script = null
+
+[node name="button" type="Button" parent="window"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 281.0
+offset_bottom = 69.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_styles/hover = ExtResource("7_wyo10")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
+theme_override_styles/normal = ExtResource("7_wyo10")
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+text = ""
+icon = null
+flat = false
+alignment = 1
+text_overrun_behavior = 0
+autowrap_mode = 0
+clip_text = false
+icon_alignment = 0
+vertical_icon_alignment = 1
+expand_icon = false
+text_direction = 0
+language = ""
+script = null
+
+[node name="draghandle" type="Panel" parent="window"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.8333
+offset_top = 1.66667
+offset_right = 36.1667
+offset_bottom = 8.66667
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("8_3hha4")
+
+[node name="resizehandle" type="Panel" parent="window"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -8.66667
+offset_right = 1.0
+offset_bottom = 1.33333
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("8_3hha4")
+script = ExtResource("9_oydpv")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="gui_input" from="window" to="window" method="_on_gui_input"]
+[connection signal="pressed" from="window/HBoxContainer/maximize" to="window" method="_on_maximize_pressed"]
+[connection signal="pressed" from="window/HBoxContainer/close" to="window" method="_on_close_pressed"]
+[connection signal="pressed" from="window/button" to="window" method="_on_confirm_pressed"]
+[connection signal="gui_input" from="window/draghandle" to="window" method="_on_draghandle_gui_input"]
+[connection signal="gui_input" from="window/resizehandle" to="window/resizehandle" method="_on_gui_input"]

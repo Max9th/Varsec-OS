@@ -1,22 +1,9 @@
+res://resources
+res://shaders
 /home/miguel/Documents/GitHub/Varsec-OS/exported/web
-res://sprites
 /home/miguel/Documents/GitHub/Varsec-OS/exported/linux
 /home/miguel/Documents/GitHub/Varsec-OS/exported/windows
-res://fonts
-res://scenes/nelix_game/components/characters/enemies
-res://scenes/nelix_game/components/ui/pausemenu
-res://scenes/nelix_game/components/characters/mc
-res://scenes/nelix_game/components/levels
-res://scenes/windows/aula_select
-res://shaders
-res://scenes/file_manager
-res://resources
-res://scenes/source_link
 /home/miguel/Desktop/CC Sôdid/6 Syôkôn/Godot
 /home/miguel/Documents/GitHub/Varsec-OS/exported
 res://
-res://scenes/authenticator
 /home/miguel/Documents/GitHub/Varsec-OS
-res://scenes/examples
-res://scenes/cubigor
-res://scenes/main menu

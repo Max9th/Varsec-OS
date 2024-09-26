@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpim0hfyc3kr0"]
+
+[ext_resource type="Script" path="res://resources/scenes/cubigor/cubigor.gd" id="1_txcu6"]
+[ext_resource type="Texture2D" uid="uid://dxef4wd2s67rq" path="res://resources/sprites/Igor.png" id="1_xcgny"]
+[ext_resource type="AudioStream" uid="uid://4j52i1pkdhjm" path="res://resources/audio/Cubigor theme.mp3" id="4_rgf8c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4qmo"]
+albedo_color = Color(0.384314, 0, 1, 1)
+albedo_texture = ExtResource("1_xcgny")
+emission_enabled = true
+emission_energy_multiplier = 0.8
+emission_texture = ExtResource("1_xcgny")
+ao_enabled = true
+uv1_scale = Vector3(1.965, 1.965, 1.965)
+uv1_offset = Vector3(-0.225, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3n64t"]
+size = Vector3(23, 23, 23)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4vhm5"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jq0g1"]
+size = Vector3(15, 15, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bg0v7"]
+size = Vector3(14, 14, 14)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wclh3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_svmov"]
+sky_material = SubResource("ProceduralSkyMaterial_wclh3")
+
+[sub_resource type="Environment" id="Environment_tqw1p"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_svmov")
+tonemap_mode = 2
+
+[node name="cubigor" type="Node3D" groups=["authentication"]]
+script = ExtResource("1_txcu6")
+
+[node name="objects" type="Node3D" parent="."]
+
+[node name="mesh" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_3n64t")
+skeleton = NodePath("../..")
+
+[node name="mesh1" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(-0.470267, 0.24385, -0.848167, -0.830196, -0.448251, 0.33143, -0.299372, 0.860005, 0.413242, 33.3798, 0.181519, -10.7839)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_4vhm5")
+skeleton = NodePath("../mesh")
+
+[node name="mesh2" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(0.184681, 0.179111, -0.966339, 0.974115, 0.0970572, 0.204157, 0.130357, -0.97903, -0.15655, 76.6301, 44.6216, 60.4008)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_jq0g1")
+skeleton = NodePath("../mesh")
+
+[node name="mesh3" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(0.329841, -0.772799, 0.542205, -0.0755703, 0.55089, 0.831149, -0.941007, -0.315122, 0.123306, -31.6295, 94.2147, 76.296)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_bg0v7")
+skeleton = NodePath("../mesh2")
+
+[node name="mesh4" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -50.6208, 45.8419, 30.8681)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_bg0v7")
+skeleton = NodePath("../mesh2")
+
+[node name="mesh5" type="MeshInstance3D" parent="objects"]
+transform = Transform3D(0.812104, 0.412606, 0.412606, -0.516653, 0.837106, 0.179786, -0.271214, -0.359179, 0.892992, -82.198, -16.268, 30.8681)
+material_override = SubResource("StandardMaterial3D_c4qmo")
+mesh = SubResource("BoxMesh_bg0v7")
+skeleton = NodePath("../mesh2")
+
+[node name="others" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="others"]
+environment = SubResource("Environment_tqw1p")
+
+[node name="Camera3D" type="Camera3D" parent="others"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -37.9224)
+fov = 102.1
+
+[node name="Cubigor_theme" type="AudioStreamPlayer" parent="others"]
+stream = ExtResource("4_rgf8c")
