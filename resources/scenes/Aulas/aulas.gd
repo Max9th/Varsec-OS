@@ -3,7 +3,7 @@ extends Control
 @onready var filename: Label = $filename
 @onready var timer: Timer = $Timer
 @onready var selected_panel: Panel = $selected_panel
-@onready var aula_select: Panel = $"../class_manager"
+@onready var class_manager_window: Panel = $"../../../windows/class_manager_window"
 @onready var select_audio: AudioStreamPlayer = $select_audio
 
 var selected: bool = false
@@ -31,5 +31,5 @@ func select():
 func _on_pressed() -> void:
 	select()
 func spawnwindow():
-	aula_select.visible = true
+	class_manager_window.visible = true
 	

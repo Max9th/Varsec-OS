@@ -4,6 +4,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var filename: Label = $filename
 @onready var window: Panel = $window
+@onready var select_audio: AudioStreamPlayer = $select
 
 var selected: bool = false
 var timer_running: bool = false

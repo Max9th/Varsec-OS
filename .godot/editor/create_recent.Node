@@ -1,7 +1,7 @@
-TextEdit
 Control
-Panel
 TextureRect
+TextEdit
+Panel
 AudioStreamPlayer
 AudioStreamPlayer2D
 VBoxContainer
@@ -12,4 +12,3 @@ Container
 LineEdit
 HBoxContainer
 Node3D
-Node

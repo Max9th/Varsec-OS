@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://dg3elxvkc55dg"]
+
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_bonb7"]
+[ext_resource type="Script" path="res://resources/scenes/examples/window/window.gd" id="2_qjpql"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="3_6s5mf"]
+[ext_resource type="Texture2D" uid="uid://cawxvxqr1lt7h" path="res://icon.svg" id="4_i2j31"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_cjjfa"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="6_ebnck"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_uwk2l"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="8_dwv5l"]
+[ext_resource type="Script" path="res://resources/scenes/examples/scripts/draghandle.gd" id="9_rhsfx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0s1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 10
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
+font = ExtResource("5_cjjfa")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
+font = ExtResource("5_cjjfa")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
+bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="window" type="Panel" groups=["authentication"]]
+custom_minimum_size = Vector2(123, 57)
+offset_left = 53.0
+offset_top = -56.0
+offset_right = 188.0
+offset_bottom = 1.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = ExtResource("1_bonb7")
+script = ExtResource("2_qjpql")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6s5mf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 65.6667
+offset_top = 15.3333
+offset_right = 84.6667
+offset_bottom = 34.3333
+theme_override_styles/panel = SubResource("StyleBoxFlat_fk0s1")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("4_i2j31")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bodytext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 106.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+text = "Placeholder
+"
+label_settings = SubResource("LabelSettings_wnq2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="windowname" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.1667
+offset_top = 2.0
+offset_right = 158.833
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "placeholder
+"
+label_settings = SubResource("LabelSettings_xcy33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 281.0
+offset_bottom = 58.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = ExtResource("6_ebnck")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("7_uwk2l")
+theme_override_styles/pressed = ExtResource("7_uwk2l")
+theme_override_styles/normal = ExtResource("7_uwk2l")
+
+[node name="close" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 1
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("7_uwk2l")
+theme_override_styles/pressed = ExtResource("7_uwk2l")
+theme_override_styles/normal = ExtResource("7_uwk2l")
+
+[node name="button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 281.0
+offset_bottom = 69.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/hover = ExtResource("8_dwv5l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
+theme_override_styles/normal = ExtResource("8_dwv5l")
+
+[node name="draghandle" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.8333
+offset_top = 1.66667
+offset_right = 36.1667
+offset_bottom = 8.66667
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("7_uwk2l")
+
+[node name="resizehandle" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -8.66667
+offset_right = 1.0
+offset_bottom = 1.33333
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("7_uwk2l")
+script = ExtResource("9_rhsfx")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
+[connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="button" to="." method="_on_confirm_pressed"]
+[connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]
+[connection signal="gui_input" from="resizehandle" to="resizehandle" method="_on_gui_input"]

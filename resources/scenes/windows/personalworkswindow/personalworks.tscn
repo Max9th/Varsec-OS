@@ -1,99 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=17 format=3 uid="uid://dmryciivu5mdv"]
 
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_dd0rh"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="3_qklyj"]
-[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
-[ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="5_bxqsp"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
-[ext_resource type="Script" path="res://resources/scenes/Aulas/button_manager.gd" id="7_gh4da"]
-[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
-
-[sub_resource type="GDScript" id="GDScript_uqghu"]
-script/source = "extends Panel
-
-@onready var aula_select: Panel = $\".\"
-@onready var maximize: Button = $HBoxContainer/maximize
-@onready var close_audio: AudioStreamPlayer = $close_audio
-
-var is_dragging: bool
-var start_drag_position: Vector2
-var mouse_start_drag_position: Vector2
-
-var is_maximized: bool
-var old_unmaximized_position: Vector2
-var old_unmaximized_size: Vector2
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	aula_select.visible = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if is_dragging:
-		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
-		clamp_window_inside_viewport()
-
-func _on_close_pressed() -> void:
-	aula_select.visible = false
-	close_audio.play()
-
-func _on_draghandle_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1:
-		if event.is_pressed():
-			is_dragging = true
-			start_drag_position = global_position
-			mouse_start_drag_position = get_global_mouse_position()
-		else:
-			is_dragging = false
-
-func clamp_window_inside_viewport() -> void:
-	var viewport_size = get_viewport().get_visible_rect().size
-	var position2 = global_position
-	var object_size = size * 2.78
-	
-	position.x = clamp(position2.x, 0, viewport_size.x - object_size.x)
-	position.y = clamp(position2.y, 0, viewport_size.y - object_size.y)
-	global_position = position2
-
-func _on_maximize_pressed() -> void:
-	maximize_window()
-
-func maximize_window() -> void:
-	if is_maximized:
-		is_maximized = !is_maximized
-		var tween: Tween = create_tween()
-		tween.set_parallel(true)
-		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, \"global_position\", old_unmaximized_position, 0.25)
-		await tween.tween_property(self, \"size\", old_unmaximized_size, 0.25).finished
-	else:
-		is_maximized = !is_maximized
-		old_unmaximized_position = global_position
-		old_unmaximized_size = size
-		
-		var new_size: Vector2 
-		var new_position: Vector2
-		new_position.x = 2
-	
-		new_position.y = 66
-		new_size.x = 384.3
-		
-		
-		new_size.y = 193
-	
-		var tween: Tween = create_tween()
-		tween.set_parallel(true)
-		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, \"global_position\", new_position, 0.25)
-		await tween.tween_property(self, \"size\", new_size, 0.25).finished
-
-
-func _on_aulas_window_selected() -> void:
-	aula_select.visible = true
-"
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jjfn"]
+[ext_resource type="Script" path="res://resources/scenes/windows/personalworkswindow/personalworks.gd" id="2_iadqj"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="4_ymjld"]
+[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="5_16iuw"]
+[ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="6_gkklh"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_w23mc"]
+[ext_resource type="Script" path="res://resources/scenes/windows/personalworkswindow/button_manager.gd" id="8_lqxfq"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="9_hwie5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
-font = ExtResource("2_ase65")
+font = ExtResource("3_2cffn")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
@@ -106,16 +24,16 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
-font = ExtResource("2_ase65")
+font = ExtResource("3_2cffn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
-font = ExtResource("2_ase65")
+font = ExtResource("3_2cffn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
-font = ExtResource("2_ase65")
+font = ExtResource("3_2cffn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wvchx"]
-font = ExtResource("4_l3xm2")
+font = ExtResource("5_16iuw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
 bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
@@ -125,14 +43,14 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[node name="aula_select" type="Panel"]
+[node name="personalworks" type="Panel"]
 custom_minimum_size = Vector2(217, 115)
 offset_left = 104.0
 offset_right = 321.0
 offset_bottom = 115.0
 scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("1_dd0rh")
-script = SubResource("GDScript_uqghu")
+theme_override_styles/panel = ExtResource("1_1jjfn")
+script = ExtResource("2_iadqj")
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -145,7 +63,7 @@ offset_right = 83.1555
 offset_bottom = 16.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-text = "class manager"
+text = "personal work manager"
 label_settings = SubResource("LabelSettings_2xelb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -158,11 +76,11 @@ offset_top = 82.3332
 offset_right = 110.161
 offset_bottom = 122.333
 scale = Vector2(0.25, 0.25)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("3_2cffn")
 theme_override_font_sizes/font_size = 0
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Cubigor"
 
 [node name="recentes" type="Label" parent="."]
@@ -200,12 +118,12 @@ text = "Selecione a aula"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 
-[node name="aula0" type="Control" parent="body_text"]
+[node name="personal" type="Control" parent="body_text"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="body_text" type="Label" parent="body_text/aula0"]
+[node name="body_text" type="Label" parent="body_text/personal"]
 layout_mode = 0
 offset_left = 7.24145
 offset_top = 113.333
@@ -218,16 +136,16 @@ A lenda de Jonas diz que ele gosta de levar professores do IFg pro Acre para tom
 label_settings = SubResource("LabelSettings_wvchx")
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="body_text/aula0"]
+[node name="TextureRect" type="TextureRect" parent="body_text/personal"]
 layout_mode = 0
 offset_left = 3.62073
 offset_top = 15.3334
 offset_right = 146.621
 offset_bottom = 101.333
-texture = ExtResource("5_bxqsp")
+texture = ExtResource("6_gkklh")
 expand_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="body_text/aula0"]
+[node name="TextEdit" type="TextEdit" parent="body_text/personal"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 154.0
@@ -238,9 +156,9 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_fonts/font = ExtResource("5_16iuw")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/normal = ExtResource("7_w23mc")
 text = "Assunto:
 identidade cultural, povos originários, arte marajoara
 Atividades desenvolvidas em sala:
@@ -252,22 +170,22 @@ O que eu aprendi:
 editable = false
 context_menu_enabled = false
 
-[node name="aula1" type="Control" parent="body_text"]
+[node name="personal2" type="Control" parent="body_text"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="aula2" type="Control" parent="body_text"]
+[node name="personal3" type="Control" parent="body_text"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="aula3" type="Control" parent="body_text"]
+[node name="personal4" type="Control" parent="body_text"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="aula4" type="Control" parent="body_text"]
+[node name="personal5" type="Control" parent="body_text"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -279,52 +197,52 @@ offset_top = 16.0
 offset_right = 115.0
 offset_bottom = 233.0
 scale = Vector2(0.25, 0.25)
-script = ExtResource("7_gh4da")
+script = ExtResource("8_lqxfq")
 metadata/_edit_group_ = true
 
-[node name="aula1" type="Button" parent="Buttonmanager"]
+[node name="tab" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_fonts/font = ExtResource("3_2cffn")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Aula 1"
 
-[node name="aula2" type="Button" parent="Buttonmanager"]
+[node name="tab2" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_fonts/font = ExtResource("3_2cffn")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Aula 2"
 
-[node name="aula3" type="Button" parent="Buttonmanager"]
+[node name="tab3" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_fonts/font = ExtResource("3_2cffn")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Aula 3"
 
-[node name="aula4" type="Button" parent="Buttonmanager"]
+[node name="tab4" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_fonts/font = ExtResource("3_2cffn")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Aula 4"
 
-[node name="aula5" type="Button" parent="Buttonmanager"]
+[node name="tab5" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_fonts/font = ExtResource("3_2cffn")
+theme_override_styles/hover = ExtResource("4_ymjld")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
+theme_override_styles/normal = ExtResource("4_ymjld")
 text = "Aula 5"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -344,17 +262,17 @@ metadata/_edit_group_ = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("6_nydlm")
-theme_override_styles/pressed = ExtResource("6_nydlm")
-theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/hover = ExtResource("7_w23mc")
+theme_override_styles/pressed = ExtResource("7_w23mc")
+theme_override_styles/normal = ExtResource("7_w23mc")
 
 [node name="close" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("6_nydlm")
-theme_override_styles/pressed = ExtResource("6_nydlm")
-theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/hover = ExtResource("7_w23mc")
+theme_override_styles/pressed = ExtResource("7_w23mc")
+theme_override_styles/normal = ExtResource("7_w23mc")
 
 [node name="draghandle" type="Panel" parent="."]
 layout_mode = 1
@@ -365,7 +283,7 @@ offset_left = -105.5
 offset_right = 88.5
 offset_bottom = 10.0
 grow_horizontal = 2
-theme_override_styles/panel = ExtResource("6_nydlm")
+theme_override_styles/panel = ExtResource("7_w23mc")
 
 [node name="separator" type="Panel" parent="."]
 layout_mode = 0
@@ -385,9 +303,9 @@ offset_bottom = 112.667
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_b7u5f")
+stream = ExtResource("9_hwie5")
 
-[connection signal="pressed" from="Buttonmanager/aula1" to="Buttonmanager" method="_on_aula_1_pressed"]
+[connection signal="pressed" from="Buttonmanager/tab" to="Buttonmanager" method="_on_tab_pressed"]
 [connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

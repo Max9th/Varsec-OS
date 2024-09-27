@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpim0hfyc3kr0"]
 
-[ext_resource type="Script" path="res://resources/scenes/cubigor/cubigor.gd" id="1_txcu6"]
+[ext_resource type="Script" path="res://resources/scenes/cubigor/scripts/cubigor.gd" id="1_txcu6"]
 [ext_resource type="Texture2D" uid="uid://dxef4wd2s67rq" path="res://resources/sprites/Igor.png" id="1_xcgny"]
 [ext_resource type="AudioStream" uid="uid://4j52i1pkdhjm" path="res://resources/audio/Cubigor theme.mp3" id="4_rgf8c"]
 

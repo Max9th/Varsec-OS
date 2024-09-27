@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/personalfolder.png" id="1_vk3yy"]
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/folderopenpersonal.png" id="2_1kli8"]
-[ext_resource type="Script" path="res://resources/scenes/pessoais/pessoais.gd" id="3_oxt5l"]
+[ext_resource type="Script" path="res://resources/scenes/personalworksbutton/personalworkscript.gd" id="3_oxt5l"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_32slq"]
+[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/windows/personalworkswindow/personalworks.tscn" id="5_bqu2t"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_n1ouu"]
-[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="6_8msoo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dto36"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,7 +20,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 anti_aliasing = false
 
-[sub_resource type="LabelSettings" id="LabelSettings_5aswj"]
+[sub_resource type="LabelSettings" id="LabelSettings_3stu5"]
 font = ExtResource("4_32slq")
 font_color = Color(0, 0, 0, 1)
 
@@ -67,18 +67,22 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Meus Projetos
 "
-label_settings = SubResource("LabelSettings_5aswj")
+label_settings = SubResource("LabelSettings_3stu5")
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="aula_select" parent="." instance=ExtResource("5_bqu2t")]
+layout_mode = 0
+offset_left = 39.9999
+offset_top = -208.0
+offset_right = 257.0
+offset_bottom = -93.0002
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.7
 one_shot = true
 
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_n1ouu")
-
-[node name="close_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_8msoo")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var window: Panel = $"."
+@onready var nelixwindow: Panel = $"."
 @onready var close_audio: AudioStreamPlayer = $close_audio
 
 var is_dragging: bool
@@ -12,7 +12,7 @@ var old_unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
 
 func _ready() -> void:
-	window.visible = false
+	nelixwindow.visible = false
 
 func _process(_delta: float) -> void:
 	if is_dragging:
@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 		clamp_window_inside_viewport()
 
 func _on_close_pressed() -> void:
-	window.visible = false
+	nelixwindow.visible = false
 	close_audio.play()
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:

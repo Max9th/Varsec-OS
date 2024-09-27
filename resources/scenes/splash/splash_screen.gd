@@ -26,7 +26,7 @@ func _ready() -> void:
 		splash_subscreen.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if clicknumber == 2:
+	if clicknumber >= 2:
 		finish_boot()
 func _on_if_gtimer_timeout() -> void:
 	max_node.visible = true
@@ -34,7 +34,6 @@ func _on_if_gtimer_timeout() -> void:
 	shineanimator.play("shine")
 func _on_changescene_timeout() -> void:
 	finish_boot()
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	changescenetimer.start()
 

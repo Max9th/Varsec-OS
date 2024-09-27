@@ -1,18 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bj2mltt8gsqow"]
+[gd_scene load_steps=7 format=3 uid="uid://bj2mltt8gsqow"]
 
 [ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/folderlocked.png" id="1_6jop3"]
 [ext_resource type="Script" path="res://resources/scenes/authenticator/folderlocked.gd" id="2_7ak7n"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_eeaqt"]
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="4_i0u4u"]
-[ext_resource type="Script" path="res://resources/scenes/authenticator/authenticate_popup.gd" id="5_7g1ax"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="6_hykfn"]
-[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="7_7b21h"]
-[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="7_bamtq"]
-[ext_resource type="Texture2D" uid="uid://jt6tdmef2yl4" path="res://resources/sprites/checkmark-symbolic.svg" id="8_tcno7"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="9_vpqa7"]
-[ext_resource type="AudioStream" uid="uid://bec51h6ctq2uo" path="res://resources/audio/wrong.wav" id="11_uhjgk"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="12_vbpju"]
-[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="13_10182"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuoey"]
 bg_color = Color(1, 1, 1, 1)
@@ -30,31 +21,6 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_8oeka"]
 font = ExtResource("3_eeaqt")
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_p6fgv"]
-font = ExtResource("3_eeaqt")
-
-[sub_resource type="LabelSettings" id="LabelSettings_7enhi"]
-font = ExtResource("3_eeaqt")
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rhlb"]
-bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5rtg"]
-shader = ExtResource("7_bamtq")
-
-[sub_resource type="LabelSettings" id="LabelSettings_85uop"]
-font = ExtResource("3_eeaqt")
-font_size = 32
-font_color = Color(1, 0, 0, 1)
-outline_size = 4
 
 [node name="folderlocked" type="TextureButton"]
 anchors_preset = -1
@@ -106,130 +72,7 @@ autowrap_mode = 2
 wait_time = 0.7
 one_shot = true
 
-[node name="authenticate_popup" type="Panel" parent="." groups=["authentication"]]
-layout_mode = 0
-offset_left = 96.0
-offset_top = -56.0
-offset_right = 208.0
-offset_bottom = -8.0
-scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("4_i0u4u")
-script = ExtResource("5_7g1ax")
-
-[node name="password" type="Label" parent="authenticate_popup"]
-layout_mode = 0
-offset_left = 24.6666
-offset_top = 18.6666
-offset_right = 131.667
-offset_bottom = 32.6666
-scale = Vector2(0.5, 0.5)
-text = "Digite a senha:"
-label_settings = SubResource("LabelSettings_p6fgv")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="windowname" type="Label" parent="authenticate_popup"]
-layout_mode = 0
-offset_left = 24.5
-offset_top = 2.0
-offset_right = 126.5
-offset_bottom = 16.0
-scale = Vector2(0.5, 0.5)
-text = "Autenticar
-"
-label_settings = SubResource("LabelSettings_7enhi")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="authenticate_popup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -9.33335
-offset_top = 1.99991
-offset_right = 5.66666
-offset_bottom = 8.99991
-grow_horizontal = 0
-theme_override_constants/separation = 1
-metadata/_edit_group_ = true
-
-[node name="close" type="Button" parent="authenticate_popup/HBoxContainer"]
-custom_minimum_size = Vector2(7, 7)
-layout_direction = 1
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-focus_mode = 0
-theme_override_styles/hover = ExtResource("9_vpqa7")
-theme_override_styles/pressed = ExtResource("9_vpqa7")
-theme_override_styles/normal = ExtResource("9_vpqa7")
-
-[node name="LineEdit" type="LineEdit" parent="authenticate_popup"]
-layout_mode = 0
-offset_left = 24.6666
-offset_top = 29.3332
-offset_right = 301.667
-offset_bottom = 67.3332
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_eeaqt")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = ExtResource("7_7b21h")
-theme_override_styles/normal = ExtResource("7_7b21h")
-max_length = 9
-
-[node name="confirm" type="Button" parent="authenticate_popup"]
-layout_mode = 0
-offset_left = 82.6666
-offset_top = 29.3332
-offset_right = 122.667
-offset_bottom = 69.3332
-scale = Vector2(0.2, 0.2)
-theme_override_styles/hover = ExtResource("6_hykfn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rhlb")
-theme_override_styles/normal = ExtResource("6_hykfn")
-metadata/_edit_group_ = true
-
-[node name="Checkmark-symbolic" type="Sprite2D" parent="authenticate_popup/confirm"]
-texture_filter = 1
-material = SubResource("ShaderMaterial_e5rtg")
-position = Vector2(20, 20)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("8_tcno7")
-
-[node name="INCORRECT" type="Label" parent="authenticate_popup"]
-visible = false
-layout_mode = 0
-offset_left = 24.6666
-offset_top = 37.3332
-offset_right = 296.667
-offset_bottom = 65.3332
-scale = Vector2(0.2, 0.2)
-text = "!!Senha incorreta!!"
-label_settings = SubResource("LabelSettings_85uop")
-
-[node name="wrong" type="AudioStreamPlayer" parent="authenticate_popup/INCORRECT"]
-stream = ExtResource("11_uhjgk")
-
-[node name="Timer" type="Timer" parent="authenticate_popup"]
-wait_time = 3.0
-
-[node name="resizehandle" type="Panel" parent="authenticate_popup"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 99.0
-offset_bottom = 10.0
-theme_override_styles/panel = ExtResource("9_vpqa7")
-
-[node name="select_audio" type="AudioStreamPlayer" parent="authenticate_popup"]
+[node name="select_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_vbpju")
 
-[node name="close_audio" type="AudioStreamPlayer" parent="authenticate_popup"]
-stream = ExtResource("13_10182")
-
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="pressed" from="authenticate_popup/HBoxContainer/close" to="authenticate_popup" method="_on_close_pressed"]
-[connection signal="text_submitted" from="authenticate_popup/LineEdit" to="authenticate_popup" method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="authenticate_popup/confirm" to="authenticate_popup" method="_on_confirm_pressed"]
-[connection signal="timeout" from="authenticate_popup/Timer" to="authenticate_popup" method="_on_timer_timeout"]
-[connection signal="gui_input" from="authenticate_popup/resizehandle" to="authenticate_popup" method="_on_resizehandle_gui_input"]

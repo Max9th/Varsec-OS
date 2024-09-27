@@ -3,8 +3,9 @@ extends Control
 @onready var selected_panel: Panel = $selected
 @onready var timer: Timer = $Timer
 @onready var filename: Label = $filename
-@onready var authenticate_popup: Panel = $authenticate_popup
-@onready var select_audio: AudioStreamPlayer = $authenticate_popup/select_audio
+@onready var authenticate_popup: Panel = $"../../../windows/authenticate_popup"
+@onready var select_audio: AudioStreamPlayer = $select_audio
+
 
 var selected: bool = false
 var timer_running: bool = false

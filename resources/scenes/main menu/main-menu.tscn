@@ -1,9 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=35 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/main menu/main_menu.gd" id="1_xfcrf"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="2_dediy"]
 [ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="3_8mgm0"]
-[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/prettygaytbh.tscn" id="3_fpams"]
+[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_fpams"]
 [ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png" id="4_jtiqu"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="5_amkwd"]
 [ext_resource type="Texture2D" uid="uid://bp3nh64ldrpw2" path="res://resources/sprites/audio.png" id="5_l40gv"]
@@ -14,7 +14,7 @@
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_fcre7"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="8_qc6vo"]
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/crt.png" id="11_a0u8g"]
-[ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/pessoais/pessoais_button.tscn" id="11_dan5j"]
+[ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/personalworksbutton/personalworkscene.tscn" id="11_dan5j"]
 [ext_resource type="Texture2D" uid="uid://cs5wyhy0rqja4" path="res://resources/sprites/crtdisabled.png" id="11_x4v7k"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="12_xo21c"]
 [ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://resources/scenes/authenticator/folderlocked_button.tscn" id="13_j8r1x"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/nelix/play_nelix_button.tscn" id="16_fhs21"]
 [ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/source_code_link.tscn" id="17_put8e"]
 [ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://resources/scenes/Aulas/aulas_button.tscn" id="20_e8l5l"]
-[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/windows/playnelixwindow/window.tscn" id="22_tje3e"]
+[ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/windows/authenticator/authenticate_popup.tscn" id="20_oo81s"]
+[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/windows/personalworkswindow/personalworks.tscn" id="21_dinur"]
+[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/windows/playnelixwindow/playnelixwindow.tscn" id="22_tje3e"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/windows/aulaselectwindow/aula_select.tscn" id="23_n5ocp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qgy"]
@@ -237,16 +239,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="pessoais" parent="desktop/Folders" instance=ExtResource("11_dan5j")]
+[node name="musicplayer" parent="desktop/Folders" instance=ExtResource("15_5q1r6")]
 layout_mode = 1
-anchor_left = 0.001
-anchor_top = 0.0
-anchor_right = 0.001
-anchor_bottom = 0.0
-offset_left = 61.848
-offset_top = 256.0
-offset_right = 101.848
-offset_bottom = 296.0
+anchors_preset = -1
+anchor_right = 0.778
+anchor_bottom = 0.324
+offset_right = 191.744
+offset_bottom = 86.048
+script = null
+
+[node name="source_link" parent="desktop/Folders" instance=ExtResource("17_put8e")]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 383.0
+offset_right = 1088.0
+offset_bottom = 431.0
 
 [node name="play nelix" parent="desktop/Folders" instance=ExtResource("16_fhs21")]
 layout_mode = 1
@@ -261,21 +268,6 @@ offset_right = 36.0005
 offset_bottom = 268.0
 grow_horizontal = 0
 
-[node name="musicplayer" parent="desktop/Folders" instance=ExtResource("15_5q1r6")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.778
-anchor_bottom = 0.324
-offset_right = 191.744
-offset_bottom = 86.048
-
-[node name="source_link" parent="desktop/Folders" instance=ExtResource("17_put8e")]
-layout_mode = 0
-offset_left = 1056.0
-offset_top = 383.0
-offset_right = 1088.0
-offset_bottom = 431.0
-
 [node name="folderlocked" parent="desktop/Folders" instance=ExtResource("13_j8r1x")]
 layout_mode = 0
 anchors_preset = 0
@@ -288,7 +280,18 @@ offset_top = 383.0
 offset_right = 103.0
 offset_bottom = 423.0
 
-[node name="aulas" parent="desktop/Folders" instance=ExtResource("20_e8l5l")]
+[node name="personalworksbutton" parent="desktop/Folders" instance=ExtResource("11_dan5j")]
+layout_mode = 1
+anchor_left = 0.001
+anchor_top = 0.0
+anchor_right = 0.001
+anchor_bottom = 0.0
+offset_left = 61.848
+offset_top = 256.0
+offset_right = 101.848
+offset_bottom = 296.0
+
+[node name="classmanagerbutton" parent="desktop/Folders" instance=ExtResource("20_e8l5l")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -300,20 +303,39 @@ offset_top = 128.0
 offset_right = 100.0
 offset_bottom = 168.0
 
-[node name="window" parent="desktop/Folders" instance=ExtResource("22_tje3e")]
+[node name="windows" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nelixwindow" parent="windows" instance=ExtResource("22_tje3e")]
 layout_mode = 0
-offset_left = 675.0
-offset_top = 108.0
-offset_right = 798.0
-offset_bottom = 165.0
+offset_left = 664.0
+offset_top = 128.0
+offset_right = 787.0
+offset_bottom = 185.0
 scale = Vector2(3, 3)
 
-[node name="class_manager" parent="desktop/Folders" instance=ExtResource("23_n5ocp")]
+[node name="authenticate_popup" parent="windows" instance=ExtResource("20_oo81s")]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 96.0
-offset_right = 369.0
-offset_bottom = 211.0
+offset_left = 144.0
+offset_top = 383.0
+offset_right = 256.0
+offset_bottom = 431.0
+
+[node name="personalworkswindow" parent="windows" instance=ExtResource("21_dinur")]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 123.0
+offset_right = 657.0
+offset_bottom = 238.0
+
+[node name="class_manager_window" parent="windows" instance=ExtResource("23_n5ocp")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 123.0
+offset_right = 345.0
+offset_bottom = 238.0
 
 [node name="sound_button" type="Button" parent="."]
 layout_mode = 0
