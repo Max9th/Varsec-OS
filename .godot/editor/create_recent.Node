@@ -1,3 +1,5 @@
+TextEdit
+Control
 Panel
 TextureRect
 AudioStreamPlayer
@@ -11,4 +13,3 @@ LineEdit
 HBoxContainer
 Node3D
 Node
-Control

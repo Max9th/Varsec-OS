@@ -12,15 +12,15 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63reo"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2umt0"]
+font = ExtResource("1_ex30y")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nski4"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="LabelSettings" id="LabelSettings_2umt0"]
-font = ExtResource("1_ex30y")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kclic"]
 atlas = ExtResource("3_36slr")
@@ -133,8 +133,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_63reo")
 
+[node name="Label" type="Label" parent="."]
+texture_filter = 5
+offset_left = 416.0
+offset_top = 624.0
+offset_right = 616.0
+offset_bottom = 643.0
+pivot_offset = Vector2(100, 0)
+text = "Max9th(Miguel J.)© 2024"
+label_settings = SubResource("LabelSettings_2umt0")
+
 [node name="IFG" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -11,6 +11,7 @@ extends Control
 @onready var crt_disabled_texture: TextureRect = $desktop/Panel/crt_disabled_texture
 @onready var takecare: AudioStreamPlayer = $desktop/Folders/musicplayer/takecare
 
+
 var playaudio: bool = true
 
 func _on_power_button_pressed() -> void:

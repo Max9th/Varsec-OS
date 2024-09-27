@@ -44,8 +44,6 @@ font = ExtResource("7_hxvmw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x83uk"]
 shader = ExtResource("6_ofxuh")
-shader_parameter/replaceAmount = 1.0
-shader_parameter/replaceColor = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
 bg_color = Color(1, 1, 1, 1)
@@ -403,6 +401,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
 toggle_mode = true
 
 [node name="crt" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_v3j3e")
 layout_mode = 1
 anchors_preset = 15

@@ -1,6 +1,6 @@
 extends Node2D
 #these are variables:
-@onready var person_theme: AudioStreamPlayer = $persontheme
+@onready var person_theme: AudioStreamPlayer = $gaytheme
 var person_mode: bool = false
 #Here, a signal was defined
 signal Disablebk
