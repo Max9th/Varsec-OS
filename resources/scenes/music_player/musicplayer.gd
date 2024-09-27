@@ -17,14 +17,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	timer_running = not timer.is_stopped()
 	if playing:
-		folder.texture_normal = load("res://sprites/audiodisabled.png")
-		folder.texture_hover = load("res://sprites/audiodisabled.png")
-		folder.texture_pressed = load("res://sprites/audiodisabled.png")
+		folder.texture_normal = load("res://resources/sprites/audiodisabled.png")
+		folder.texture_hover = load("res://resources/sprites/audiodisabled.png")
+		folder.texture_pressed = load("res://resources/sprites/audiodisabled.png")
 		filename.text = "Stop playing"
 	else:
-		folder.texture_normal = load("res://sprites/audio.png")
-		folder.texture_hover = load("res://sprites/audio.png")
-		folder.texture_pressed = load("res://sprites/audio.png")
+		folder.texture_normal = load("res://resources/sprites/audio_selected.png")
+		folder.texture_hover = load("res://resources/sprites/audio_selected.png")
+		folder.texture_pressed = load("res://resources/sprites/audio_selected.png")
 		filename.text = "play take care"
 func select():
 	if !timer_running:

@@ -1,0 +1,395 @@
+[gd_scene load_steps=17 format=3 uid="uid://b25vo8wxtko27"]
+
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_dd0rh"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="3_qklyj"]
+[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
+[ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="5_bxqsp"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
+[ext_resource type="Script" path="res://resources/scenes/Aulas/button_manager.gd" id="7_gh4da"]
+[ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
+
+[sub_resource type="GDScript" id="GDScript_uqghu"]
+script/source = "extends Panel
+
+@onready var aula_select: Panel = $\".\"
+@onready var maximize: Button = $HBoxContainer/maximize
+@onready var close_audio: AudioStreamPlayer = $close_audio
+@onready var body_text: Label = $body_text
+
+var is_dragging: bool
+var start_drag_position: Vector2
+var mouse_start_drag_position: Vector2
+
+var is_maximized: bool
+var old_unmaximized_position: Vector2
+var old_unmaximized_size: Vector2
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	aula_select.visible = false
+	body_text.visible = false
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if is_dragging:
+		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
+		clamp_window_inside_viewport()
+
+func _on_close_pressed() -> void:
+	aula_select.visible = false
+	close_audio.play()
+
+func _on_draghandle_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		if event.is_pressed():
+			is_dragging = true
+			start_drag_position = global_position
+			mouse_start_drag_position = get_global_mouse_position()
+		else:
+			is_dragging = false
+
+func clamp_window_inside_viewport() -> void:
+	var viewport_size = get_viewport().get_visible_rect().size
+	var position2 = global_position
+	var object_size = size * 2.78
+	
+	position.x = clamp(position2.x, 0, viewport_size.x - object_size.x)
+	position.y = clamp(position2.y, 0, viewport_size.y - object_size.y)
+	global_position = position2
+
+func _on_maximize_pressed() -> void:
+	maximize_window()
+
+func maximize_window() -> void:
+	if is_maximized:
+		is_maximized = !is_maximized
+		var tween: Tween = create_tween()
+		tween.set_parallel(true)
+		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, \"global_position\", old_unmaximized_position, 0.25)
+		await tween.tween_property(self, \"size\", old_unmaximized_size, 0.25).finished
+	else:
+		is_maximized = !is_maximized
+		old_unmaximized_position = global_position
+		old_unmaximized_size = size
+		
+		var new_size: Vector2 
+		var new_position: Vector2
+		new_position.x = 2
+	
+		new_position.y = 66
+		new_size.x = 416
+		
+		
+		new_size.y = 193
+	
+		var tween: Tween = create_tween()
+		tween.set_parallel(true)
+		tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, \"global_position\", new_position, 0.25)
+		await tween.tween_property(self, \"size\", new_size, 0.25).finished
+
+
+func _on_aulas_window_selected() -> void:
+	aula_select.visible = true
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
+font = ExtResource("2_ase65")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
+bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
+font = ExtResource("2_ase65")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
+font = ExtResource("2_ase65")
+
+[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
+font = ExtResource("2_ase65")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wvchx"]
+font = ExtResource("4_l3xm2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
+bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[node name="aula_select" type="Panel"]
+custom_minimum_size = Vector2(217, 115)
+offset_left = 104.0
+offset_right = 321.0
+offset_bottom = 115.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = ExtResource("1_dd0rh")
+script = SubResource("GDScript_uqghu")
+
+[node name="windowname" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.8445
+offset_top = 2.0
+offset_right = 83.1555
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "class manager"
+label_settings = SubResource("LabelSettings_2xelb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aula" type="Button" parent="."]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 0
+offset_left = 5.16132
+offset_top = 82.3332
+offset_right = 110.161
+offset_bottom = 122.333
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Cubigor"
+
+[node name="recentes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.88547
+offset_top = 76.6668
+offset_right = 83.8854
+offset_bottom = 90.6668
+scale = Vector2(0.3, 0.3)
+text = "Recentes:"
+label_settings = SubResource("LabelSettings_wrkym")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="selecione" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.24754
+offset_top = 11.3334
+offset_right = 84.2476
+offset_bottom = 25.3334
+scale = Vector2(0.3, 0.3)
+text = "Selecione:"
+label_settings = SubResource("LabelSettings_dbcny")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="body_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.5582
+offset_top = 11.3334
+offset_right = 167.558
+offset_bottom = 25.3334
+scale = Vector2(0.5, 0.5)
+text = "Selecione a aula"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+
+[node name="aula0" type="Control" parent="body_text"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="body_text" type="Label" parent="body_text/aula0"]
+layout_mode = 0
+offset_left = 7.24145
+offset_top = 113.333
+offset_right = 533.241
+offset_bottom = 462.333
+scale = Vector2(0.5, 0.5)
+text = "Esse é Jonas. Jonas é uma mistura de morcego fruteiro e de uma jararaca-de-alcatrazes
+Jonas não é o melhor desenho do mundo, mas ele ama professores de arte chamados CUBIGOR
+A lenda de Jonas diz que ele gosta de levar professores do IFg pro Acre para tomar guaraná geladinho e observar os dinossauros UwU"
+label_settings = SubResource("LabelSettings_wvchx")
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="body_text/aula0"]
+layout_mode = 0
+offset_left = 3.62073
+offset_top = 15.3334
+offset_right = 146.621
+offset_bottom = 101.333
+texture = ExtResource("5_bxqsp")
+expand_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="body_text/aula0"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 154.0
+offset_top = 11.0
+offset_right = 1081.0
+offset_bottom = 471.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = ExtResource("6_nydlm")
+text = "Assunto:
+identidade cultural, povos originários, arte marajoara
+Atividades desenvolvidas em sala:
+Desenho baseado em duas especies de
+animais brasileiros fundidos em 
+um único ser 
+O que eu aprendi: 
+"
+editable = false
+context_menu_enabled = false
+
+[node name="aula1" type="Control" parent="body_text"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="aula2" type="Control" parent="body_text"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="aula3" type="Control" parent="body_text"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="aula4" type="Control" parent="body_text"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 115.0
+offset_bottom = 233.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("7_gh4da")
+metadata/_edit_group_ = true
+
+[node name="aula1" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 1"
+
+[node name="aula2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 2"
+
+[node name="aula3" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 3"
+
+[node name="aula4" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 4"
+
+[node name="aula5" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 5"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.7678
+offset_top = 2.33345
+offset_right = -0.767838
+offset_bottom = 9.33345
+grow_horizontal = 0
+theme_override_constants/separation = 2
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = ExtResource("6_nydlm")
+theme_override_styles/pressed = ExtResource("6_nydlm")
+theme_override_styles/normal = ExtResource("6_nydlm")
+
+[node name="close" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = ExtResource("6_nydlm")
+theme_override_styles/pressed = ExtResource("6_nydlm")
+theme_override_styles/normal = ExtResource("6_nydlm")
+
+[node name="draghandle" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.5
+offset_right = 88.5
+offset_bottom = 10.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("6_nydlm")
+
+[node name="separator" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 31.6667
+offset_top = 72.5863
+offset_right = 34.6667
+offset_bottom = 100.586
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+
+[node name="separator2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 33.765
+offset_top = 11.6668
+offset_right = 36.765
+offset_bottom = 112.667
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+
+[node name="close_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_b7u5f")
+
+[connection signal="pressed" from="VBoxContainer/aula1" to="VBoxContainer" method="_on_aula_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
+[connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

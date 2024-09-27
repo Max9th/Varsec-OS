@@ -3,7 +3,7 @@ extends Control
 @onready var filename: Label = $filename
 @onready var timer: Timer = $Timer
 @onready var selected_panel: Panel = $selected_panel
-@onready var aula_select: Panel = $aula_select
+@onready var aula_select: Panel = $"../class_manager"
 @onready var select_audio: AudioStreamPlayer = $select_audio
 
 var selected: bool = false

@@ -2,7 +2,7 @@ extends Control
 
 @onready var timer: Timer = $doubleclicktimer
 @onready var filename: Label = $filename
-@onready var window: Panel = $window
+@onready var window: Panel = $"../window"
 @onready var selected_panel: Panel = $selected_panel
 @onready var select_audio: AudioStreamPlayer = $select_audio
 
@@ -32,6 +32,7 @@ func _on_pressed() -> void:
 	select()
 
 func spawnwindow():
-	get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
-	#window.visible = true
+	#get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
+	window.visible = true
+	
 	
