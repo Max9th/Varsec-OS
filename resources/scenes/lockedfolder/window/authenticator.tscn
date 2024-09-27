@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dq48ek1cmrexf"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_gdggg"]
-[ext_resource type="Script" path="res://resources/scenes/authenticator/authenticate_popup.gd" id="2_t6mlv"]
+[ext_resource type="Script" path="res://resources/scenes/lockedfolder/window/scripts/authenticate_popup.gd" id="2_t6mlv"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_78nmx"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="4_2pwua"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="5_lh1qc"]
@@ -29,8 +29,6 @@ corner_radius_bottom_left = 9
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crjd4"]
 shader = ExtResource("7_1o28u")
-shader_parameter/replaceAmount = 1.0
-shader_parameter/replaceColor = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_85uop"]
 font = ExtResource("3_78nmx")
@@ -38,7 +36,7 @@ font_size = 32
 font_color = Color(1, 0, 0, 1)
 outline_size = 4
 
-[node name="authenticate_popup" type="Panel" groups=["authentication"]]
+[node name="popup" type="Panel" groups=["authentication"]]
 offset_left = 96.0
 offset_top = -56.0
 offset_right = 208.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bj2mltt8gsqow"]
 
 [ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/folderlocked.png" id="1_6jop3"]
-[ext_resource type="Script" path="res://resources/scenes/authenticator/folderlocked.gd" id="2_7ak7n"]
+[ext_resource type="Script" path="res://resources/scenes/lockedfolder/scripts/lockedfolder.gd" id="2_7ak7n"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_eeaqt"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="12_vbpju"]
 

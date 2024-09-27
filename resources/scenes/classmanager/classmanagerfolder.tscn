@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://resources/sprites/folderwithfile.png" id="1_v38wl"]
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://resources/sprites/folderopenwithfile.png" id="2_fr6q5"]
-[ext_resource type="Script" path="res://resources/scenes/Aulas/aulas.gd" id="3_w04ev"]
+[ext_resource type="Script" path="res://resources/scenes/classmanager/scripts/classmanagerfolder.gd" id="3_w04ev"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_u02bm"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_07f6p"]
 

@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=3 uid="uid://dmryciivu5mdv"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jjfn"]
-[ext_resource type="Script" path="res://resources/scenes/windows/personalworkswindow/personalworks.gd" id="2_iadqj"]
+[ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="4_ymjld"]
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="5_16iuw"]
 [ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="6_gkklh"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_w23mc"]
-[ext_resource type="Script" path="res://resources/scenes/windows/personalworkswindow/button_manager.gd" id="8_lqxfq"]
+[ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/button_manager.gd" id="8_lqxfq"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="9_hwie5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xelb"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://daufpfj3xpnyb"]
 
 [ext_resource type="Texture2D" uid="uid://3n8n63mdhm2" path="res://resources/sprites/audio_selected.png" id="1_ikqkj"]
-[ext_resource type="Script" path="res://resources/scenes/musicplayer/musicplayer.gd" id="2_gpane"]
+[ext_resource type="Script" path="res://resources/scenes/musicplayer/scripts/musicplayer.gd" id="2_gpane"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_ddfo4"]
 [ext_resource type="AudioStream" uid="uid://bwjs0w57phcsg" path="res://resources/audio/Take Care.mp3" id="4_l2oo5"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_ldx4l"]

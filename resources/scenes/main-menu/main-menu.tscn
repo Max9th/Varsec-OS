@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://bnt5241iy3pp7"]
 
-[ext_resource type="Script" path="res://resources/scenes/main menu/main_menu.gd" id="1_xfcrf"]
+[ext_resource type="Script" path="res://resources/scenes/main-menu/scripts/main_menu.gd" id="1_xfcrf"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="2_dediy"]
 [ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="3_8mgm0"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_fpams"]
@@ -14,18 +14,18 @@
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="8_fcre7"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="8_qc6vo"]
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/crt.png" id="11_a0u8g"]
-[ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/personalworksbutton/personalworkscene.tscn" id="11_dan5j"]
 [ext_resource type="Texture2D" uid="uid://cs5wyhy0rqja4" path="res://resources/sprites/crtdisabled.png" id="11_x4v7k"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="12_xo21c"]
-[ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://resources/scenes/authenticator/folderlocked_button.tscn" id="13_j8r1x"]
+[ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://resources/scenes/lockedfolder/lockedfolder.tscn" id="13_j8r1x"]
 [ext_resource type="PackedScene" uid="uid://daufpfj3xpnyb" path="res://resources/scenes/musicplayer/musicplayer.tscn" id="15_5q1r6"]
-[ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/nelix/play_nelix_button.tscn" id="16_fhs21"]
-[ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/source_code_link.tscn" id="17_put8e"]
-[ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://resources/scenes/Aulas/aulas_button.tscn" id="20_e8l5l"]
-[ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/windows/authenticator/authenticate_popup.tscn" id="20_oo81s"]
-[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/windows/personalworkswindow/personalworks.tscn" id="21_dinur"]
-[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/windows/playnelixwindow/playnelixwindow.tscn" id="22_tje3e"]
-[ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/windows/aulaselectwindow/aula_select.tscn" id="23_n5ocp"]
+[ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/playnelixdoc/nelixdoc.tscn" id="16_fhs21"]
+[ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/sourcecodelinkdoc.tscn" id="17_put8e"]
+[ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/personalworksmanager/personalworkfolder.tscn" id="17_x67pa"]
+[ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://resources/scenes/classmanager/classmanagerfolder.tscn" id="20_e8l5l"]
+[ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="20_oo81s"]
+[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="21_dinur"]
+[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/playnelixdoc/playnelixwindow/playnelixwindow.tscn" id="22_tje3e"]
+[ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="23_n5ocp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qgy"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -88,7 +88,7 @@ metadata/_edit_vertical_guides_ = [-80.0]
 
 [node name="cubigor" parent="." instance=ExtResource("12_xo21c")]
 
-[node name="sas" parent="." instance=ExtResource("3_fpams")]
+[node name="easteregg2" parent="." instance=ExtResource("3_fpams")]
 position = Vector2(576, 324)
 scale = Vector2(9.52066, 4)
 
@@ -280,16 +280,13 @@ offset_top = 383.0
 offset_right = 103.0
 offset_bottom = 423.0
 
-[node name="personalworksbutton" parent="desktop/Folders" instance=ExtResource("11_dan5j")]
+[node name="personalworksfolder" parent="desktop/Folders" instance=ExtResource("17_x67pa")]
 layout_mode = 1
-anchor_left = 0.001
-anchor_top = 0.0
-anchor_right = 0.001
-anchor_bottom = 0.0
-offset_left = 61.848
-offset_top = 256.0
-offset_right = 101.848
-offset_bottom = 296.0
+anchor_left = 0.0564236
+anchor_top = 0.395062
+anchor_right = 0.0911458
+anchor_bottom = 0.45679
+script = null
 
 [node name="classmanagerbutton" parent="desktop/Folders" instance=ExtResource("20_e8l5l")]
 layout_mode = 0
@@ -302,6 +299,7 @@ offset_left = 60.0
 offset_top = 128.0
 offset_right = 100.0
 offset_bottom = 168.0
+script = null
 
 [node name="windows" type="Control" parent="."]
 anchors_preset = 0
@@ -392,7 +390,7 @@ visible = false
 stream = ExtResource("8_qc6vo")
 
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
-[connection signal="Disablebk" from="sas" to="." method="_on_gaytscn_disablebk"]
+[connection signal="Disablebk" from="easteregg2" to="." method="_on_gaytscn_disablebk"]
 [connection signal="pressed" from="sound_button" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="crt_button" to="." method="_on_crt_button_pressed"]
 [connection signal="pressed" from="power_button" to="." method="_on_power_button_pressed"]

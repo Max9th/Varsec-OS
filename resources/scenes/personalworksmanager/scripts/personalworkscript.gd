@@ -6,20 +6,6 @@ extends Control
 @onready var select_audio: AudioStreamPlayer = $select_audio
 @onready var personalworkswindow: Panel = $"../../../windows/personalworkswindow"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var selected: bool = false
 var timer_running: bool = false
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/personalfolder.png" id="1_vk3yy"]
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/folderopenpersonal.png" id="2_1kli8"]
-[ext_resource type="Script" path="res://resources/scenes/personalworksbutton/personalworkscript.gd" id="3_oxt5l"]
+[ext_resource type="Script" path="res://resources/scenes/personalworksmanager/scripts/personalworkscript.gd" id="3_oxt5l"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_32slq"]
-[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/windows/personalworkswindow/personalworks.tscn" id="5_bqu2t"]
+[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="5_bqu2t"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_n1ouu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dto36"]
@@ -24,7 +24,7 @@ anti_aliasing = false
 font = ExtResource("4_32slq")
 font_color = Color(0, 0, 0, 1)
 
-[node name="pessoais" type="TextureButton"]
+[node name="personalworksfolder" type="TextureButton"]
 anchors_preset = -1
 anchor_left = 0.0555556
 anchor_top = 0.320988

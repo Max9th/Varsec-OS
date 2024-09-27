@@ -26,13 +26,13 @@ offset_bottom = 91.0
 scale = Vector2(7, 7)
 theme_override_styles/panel = ExtResource("1_1jiao")
 script = ExtResource("2_jsprg")
-metadata/_edit_group_ = true
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_27wvl")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qs3cc")
+pitch_scale = 4.0
 
 [node name="bodytext" type="Label" parent="."]
 layout_mode = 0

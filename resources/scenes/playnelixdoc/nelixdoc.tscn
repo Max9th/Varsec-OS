@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://resources/sprites/nelix.png" id="1_0hnt3"]
 [ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="2_1tobn"]
-[ext_resource type="Script" path="res://resources/scenes/nelix/play_nelix.gd" id="2_frl7q"]
+[ext_resource type="Script" path="res://resources/scenes/playnelixdoc/scripts/nelixdoc.gd" id="2_frl7q"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="8_8oens"]
 

@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
 [ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="5_bxqsp"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
-[ext_resource type="Script" path="res://resources/scenes/Aulas/button_manager.gd" id="7_gh4da"]
+[ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/button_manager.gd" id="7_gh4da"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
 
 [sub_resource type="GDScript" id="GDScript_uqghu"]
