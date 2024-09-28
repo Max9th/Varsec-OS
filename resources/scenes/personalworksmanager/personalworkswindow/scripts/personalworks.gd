@@ -26,7 +26,7 @@ func _on_close_pressed() -> void:
 	close_audio.play()
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1:
+	if event is InputEventMouseButton and event.button_index == 1 and is_maximized == false:
 		if event.is_pressed():
 			is_dragging = true
 			start_drag_position = global_position

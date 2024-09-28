@@ -9,9 +9,9 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_06psj"]
 font = ExtResource("5_i3tha")
-font_size = 32
 font_color = Color(1, 0, 0, 1)
-outline_size = 4
+outline_size = 5
+shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_03pvy"]
 font = ExtResource("5_i3tha")
@@ -19,10 +19,9 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="window" type="Panel" groups=["authentication"]]
 custom_minimum_size = Vector2(123, 57)
-offset_left = -805.0
-offset_top = 34.0
-offset_right = -682.0
-offset_bottom = 91.0
+offset_left = -6.10352e-05
+offset_right = 123.0
+offset_bottom = 57.0
 scale = Vector2(7, 7)
 theme_override_styles/panel = ExtResource("1_1jiao")
 script = ExtResource("2_jsprg")
@@ -35,14 +34,23 @@ stream = ExtResource("4_qs3cc")
 pitch_scale = 4.0
 
 [node name="bodytext" type="Label" parent="."]
-layout_mode = 0
-offset_left = 15.9999
-offset_top = 16.0667
-offset_right = 196.0
-offset_bottom = 75.0667
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.6428
+offset_top = -4.5
+offset_right = 67.3571
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-text = "!!Indisponivel 
-no momento!!
+text = "Indisponivel 
+no momento
+
+
 "
 label_settings = SubResource("LabelSettings_06psj")
 horizontal_alignment = 1

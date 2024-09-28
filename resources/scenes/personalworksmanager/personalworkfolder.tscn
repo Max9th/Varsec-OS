@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bin6va1btyxpn"]
+[gd_scene load_steps=8 format=3 uid="uid://bin6va1btyxpn"]
 
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/personalfolder.png" id="1_vk3yy"]
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/folderopenpersonal.png" id="2_1kli8"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/scripts/personalworkscript.gd" id="3_oxt5l"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_32slq"]
-[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="5_bqu2t"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_n1ouu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dto36"]
@@ -30,12 +29,17 @@ anchor_left = 0.0555556
 anchor_top = 0.320988
 anchor_right = 0.0902778
 anchor_bottom = 0.382716
-offset_top = 1.52588e-05
+offset_left = -64.0001
+offset_top = -208.0
+offset_right = -64.0001
+offset_bottom = -208.0
+pivot_offset = Vector2(20, 20)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource("1_vk3yy")
 texture_pressed = ExtResource("1_vk3yy")
 texture_hover = ExtResource("2_1kli8")
+ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("3_oxt5l")
 metadata/_edit_use_anchors_ = true
@@ -51,6 +55,7 @@ offset_left = -17.0
 offset_right = 7.0
 offset_bottom = 24.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dto36")
+metadata/_edit_use_anchors_ = true
 
 [node name="filename" type="Label" parent="."]
 layout_mode = 1
@@ -58,7 +63,7 @@ anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.99
 anchor_right = 1.0
-anchor_bottom = 1.34
+anchor_bottom = 1.115
 offset_left = -9.0
 offset_top = 5.4
 offset_right = 7.0
@@ -70,13 +75,7 @@ text = "Meus Projetos
 label_settings = SubResource("LabelSettings_3stu5")
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="aula_select" parent="." instance=ExtResource("5_bqu2t")]
-layout_mode = 0
-offset_left = 39.9999
-offset_top = -208.0
-offset_right = 257.0
-offset_bottom = -93.0002
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

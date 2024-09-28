@@ -4,6 +4,17 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var selected_panel: Panel = $selected_panel
 @onready var class_manager_window: Panel = $"../../../windows/class_manager_window"
+
+
+
+
+
+
+
+
+
+
+
 @onready var select_audio: AudioStreamPlayer = $select_audio
 
 var selected: bool = false

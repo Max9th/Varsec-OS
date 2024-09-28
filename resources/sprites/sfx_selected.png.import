@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs5wyhy0rqja4"
-path="res://.godot/imported/crtdisabled.png-893d250f1efae68d15c432d10740f136.ctex"
+uid="uid://dbllfwvyy8448"
+path="res://.godot/imported/sfx_selected.png-a3489c001b9f3b449d5671086b4d5c92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/crtdisabled.png"
-dest_files=["res://.godot/imported/crtdisabled.png-893d250f1efae68d15c432d10740f136.ctex"]
+source_file="res://resources/sprites/sfx_selected.png"
+dest_files=["res://.godot/imported/sfx_selected.png-a3489c001b9f3b449d5671086b4d5c92.ctex"]
 
 [params]
 

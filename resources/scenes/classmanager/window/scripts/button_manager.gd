@@ -12,5 +12,4 @@ func _ready() -> void:
 	aula_0.visible = false
 
 func _on_aula_1_pressed() -> void:
-	body_text.text = aula_1.text
 	aula_0.visible = true

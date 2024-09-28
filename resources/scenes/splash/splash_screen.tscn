@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://btl1e5x4iv3p5"]
+[gd_scene load_steps=25 format=3 uid="uid://btl1e5x4iv3p5"]
 
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="1_ex30y"]
 [ext_resource type="Script" path="res://resources/scenes/splash/scripts/splash_screen.gd" id="1_yxwjt"]
-[ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png" id="2_b36d3"]
+[ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/IFg.png" id="2_b36d3"]
 [ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="3_5f70m"]
 [ext_resource type="Texture2D" uid="uid://dyiehlbsbsixj" path="res://resources/sprites/maxlogo.png" id="3_36slr"]
 [ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://resources/sprites/maxthelogo.png" id="3_j3kro"]
@@ -12,8 +12,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63reo"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_2umt0"]
+[sub_resource type="LabelSettings" id="LabelSettings_12up3"]
 font = ExtResource("1_ex30y")
+font_size = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nski4"]
 bg_color = Color(1, 1, 1, 1)
@@ -21,6 +22,9 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_2umt0"]
+font = ExtResource("1_ex30y")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kclic"]
 atlas = ExtResource("3_36slr")
@@ -133,17 +137,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_63reo")
 
-[node name="Label" type="Label" parent="."]
+[node name="Copyright" type="Label" parent="."]
 texture_filter = 5
-offset_left = 416.0
-offset_top = 624.0
-offset_right = 616.0
-offset_bottom = 643.0
-pivot_offset = Vector2(100, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -399.5
+offset_top = -25.845
+offset_right = 399.5
+offset_bottom = 50.155
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(399.5, 0)
+size_flags_horizontal = 4
 text = "Max9th(Miguel J.)© 2024"
-label_settings = SubResource("LabelSettings_2umt0")
+label_settings = SubResource("LabelSettings_12up3")
 
 [node name="IFG" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,8 +222,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Maxthelogo" type="Sprite2D" parent="MAX"]
-position = Vector2(344, 321)
-scale = Vector2(7, 7)
+position = Vector2(320, 324)
+scale = Vector2(10, 10)
 texture = ExtResource("3_j3kro")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MAX"]
@@ -237,9 +251,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="middle" type="Marker2D" parent="."]
-position = Vector2(576, 324)
 
 [node name="IFGtimer" type="Timer" parent="."]
 wait_time = 2.0

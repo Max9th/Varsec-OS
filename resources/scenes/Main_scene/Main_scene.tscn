@@ -1,0 +1,542 @@
+[gd_scene load_steps=39 format=3 uid="uid://bnt5241iy3pp7"]
+
+[ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
+[ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
+[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
+[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
+[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="5_15vlg"]
+[ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/IFg.png" id="6_7exc4"]
+[ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
+[ext_resource type="Texture2D" uid="uid://bvm6djr4v7po6" path="res://resources/sprites/sfx.png" id="8_n2xns"]
+[ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/vfx.png" id="9_kokno"]
+[ext_resource type="Texture2D" uid="uid://cgex4bd1frmyr" path="res://resources/sprites/easteregg.png" id="10_1afcs"]
+[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_djys2"]
+[ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="12_krryl"]
+[ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/playnelixdoc/nelixdoc.tscn" id="13_6bx3l"]
+[ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/sourcecodelinkdoc.tscn" id="14_r1580"]
+[ext_resource type="Texture2D" uid="uid://dbllfwvyy8448" path="res://resources/sprites/sfx_selected.png" id="15_7751k"]
+[ext_resource type="AudioStream" uid="uid://bwjs0w57phcsg" path="res://resources/audio/Take Care.mp3" id="16_7yxw8"]
+[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="17_00nwq"]
+[ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://resources/scenes/classmanager/classmanagerfolder.tscn" id="18_pkjs4"]
+[ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/personalworksmanager/personalworkfolder.tscn" id="19_aosso"]
+[ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://resources/scenes/lockedfolder/lockedfolder.tscn" id="20_yd3ne"]
+[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/playnelixdoc/playnelixwindow/playnelixwindow.tscn" id="21_h37e3"]
+[ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="22_76pyy"]
+[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="23_q30xu"]
+[ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
+[ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="25_yofc8"]
+[ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
+[ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qgy"]
+bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yma61"]
+bg_color = Color(0.131791, 0.156469, 0.224271, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnbm7"]
+font = ExtResource("4_ljiqo")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ylh16"]
+font = ExtResource("4_ljiqo")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x83uk"]
+shader = ExtResource("5_15vlg")
+shader_parameter/replaceAmount = 1.0
+shader_parameter/replaceColor = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
+bg_color = Color(1, 0.337255, 0.321569, 0)
+
+[sub_resource type="GDScript" id="GDScript_bhlkm"]
+script/source = "extends Control
+
+@onready var selected_panel: Panel = $selected_panel
+@onready var timer: Timer = $Timer
+@onready var filename: Label = $filename
+@onready var takecare: AudioStreamPlayer = $takecare
+@onready var folder: TextureButton = $\".\"
+@onready var select_audio: AudioStreamPlayer = $select_audio
+
+var selected: bool = false
+var timer_running: bool = false
+var playing = false
+
+func _ready() -> void:
+	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+	selected_panel.visible = false
+func _process(_delta: float) -> void:
+	timer_running = not timer.is_stopped()
+	if playing:
+		folder.texture_normal = load(\"res://resources/sprites/disabledsfx.png\")
+		folder.texture_hover = load(\"res://resources/sprites/disabledsfx.png\")
+		folder.texture_pressed = load(\"res://resources/sprites/disabledsfx.png\")
+		filename.text = \"Stop playing\"
+	else:
+		folder.texture_normal = load(\"res://resources/sprites/sfx.png\")
+		folder.texture_hover = load(\"res://resources/sprites/sfx_selected.png\")
+		folder.texture_pressed = load(\"res://resources/sprites/sfx.png\")
+		filename.text = \"play take care\"
+func select():
+	if !timer_running:
+		selected = !selected
+		if selected:
+			selected_panel.visible = true
+			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
+			timer.start() # Start the timer
+			select_audio.play()
+		else:
+			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+			selected_panel.visible = false
+	elif selected and timer_running:
+		spawnwindow()
+
+func _on_pressed() -> void:
+	select()
+
+func spawnwindow():
+		playin()
+
+func playin():
+	playing = !playing
+	if playing:
+		takecare.play()
+	else:
+		takecare.stop()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_etf32"]
+font = ExtResource("4_ljiqo")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3j3e"]
+shader = ExtResource("25_yofc8")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.22
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 12.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.157
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Main_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kmpr7")
+metadata/_edit_vertical_guides_ = [-80.0]
+
+[node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
+
+[node name="easteregg2" parent="." instance=ExtResource("3_bhann")]
+position = Vector2(576, 324)
+scale = Vector2(9.52066, 4)
+
+[node name="desktop" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="background" type="Panel" parent="desktop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1qgy")
+
+[node name="panel" type="Control" parent="desktop"]
+anchors_preset = 0
+
+[node name="Panel2" type="Panel" parent="desktop/panel"]
+custom_minimum_size = Vector2(1120, 49)
+layout_mode = 1
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_yma61")
+
+[node name="time" type="Label" parent="desktop/panel/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.463542
+anchor_top = 0.25
+anchor_right = 0.536458
+anchor_bottom = 0.541667
+offset_left = 0.832947
+offset_top = -4.0
+offset_right = 3.16705
+offset_bottom = 5.33331
+grow_horizontal = 2
+grow_vertical = 2
+text = "cinco pra daqui a pouco owo
+"
+label_settings = SubResource("LabelSettings_dnbm7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="date" type="Label" parent="desktop/panel/Panel2/time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444444
+anchor_top = 0.541667
+anchor_right = 0.545139
+anchor_bottom = 0.75
+offset_left = -53.3333
+offset_top = 3.83332
+offset_right = 54.2083
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "max9th's property baby uwu"
+label_settings = SubResource("LabelSettings_ylh16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IFg" type="TextureRect" parent="desktop/panel/Panel2"]
+material = SubResource("ShaderMaterial_x83uk")
+layout_mode = 0
+offset_left = 1051.0
+offset_top = 4.0
+offset_right = 1196.0
+offset_bottom = 104.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_7exc4")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 9.0
+offset_right = 283.0
+offset_bottom = 41.0
+theme_override_constants/separation = 24
+metadata/_edit_group_ = true
+
+[node name="Power_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Turn off Varsec OS"
+texture = ExtResource("7_mwwwy")
+
+[node name="sfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Turn off SFX
+"
+texture = ExtResource("8_n2xns")
+
+[node name="vfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "
+"
+texture = ExtResource("9_kokno")
+
+[node name="easter_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "
+"
+texture = ExtResource("10_1afcs")
+
+[node name="power_button" type="Button" parent="desktop/panel/Panel2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 19.0
+offset_right = 70.0
+offset_bottom = 48.0
+tooltip_text = "Turn off Varsec OS"
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("11_djys2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
+[node name="sfx_button" type="Button" parent="desktop/panel/Panel2"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 18.0
+offset_right = 120.0
+offset_bottom = 47.0
+tooltip_text = "Disable SFX"
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_ljiqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("11_djys2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
+[node name="vfx_button" type="Button" parent="desktop/panel/Panel2"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 15.0
+offset_right = 172.0
+offset_bottom = 44.0
+tooltip_text = "Disable VFX"
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("11_djys2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
+[node name="easter_button" type="Button" parent="desktop/panel/Panel2"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 10.0
+offset_right = 221.0
+offset_bottom = 39.0
+tooltip_text = "Disable easter"
+focus_mode = 0
+theme_override_styles/disabled_mirrored = ExtResource("11_djys2")
+theme_override_styles/disabled = ExtResource("11_djys2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
+theme_override_styles/pressed = ExtResource("11_djys2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+toggle_mode = true
+
+[node name="portfolio" type="TextureRect" parent="desktop"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -14.5
+offset_right = 53.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(53, 14.5)
+texture = ExtResource("12_krryl")
+
+[node name="Folders" type="Control" parent="desktop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="rightvboxcon" type="VBoxContainer" parent="desktop/Folders"]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 144.0
+offset_right = 1136.0
+offset_bottom = 496.0
+theme_override_constants/separation = 88
+
+[node name="play nelix" parent="desktop/Folders/rightvboxcon" instance=ExtResource("13_6bx3l")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="source_link" parent="desktop/Folders/rightvboxcon" instance=ExtResource("14_r1580")]
+custom_minimum_size = Vector2(32, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="musicplayer" type="TextureButton" parent="desktop/Folders/rightvboxcon"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_n2xns")
+texture_hover = ExtResource("15_7751k")
+stretch_mode = 0
+script = SubResource("GDScript_bhlkm")
+
+[node name="selected_panel" type="Panel" parent="desktop/Folders/rightvboxcon/musicplayer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.4
+anchor_bottom = 1.325
+offset_left = -36.0
+offset_top = 1.0
+offset_right = 34.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xpere")
+
+[node name="filename" type="Label" parent="desktop/Folders/rightvboxcon/musicplayer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.99
+anchor_right = 1.0
+anchor_bottom = 1.34
+offset_left = -26.0
+offset_top = 6.39999
+offset_right = 26.0
+offset_bottom = 23.4
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play 
+\"take care\""
+label_settings = SubResource("LabelSettings_etf32")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="desktop/Folders/rightvboxcon/musicplayer"]
+wait_time = 0.3
+one_shot = true
+
+[node name="takecare" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/musicplayer"]
+stream = ExtResource("16_7yxw8")
+
+[node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/musicplayer"]
+stream = ExtResource("17_00nwq")
+
+[node name="leftvboxcon" type="VBoxContainer" parent="desktop/Folders"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 152.0
+offset_right = 144.0
+offset_bottom = 504.0
+theme_override_constants/separation = 88
+metadata/_edit_group_ = true
+
+[node name="classmanagerfolder2" parent="desktop/Folders/leftvboxcon" instance=ExtResource("18_pkjs4")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="personalworksfolder" parent="desktop/Folders/leftvboxcon" instance=ExtResource("19_aosso")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="folderlocked" parent="desktop/Folders/leftvboxcon" instance=ExtResource("20_yd3ne")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="windows" type="Control" parent="desktop"]
+layout_mode = 1
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="nelixwindow" parent="desktop/windows" instance=ExtResource("21_h37e3")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 0
+offset_left = 784.0
+offset_top = 136.0
+offset_right = 867.0
+offset_bottom = 173.0
+scale = Vector2(3, 3)
+
+[node name="authenticate_popup" parent="desktop/windows" instance=ExtResource("22_76pyy")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 376.0
+offset_right = 240.0
+offset_bottom = 424.0
+scale = Vector2(2.80527, 2.69586)
+
+[node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 256.0
+offset_right = 361.0
+offset_bottom = 371.0
+
+[node name="class_manager_window" parent="desktop/windows" instance=ExtResource("24_goyto")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 345.0
+offset_bottom = 179.0
+
+[node name="vfx" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_v3j3e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ambientsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_kfb2x")
+
+[node name="splash_screen" parent="." instance=ExtResource("27_uwk17")]
+visible = false
+
+[connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
+[connection signal="stop" from="." to="easteregg2" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
+[connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
+[connection signal="Disablebk" from="easteregg2" to="." method="_on_gaytscn_disablebk"]
+[connection signal="pressed" from="desktop/panel/Panel2/power_button" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel2/sfx_button" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel2/vfx_button" to="." method="_on_vfx_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel2/easter_button" to="." method="_on_easter_button_pressed"]
+[connection signal="pressed" from="desktop/Folders/rightvboxcon/musicplayer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_pressed"]
+[connection signal="timeout" from="desktop/Folders/rightvboxcon/musicplayer/Timer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_timer_timeout"]

@@ -19,6 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	cubigor_spawner()
 	if cubigor_mode:
 		mesh.rotate_x(5 * delta)
 		mesh1.rotate_y(5 * delta)
@@ -31,11 +32,13 @@ func cubigor_spawner():
 	if cubigor_mode:
 		if not cubigor_theme.playing:
 			cubigor_theme.play()
-		cubigorbk.emit()
+			cubigorbk.emit()
 	else:
 		if cubigor_theme.playing:
 			cubigor_theme.stop()
 
-func _on_authenticate_popup_authenticated() -> void:
+func _on_authenticated_cubigor() -> void:
 		cubigor_mode = true
-		cubigor_spawner()
+
+func _on_mm_stop() -> void:
+	cubigor_mode = false

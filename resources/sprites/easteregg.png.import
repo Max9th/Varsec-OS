@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yx7brorivehg"
-path="res://.godot/imported/crt.png-9148b368f2b261d150089221c016ee39.ctex"
+uid="uid://cgex4bd1frmyr"
+path="res://.godot/imported/easteregg.png-b751e3cd4b8412bd1b061f8631294168.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/crt.png"
-dest_files=["res://.godot/imported/crt.png-9148b368f2b261d150089221c016ee39.ctex"]
+source_file="res://resources/sprites/easteregg.png"
+dest_files=["res://.godot/imported/easteregg.png-b751e3cd4b8412bd1b061f8631294168.ctex"]
 
 [params]
 

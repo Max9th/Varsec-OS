@@ -10,6 +10,7 @@ extends Panel
 var is_dragging: bool
 var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
+var easter: bool
 
 func _ready() -> void:
 	authenticate_popup.visible = false
@@ -50,17 +51,33 @@ func _on_line_edit_text_submitted(_new_text: String) -> void:
 	authenticate()
 
 func authenticate():
-	if line_edit.text == "cubigor":
-		authenticate_popup.visible = false
-		get_tree().call_group("authentication","_on_authenticate_popup_authenticated")
-	if line_edit.text == "max9th":
-		authenticate_popup.visible = false
-		get_tree().call_group("authentication","_on_authenticated")
-	if line_edit.text == "nelix":
-		authenticate_popup.visible = false
-		get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
-	elif line_edit.text != "cubigor" and line_edit.text != "max9th" and line_edit.text != "nelix":
+	var user_input = line_edit.text
+	if easter == false:
+		match user_input:
+			"cubigor":
+				authenticated()
+			"max9th":
+				authenticated()
+			"nelix":
+				authenticated()
+				get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
+			_:
+				incorrect.visible = true
+				timer.start()
+				line_edit.text = ""
+				wrong.play()
+	elif easter == true:
+		incorrect.text = "!!IT'S EASTER ALREADY!!"
 		incorrect.visible = true
 		timer.start()
-		line_edit.text = ""
 		wrong.play()
+
+func authenticated():
+	var user_input = line_edit.text
+	authenticate_popup.visible = false
+	get_tree().call_group("authentication", "_on_authenticated" + "_" + str(user_input))
+	easter = true
+
+func _on_mainmenu_stop() -> void:
+	easter = false
+	

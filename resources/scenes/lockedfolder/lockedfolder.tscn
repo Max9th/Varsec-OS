@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bj2mltt8gsqow"]
 
-[ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/folderlocked.png" id="1_6jop3"]
+[ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/lockedfolder.png" id="1_6jop3"]
 [ext_resource type="Script" path="res://resources/scenes/lockedfolder/scripts/lockedfolder.gd" id="2_7ak7n"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_eeaqt"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="12_vbpju"]
@@ -28,7 +28,10 @@ anchor_left = 0.0555556
 anchor_top = 0.592593
 anchor_right = 0.0902778
 anchor_bottom = 0.654321
-offset_bottom = -3.05176e-05
+offset_left = -64.0001
+offset_top = -384.0
+offset_right = -64.0001
+offset_bottom = -384.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource("1_6jop3")
@@ -44,11 +47,12 @@ anchor_left = -0.2
 anchor_top = 1.025
 anchor_right = 1.4
 anchor_bottom = 1.325
-offset_left = -16.0
-offset_top = 1.0
-offset_right = 16.0
-offset_bottom = 29.0
+offset_left = -11.0
+offset_top = 1.00028
+offset_right = 8.00004
+offset_bottom = 29.0004
 theme_override_styles/panel = SubResource("StyleBoxFlat_fuoey")
+metadata/_edit_use_anchors_ = true
 
 [node name="filename" type="Label" parent="."]
 layout_mode = 1
@@ -67,6 +71,7 @@ text = "Pasta trancada"
 label_settings = SubResource("LabelSettings_8oeka")
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

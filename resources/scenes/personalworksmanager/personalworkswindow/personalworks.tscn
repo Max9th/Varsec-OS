@@ -45,12 +45,12 @@ anti_aliasing = false
 
 [node name="personalworks" type="Panel"]
 custom_minimum_size = Vector2(217, 115)
-offset_left = 104.0
-offset_right = 321.0
+offset_right = 217.0
 offset_bottom = 115.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jjfn")
 script = ExtResource("2_iadqj")
+metadata/_edit_group_ = true
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1jp30ai5f8kp"
-path="res://.godot/imported/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png-b54c7d6fa516ea1c8d8add1632fe7899.ctex"
+uid="uid://cs5wyhy0rqja4"
+path="res://.godot/imported/disabledvfx.png-4addc707f6d5ffa4ca8c99e791801d7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png"
-dest_files=["res://.godot/imported/Instituto_Federal_de_Goiás_-_Marca_Vertical_2015.svg.png-b54c7d6fa516ea1c8d8add1632fe7899.ctex"]
+source_file="res://resources/sprites/disabledvfx.png"
+dest_files=["res://.godot/imported/disabledvfx.png-4addc707f6d5ffa4ca8c99e791801d7b.ctex"]
 
 [params]
 

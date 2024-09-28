@@ -1,10 +1,68 @@
 [gd_scene load_steps=8 format=3 uid="uid://daufpfj3xpnyb"]
 
-[ext_resource type="Texture2D" uid="uid://3n8n63mdhm2" path="res://resources/sprites/audio_selected.png" id="1_ikqkj"]
-[ext_resource type="Script" path="res://resources/scenes/musicplayer/scripts/musicplayer.gd" id="2_gpane"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_ddfo4"]
 [ext_resource type="AudioStream" uid="uid://bwjs0w57phcsg" path="res://resources/audio/Take Care.mp3" id="4_l2oo5"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_ldx4l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g4g6j"]
+load_path = "res://.godot/imported/audio_selected.png-ae56521c6731e584413c13589455a054.ctex"
+
+[sub_resource type="GDScript" id="GDScript_bhlkm"]
+script/source = "extends Control
+
+@onready var selected_panel: Panel = $selected_panel
+@onready var timer: Timer = $Timer
+@onready var filename: Label = $filename
+@onready var takecare: AudioStreamPlayer = $takecare
+@onready var folder: TextureButton = $\".\"
+@onready var select_audio: AudioStreamPlayer = $select_audio
+
+var selected: bool = false
+var timer_running: bool = false
+var playing = false
+
+func _ready() -> void:
+	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+	selected_panel.visible = false
+func _process(_delta: float) -> void:
+	timer_running = not timer.is_stopped()
+	if playing:
+		folder.texture_normal = load(\"res://resources/sprites/audiodisabled.png\")
+		folder.texture_hover = load(\"res://resources/sprites/audiodisabled.png\")
+		folder.texture_pressed = load(\"res://resources/sprites/audiodisabled.png\")
+		filename.text = \"Stop playing\"
+	else:
+		folder.texture_normal = load(\"res://resources/sprites/audio_selected.png\")
+		folder.texture_hover = load(\"res://resources/sprites/audio_selected.png\")
+		folder.texture_pressed = load(\"res://resources/sprites/audio_selected.png\")
+		filename.text = \"play take care\"
+func select():
+	if !timer_running:
+		selected = !selected
+		if selected:
+			selected_panel.visible = true
+			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
+			timer.start() # Start the timer
+			select_audio.play()
+		else:
+			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+			selected_panel.visible = false
+	elif selected and timer_running:
+		spawnwindow()
+
+func _on_pressed() -> void:
+	select()
+
+func spawnwindow():
+		playin()
+
+func playin():
+	playing = !playing
+	if playing:
+		takecare.play()
+	else:
+		takecare.stop()
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,16 +82,14 @@ font = ExtResource("3_ddfo4")
 font_color = Color(0, 0, 0, 1)
 
 [node name="musicplayer" type="TextureButton"]
-offset_left = 1048.0
-offset_top = 256.0
-offset_right = 1088.0
-offset_bottom = 296.0
+offset_right = 40.0
+offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
-texture_normal = ExtResource("1_ikqkj")
-texture_pressed = ExtResource("1_ikqkj")
-texture_hover = ExtResource("1_ikqkj")
+texture_normal = SubResource("CompressedTexture2D_g4g6j")
+texture_pressed = SubResource("CompressedTexture2D_g4g6j")
+texture_hover = SubResource("CompressedTexture2D_g4g6j")
 stretch_mode = 0
-script = ExtResource("2_gpane")
+script = SubResource("GDScript_bhlkm")
 
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1

@@ -38,7 +38,7 @@ func _on_close_pressed() -> void:
 	close_audio.play()
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1:
+	if event is InputEventMouseButton and event.button_index == 1 and is_maximized == false:
 		if event.is_pressed():
 			is_dragging = true
 			start_drag_position = global_position
@@ -71,15 +71,11 @@ func maximize_window() -> void:
 		old_unmaximized_position = global_position
 		old_unmaximized_size = size
 		
-		var new_size: Vector2 
+		var new_size: Vector2 = get_viewport_rect().size / 3
+		new_size.y -= 22
 		var new_position: Vector2
-		new_position.x = 2
-	
+		new_position.x = 0
 		new_position.y = 66
-		new_size.x = 384.3
-		
-		
-		new_size.y = 193
 	
 		var tween: Tween = create_tween()
 		tween.set_parallel(true)
@@ -111,11 +107,12 @@ font = ExtResource("2_ase65")
 [sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
 font = ExtResource("2_ase65")
 
-[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
-font = ExtResource("2_ase65")
-
 [sub_resource type="LabelSettings" id="LabelSettings_wvchx"]
 font = ExtResource("4_l3xm2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
+font = ExtResource("2_ase65")
+font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
 bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
@@ -127,8 +124,7 @@ anti_aliasing = false
 
 [node name="aula_select" type="Panel"]
 custom_minimum_size = Vector2(217, 115)
-offset_left = 104.0
-offset_right = 321.0
+offset_right = 217.0
 offset_bottom = 115.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_dd0rh")
@@ -189,28 +185,37 @@ label_settings = SubResource("LabelSettings_dbcny")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="body_text" type="Label" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_left = 39.5582
-offset_top = 11.3334
-offset_right = 167.558
-offset_bottom = 25.3334
-scale = Vector2(0.5, 0.5)
-text = "Selecione a aula"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
-
-[node name="aula0" type="Control" parent="body_text"]
-anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="body_text" type="Label" parent="body_text/aula0"]
+[node name="aulas" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.898618
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="aula0" type="Control" parent="aulas"]
+layout_mode = 1
+anchor_right = 5.4
+anchor_bottom = 2.867
+offset_left = 80.0
+offset_top = 27.0
+offset_right = -621.0
+offset_bottom = -126.705
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="body_text" type="Label" parent="aulas/aula0"]
 layout_mode = 0
-offset_left = 7.24145
-offset_top = 113.333
-offset_right = 533.241
-offset_bottom = 462.333
+offset_left = 5.33334
+offset_top = 96.0
+offset_right = 531.333
+offset_bottom = 445.0
 scale = Vector2(0.5, 0.5)
 text = "Esse é Jonas. Jonas é uma mistura de morcego fruteiro e de uma jararaca-de-alcatrazes
 Jonas não é o melhor desenho do mundo, mas ele ama professores de arte chamados CUBIGOR
@@ -218,28 +223,28 @@ A lenda de Jonas diz que ele gosta de levar professores do IFg pro Acre para tom
 label_settings = SubResource("LabelSettings_wvchx")
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="body_text/aula0"]
+[node name="TextureRect" type="TextureRect" parent="aulas/aula0"]
 layout_mode = 0
-offset_left = 3.62073
-offset_top = 15.3334
-offset_right = 146.621
-offset_bottom = 101.333
+offset_left = 5.33333
+offset_top = 16.0
+offset_right = 139.333
+offset_bottom = 91.0
 texture = ExtResource("5_bxqsp")
 expand_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="body_text/aula0"]
+[node name="TextEdit" type="TextEdit" parent="aulas/aula0"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 154.0
+offset_left = 144.0
 offset_top = 11.0
-offset_right = 1081.0
-offset_bottom = 471.0
+offset_right = 1071.0
+offset_bottom = 411.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_nydlm")
 text = "Assunto:
 identidade cultural, povos originários, arte marajoara
@@ -252,25 +257,43 @@ O que eu aprendi:
 editable = false
 context_menu_enabled = false
 
-[node name="aula1" type="Control" parent="body_text"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="body_text2" type="Label" parent="aulas/aula0"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 154.0
+offset_bottom = 21.0
+scale = Vector2(0.5, 0.5)
+text = "Selecione a aula"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
 
-[node name="aula2" type="Control" parent="body_text"]
+[node name="aula1" type="Control" parent="aulas"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 39.5582
+offset_top = 11.3334
+offset_right = 79.5582
+offset_bottom = 51.3334
 
-[node name="aula3" type="Control" parent="body_text"]
+[node name="aula2" type="Control" parent="aulas"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 39.5582
+offset_top = 11.3334
+offset_right = 79.5582
+offset_bottom = 51.3334
 
-[node name="aula4" type="Control" parent="body_text"]
+[node name="aula3" type="Control" parent="aulas"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 39.5582
+offset_top = 11.3334
+offset_right = 79.5582
+offset_bottom = 51.3334
+
+[node name="aula4" type="Control" parent="aulas"]
+anchors_preset = 0
+offset_left = 39.5582
+offset_top = 11.3334
+offset_right = 79.5582
+offset_bottom = 51.3334
 
 [node name="Buttonmanager" type="VBoxContainer" parent="."]
 layout_mode = 0

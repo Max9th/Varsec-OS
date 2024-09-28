@@ -21,7 +21,6 @@ anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
 font = ExtResource("3_pt81c")
-font_size = 40
 font_color = Color(0, 0, 0, 1)
 
 [node name="play nelix" type="TextureButton"]
@@ -30,9 +29,8 @@ anchor_left = 0.326389
 anchor_top = 0.148148
 anchor_right = 0.362847
 anchor_bottom = 0.212963
-offset_right = 98.0
-offset_bottom = 98.0001
-scale = Vector2(0.3, 0.3)
+offset_right = -1.9996
+offset_bottom = -2.00012
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource("1_0hnt3")
@@ -48,23 +46,20 @@ stream = ExtResource("8_8oens")
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.2
-anchor_top = 1.025
-anchor_right = 1.4
-anchor_bottom = 1.325
-offset_left = 28.0
-offset_top = -10.5001
-offset_right = -53.0
-offset_bottom = 27.4998
+anchor_left = -0.3
+anchor_top = 0.875
+anchor_right = 1.375
+anchor_bottom = 1.675
 theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
+metadata/_edit_use_anchors_ = true
 
 [node name="filename" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.798743
-anchor_top = 1.49975
-anchor_right = 0.101257
-anchor_bottom = 1.84975
+anchor_left = -2.9206
+anchor_top = 2.67414
+anchor_right = -2.0206
+anchor_bottom = 2.84914
 offset_left = 111.824
 offset_top = -69.9657
 offset_right = 129.824
