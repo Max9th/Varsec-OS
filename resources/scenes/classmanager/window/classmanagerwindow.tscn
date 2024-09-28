@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=24 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_dd0rh"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/button_manager.gd" id="7_gh4da"]
 [ext_resource type="Texture2D" uid="uid://cmxf2l7frdplr" path="res://resources/sprites/classmanagerassets/aula_2a.jpeg" id="7_lysfj"]
+[ext_resource type="Texture2D" uid="uid://cw0x17dao7of2" path="res://resources/sprites/classmanagerassets/1271416569_4a3d19b1ff_b.jpg" id="7_xvj6i"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
 [ext_resource type="Texture2D" uid="uid://ca8ikd8p44gm6" path="res://resources/sprites/classmanagerassets/aula_2d.jpeg" id="8_t4clq"]
 [ext_resource type="Texture2D" uid="uid://cf77bwyb1714g" path="res://resources/sprites/classmanagerassets/IMG_20240928_002046.jpg" id="9_5m73j"]
@@ -197,17 +198,12 @@ label_settings = SubResource("LabelSettings_dbcny")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="aulas" type="Control" parent="."]
 layout_mode = 1
-anchor_right = 0.995392
-anchor_bottom = 0.995652
-offset_right = 216.0
-offset_bottom = 114.5
+anchor_right = 1.769
+anchor_bottom = 1.878
+offset_right = 52.25
+offset_bottom = 13.03
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -216,12 +212,10 @@ scale = Vector2(0.5, 0.5)
 visible = false
 clip_contents = true
 layout_mode = 1
-anchor_right = 1.777
-anchor_bottom = 1.884
-offset_left = 80.0
-offset_top = 27.0
-offset_right = -333.664
-offset_bottom = -204.436
+anchor_left = 0.183434
+anchor_top = 0.117904
+anchor_right = 0.974496
+anchor_bottom = 0.982533
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -242,31 +236,29 @@ metadata/_edit_use_anchors_ = true
 [node name="image" type="TextureRect" parent="aulas/aula1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0161128
-anchor_top = 0.0860215
-anchor_right = 0.9
-anchor_bottom = 0.674
-offset_right = -169.585
-offset_bottom = -36.9505
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.0173913
+anchor_top = 0.0858586
+anchor_right = 0.344928
+anchor_bottom = 0.489899
 tooltip_text = "Jonas disse:
 \"CUBIGOR\"
 Lembre-se disso "
 texture = ExtResource("5_bxqsp")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="aulas/aula1"]
 texture_filter = 1
+custom_minimum_size = Vector2(870, 910)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.1216
-anchor_top = 0.085
-anchor_right = 1.37672
-anchor_bottom = 1.456
-offset_left = -240.046
-offset_right = 545.642
-offset_bottom = 638.8
+anchor_left = 0.457971
+anchor_top = 0.0252525
+anchor_right = 0.962319
+anchor_bottom = 0.944444
+offset_right = 696.0
+offset_bottom = 728.0
+grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -308,33 +300,31 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
+caret_type = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="image2" type="TextureRect" parent="aulas/aula1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.420904
-anchor_top = 0.49
-anchor_right = 1.844
-anchor_bottom = 1.305
-offset_left = -143.0
-offset_right = 2220.22
-offset_bottom = 1877.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("7_lysfj")
+anchor_left = 0.0249082
+anchor_top = 0.54
+anchor_right = 0.34318
+anchor_bottom = 0.975
+texture = ExtResource("7_xvj6i")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="aula2" type="Control" parent="aulas"]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchor_top = -0.0174672
-anchor_right = 1.777
-anchor_bottom = 1.884
+anchor_right = 1.153
+anchor_bottom = 1.223
 offset_left = 80.0
 offset_top = 27.0
-offset_right = -333.664
-offset_bottom = -204.436
+offset_right = -71.8498
+offset_bottom = -53.067
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -355,33 +345,32 @@ vertical_alignment = 1
 [node name="image" type="TextureRect" parent="aulas/aula2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0161128
-anchor_top = 0.0860215
-anchor_right = 0.9
-anchor_bottom = 0.674
-offset_left = 0.296068
-offset_top = -0.204294
-offset_right = -169.6
-offset_bottom = -36.8
+anchor_left = 0.0169491
+anchor_top = 0.0833334
+anchor_right = 1.263
+anchor_bottom = 0.875
+offset_right = 2425.9
+offset_bottom = 1524.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.05, 0.05)
 tooltip_text = "Jonas disse:
 \"CUBIGOR\"
 Lembre-se disso "
 texture = ExtResource("8_t4clq")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="aulas/aula2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.12254
+anchor_left = 0.444444
 anchor_top = 0.085
-anchor_right = 1.4963
-anchor_bottom = 1.456
-offset_left = -240.046
-offset_right = 545.642
-offset_bottom = 638.8
+anchor_right = 0.963088
+anchor_bottom = 0.985475
+offset_right = 734.399
+offset_bottom = 734.787
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -422,19 +411,18 @@ middle_mouse_paste_enabled = false
 wrap_mode = 1
 autowrap_mode = 2
 scroll_smooth = true
+metadata/_edit_use_anchors_ = true
 
 [node name="image2" type="TextureRect" parent="aulas/aula2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.420904
-anchor_top = 0.49
-anchor_right = 1.844
-anchor_bottom = 1.305
-offset_left = -143.0
-offset_top = 15.0
-offset_right = 2220.22
-offset_bottom = 1496.0
-grow_horizontal = 0
+anchor_left = 0.0169493
+anchor_top = 0.563529
+anchor_right = 1.655
+anchor_bottom = 1.822
+offset_right = 2283.96
+offset_bottom = 1390.53
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("7_lysfj")
@@ -458,12 +446,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vnflo")
 visible = false
 clip_contents = true
 layout_mode = 1
-anchor_right = 1.777
-anchor_bottom = 1.884
-offset_left = 80.0
-offset_top = 27.0
-offset_right = -333.664
-offset_bottom = -204.436
+anchor_left = 0.183434
+anchor_top = 0.117904
+anchor_right = 0.974496
+anchor_bottom = 0.991266
+offset_right = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -486,10 +473,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0161128
 anchor_top = 0.0860215
-anchor_right = 0.9
-anchor_bottom = 0.674
-offset_right = -169.585
-offset_bottom = -36.9505
+anchor_right = 0.43066
+anchor_bottom = 0.489247
+offset_right = -1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Jonas disse:
@@ -497,18 +483,18 @@ tooltip_text = "Jonas disse:
 Lembre-se disso "
 texture = ExtResource("9_5m73j")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="aulas/aula3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.1216
+anchor_left = 0.457254
 anchor_top = 0.085
-anchor_right = 1.37672
-anchor_bottom = 1.456
-offset_left = -240.046
-offset_right = 545.642
-offset_bottom = 638.8
+anchor_right = 0.943168
+anchor_bottom = 0.998
+offset_right = 702.296
+offset_bottom = 730.4
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -545,21 +531,19 @@ metadata/_edit_use_anchors_ = true
 [node name="image2" type="TextureRect" parent="aulas/aula3"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.420904
-anchor_top = 0.49
-anchor_right = 1.844
-anchor_bottom = 1.305
-offset_left = -143.0
-offset_top = 10.0
-offset_right = 2220.22
-offset_bottom = 1507.0
+anchor_left = 0.0251402
+anchor_top = 0.54
+anchor_right = 0.423315
+anchor_bottom = 0.955
+offset_right = 2733.55
+offset_bottom = 1577.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("11_hkcfu")
+metadata/_edit_use_anchors_ = true
 
 [node name="aula4" type="Control" parent="aulas"]
-visible = false
 clip_contents = true
 layout_mode = 1
 anchor_right = 1.777
@@ -570,7 +554,6 @@ offset_right = -333.664
 offset_bottom = -204.436
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="aulas/aula4"]
 layout_mode = 0
@@ -585,36 +568,20 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="image" type="TextureRect" parent="aulas/aula4"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0161128
-anchor_top = 0.0860215
-anchor_right = 0.9
-anchor_bottom = 0.674
-offset_left = 0.296068
-offset_top = -0.204294
-offset_right = -169.6
-offset_bottom = -43.8
-grow_horizontal = 2
-grow_vertical = 2
-tooltip_text = "Jonas disse:
-\"CUBIGOR\"
-Lembre-se disso "
-texture = ExtResource("11_3jok6")
-expand_mode = 1
-
 [node name="TextEdit" type="TextEdit" parent="aulas/aula4"]
 texture_filter = 1
+custom_minimum_size = Vector2(980, 1028.04)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.1216
-anchor_top = 0.085
-anchor_right = 1.37672
-anchor_bottom = 1.456
-offset_left = -240.046
-offset_right = 545.642
-offset_bottom = 638.8
+anchor_left = 0.437881
+anchor_top = -0.00500003
+anchor_right = 0.923795
+anchor_bottom = 0.908
+offset_left = -0.217911
+offset_right = 804.208
+offset_bottom = 845.438
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -648,37 +615,52 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-metadata/_edit_use_anchors_ = true
+
+[node name="image" type="TextureRect" parent="aulas/aula4"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+offset_right = 149.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 1
 
 [node name="image2" type="TextureRect" parent="aulas/aula4"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.420904
-anchor_top = 0.49
-anchor_right = 1.844
-anchor_bottom = 1.305
-offset_left = -143.0
-offset_top = 10.3334
-offset_right = 2220.22
-offset_bottom = 1574.33
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+offset_top = 109.0
+offset_right = 149.0
+offset_bottom = 183.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.05, 0.05)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("12_uoi20")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="aulas/aula4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="aula5" type="Control" parent="aulas"]
 visible = false
 clip_contents = true
 layout_mode = 1
-anchor_right = 1.777
-anchor_bottom = 1.884
-offset_left = 80.0
-offset_top = 27.0
-offset_right = -333.664
-offset_bottom = -204.436
+anchor_right = 0.995
+anchor_bottom = 1.0
+offset_left = 85.3333
+offset_top = 22.6667
+offset_right = -7.6091
+offset_bottom = -6.33331
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="aulas/aula5"]
 layout_mode = 0
@@ -697,13 +679,14 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.695045
+anchor_left = 0.0304434
 anchor_top = 0.085
-anchor_right = 3.08858
-anchor_bottom = 1.456
-offset_left = -240.046
-offset_right = 545.642
-offset_bottom = 638.8
+anchor_right = 0.944298
+anchor_bottom = 0.965
+offset_right = 1320.8
+offset_bottom = 704.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -791,7 +774,6 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Buttonmanager" type="VBoxContainer" parent="."]
 layout_mode = 0

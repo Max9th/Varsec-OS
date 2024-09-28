@@ -1,4 +1,11 @@
+/home/miguel/Documents/GitHub/Varsec-OS/exports/windows
+/home/miguel/Documents/GitHub/Varsec-OS/exports/web
 /home/miguel/Documents/GitHub/Varsec-OS-web
+/home/miguel/Documents/GitHub/Varsec-OS/exports/linux
+/home/miguel/Documents/GitHub/Varsec-OS/exports/android
+/usr/lib/jvm/jdk-23-oracle-x64/bin/
+/usr/java/jdk-23-oracle-x64/
+/home/miguel/Android/Sdk
 res://resources/sprites
 res://shaders
 res://resources/scenes/nelix_game/components/ui/mainmenu
@@ -8,7 +15,6 @@ res://resources/scenes/personalworksmanager
 res://resources/scenes/classmanager
 res://resources/scenes/musicplayer
 res://resources/scenes/examples
-/home/miguel/Documents/GitHub/Varsec-OS/exports/web
 /home/miguel/Desktop/CC Sôdid/6 Syôkôn/Godot
 res://
 /home/miguel/Documents/GitHub/Varsec-OS

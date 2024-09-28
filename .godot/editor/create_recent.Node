@@ -1,3 +1,9 @@
+GridContainer
+BoxContainer
+VScrollBar
+VBoxContainer
+HBoxContainer
+ScrollContainer
 Panel
 TextureRect
 CanvasLayer
@@ -5,10 +11,5 @@ ColorRect
 Control
 AspectRatioContainer
 CenterContainer
-HBoxContainer
-VBoxContainer
 Label
 TextEdit
-AudioStreamPlayer
-AudioStreamPlayer2D
-TextureButton

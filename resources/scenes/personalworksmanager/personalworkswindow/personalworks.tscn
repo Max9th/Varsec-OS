@@ -62,11 +62,6 @@ label_settings = SubResource("LabelSettings_polhb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="aulas" type="Control" parent="."]
 layout_mode = 1
 anchor_right = 0.995392
