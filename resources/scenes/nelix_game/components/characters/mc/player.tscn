@@ -14,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://55ld3nonqtij" path="res://resources/scenes/nelix_game/sprites/ui/quit/quit-p.png" id="12_l1frk"]
 [ext_resource type="Texture2D" uid="uid://divmsii5acjr8" path="res://resources/scenes/nelix_game/sprites/ui/quit/quit-h.png" id="13_ci5o0"]
 [ext_resource type="Texture2D" uid="uid://bph5nnssbwqjl" path="res://resources/scenes/nelix_game/sprites/ui/headers/configs.png" id="14_4tddh"]
-[ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="14_jwu3j"]
+[ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="14_jwu3j"]
 [ext_resource type="Texture2D" uid="uid://dis1j3rgmktgy" path="res://resources/scenes/nelix_game/sprites/ui/back/back_n.png" id="15_37o2e"]
 [ext_resource type="Texture2D" uid="uid://bxulre1cni4oh" path="res://resources/scenes/nelix_game/sprites/ui/back/back_p.png" id="16_n2581"]
 [ext_resource type="Texture2D" uid="uid://cx8pumpb0vfdd" path="res://resources/scenes/nelix_game/sprites/ui/back/back_h.png" id="17_1mv8v"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="20_oto8x"]
 [ext_resource type="Texture2D" uid="uid://c1ue0xfek7rth" path="res://resources/scenes/nelix_game/sprites/ui/crosshair.png" id="21_a2yxy"]
-[ext_resource type="Texture2D" uid="uid://cy6mvupjji8dm" path="res://resources/scenes/nelix_game/sprites/ui/UItileset.png" id="21_iiunq"]
+[ext_resource type="Texture2D" path="res://resources/scenes/nelix_game/sprites/ui/UItileset.png" id="21_iiunq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cw808"]
 

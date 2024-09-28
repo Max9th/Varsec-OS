@@ -60,7 +60,7 @@ func authenticate():
 				authenticated()
 			"nelix":
 				authenticated()
-				get_tree().change_scene_to_file("res://scenes/nelix_game/components/levels/proto1.tscn")
+				get_tree().change_scene_to_file("res://scenes/nelix_game/components/ui/mainmenu/main_menu.tscn")
 			_:
 				incorrect.visible = true
 				timer.start()

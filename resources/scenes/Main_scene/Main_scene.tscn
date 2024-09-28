@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
-[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="5_15vlg"]
+[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://resources/shaders/color_replace_shader.res" id="5_15vlg"]
 [ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/IFg.png" id="6_7exc4"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
 [ext_resource type="Texture2D" uid="uid://bvm6djr4v7po6" path="res://resources/sprites/sfx.png" id="8_n2xns"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="22_76pyy"]
 [ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="23_q30xu"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
-[ext_resource type="Shader" path="res://shaders/crt_postprocess.gdshader" id="25_yofc8"]
+[ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
 
@@ -525,6 +525,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ambientsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_kfb2x")
+volume_db = -17.66
 
 [node name="splash_screen" parent="." instance=ExtResource("27_uwk17")]
 visible = false

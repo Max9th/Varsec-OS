@@ -1,27 +1,27 @@
 [gd_scene load_steps=27 format=3 uid="uid://r3efw26mbg4"]
 
-[ext_resource type="Script" path="res://components/ui/mainmenu/main_menu.gd" id="1_oir5h"]
+[ext_resource type="Script" path="res://resources/scenes/nelix_game/components/ui/mainmenu/main_menu.gd" id="1_oir5h"]
 [ext_resource type="Texture2D" uid="uid://cfiqkrd4kh6pa" path="res://resources/scenes/nelix_game/sprites/ui/bk.png" id="2_7t33q"]
 [ext_resource type="Texture2D" uid="uid://buybd2oa5wk8s" path="res://resources/scenes/nelix_game/sprites/ui/play/play-p.png" id="3_25xs6"]
-[ext_resource type="StyleBox" path="res://nelixwindow.tres" id="3_k8uv0"]
+[ext_resource type="StyleBox" uid="uid://cdqeb6xduuu26" path="res://resources/nelixwindow.tres" id="3_k8uv0"]
 [ext_resource type="Texture2D" uid="uid://cnkv4gtputj74" path="res://resources/scenes/nelix_game/sprites/ui/headers/nelix.png" id="3_rwtxq"]
 [ext_resource type="Texture2D" uid="uid://d35oelh1lo4bl" path="res://resources/scenes/nelix_game/sprites/ui/options/sets.png" id="4_ciki8"]
 [ext_resource type="Texture2D" uid="uid://cktbt6pfj0cad" path="res://resources/scenes/nelix_game/sprites/ui/play/play_n.png" id="4_n3u2q"]
 [ext_resource type="Texture2D" uid="uid://b1n1tht150gw" path="res://resources/scenes/nelix_game/sprites/ui/play/play-h.png" id="6_2wysh"]
 [ext_resource type="Texture2D" uid="uid://dweyrm5ypbdwe" path="res://resources/scenes/nelix_game/sprites/ui/options/options-p.png" id="6_jsfkw"]
-[ext_resource type="Shader" path="res://shaders/post_processing/crt_postprocess.gdshader" id="7_4tvs5"]
+[ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="7_4tvs5"]
 [ext_resource type="Texture2D" uid="uid://vlwc2nt0ro0a" path="res://resources/scenes/nelix_game/sprites/ui/options/options_n.png" id="7_t7iwu"]
 [ext_resource type="Texture2D" uid="uid://cqghawdqj1pad" path="res://resources/scenes/nelix_game/sprites/ui/options/options-h.png" id="9_4jk7m"]
 [ext_resource type="Texture2D" uid="uid://55ld3nonqtij" path="res://resources/scenes/nelix_game/sprites/ui/quit/quit-p.png" id="10_6i6ok"]
 [ext_resource type="Texture2D" uid="uid://bvym5m71fk2jt" path="res://resources/scenes/nelix_game/sprites/ui/options/sets_p.png" id="11_frywe"]
 [ext_resource type="Texture2D" uid="uid://pq6m13dxfvpb" path="res://resources/scenes/nelix_game/sprites/ui/quit/quit_n.png" id="14_vwvfy"]
-[ext_resource type="Shader" path="res://shaders/post_processing/glitch-effect.gdshader" id="15_8sfbr"]
+[ext_resource type="Shader" path="res://resources/shaders/glitch-effect.gdshader" id="15_8sfbr"]
 [ext_resource type="Texture2D" uid="uid://bph5nnssbwqjl" path="res://resources/scenes/nelix_game/sprites/ui/headers/configs.png" id="15_563vt"]
 [ext_resource type="Texture2D" uid="uid://divmsii5acjr8" path="res://resources/scenes/nelix_game/sprites/ui/quit/quit-h.png" id="15_bues7"]
 [ext_resource type="Texture2D" uid="uid://dis1j3rgmktgy" path="res://resources/scenes/nelix_game/sprites/ui/back/back_n.png" id="16_qy3h8"]
 [ext_resource type="Texture2D" uid="uid://bxulre1cni4oh" path="res://resources/scenes/nelix_game/sprites/ui/back/back_p.png" id="17_sqe4n"]
 [ext_resource type="Texture2D" uid="uid://cx8pumpb0vfdd" path="res://resources/scenes/nelix_game/sprites/ui/back/back_h.png" id="18_xok6r"]
-[ext_resource type="Texture2D" uid="uid://cy6mvupjji8dm" path="res://resources/scenes/nelix_game/sprites/ui/UItileset.png" id="21_0ig4b"]
+[ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="21_0ig4b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3v1o"]
 bg_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
@@ -59,11 +59,11 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5np54"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ph5t"]
 shader = ExtResource("15_8sfbr")
 shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.041
-shader_parameter/shake_speed = 3.0
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
 
@@ -226,15 +226,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="glitch" type="ColorRect" parent="crt"]
-show_behind_parent = true
-material = SubResource("ShaderMaterial_5np54")
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="ColorRect" type="ColorRect" parent="crt"]
+material = SubResource("ShaderMaterial_2ph5t")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Main/MainContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/MainContainer/options" to="." method="_on_options_pressed"]

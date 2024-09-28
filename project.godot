@@ -43,8 +43,8 @@ folder_colors={
 "res://resources/fonts/": "green",
 "res://resources/scenes/": "blue",
 "res://resources/scenes/nelix_game/": "purple",
-"res://resources/sprites/": "pink",
-"res://shaders/": "purple"
+"res://resources/shaders/": "purple",
+"res://resources/sprites/": "pink"
 }
 
 [global_group]

@@ -1,13 +1,14 @@
+/home/miguel/Documents/GitHub/Varsec-OS-web
+res://resources/sprites
+res://shaders
+res://resources/scenes/nelix_game/components/ui/mainmenu
+res://resources
 res://resources/scenes/classmanager/scripts
 res://resources/scenes/personalworksmanager
 res://resources/scenes/classmanager
 res://resources/scenes/musicplayer
 res://resources/scenes/examples
-res://resources/scenes/windows/playnelixwindow
 /home/miguel/Documents/GitHub/Varsec-OS/exports/web
-res://resources/scenes/main menu
-res://resources
-res://shaders
 /home/miguel/Desktop/CC Sôdid/6 Syôkôn/Godot
 res://
 /home/miguel/Documents/GitHub/Varsec-OS

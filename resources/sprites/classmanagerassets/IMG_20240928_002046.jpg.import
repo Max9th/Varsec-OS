@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy6mvupjji8dm"
-path="res://.godot/imported/UItileset.png-d818cce33a975316ba73a2629f34beec.ctex"
+uid="uid://cf77bwyb1714g"
+path="res://.godot/imported/IMG_20240928_002046.jpg-75fe294fbdbaf33b2482ce8eedf54fee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/scenes/nelix_game/sprites/ui/UItileset.png"
-dest_files=["res://.godot/imported/UItileset.png-d818cce33a975316ba73a2629f34beec.ctex"]
+source_file="res://resources/sprites/classmanagerassets/IMG_20240928_002046.jpg"
+dest_files=["res://.godot/imported/IMG_20240928_002046.jpg-75fe294fbdbaf33b2482ce8eedf54fee.ctex"]
 
 [params]
 

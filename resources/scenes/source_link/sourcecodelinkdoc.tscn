@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="1_oyhqj"]
 [ext_resource type="Texture2D" uid="uid://h41su6ua5f8v" path="res://resources/sprites/file_selected.png" id="2_fyqcd"]
 [ext_resource type="Script" path="res://resources/scenes/source_link/scripts/source_code_link.gd" id="3_8s2dh"]
-[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://shaders/color_replace_shader.res" id="4_jem58"]
+[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://resources/shaders/color_replace_shader.res" id="4_jem58"]
 [ext_resource type="Texture2D" uid="uid://cejy5nqlsh6xr" path="res://resources/sprites/chain-link-symbolic.svg" id="5_rr4sf"]
 [ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="7_uvtag"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_i3lby"]

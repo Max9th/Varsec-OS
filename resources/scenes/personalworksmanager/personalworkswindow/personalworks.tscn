@@ -1,56 +1,51 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmryciivu5mdv"]
+[gd_scene load_steps=26 format=3 uid="uid://dmryciivu5mdv"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jjfn"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="4_ymjld"]
-[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="5_16iuw"]
-[ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/1727438391663.jpg" id="6_gkklh"]
+[ext_resource type="Texture2D" uid="uid://buijigbbbq2ao" path="res://resources/sprites/personalworkmanagerassets/bloodtower1.png" id="4_6eokd"]
+[ext_resource type="Texture2D" uid="uid://dajwjbfof67fp" path="res://resources/sprites/personalworkmanagerassets/bk2 (1).png" id="5_bqeg2"]
+[ext_resource type="Texture2D" uid="uid://dydspky65dpyf" path="res://resources/sprites/personalworkmanagerassets/Darfigure.png" id="6_vrxvx"]
+[ext_resource type="Texture2D" uid="uid://dl2sn1jffnjtj" path="res://resources/sprites/personalworkmanagerassets/pfp.png" id="7_ue2kb"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_w23mc"]
-[ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/button_manager.gd" id="8_lqxfq"]
+[ext_resource type="Texture2D" uid="uid://de110x5p2ukqa" path="res://resources/sprites/personalworkmanagerassets/wtf.png" id="8_gju6p"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="9_hwie5"]
+[ext_resource type="Texture2D" uid="uid://cgoudni7y0lh" path="res://resources/sprites/personalworkmanagerassets/Sprite-0001.png" id="9_lh7x7"]
+[ext_resource type="Texture2D" uid="uid://ddwnhwlqooi3e" path="res://resources/sprites/personalworkmanagerassets/tenebrerossoturris.png" id="10_ldanr"]
+[ext_resource type="Texture2D" uid="uid://cec3rvyo8lsnw" path="res://resources/sprites/personalworkmanagerassets/wawawawwa.png" id="11_ksrki"]
+[ext_resource type="Texture2D" uid="uid://dl3h6pgj8fk25" path="res://resources/sprites/personalworkmanagerassets/belathazar.png" id="12_bed2v"]
+[ext_resource type="Texture2D" uid="uid://v2ab8fafcx26" path="res://resources/sprites/personalworkmanagerassets/pixelpalmNEW.png" id="13_r061x"]
+[ext_resource type="Texture2D" uid="uid://b0emnqptyclde" path="res://resources/sprites/personalworkmanagerassets/sirmegadrawing.png" id="14_gne8q"]
+[ext_resource type="Texture2D" uid="uid://crdyyb2glhgfx" path="res://resources/sprites/personalworkmanagerassets/pfpsnek.png" id="15_8n8s8"]
+[ext_resource type="Texture2D" uid="uid://cfyix42ek766m" path="res://resources/sprites/personalworkmanagerassets/MATRIX MADNESS.png" id="16_x05uh"]
+[ext_resource type="Texture2D" uid="uid://bql35b7puqf3u" path="res://resources/sprites/personalworkmanagerassets/Iceberry.png" id="17_45yrq"]
+[ext_resource type="Texture2D" uid="uid://blb5vxt0v3yda" path="res://resources/sprites/personalworkmanagerassets/CUPRENDER.png" id="18_10rey"]
+[ext_resource type="Texture2D" uid="uid://4k0nn1rmuaex" path="res://resources/sprites/personalworkmanagerassets/tpe100x.png" id="19_jdguw"]
+[ext_resource type="Texture2D" uid="uid://dsl4hm31u7xed" path="res://resources/sprites/personalworkmanagerassets/hand.png" id="20_kx631"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
+[sub_resource type="LabelSettings" id="LabelSettings_polhb"]
 font = ExtResource("3_2cffn")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
-bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_bb05j"]
+font = ExtResource("3_2cffn")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olpnd"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
-font = ExtResource("3_2cffn")
-
-[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
-font = ExtResource("3_2cffn")
-
-[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
-font = ExtResource("3_2cffn")
-
-[sub_resource type="LabelSettings" id="LabelSettings_wvchx"]
-font = ExtResource("5_16iuw")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
-bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
 [node name="personalworks" type="Panel"]
 custom_minimum_size = Vector2(217, 115)
-offset_right = 217.0
-offset_bottom = 115.0
+offset_top = 8.0
+offset_right = 323.0
+offset_bottom = 163.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jjfn")
 script = ExtResource("2_iadqj")
-metadata/_edit_group_ = true
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -63,187 +58,174 @@ offset_right = 83.1555
 offset_bottom = 16.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-text = "personal work manager"
-label_settings = SubResource("LabelSettings_2xelb")
+text = "class manager"
+label_settings = SubResource("LabelSettings_polhb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="aula" type="Button" parent="."]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 0
-offset_left = 5.16132
-offset_top = 82.3332
-offset_right = 110.161
-offset_bottom = 122.333
-scale = Vector2(0.25, 0.25)
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_font_sizes/font_size = 0
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Cubigor"
-
-[node name="recentes" type="Label" parent="."]
-layout_mode = 0
-offset_left = 5.88547
-offset_top = 76.6668
-offset_right = 83.8854
-offset_bottom = 90.6668
-scale = Vector2(0.3, 0.3)
-text = "Recentes:"
-label_settings = SubResource("LabelSettings_wrkym")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="selecione" type="Label" parent="."]
-layout_mode = 0
-offset_left = 6.24754
-offset_top = 11.3334
-offset_right = 84.2476
-offset_bottom = 25.3334
-scale = Vector2(0.3, 0.3)
-text = "Selecione:"
-label_settings = SubResource("LabelSettings_dbcny")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="body_text" type="Label" parent="."]
-layout_mode = 0
-offset_left = 39.5582
-offset_top = 11.3334
-offset_right = 167.558
-offset_bottom = 25.3334
-scale = Vector2(0.5, 0.5)
-text = "Selecione a aula"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
-
-[node name="personal" type="Control" parent="body_text"]
-anchors_preset = 0
+[node name="CenterContainer" type="CenterContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="body_text" type="Label" parent="body_text/personal"]
-layout_mode = 0
-offset_left = 7.24145
-offset_top = 113.333
-offset_right = 533.241
-offset_bottom = 462.333
+[node name="aulas" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.995392
+anchor_bottom = 0.995652
+offset_right = 216.0
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-text = "Esse é Jonas. Jonas é uma mistura de morcego fruteiro e de uma jararaca-de-alcatrazes
-Jonas não é o melhor desenho do mundo, mas ele ama professores de arte chamados CUBIGOR
-A lenda de Jonas diz que ele gosta de levar professores do IFg pro Acre para tomar guaraná geladinho e observar os dinossauros UwU"
-label_settings = SubResource("LabelSettings_wvchx")
-autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="body_text/personal"]
-layout_mode = 0
-offset_left = 3.62073
-offset_top = 15.3334
-offset_right = 146.621
-offset_bottom = 101.333
-texture = ExtResource("6_gkklh")
-expand_mode = 1
+[node name="aula1" type="Control" parent="aulas"]
+clip_contents = true
+custom_minimum_size = Vector2(641, 275)
+layout_mode = 1
+anchor_left = -0.138912
+anchor_top = -0.00145561
+anchor_right = 1.82327
+anchor_bottom = 1.88254
+offset_left = 79.6667
+offset_top = 26.3913
+offset_right = -334.03
+offset_bottom = -205.077
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="body_text/personal"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 154.0
-offset_top = 11.0
-offset_right = 1081.0
-offset_bottom = 471.0
+[node name="Title" type="Label" parent="aulas/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0155998
+anchor_right = 0.324476
+anchor_bottom = 0.0781726
+offset_right = 96.0
+offset_bottom = 10.5
+scale = Vector2(0.5, 0.5)
+text = "Projetos Pessoais OwO"
+label_settings = SubResource("LabelSettings_bb05j")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="image" type="TextureRect" parent="aulas/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00104
+anchor_top = 0.131105
+anchor_right = 0.192508
+anchor_bottom = 1.5511
+offset_right = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.45, 0.45)
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("4_6eokd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bk2(1)" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(115, 55.3333)
+scale = Vector2(0.733333, 0.588889)
+texture = ExtResource("5_bqeg2")
+
+[node name="Darfigure" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(208, 53)
+scale = Vector2(0.1, 0.0958333)
+texture = ExtResource("6_vrxvx")
+
+[node name="Pfp" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(271.333, 47.6667)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("7_ue2kb")
+
+[node name="Wtf" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(272, 101)
 scale = Vector2(0.2, 0.2)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_16iuw")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = ExtResource("7_w23mc")
-text = "Assunto:
-identidade cultural, povos originários, arte marajoara
-Atividades desenvolvidas em sala:
-Desenho baseado em duas especies de
-animais brasileiros fundidos em 
-um único ser 
-O que eu aprendi: 
-"
-editable = false
-context_menu_enabled = false
+texture = ExtResource("8_gju6p")
 
-[node name="personal2" type="Control" parent="body_text"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Sprite-0001" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(96.9167, 131.25)
+scale = Vector2(2.14103, 2.00427)
+texture = ExtResource("9_lh7x7")
 
-[node name="personal3" type="Control" parent="body_text"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Tenebrerossoturris" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(364.333, 50.6667)
+scale = Vector2(0.104109, 0.102658)
+texture = ExtResource("10_ldanr")
 
-[node name="personal4" type="Control" parent="body_text"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Wawawawwa" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(144, 133)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_ksrki")
 
-[node name="personal5" type="Control" parent="body_text"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Belathazar" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(352, 143.667)
+scale = Vector2(0.685185, 0.648148)
+texture = ExtResource("12_bed2v")
 
-[node name="Buttonmanager" type="VBoxContainer" parent="."]
+[node name="PixelpalmNew" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(208, 117)
+scale = Vector2(0.0552083, 0.05)
+texture = ExtResource("13_r061x")
+
+[node name="Panel" type="Panel" parent="aulas/aula1"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 16.0
-offset_right = 115.0
-offset_bottom = 233.0
-scale = Vector2(0.25, 0.25)
-script = ExtResource("8_lqxfq")
-metadata/_edit_group_ = true
+offset_left = 426.667
+offset_right = 538.667
+offset_bottom = 92.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_olpnd")
 
-[node name="tab" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Aula 1"
+[node name="Sirmegadrawing" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(482.667, 24.6667)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("14_gne8q")
 
-[node name="tab2" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Aula 2"
+[node name="Pfpsnek" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(438.333, 140)
+scale = Vector2(0.026087, 0.0276812)
+texture = ExtResource("15_8n8s8")
 
-[node name="tab3" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Aula 3"
+[node name="MatrixMadness" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(552.5, 134.896)
+scale = Vector2(0.0659722, 0.0579321)
+texture = ExtResource("16_x05uh")
 
-[node name="tab4" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Aula 4"
+[node name="Iceberry" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(586.667, 40.6667)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_45yrq")
 
-[node name="tab5" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2cffn")
-theme_override_styles/hover = ExtResource("4_ymjld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("4_ymjld")
-text = "Aula 5"
+[node name="Tpe100x" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(514, 228.058)
+scale = Vector2(1.01707, 0.993056)
+texture = ExtResource("19_jdguw")
+
+[node name="Hand" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(334, 238.058)
+texture = ExtResource("20_kx631")
+
+[node name="Cuprender" type="Sprite2D" parent="aulas/aula1"]
+position = Vector2(209.667, 196)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("18_10rey")
+
+[node name="Title2" type="Label" parent="aulas/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0146234
+anchor_top = 0.96
+anchor_right = 0.3235
+anchor_bottom = 1.03817
+offset_left = 2.29309
+offset_right = 98.2931
+offset_bottom = 10.5
+scale = Vector2(0.5, 0.5)
+text = "So os mais notaveis"
+label_settings = SubResource("LabelSettings_bb05j")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -285,27 +267,5 @@ offset_bottom = 10.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("7_w23mc")
 
-[node name="separator" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 31.6667
-offset_top = 72.5863
-offset_right = 34.6667
-offset_bottom = 100.586
-rotation = 1.5708
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
-
-[node name="separator2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 33.765
-offset_top = 11.6668
-offset_right = 36.765
-offset_bottom = 112.667
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
-
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_hwie5")
-
-[connection signal="pressed" from="Buttonmanager/tab" to="Buttonmanager" method="_on_tab_pressed"]
-[connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
-[connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
-[connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

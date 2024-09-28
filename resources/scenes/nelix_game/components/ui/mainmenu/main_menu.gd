@@ -9,7 +9,7 @@ var settings_visible = false
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://components/levels/proto1.tscn")
+	get_tree().change_scene_to_file("res://resources/scenes/nelix_game/components/levels/proto1.tscn")
 
 func _on_options_pressed():
 	settings_enabled()
