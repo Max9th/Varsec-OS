@@ -1,6 +1,7 @@
 # Varsec OS
 
-![icon](https://github.com/user-attachments/assets/debd4a8e-dbe8-4b70-8ee4-8574fb5183c2)
+![icon](https://github.com/user-attachments/assets/65a14560-15db-4d34-b16b-93886c1dc837)
+
 
  Fantasy OS made as an art project
 
@@ -13,4 +14,4 @@ The repo for the web player follows:
 
 https://github.com/Max9th/Varsec-OS-web
 
-Made kn GODOT
+Made in GODOT
