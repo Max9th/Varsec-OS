@@ -497,12 +497,12 @@ offset_bottom = 424.0
 scale = Vector2(2.80527, 2.69586)
 
 [node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
-visible = false
+clip_contents = true
 layout_mode = 0
-offset_left = 144.0
-offset_top = 256.0
-offset_right = 361.0
-offset_bottom = 371.0
+offset_left = 138.0
+offset_top = 88.0
+offset_right = 459.0
+offset_bottom = 247.0
 
 [node name="class_manager_window" parent="desktop/windows" instance=ExtResource("24_goyto")]
 layout_mode = 0

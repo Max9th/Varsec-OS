@@ -211,7 +211,6 @@ offset_bottom = 114.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-metadata/_edit_use_anchors_ = true
 
 [node name="aula1" type="Control" parent="aulas"]
 visible = false
@@ -338,7 +337,6 @@ offset_right = -333.664
 offset_bottom = -204.436
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="aulas/aula2"]
 layout_mode = 1
@@ -353,7 +351,6 @@ scale = Vector2(0.5, 0.5)
 text = "Aula 2 - Visita tecnica"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="image" type="TextureRect" parent="aulas/aula2"]
 layout_mode = 1
@@ -425,7 +422,6 @@ middle_mouse_paste_enabled = false
 wrap_mode = 1
 autowrap_mode = 2
 scroll_smooth = true
-metadata/_edit_use_anchors_ = true
 
 [node name="image2" type="TextureRect" parent="aulas/aula2"]
 layout_mode = 1
