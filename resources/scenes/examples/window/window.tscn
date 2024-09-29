@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg3elxvkc55dg"]
+[gd_scene load_steps=13 format=3 uid="uid://dg3elxvkc55dg"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_bonb7"]
 [ext_resource type="Script" path="res://resources/scenes/examples/window/window.gd" id="2_qjpql"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="3_6s5mf"]
-[ext_resource type="Texture2D" uid="uid://cawxvxqr1lt7h" path="res://icon.svg" id="4_i2j31"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_cjjfa"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="6_ebnck"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_uwk2l"]
@@ -43,13 +42,14 @@ corner_radius_bottom_left = 9
 
 [node name="window" type="Panel" groups=["authentication"]]
 custom_minimum_size = Vector2(123, 57)
-offset_left = 53.0
-offset_top = -56.0
-offset_right = 188.0
-offset_bottom = 1.0
+offset_left = 301.0
+offset_top = 210.0
+offset_right = 436.0
+offset_bottom = 267.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_bonb7")
 script = ExtResource("2_qjpql")
+metadata/_edit_group_ = true
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6s5mf")
@@ -66,7 +66,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fk0s1")
 layout_mode = 0
 offset_right = 19.0
 offset_bottom = 19.0
-texture = ExtResource("4_i2j31")
 expand_mode = 1
 stretch_mode = 4
 

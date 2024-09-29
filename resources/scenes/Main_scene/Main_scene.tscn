@@ -169,7 +169,7 @@ metadata/_edit_vertical_guides_ = [-80.0]
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
-[node name="easteregg2" parent="." instance=ExtResource("3_bhann")]
+[node name="theonewhowaits" parent="." instance=ExtResource("3_bhann")]
 position = Vector2(576, 324)
 scale = Vector2(9.52066, 4)
 
@@ -194,7 +194,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_m1qgy")
 [node name="panel" type="Control" parent="desktop"]
 anchors_preset = 0
 
-[node name="Panel2" type="Panel" parent="desktop/panel"]
+[node name="Panel" type="Panel" parent="desktop/panel"]
 custom_minimum_size = Vector2(1120, 49)
 layout_mode = 1
 offset_left = 16.0
@@ -204,17 +204,13 @@ offset_bottom = 57.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_yma61")
 
-[node name="time" type="Label" parent="desktop/panel/Panel2"]
+[node name="time" type="Label" parent="desktop/panel/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.463542
-anchor_top = 0.25
-anchor_right = 0.536458
-anchor_bottom = 0.541667
-offset_left = 0.832947
-offset_top = -4.0
-offset_right = 3.16705
-offset_bottom = 5.33331
+anchor_left = 0.409821
+anchor_top = 0.168367
+anchor_right = 0.59375
+anchor_bottom = 0.65051
 grow_horizontal = 2
 grow_vertical = 2
 text = "cinco pra daqui a pouco owo
@@ -222,26 +218,28 @@ text = "cinco pra daqui a pouco owo
 label_settings = SubResource("LabelSettings_dnbm7")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="date" type="Label" parent="desktop/panel/Panel2/time"]
+[node name="date" type="Label" parent="desktop/panel/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.444444
-anchor_top = 0.541667
-anchor_right = 0.545139
-anchor_bottom = 0.75
-offset_left = -53.3333
-offset_top = 3.83332
-offset_right = 54.2083
-offset_bottom = 18.0
+anchor_left = 0.40625
+anchor_top = 0.510204
+anchor_right = 0.596429
+anchor_bottom = 0.795918
 grow_horizontal = 2
 grow_vertical = 0
 text = "max9th's property baby uwu"
 label_settings = SubResource("LabelSettings_ylh16")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="IFg" type="TextureRect" parent="desktop/panel/Panel2"]
+[node name="timer" type="Timer" parent="desktop/panel/Panel"]
+wait_time = 10.0
+autostart = true
+
+[node name="IFg" type="TextureRect" parent="desktop/panel/Panel"]
 material = SubResource("ShaderMaterial_x83uk")
 layout_mode = 0
 offset_left = 1051.0
@@ -253,7 +251,7 @@ texture = ExtResource("6_7exc4")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 9.0
@@ -262,7 +260,7 @@ offset_bottom = 41.0
 theme_override_constants/separation = 24
 metadata/_edit_group_ = true
 
-[node name="Power_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+[node name="Power_button_sprite" type="TextureRect" parent="desktop/panel/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -270,7 +268,7 @@ size_flags_vertical = 4
 tooltip_text = "Turn off Varsec OS"
 texture = ExtResource("7_mwwwy")
 
-[node name="sfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+[node name="sfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -279,7 +277,7 @@ tooltip_text = "Turn off SFX
 "
 texture = ExtResource("8_n2xns")
 
-[node name="vfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+[node name="vfx_button_sprite" type="TextureRect" parent="desktop/panel/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -288,7 +286,7 @@ tooltip_text = "
 "
 texture = ExtResource("9_kokno")
 
-[node name="easter_button_sprite" type="TextureRect" parent="desktop/panel/Panel2/HBoxContainer"]
+[node name="easter_button_sprite" type="TextureRect" parent="desktop/panel/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -297,7 +295,7 @@ tooltip_text = "
 "
 texture = ExtResource("10_1afcs")
 
-[node name="power_button" type="Button" parent="desktop/panel/Panel2"]
+[node name="power_button" type="Button" parent="desktop/panel/Panel"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 19.0
@@ -310,7 +308,7 @@ theme_override_styles/pressed = ExtResource("11_djys2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
 toggle_mode = true
 
-[node name="sfx_button" type="Button" parent="desktop/panel/Panel2"]
+[node name="sfx_button" type="Button" parent="desktop/panel/Panel"]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 18.0
@@ -324,7 +322,7 @@ theme_override_styles/pressed = ExtResource("11_djys2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
 toggle_mode = true
 
-[node name="vfx_button" type="Button" parent="desktop/panel/Panel2"]
+[node name="vfx_button" type="Button" parent="desktop/panel/Panel"]
 layout_mode = 0
 offset_left = 143.0
 offset_top = 15.0
@@ -337,7 +335,7 @@ theme_override_styles/pressed = ExtResource("11_djys2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
 toggle_mode = true
 
-[node name="easter_button" type="Button" parent="desktop/panel/Panel2"]
+[node name="easter_button" type="Button" parent="desktop/panel/Panel"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 10.0
@@ -499,13 +497,17 @@ scale = Vector2(2.80527, 2.69586)
 [node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
 clip_contents = true
 layout_mode = 0
-offset_left = 138.0
+offset_left = 128.0
 offset_top = 88.0
-offset_right = 459.0
-offset_bottom = 247.0
+offset_right = 451.0
+offset_bottom = 264.0
+scale = Vector2(2, 2)
 
 [node name="class_manager_window" parent="desktop/windows" instance=ExtResource("24_goyto")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 128.0
 offset_top = 64.0
 offset_right = 345.0
@@ -531,13 +533,14 @@ volume_db = -17.66
 visible = false
 
 [connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
-[connection signal="stop" from="." to="easteregg2" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="theonewhowaits" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
-[connection signal="Disablebk" from="easteregg2" to="." method="_on_gaytscn_disablebk"]
-[connection signal="pressed" from="desktop/panel/Panel2/power_button" to="." method="_on_power_button_pressed"]
-[connection signal="pressed" from="desktop/panel/Panel2/sfx_button" to="." method="_on_sfx_button_pressed"]
-[connection signal="pressed" from="desktop/panel/Panel2/vfx_button" to="." method="_on_vfx_button_pressed"]
-[connection signal="pressed" from="desktop/panel/Panel2/easter_button" to="." method="_on_easter_button_pressed"]
+[connection signal="Disablebk" from="theonewhowaits" to="." method="_on_gaytscn_disablebk"]
+[connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel/sfx_button" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel/vfx_button" to="." method="_on_vfx_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
 [connection signal="pressed" from="desktop/Folders/rightvboxcon/musicplayer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_pressed"]
 [connection signal="timeout" from="desktop/Folders/rightvboxcon/musicplayer/Timer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_timer_timeout"]

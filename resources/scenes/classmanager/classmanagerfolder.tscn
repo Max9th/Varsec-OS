@@ -25,14 +25,9 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="classmanagerfolder" type="TextureButton"]
 anchors_preset = -1
-anchor_left = 0.0694444
-anchor_top = 0.481481
-anchor_right = 0.101411
-anchor_bottom = 0.54321
-offset_left = -80.0
-offset_top = -312.0
-offset_right = -76.825
-offset_bottom = -312.0
+anchor_right = 0.0319666
+anchor_bottom = 0.0617285
+offset_right = 3.175
 scale = Vector2(0.920626, 1)
 size_flags_horizontal = 0
 size_flags_vertical = 0

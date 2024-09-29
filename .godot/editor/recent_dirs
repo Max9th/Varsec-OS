@@ -1,13 +1,10 @@
-/home/miguel/Documents/GitHub/Varsec-OS/exports/windows
-/home/miguel/Documents/GitHub/Varsec-OS/exports/web
 /home/miguel/Documents/GitHub/Varsec-OS-web
-/home/miguel/Documents/GitHub/Varsec-OS/exports/linux
-/home/miguel/Documents/GitHub/Varsec-OS/exports/android
+/home/miguel/Documents/GitHub/Varsec-OS/exports
+res://resources/scenes/classmanager/window/scripts
 /usr/lib/jvm/jdk-23-oracle-x64/bin/
 /usr/java/jdk-23-oracle-x64/
 /home/miguel/Android/Sdk
 res://resources/sprites
-res://shaders
 res://resources/scenes/nelix_game/components/ui/mainmenu
 res://resources
 res://resources/scenes/classmanager/scripts

@@ -31,7 +31,7 @@ mouse_cursor/custom_image="res://resources/sprites/cursor.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg")
+enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
 
 [file_customization]
 
@@ -42,7 +42,6 @@ folder_colors={
 "res://resources/audio/": "orange",
 "res://resources/fonts/": "green",
 "res://resources/scenes/": "blue",
-"res://resources/scenes/nelix_game/": "purple",
 "res://resources/shaders/": "purple",
 "res://resources/sprites/": "pink"
 }

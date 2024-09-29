@@ -25,14 +25,8 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="personalworksfolder" type="TextureButton"]
 anchors_preset = -1
-anchor_left = 0.0555556
-anchor_top = 0.320988
-anchor_right = 0.0902778
-anchor_bottom = 0.382716
-offset_left = -64.0001
-offset_top = -208.0
-offset_right = -64.0001
-offset_bottom = -208.0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617283
 pivot_offset = Vector2(20, 20)
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -84,4 +78,6 @@ one_shot = true
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_n1ouu")
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

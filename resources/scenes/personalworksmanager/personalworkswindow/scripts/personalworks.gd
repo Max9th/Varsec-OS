@@ -12,10 +12,14 @@ var is_maximized: bool
 var old_unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
 
-# Called when the node enters the scene tree for the first time.
+@export var visiblewindow: bool 
+
+
 func _ready() -> void:
-	aula_select.visible = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	if visiblewindow == false:
+		aula_select.visible = false
+	else:
+		aula_select.visible = true
 func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
@@ -59,15 +63,9 @@ func maximize_window() -> void:
 		old_unmaximized_position = global_position
 		old_unmaximized_size = size
 		
-		var new_size: Vector2 
-		var new_position: Vector2
-		new_position.x = 2
-	
-		new_position.y = 66
-		new_size.x = 384.3
-		
-		
-		new_size.y = 193
+		var new_size: Vector2 = get_viewport().get_visible_rect().size / 2
+		new_size.y -= 11  # Adjust for any window decoration height
+		var new_position: Vector2 = Vector2(0, 66)  # Fixed position
 	
 		var tween: Tween = create_tween()
 		tween.set_parallel(true)

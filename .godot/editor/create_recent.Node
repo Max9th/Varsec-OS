@@ -1,3 +1,6 @@
+Timer
+MaxSizeContainer
+ScaleContainer
 GridContainer
 BoxContainer
 VScrollBar
@@ -10,6 +13,3 @@ CanvasLayer
 ColorRect
 Control
 AspectRatioContainer
-CenterContainer
-Label
-TextEdit

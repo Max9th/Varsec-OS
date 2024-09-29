@@ -1,18 +1,28 @@
 extends Control
 
-@onready var vfx: ColorRect = $vfx
+
 @onready var ambientsound: AudioStreamPlayer = $ambientsound
+@onready var takecare: AudioStreamPlayer = $desktop/Folders/rightvboxcon/musicplayer/takecare
+
 @onready var splash_screen: CanvasLayer = $splash_screen
 @onready var background: Panel = $desktop/background
-@onready var selectom: Sprite2D = $easteregg2
-@onready var time: Label = $desktop/panel/Panel2/time
-@onready var date: Label = $desktop/panel/Panel2/time/date
-@onready var takecare: AudioStreamPlayer = $desktop/Folders/rightvboxcon/musicplayer/takecare
-@onready var sfx_button_sprite: TextureRect = $desktop/panel/Panel2/HBoxContainer/sfx_button_sprite
-@onready var vfx_button_sprite: TextureRect = $desktop/panel/Panel2/HBoxContainer/vfx_button_sprite
+
+@onready var selectom: Sprite2D = $theonewhowaits
+
+@onready var time: Label = $desktop/panel/Panel/time
+@onready var date: Label = $desktop/panel/Panel/date
+
+@onready var sfx_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/sfx_button_sprite
+
+@onready var vfx: ColorRect = $vfx
+@onready var vfx_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/vfx_button_sprite
+
 @onready var windows: Control = $desktop/windows
-@onready var easter_button_sprite: TextureRect = $desktop/panel/Panel2/HBoxContainer/easter_button_sprite
-@onready var easter_button: Button = $desktop/panel/Panel2/easter_button
+@onready var personalworkswindow: Panel = $desktop/windows/personalworkswindow
+@onready var class_manager_window: Panel = $desktop/windows/class_manager_window
+
+@onready var easter_button: Button = $desktop/panel/Panel/easter_button
+@onready var easter_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/easter_button_sprite
 
 var playaudio: bool = true
 var easter: bool
@@ -29,6 +39,8 @@ func _ready() -> void:
 	easter_button_sprite.visible = false
 	easter_button.disabled = true
 	windows.visible = true
+	update_time()
+
 func _process(_delta: float) -> void:
 	if splash_screen.visible == false and ambientsound.playing == false and background.visible == true and playaudio == true:
 		ambientsound.playing = true
@@ -36,11 +48,6 @@ func _process(_delta: float) -> void:
 	elif ambientsound.playing == true and playaudio == false:
 		sfx_button_sprite.texture = load("res://resources/sprites/disabledsfx.png")
 		ambientsound.playing = false
-	var timefunc = Time.get_time_dict_from_system()
-	var datefunc = Time.get_date_string_from_system()
-	
-	time.text = str("%02d:%02d:%02d" % [timefunc.hour, timefunc.minute, timefunc.second])
-	date.text = datefunc
 
 func _on_sfx_button_pressed() -> void:
 	playaudio = !playaudio
@@ -77,4 +84,11 @@ func _on_easter_button_pressed() -> void:
 	background.visible = true
 	stop.emit()
 	easter_time()
-	
+
+func update_time() -> void:
+	var date_dict: Dictionary = Time.get_datetime_dict_from_system()
+	time.text = "%02d:%02d" % [date_dict.hour, date_dict.minute]
+	date.text = "%02d/%02d/%d" % [date_dict.day, date_dict.month, date_dict.year]
+
+func _on_timer_timeout() -> void:
+	update_time()

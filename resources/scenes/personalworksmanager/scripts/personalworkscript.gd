@@ -8,6 +8,7 @@ extends Control
 
 var selected: bool = false
 var timer_running: bool = false
+var is_mouse_over: bool
 
 func _ready() -> void:
 	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
@@ -28,6 +29,11 @@ func select():
 	elif selected and timer_running:
 		spawnwindow()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		if !is_mouse_over:
+			selected = false
+
 func _on_pressed() -> void:
 	select()
 
@@ -36,3 +42,11 @@ func spawnwindow():
 	personalworkswindow.visible = true
 	
 	
+
+
+func _on_mouse_entered() -> void:
+	is_mouse_over = true
+
+
+func _on_mouse_exited() -> void:
+	is_mouse_over = false

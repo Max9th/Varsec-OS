@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dmryciivu5mdv"]
+[gd_scene load_steps=27 format=3 uid="uid://dmryciivu5mdv"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jjfn"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
@@ -19,8 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://crdyyb2glhgfx" path="res://resources/sprites/personalworkmanagerassets/pfpsnek.png" id="15_8n8s8"]
 [ext_resource type="Texture2D" uid="uid://cfyix42ek766m" path="res://resources/sprites/personalworkmanagerassets/MATRIX MADNESS.png" id="16_x05uh"]
 [ext_resource type="Texture2D" uid="uid://bql35b7puqf3u" path="res://resources/sprites/personalworkmanagerassets/Iceberry.png" id="17_45yrq"]
+[ext_resource type="Texture2D" uid="uid://blb5vxt0v3yda" path="res://resources/sprites/personalworkmanagerassets/CUPRENDER.png" id="18_i8u8p"]
 [ext_resource type="Texture2D" uid="uid://4k0nn1rmuaex" path="res://resources/sprites/personalworkmanagerassets/tpe100x.png" id="19_jdguw"]
 [ext_resource type="Texture2D" uid="uid://dsl4hm31u7xed" path="res://resources/sprites/personalworkmanagerassets/hand.png" id="20_kx631"]
+[ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/max_size_container.gd" id="21_sekd4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_polhb"]
 font = ExtResource("3_2cffn")
@@ -28,7 +30,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bb05j"]
 font = ExtResource("3_2cffn")
-font_size = 24
+font_size = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4pqp"]
 bg_color = Color(1, 1, 1, 1)
@@ -46,15 +48,27 @@ scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jjfn")
 script = ExtResource("2_iadqj")
 
-[node name="windowname" type="Label" parent="."]
+[node name="content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 314.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="windowname" type="Label" parent="content"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.8445
-offset_top = 2.0
-offset_right = 83.1555
-offset_bottom = 16.0
+offset_left = -65.189
+offset_top = 4.0
+offset_right = 46.811
+offset_bottom = 18.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "class manager"
@@ -62,55 +76,42 @@ label_settings = SubResource("LabelSettings_polhb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="aulas" type="Control" parent="."]
-layout_mode = 1
-anchor_right = 0.995392
-anchor_bottom = 0.995652
-offset_right = 216.0
-offset_bottom = 114.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-metadata/_edit_use_anchors_ = true
-
-[node name="aula1" type="Control" parent="aulas"]
-clip_contents = true
-custom_minimum_size = Vector2(641, 275)
-layout_mode = 1
-anchor_left = -0.138912
-anchor_top = -0.00145559
-anchor_right = 1.82327
-anchor_bottom = 1.88254
-offset_left = 79.6667
-offset_top = 26.3913
-offset_right = -334.03
-offset_bottom = -205.077
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Title" type="Label" parent="aulas/aula1"]
+[node name="Title" type="Label" parent="content"]
+custom_minimum_size = Vector2(324, 27)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0155998
-anchor_right = 0.324476
-anchor_bottom = 0.0781726
-offset_right = 96.0
-offset_bottom = 10.5
+anchor_top = 0.121212
+anchor_right = 0.174891
+anchor_bottom = 0.0990764
+offset_right = 213.993
+offset_bottom = 34.7918
 scale = Vector2(0.5, 0.5)
 text = "Projetos Pessoais OwO"
 label_settings = SubResource("LabelSettings_bb05j")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="bloodtower" type="TextureRect" parent="aulas/aula1"]
+[node name="Tenebrerossoturris" type="TextureRect" parent="content"]
+custom_minimum_size = Vector2(277, 155)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00468019
-anchor_top = 0.130909
-anchor_right = 0.135725
-anchor_bottom = 0.796364
-offset_right = 1.52588e-05
+anchor_left = 0.314729
+anchor_top = 0.545455
+anchor_right = 0.744186
+anchor_bottom = 0.985795
+texture = ExtResource("10_ldanr")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="bloodtower" type="TextureRect" parent="content"]
+custom_minimum_size = Vector2(84, 185)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00775194
+anchor_top = 0.181818
+anchor_right = 0.137984
+anchor_bottom = 0.707386
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Jonas disse:
@@ -120,164 +121,201 @@ texture = ExtResource("4_6eokd")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="citysky" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 91.0007
-offset_top = 38.0006
-offset_right = 288.001
-offset_bottom = 177.001
+[node name="citysky" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148838
+anchor_top = 0.18182
+anchor_right = 0.363722
+anchor_bottom = 0.414364
+offset_right = 50.4001
+offset_bottom = 57.1444
 scale = Vector2(0.733333, 0.588889)
 texture = ExtResource("5_bqeg2")
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="Darfigure" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 229.667
-offset_top = 38.0006
-offset_right = 293.667
-offset_bottom = 102.001
+[node name="Darfigure" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.364341
+anchor_top = 0.181818
+anchor_right = 0.463566
+anchor_bottom = 0.363636
 texture = ExtResource("6_vrxvx")
-
-[node name="Pfp" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 299.001
-offset_top = 38.0006
-offset_right = 353.001
-offset_bottom = 92.0006
-texture = ExtResource("7_ue2kb")
-stretch_mode = 4
-
-[node name="Wtf" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 283.001
-offset_top = 86.0006
-offset_right = 337.001
-offset_bottom = 135.001
-texture = ExtResource("8_gju6p")
-stretch_mode = 4
-
-[node name="girl" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 91.0007
-offset_top = 150.001
-offset_right = 134.001
-offset_bottom = 233.001
-texture = ExtResource("9_lh7x7")
-stretch_mode = 4
-
-[node name="Tenebrerossoturris" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 357.667
-offset_top = 38.0006
-offset_right = 548.667
-offset_bottom = 126.001
-texture = ExtResource("10_ldanr")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="Wawawawwa" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 75.0007
-offset_top = 123.334
-offset_right = 219.001
-offset_bottom = 156.334
+[node name="Pfp" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.471319
+anchor_top = 0.18182
+anchor_right = 0.55504
+anchor_bottom = 0.335229
+texture = ExtResource("7_ue2kb")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Wtf" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.768992
+anchor_top = 0.181818
+anchor_right = 0.942636
+anchor_bottom = 0.321023
+texture = ExtResource("8_gju6p")
+metadata/_edit_use_anchors_ = true
+
+[node name="girl" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.727649
+anchor_top = 0.181818
+anchor_right = 0.769509
+anchor_bottom = 0.332386
+texture = ExtResource("9_lh7x7")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Wawawawwa" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148837
+anchor_top = 0.409091
+anchor_right = 0.372093
+anchor_bottom = 0.502841
+offset_bottom = -1.52588e-05
 texture = ExtResource("11_ksrki")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="Belathazar" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 256.334
-offset_top = 139.334
-offset_right = 427.334
-offset_bottom = 267.334
+[node name="Belathazar" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.471318
+anchor_top = 0.333333
+anchor_right = 0.587597
+anchor_bottom = 0.546402
 texture = ExtResource("12_bed2v")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="PixelpalmNew" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 203.001
-offset_top = 139.334
-offset_right = 251.001
-offset_bottom = 187.334
+[node name="PixelpalmNew" type="TextureRect" parent="content"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.644961
+anchor_top = 0.181818
+anchor_right = 0.71938
+anchor_bottom = 0.318182
 texture = ExtResource("13_r061x")
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 171.001
-offset_top = 198.001
-offset_right = 304.001
-offset_bottom = 315.001
+[node name="Panel" type="Panel" parent="content"]
+custom_minimum_size = Vector2(133, 117)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00826877
+anchor_top = 0.727273
+anchor_right = 0.12585
+anchor_bottom = 0.926603
+offset_right = 57.16
+offset_bottom = 46.8358
 scale = Vector2(0.570226, 0.599694)
 theme_override_styles/panel = SubResource("StyleBoxFlat_x4pqp")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Sirmegadrawing" type="TextureRect" parent="aulas/aula1/Panel"]
+[node name="Sirmegadrawing" type="TextureRect" parent="content/Panel"]
 layout_mode = 0
 offset_left = -5.33267
-offset_top = 16.0006
+offset_top = 10.4422
 offset_right = 138.667
-offset_bottom = 113.001
+offset_bottom = 107.443
 texture = ExtResource("14_gne8q")
 
-[node name="Pfpsnek" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 5.66666
-offset_top = 235.371
-offset_right = 64.6667
-offset_bottom = 283.371
+[node name="Pfpsnek" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562274
+anchor_top = 0.181818
+anchor_right = 0.653747
+anchor_bottom = 0.318182
+offset_left = 3.05176e-05
 texture = ExtResource("15_8n8s8")
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="MatrixMadness" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 134.0
-offset_right = 635.0
-offset_bottom = 294.0
+[node name="MatrixMadness" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71938
+anchor_top = 0.332386
+anchor_right = 0.95969
+anchor_bottom = 0.573864
 texture = ExtResource("16_x05uh")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="Iceberry" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 528.333
-offset_top = 43.371
-offset_right = 608.333
-offset_bottom = 123.371
-texture = ExtResource("17_45yrq")
-
-[node name="Tpe100x" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 235.371
-offset_right = 182.0
-offset_bottom = 299.371
-texture = ExtResource("19_jdguw")
-stretch_mode = 4
-
-[node name="Hand" type="TextureRect" parent="aulas/aula1"]
-layout_mode = 0
-offset_left = 128.334
-offset_top = 150.001
-offset_right = 165.334
-offset_bottom = 241.001
-texture = ExtResource("20_kx631")
-
-[node name="Title2" type="Label" parent="aulas/aula1"]
+[node name="cuprender" type="TextureRect" parent="content"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0146234
-anchor_top = 0.96
-anchor_right = 0.3235
-anchor_bottom = 1.03817
-offset_left = 2.29309
-offset_right = 173.815
-offset_bottom = 13.4175
-scale = Vector2(0.5, 0.5)
-text = "So os mais notaveis"
-label_settings = SubResource("LabelSettings_bb05j")
-vertical_alignment = 1
+anchor_left = 0.71938
+anchor_top = 0.590909
+anchor_right = 0.95969
+anchor_bottom = 0.832386
+offset_top = 1.52588e-05
+texture = ExtResource("18_i8u8p")
+expand_mode = 1
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="Iceberry" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.595349
+anchor_top = 0.333333
+anchor_right = 0.744186
+anchor_bottom = 0.546402
+texture = ExtResource("17_45yrq")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Tpe100x" type="TextureRect" parent="content"]
+custom_minimum_size = Vector2(133, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148837
+anchor_top = 0.5
+anchor_right = 0.355039
+anchor_bottom = 0.727273
+texture = ExtResource("19_jdguw")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Hand" type="TextureRect" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.355556
+anchor_top = 0.378788
+anchor_right = 0.41292
+anchor_bottom = 0.620265
+offset_bottom = 1.52588e-05
+texture = ExtResource("20_kx631")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="MaxSizeContainer" type="Container" parent="content"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_sekd4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

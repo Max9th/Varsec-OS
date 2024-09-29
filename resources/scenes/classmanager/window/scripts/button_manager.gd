@@ -5,7 +5,8 @@ extends VBoxContainer
 	$"../aulas/aula2",
 	$"../aulas/aula3",
 	$"../aulas/aula4",
-	$"../aulas/aula5"
+	$"../aulas/aula5",
+	$"../aulas/aula6"
 ]
 
 func _ready() -> void:
@@ -37,3 +38,6 @@ func _on_aula_4_pressed() -> void:
 
 func _on_aula_5_pressed() -> void:
 	show_aula(4)
+
+func _on_cubigor_pressed() -> void:
+	show_aula(5)
