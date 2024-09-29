@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=25 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_dd0rh"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
@@ -18,19 +18,27 @@
 [ext_resource type="Texture2D" uid="uid://b18i1n5map00e" path="res://resources/sprites/classmanagerassets/download (2).jpeg" id="12_uoi20"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="17_dg7vq"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
-font = ExtResource("2_ase65")
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
+bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
 font = ExtResource("2_ase65")
 
-[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
-font = ExtResource("2_ase65")
-
 [sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
 font = ExtResource("2_ase65")
-font_size = 24
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6lmd"]
+font = ExtResource("2_ase65")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
+font = ExtResource("2_ase65")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -41,42 +49,42 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
-bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
+[sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
+font = ExtResource("2_ase65")
+font_color = Color(0, 0, 0, 1)
 
 [node name="classmanagerwindow" type="Panel"]
 clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1
 anchor_right = 0.565104
-anchor_bottom = 0.532407
+anchor_bottom = 0.560185
 offset_right = -434.0
 offset_bottom = -230.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_dd0rh")
 script = ExtResource("2_mcqie")
+visiblewindow = true
 metadata/_edit_use_anchors_ = true
 
-[node name="windowname" type="Label" parent="."]
+[node name="separator" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 31.6667
+offset_top = 72.5863
+offset_right = 34.6667
+offset_bottom = 100.586
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+
+[node name="separator2" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -28.8445
-offset_top = 2.0
-offset_right = 83.1555
-offset_bottom = 16.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-text = "class manager"
-label_settings = SubResource("LabelSettings_2xelb")
-horizontal_alignment = 1
-vertical_alignment = 1
+anchors_preset = -1
+anchor_bottom = 0.974
+offset_left = 33.765
+offset_top = 11.6668
+offset_right = 36.765
+offset_bottom = 0.656998
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
 [node name="recentes" type="Label" parent="."]
 layout_mode = 0
@@ -87,27 +95,14 @@ offset_bottom = 90.6668
 scale = Vector2(0.3, 0.3)
 text = "Recentes:"
 label_settings = SubResource("LabelSettings_wrkym")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="selecione" type="Label" parent="."]
-layout_mode = 0
-offset_left = 6.24754
-offset_top = 11.3334
-offset_right = 84.2476
-offset_bottom = 25.3334
-scale = Vector2(0.3, 0.3)
-text = "Selecione:"
-label_settings = SubResource("LabelSettings_dbcny")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="aulas" type="Control" parent="."]
 layout_mode = 1
 anchor_right = 1.769
 anchor_bottom = 1.878
-offset_right = 52.25
-offset_bottom = 13.03
+offset_right = 50.127
+offset_bottom = 14.03
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -133,8 +128,9 @@ anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.386
 anchor_bottom = 1.713
-offset_right = 15.788
-offset_bottom = -149.892
+offset_top = -0.0342913
+offset_right = 15.6452
+offset_bottom = -172.839
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -165,6 +161,10 @@ anchor_left = 0.452991
 anchor_top = 0.0196078
 anchor_right = 0.997151
 anchor_bottom = 1.0098
+offset_left = 2.67485
+offset_top = 0.446144
+offset_right = 6.08893
+offset_bottom = -2.52318
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -251,8 +251,9 @@ anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.386
 anchor_bottom = 1.713
-offset_right = 15.788
-offset_bottom = -149.892
+offset_top = 5.49704
+offset_right = 15.3294
+offset_bottom = -178.41
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -279,10 +280,10 @@ expand_mode = 1
 [node name="ScaleContainer3" type="Container" parent="aulas/aula2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.452991
-anchor_top = 0.0196078
-anchor_right = 0.997151
-anchor_bottom = 1.0098
+anchor_left = 0.452868
+anchor_top = 0.0459192
+anchor_right = 0.997456
+anchor_bottom = 0.993525
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -338,9 +339,10 @@ anchors_preset = -1
 anchor_left = 0.0151057
 anchor_right = 0.305136
 anchor_bottom = 0.0564516
-offset_left = -0.458091
-offset_right = -26.5185
-offset_bottom = 9.93549
+offset_left = -0.603528
+offset_top = 5.60792
+offset_right = -3.7915
+offset_bottom = 51.0849
 scale = Vector2(0.5, 0.5)
 text = "Aula 2
 
@@ -368,8 +370,9 @@ anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.379
 anchor_bottom = 2.07
-offset_right = 18.245
-offset_bottom = -222.72
+offset_top = -0.185596
+offset_right = 20.0455
+offset_bottom = -259.332
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -400,6 +403,10 @@ anchor_left = 0.452174
 anchor_top = -0.00510204
 anchor_right = 1.01159
 anchor_bottom = 1.0102
+offset_left = 2.95499
+offset_top = 7.19869
+offset_right = 0.138
+offset_bottom = -0.339569
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -475,8 +482,9 @@ anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.379
 anchor_bottom = 2.07
-offset_right = 18.245
-offset_bottom = -222.72
+offset_top = 0.0388899
+offset_right = 20.0456
+offset_bottom = -251.052
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -507,6 +515,10 @@ anchor_left = 0.452174
 anchor_top = -0.00510204
 anchor_right = 1.01159
 anchor_bottom = 1.0102
+offset_left = 2.95515
+offset_top = 9.17828
+offset_right = 0.138367
+offset_bottom = -0.298828
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -564,7 +576,6 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 
 [node name="aula5" type="Control" parent="aulas"]
-visible = false
 clip_contents = true
 layout_mode = 1
 anchor_right = 0.995
@@ -579,9 +590,9 @@ grow_vertical = 2
 [node name="title" type="Label" parent="aulas/aula5"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00293255
-anchor_right = 0.111437
-anchor_bottom = 0.055
+anchor_top = 0.0170353
+anchor_right = 0.180001
+anchor_bottom = 0.0894362
 offset_right = 37.0
 offset_bottom = 11.0
 scale = Vector2(0.5, 0.5)
@@ -602,7 +613,7 @@ stretch_mode = 1
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit2" type="TextEdit" parent="aulas/aula5/ScaleContainer3"]
+[node name="TextEdit" type="TextEdit" parent="aulas/aula5/ScaleContainer3"]
 texture_filter = 1
 custom_minimum_size = Vector2(1632, 880)
 layout_mode = 2
@@ -681,8 +692,7 @@ Um ser que traz harmonia,
 Em cada canção.
 
 Xilogravura do Cordel
-Nós precisavamos fazer uma capa para o cordel, e um deles criou cinco estrelas representando o pentacampeonato do Brasil, adornadas com uma coroa e as iniciais de Ronaldo.
-
+___
 "
 editable = false
 context_menu_enabled = false
@@ -694,6 +704,7 @@ wrap_mode = 1
 scroll_smooth = true
 
 [node name="aula6" type="Control" parent="aulas"]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchor_right = 0.995
@@ -709,13 +720,13 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00195513
-anchor_right = 0.291985
-anchor_bottom = 0.0564514
-offset_right = 96.0
-offset_bottom = 10.5
+anchor_right = 0.57087
+anchor_bottom = 0.14
+offset_right = 0.900192
+offset_bottom = -6.20972
 scale = Vector2(0.5, 0.5)
 text = "Breakin news"
-label_settings = SubResource("LabelSettings_60y8t")
+label_settings = SubResource("LabelSettings_k6lmd")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -723,9 +734,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00293255
-anchor_top = 0.075
-anchor_right = 1.0
-anchor_bottom = 0.97
+anchor_top = 0.155
+anchor_right = 0.973607
+anchor_bottom = 0.98
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -758,16 +769,23 @@ scroll_smooth = true
 [node name="Buttonmanager" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 16.0
+offset_top = 11.3333
 offset_right = 115.0
-offset_bottom = 233.0
+offset_bottom = 245.333
 scale = Vector2(0.25, 0.25)
 script = ExtResource("7_gh4da")
 metadata/_edit_group_ = true
 
+[node name="selecione" type="Label" parent="Buttonmanager"]
+layout_mode = 2
+text = "Selecione:"
+label_settings = SubResource("LabelSettings_dbcny")
+vertical_alignment = 1
+
 [node name="aula1" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ase65")
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
@@ -777,6 +795,7 @@ text = "Aula 1"
 [node name="aula2" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ase65")
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
@@ -786,6 +805,7 @@ text = "Aula 2"
 [node name="aula3" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ase65")
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
@@ -795,6 +815,7 @@ text = "Aula 3"
 [node name="aula4" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ase65")
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
@@ -804,6 +825,7 @@ text = "Aula 4"
 [node name="aula5" type="Button" parent="Buttonmanager"]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ase65")
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
@@ -830,12 +852,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -17.7678
-offset_top = 2.33345
-offset_right = -0.767838
-offset_bottom = 9.33345
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 9.0
 grow_horizontal = 0
-theme_override_constants/separation = 2
+theme_override_constants/separation = 1
 metadata/_edit_group_ = true
 
 [node name="maximize" type="Button" parent="HBoxContainer"]
@@ -859,30 +881,28 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -105.5
-offset_right = 88.5
+offset_left = -106.5
+offset_top = 1.0
+offset_right = 90.5
 offset_bottom = 10.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("6_nydlm")
 
-[node name="separator" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 31.6667
-offset_top = 72.5863
-offset_right = 34.6667
-offset_bottom = 100.586
-rotation = 1.5708
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
-
-[node name="separator2" type="Panel" parent="."]
+[node name="windowname" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.974
-offset_left = 33.765
-offset_top = 11.6668
-offset_right = 36.765
-offset_bottom = 0.656998
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.8445
+offset_top = 2.0
+offset_right = 83.1555
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "class manager"
+label_settings = SubResource("LabelSettings_2xelb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_b7u5f")

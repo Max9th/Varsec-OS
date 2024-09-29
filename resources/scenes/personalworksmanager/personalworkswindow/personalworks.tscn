@@ -48,39 +48,39 @@ scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jjfn")
 script = ExtResource("2_iadqj")
 
+[node name="windowname" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.5
+offset_top = 2.0
+offset_right = 446.5
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "Personal work manager"
+label_settings = SubResource("LabelSettings_polhb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="content" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_right = 314.0
+offset_right = 315.0
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 
-[node name="windowname" type="Label" parent="content"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -65.189
-offset_top = 4.0
-offset_right = 46.811
-offset_bottom = 18.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-text = "class manager"
-label_settings = SubResource("LabelSettings_polhb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Title" type="Label" parent="content"]
 custom_minimum_size = Vector2(324, 27)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.121212
+anchor_top = 0.0990764
 anchor_right = 0.174891
 anchor_bottom = 0.0990764
 offset_right = 213.993
@@ -322,12 +322,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -17.7678
-offset_top = 2.33345
-offset_right = -0.767838
-offset_bottom = 9.33345
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 9.0
 grow_horizontal = 0
-theme_override_constants/separation = 2
+theme_override_constants/separation = 1
 metadata/_edit_group_ = true
 
 [node name="maximize" type="Button" parent="HBoxContainer"]
@@ -351,8 +351,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -105.5
-offset_right = 88.5
+offset_left = -159.5
+offset_top = 1.0
+offset_right = 143.5
 offset_bottom = 10.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("7_w23mc")

@@ -156,10 +156,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -59.8333
-offset_top = 1.66667
-offset_right = 36.1667
-offset_bottom = 8.66667
+offset_left = -65.5
+offset_top = 1.0
+offset_right = 49.5
+offset_bottom = 10.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("7_uwk2l")
 

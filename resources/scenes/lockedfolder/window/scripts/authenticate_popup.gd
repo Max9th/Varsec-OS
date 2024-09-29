@@ -1,11 +1,10 @@
 extends Panel
 
 @onready var incorrect: Label = $INCORRECT
-@onready var line_edit: LineEdit = $LineEdit
+@onready var line_edit: LineEdit = $HBoxContainer/LineEdit
 @onready var timer: Timer = $Timer
-@onready var authenticate_popup: Panel = $"."
 @onready var wrong: AudioStreamPlayer = $INCORRECT/wrong
-@onready var close_audio: AudioStreamPlayer = $close_audio
+@onready var close_audio: AudioStreamPlayer = $close/close_audio
 
 var is_dragging: bool
 var start_drag_position: Vector2
@@ -13,13 +12,14 @@ var mouse_start_drag_position: Vector2
 var easter: bool
 
 func _ready() -> void:
-	authenticate_popup.visible = false
+	visible = false
+	incorrect.visible = false
 func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
 		clamp_window_inside_viewport()
 func _on_close_pressed() -> void:
-	authenticate_popup.visible = false
+	visible = false
 	close_audio.play()
 
 func _on_timer_timeout() -> void:
@@ -29,7 +29,7 @@ func _on_confirm_pressed() -> void:
 	authenticate()
 
 
-func _on_resizehandle_gui_input(event: InputEvent) -> void:
+func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
 		if event.is_pressed():
 			is_dragging = true
@@ -71,7 +71,7 @@ func authenticate():
 
 func authenticated():
 	var user_input = line_edit.text
-	authenticate_popup.visible = false
+	visible = false
 	get_tree().call_group("authentication", "_on_authenticated" + "_" + str(user_input))
 	easter = true
 
