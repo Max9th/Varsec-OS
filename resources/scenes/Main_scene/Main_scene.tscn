@@ -1,11 +1,15 @@
-[gd_scene load_steps=39 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=46 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
+[ext_resource type="Script" path="res://resources/scenes/cubigor/scripts/easteregg_3.gd" id="3_suwtk"]
+[ext_resource type="AudioStream" uid="uid://dotwiamefjj5r" path="res://resources/audio/limbo.mp3" id="4_aubp5"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
+[ext_resource type="VideoStream" path="res://resources/sprites/output_video.ogv" id="5_6a677"]
 [ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://resources/shaders/color_replace_shader.res" id="5_15vlg"]
 [ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/IFg.png" id="6_7exc4"]
+[ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
 [ext_resource type="Texture2D" uid="uid://bvm6djr4v7po6" path="res://resources/sprites/sfx.png" id="8_n2xns"]
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/vfx.png" id="9_kokno"]
@@ -133,6 +137,68 @@ anti_aliasing = false
 font = ExtResource("4_ljiqo")
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="GDScript" id="GDScript_qy31b"]
+resource_name = "select"
+script/source = "extends TextureButton
+
+
+# extends Control
+
+@onready var timer: Timer = $doubleclicktimer
+@onready var filename: Label = $filename
+@onready var nelixwindow: Panel = $\"../../../windows/nelixwindow\"
+@onready var selected_panel: Panel = $selected_panel
+@onready var select_audio: AudioStreamPlayer = $select_audio
+
+var selected: bool = false
+var timer_running: bool = false
+
+func _ready() -> void:
+	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+	selected_panel.visible = false
+func _process(_delta: float) -> void:
+	timer_running = not timer.is_stopped()
+func select():
+	if !timer_running:
+		selected = !selected
+		if selected:
+			selected_panel.visible = true
+			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
+			timer.start() # Start the timer
+			select_audio.play()
+		else:
+			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+			selected_panel.visible = false
+	elif selected and timer_running:
+		spawnwindow()
+
+func _on_pressed() -> void:
+	select()
+
+func spawnwindow():
+	#get_tree().change_scene_to_file(\"res://scenes/nelix_game/components/levels/proto1.tscn\")
+	pass
+	
+	
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
+font = ExtResource("4_ljiqo")
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3j3e"]
 shader = ExtResource("25_yofc8")
 shader_parameter/overlay = true
@@ -164,14 +230,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_kmpr7")
 metadata/_edit_vertical_guides_ = [-80.0]
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
+[node name="LIES!" type="Node2D" parent="." groups=["authentication"]]
+script = ExtResource("3_suwtk")
+
+[node name="sfx" type="AudioStreamPlayer" parent="LIES!" groups=["authentication"]]
+
+[node name="sfx2" type="AudioStreamPlayer" parent="LIES!" groups=["authentication"]]
+stream = ExtResource("4_aubp5")
+
+[node name="Video" type="VideoStreamPlayer" parent="LIES!"]
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("5_6a677")
+expand = true
+loop = true
+
 [node name="theonewhowaits" parent="." instance=ExtResource("3_bhann")]
-position = Vector2(576, 324)
+layout_mode = 0
 scale = Vector2(9.52066, 4)
+mouse_filter = 2
 
 [node name="desktop" type="Control" parent="."]
 layout_mode = 1
@@ -242,9 +325,9 @@ autostart = true
 [node name="IFg" type="TextureRect" parent="desktop/panel/Panel"]
 material = SubResource("ShaderMaterial_x83uk")
 layout_mode = 0
-offset_left = 1051.0
+offset_left = 1038.0
 offset_top = 4.0
-offset_right = 1196.0
+offset_right = 1183.0
 offset_bottom = 104.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_7exc4")
@@ -448,6 +531,55 @@ stream = ExtResource("16_7yxw8")
 [node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/musicplayer"]
 stream = ExtResource("17_00nwq")
 
+[node name="h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍" type="TextureButton" parent="desktop/Folders/rightvboxcon"]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("6_lno83")
+texture_pressed = ExtResource("6_lno83")
+texture_hover = ExtResource("6_lno83")
+stretch_mode = 0
+script = SubResource("GDScript_qy31b")
+
+[node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+stream = ExtResource("17_00nwq")
+pitch_scale = 0.32
+
+[node name="selected_panel" type="Panel" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 1.025
+anchor_right = 1.475
+anchor_bottom = 1.825
+theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
+metadata/_edit_use_anchors_ = true
+
+[node name="filename" type="Label" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.8206
+anchor_top = 2.82414
+anchor_right = -1.9206
+anchor_bottom = 2.99914
+offset_left = 111.824
+offset_top = -69.9657
+offset_right = 129.824
+offset_bottom = -45.9657
+grow_horizontal = 2
+grow_vertical = 2
+text = "h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
+label_settings = SubResource("LabelSettings_yb2ti")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="doubleclicktimer" type="Timer" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+wait_time = 0.3
+one_shot = true
+
 [node name="leftvboxcon" type="VBoxContainer" parent="desktop/Folders"]
 layout_mode = 0
 offset_left = 16.0
@@ -486,6 +618,20 @@ offset_right = 867.0
 offset_bottom = 173.0
 scale = Vector2(3, 3)
 
+[node name="bodytext" parent="desktop/windows/nelixwindow" index="2"]
+anchors_preset = -1
+anchor_left = 0.488
+offset_left = -24.504
+offset_top = -5.5
+offset_right = 68.5
+offset_bottom = 165.5
+vertical_alignment = 0
+autowrap_mode = 1
+
+[node name="draghandle" parent="desktop/windows/nelixwindow" index="5"]
+offset_left = -39.5
+offset_right = 23.5
+
 [node name="authenticate_popup" parent="desktop/windows" instance=ExtResource("22_76pyy")]
 layout_mode = 0
 offset_left = 128.0
@@ -509,9 +655,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 128.0
-offset_top = 64.0
+offset_top = 67.0
 offset_right = 345.0
-offset_bottom = 179.0
+offset_bottom = 192.0
 
 [node name="vfx" type="ColorRect" parent="."]
 visible = false
@@ -536,6 +682,7 @@ visible = false
 [connection signal="stop" from="." to="theonewhowaits" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
+[connection signal="disablebk" from="LIES!" to="." method="_on_lies_disablebk"]
 [connection signal="Disablebk" from="theonewhowaits" to="." method="_on_gaytscn_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
@@ -544,3 +691,6 @@ visible = false
 [connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
 [connection signal="pressed" from="desktop/Folders/rightvboxcon/musicplayer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_pressed"]
 [connection signal="timeout" from="desktop/Folders/rightvboxcon/musicplayer/Timer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_timer_timeout"]
+[connection signal="pressed" from="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍" to="LIES!" method="_on_hah_pressed"]
+
+[editable path="desktop/windows/nelixwindow"]

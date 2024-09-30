@@ -1,3 +1,8 @@
+VideoStreamPlayer
+AnimatedSprite2D
+TextureRect
+AudioStreamPlayer
+TextureButton
 HBoxContainer
 Timer
 MaxSizeContainer
@@ -7,8 +12,3 @@ BoxContainer
 VScrollBar
 VBoxContainer
 ScrollContainer
-Panel
-TextureRect
-CanvasLayer
-ColorRect
-Control

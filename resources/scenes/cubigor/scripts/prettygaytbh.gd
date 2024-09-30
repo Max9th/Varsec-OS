@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 #these are variables:
 @onready var person_theme: AudioStreamPlayer = $gaytheme
 var person_mode: bool = false

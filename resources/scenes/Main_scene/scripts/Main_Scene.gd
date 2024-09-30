@@ -7,7 +7,7 @@ extends Control
 @onready var splash_screen: CanvasLayer = $splash_screen
 @onready var background: Panel = $desktop/background
 
-@onready var selectom: Sprite2D = $theonewhowaits
+@onready var selectom: TextureRect = $theonewhowaits
 
 @onready var time: Label = $desktop/panel/Panel/time
 @onready var date: Label = $desktop/panel/Panel/date
@@ -24,6 +24,13 @@ extends Control
 @onready var easter_button: Button = $desktop/panel/Panel/easter_button
 @onready var easter_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/easter_button_sprite
 
+@onready var panel: Control = $desktop/panel
+@onready var logopor: TextureRect = $desktop/portfolio
+
+@onready var play_nelix: TextureButton = $"desktop/Folders/rightvboxcon/play nelix"
+@onready var musicplayer: TextureButton = $desktop/Folders/rightvboxcon/musicplayer
+@onready var hahahha: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
+
 var playaudio: bool = true
 var easter: bool
 
@@ -39,6 +46,7 @@ func _ready() -> void:
 	easter_button_sprite.visible = false
 	easter_button.disabled = true
 	windows.visible = true
+	hahahha.visible = false
 	update_time()
 
 func _process(_delta: float) -> void:
@@ -53,16 +61,37 @@ func _on_sfx_button_pressed() -> void:
 	playaudio = !playaudio
 
 func _on_cubigor_cubigorbk() -> void:
+	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	selectom.visible = false
 	takecare.playing = false
+	if takecare.playing:
+		takecare.stop()
+
+func _on_lies_disablebk() -> void:
 	easter_time()
+	background.visible = false
+	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
+	takecare.playing = false
+	selectom.visible = false
+	panel.visible = false
+	logopor.visible = false
+	if takecare.playing:
+		takecare.stop()
+	play_nelix.visible = false
+	musicplayer.visible = false
+	hahahha.visible = true
 
 func _on_gaytscn_disablebk() -> void:
-	background.visible = false
-	takecare.playing = false
 	easter_time()
+	background.visible = false
+	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
+	takecare.playing = false
+	logopor.visible = false
+	logopor.visible = false
+	if takecare.playing:
+		takecare.stop()
 
 func _on_vfx_button_pressed() -> void:
 	vfx.visible = !vfx.visible
@@ -86,6 +115,8 @@ func _on_easter_button_pressed() -> void:
 	easter_time()
 
 func update_time() -> void:
+	
+	
 	var date_dict: Dictionary = Time.get_datetime_dict_from_system()
 	time.text = "%02d:%02d" % [date_dict.hour, date_dict.minute]
 	date.text = "%02d/%02d/%d" % [date_dict.day, date_dict.month, date_dict.year]

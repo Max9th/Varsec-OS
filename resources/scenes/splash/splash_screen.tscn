@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btl1e5x4iv3p5"]
+[gd_scene load_steps=26 format=3 uid="uid://btl1e5x4iv3p5"]
 
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="1_ex30y"]
 [ext_resource type="Script" path="res://resources/scenes/splash/scripts/splash_screen.gd" id="1_yxwjt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bs0ok80xfyuid" path="res://resources/sprites/maxthelogo.png" id="3_j3kro"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="6_1fxpe"]
 [ext_resource type="AudioStream" uid="uid://cf168qxl8ldor" path="res://resources/audio/boot.mp3" id="7_o50mx"]
+[ext_resource type="Texture2D" uid="uid://4hlbl2jngrh7" path="res://resources/sprites/skip.png" id="9_vmk0t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63reo"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -93,7 +94,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_igm0h")
 }],
 "loop": false,
-"name": &"shine",
+"name": &"glint",
 "speed": 5.0
 }]
 
@@ -214,6 +215,10 @@ grow_vertical = 2
 pivot_offset = Vector2(92, 86)
 texture = ExtResource("2_b36d3")
 
+[node name="IFGtimer" type="Timer" parent="IFG"]
+wait_time = 2.0
+one_shot = true
+
 [node name="MAX" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -230,7 +235,7 @@ texture = ExtResource("3_j3kro")
 position = Vector2(592, 320)
 scale = Vector2(0.618033, 0.606667)
 sprite_frames = SubResource("SpriteFrames_x7wn3")
-animation = &"shine"
+animation = &"glint"
 
 [node name="Label" type="Label" parent="MAX"]
 layout_mode = 0
@@ -240,6 +245,15 @@ offset_right = 792.0
 offset_bottom = 398.0
 text = "Miguel Jorge Freitas de O."
 label_settings = SubResource("LabelSettings_dy2l2")
+
+[node name="skip" type="TextureButton" parent="."]
+offset_left = 1088.0
+offset_top = 584.0
+offset_right = 1128.0
+offset_bottom = 624.0
+tooltip_text = "Skip Bootscreen"
+texture_normal = ExtResource("9_vmk0t")
+stretch_mode = 0
 
 [node name="crt" type="ColorRect" parent="."]
 visible = false
@@ -252,10 +266,6 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="IFGtimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="changescene" type="Timer" parent="."]
 wait_time = 3.5
 one_shot = true
@@ -264,6 +274,7 @@ one_shot = true
 stream = ExtResource("7_o50mx")
 volume_db = -17.66
 
+[connection signal="timeout" from="IFG/IFGtimer" to="." method="_on_if_gtimer_timeout"]
 [connection signal="animation_finished" from="MAX/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="IFGtimer" to="." method="_on_if_gtimer_timeout"]
+[connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]
 [connection signal="timeout" from="changescene" to="." method="_on_changescene_timeout"]

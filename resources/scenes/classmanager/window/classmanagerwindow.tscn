@@ -58,13 +58,12 @@ clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1
 anchor_right = 0.565104
-anchor_bottom = 0.560185
+anchor_bottom = 0.61574
 offset_right = -434.0
-offset_bottom = -230.0
+offset_bottom = -266.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_dd0rh")
 script = ExtResource("2_mcqie")
-visiblewindow = true
 metadata/_edit_use_anchors_ = true
 
 [node name="separator" type="Panel" parent="."]
@@ -218,22 +217,22 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0151057
-anchor_right = 0.305136
-anchor_bottom = 0.0564516
-offset_left = -0.211472
-offset_right = -26.272
-offset_bottom = 33.8226
+anchor_left = 0.014489
+anchor_top = -0.0200935
+anchor_right = 0.139894
+anchor_bottom = 0.106926
+offset_right = 43.0
+offset_bottom = 29.5
 scale = Vector2(0.5, 0.5)
 text = "Aula 1
 
 "
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="aula2" type="Control" parent="aulas"]
 visible = false
-clip_contents = true
 layout_mode = 1
 anchor_top = -0.0174672
 anchor_right = 0.995
@@ -336,23 +335,21 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0151057
-anchor_right = 0.305136
-anchor_bottom = 0.0564516
-offset_left = -0.603528
-offset_top = 5.60792
-offset_right = -3.7915
-offset_bottom = 51.0849
+anchor_left = 0.0143313
+anchor_top = 0.00417447
+anchor_right = 0.154778
+anchor_bottom = 0.127321
+offset_right = 49.0
+offset_bottom = 29.5
 scale = Vector2(0.5, 0.5)
 text = "Aula 2
 
 "
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="aula3" type="Control" parent="aulas"]
-visible = false
-clip_contents = true
 layout_mode = 1
 anchor_right = 0.995
 anchor_bottom = 1.004
@@ -367,12 +364,12 @@ metadata/_edit_use_anchors_ = true
 [node name="ScaleContainer2" type="Container" parent="aulas/aula3"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0561225
-anchor_right = 0.379
-anchor_bottom = 2.07
-offset_top = -0.185596
-offset_right = 20.0455
-offset_bottom = -259.332
+anchor_top = 0.0553325
+anchor_right = 0.437
+anchor_bottom = 1.882
+offset_right = 0.157974
+offset_bottom = -215.163
+grow_horizontal = 2
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -450,21 +447,21 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0151057
-anchor_right = 0.305136
-anchor_bottom = 0.0564516
-offset_left = -0.458091
-offset_right = -26.5185
-offset_bottom = 9.93549
+anchor_left = 0.0137697
+anchor_top = -0.0170254
+anchor_right = 0.156674
+anchor_bottom = 0.0425635
+offset_right = 49.0
+offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
 text = "Aula 3
 "
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="aula4" type="Control" parent="aulas"]
 visible = false
-clip_contents = true
 layout_mode = 1
 anchor_right = 0.995
 anchor_bottom = 1.004
@@ -564,18 +561,20 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0151057
-anchor_right = 0.305136
-anchor_bottom = 0.0564516
-offset_left = -0.458091
-offset_right = -26.5185
-offset_bottom = 9.93549
+anchor_left = 0.0137697
+anchor_top = -0.0173203
+anchor_right = 0.156674
+anchor_bottom = 0.0433007
+offset_right = 49.0
+offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
 text = "Aula 4"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="aula5" type="Control" parent="aulas"]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchor_right = 0.995
@@ -590,11 +589,10 @@ grow_vertical = 2
 [node name="title" type="Label" parent="aulas/aula5"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0170353
-anchor_right = 0.180001
-anchor_bottom = 0.0894362
-offset_right = 37.0
-offset_bottom = 11.0
+anchor_right = 0.144591
+anchor_bottom = 0.0596241
+offset_right = 49.0
+offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
 text = "Aula 5"
 label_settings = SubResource("LabelSettings_60y8t")
@@ -716,20 +714,6 @@ offset_bottom = -6.33331
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="title" type="Label" parent="aulas/aula6"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00195513
-anchor_right = 0.57087
-anchor_bottom = 0.14
-offset_right = 0.900192
-offset_bottom = -6.20972
-scale = Vector2(0.5, 0.5)
-text = "Breakin news"
-label_settings = SubResource("LabelSettings_k6lmd")
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="ScaleContainer3" type="Container" parent="aulas/aula6"]
 layout_mode = 1
 anchors_preset = -1
@@ -765,6 +749,20 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
+
+[node name="title" type="Label" parent="aulas/aula6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00195513
+anchor_right = 0.574416
+anchor_bottom = 0.119248
+offset_right = 263.776
+offset_bottom = 40.14
+scale = Vector2(0.5, 0.5)
+text = "Breakin news"
+label_settings = SubResource("LabelSettings_k6lmd")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Buttonmanager" type="VBoxContainer" parent="."]
 layout_mode = 0

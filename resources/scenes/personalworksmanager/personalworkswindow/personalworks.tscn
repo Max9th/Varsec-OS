@@ -363,3 +363,4 @@ stream = ExtResource("9_hwie5")
 
 [connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

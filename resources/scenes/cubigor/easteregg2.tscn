@@ -4,8 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://nigo5atu6650" path="res://resources/audio/idk.mp3" id="2_i6i65"]
 [ext_resource type="Texture2D" uid="uid://b61vfxfoeqjxb" path="res://resources/sprites/max.jpg" id="3_nwj22"]
 
-[node name="easteregg2s" type="Sprite2D" groups=["authentication"]]
-position = Vector2(580, 326)
+[node name="easteregg2" type="TextureRect" groups=["authentication"]]
+offset_right = 121.0
+offset_bottom = 162.0
 scale = Vector2(9.52066, 4.02469)
 texture = ExtResource("3_nwj22")
 script = ExtResource("1_fbit4")
