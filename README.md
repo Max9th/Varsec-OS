@@ -8,6 +8,6 @@
 
 **play the fantasy OS here:**
 
-https://max9th.github.io/Varsec-OS/
+https://max9th.github.io/Varsec-OS-web/
 
 Made in GODOT
