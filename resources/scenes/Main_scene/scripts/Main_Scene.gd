@@ -1,5 +1,22 @@
 extends Control
 
+						  #:xkl..                  
+						   #'kWMNd.                
+				 #:lll,       .xMMWd.              
+			 #.oXNMMMMWXK:     .xWMMWx.            
+		   #.dNMMWOk;...,kd.    .NMMMMO.           
+		  #.OMMWk'               ,NMMMMO           
+		  #0MMWx   .okko.        .XMMMMNd          
+		  #0MMx    0MMMMK         XMMMMMK          
+		  #;KMx    :KWWK:       .oNMMMMMK          
+		   #;0Wk                .NMMMMMMK          
+			 #,O0:             .XMMMMMM0.          
+			   #..           .lXMMMMMMNo           
+						  #.oXMMMMMMMNl            
+		  #:x:..       .'xkNMMMMMMMNo.             
+		   #,OWXdoooooOWMMMMMMMMMNl.               
+			 #'oxWWWMMMMMMMMWWKol.                 
+				#...lxxxxxx'..                     
 
 @onready var ambientsound: AudioStreamPlayer = $ambientsound
 @onready var takecare: AudioStreamPlayer = $desktop/Folders/rightvboxcon/musicplayer/takecare
@@ -7,7 +24,7 @@ extends Control
 @onready var splash_screen: CanvasLayer = $splash_screen
 @onready var background: Panel = $desktop/background
 
-@onready var selectom: TextureRect = $theonewhowaits
+@onready var gaylon: TextureRect = $theonewhowaits
 
 @onready var time: Label = $desktop/panel/Panel/time
 @onready var date: Label = $desktop/panel/Panel/date
@@ -31,6 +48,8 @@ extends Control
 @onready var musicplayer: TextureButton = $desktop/Folders/rightvboxcon/musicplayer
 @onready var hahahha: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
 
+var open_count: int = 0
+
 var playaudio: bool = true
 var easter: bool
 
@@ -47,6 +66,7 @@ func _ready() -> void:
 	easter_button.disabled = true
 	windows.visible = true
 	hahahha.visible = false
+	windows.position.x = 0
 	update_time()
 
 func _process(_delta: float) -> void:
@@ -64,7 +84,7 @@ func _on_cubigor_cubigorbk() -> void:
 	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
-	selectom.visible = false
+	gaylon.visible = false
 	takecare.playing = false
 	if takecare.playing:
 		takecare.stop()
@@ -74,7 +94,7 @@ func _on_lies_disablebk() -> void:
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	takecare.playing = false
-	selectom.visible = false
+	gaylon.visible = false
 	panel.visible = false
 	logopor.visible = false
 	if takecare.playing:
@@ -115,8 +135,6 @@ func _on_easter_button_pressed() -> void:
 	easter_time()
 
 func update_time() -> void:
-	
-	
 	var date_dict: Dictionary = Time.get_datetime_dict_from_system()
 	time.text = "%02d:%02d" % [date_dict.hour, date_dict.minute]
 	date.text = "%02d/%02d/%d" % [date_dict.day, date_dict.month, date_dict.year]

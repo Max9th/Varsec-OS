@@ -7,13 +7,13 @@
 [ext_resource type="AudioStream" uid="uid://dotwiamefjj5r" path="res://resources/audio/limbo.mp3" id="4_aubp5"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
 [ext_resource type="VideoStream" path="res://resources/sprites/output_video.ogv" id="5_6a677"]
-[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://resources/shaders/color_replace_shader.res" id="5_15vlg"]
-[ext_resource type="Texture2D" uid="uid://b1jp30ai5f8kp" path="res://resources/sprites/IFg.png" id="6_7exc4"]
 [ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
+[ext_resource type="Texture2D" uid="uid://frj2l5gv45ks" path="res://resources/sprites/bk.png" id="7_14eui"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
 [ext_resource type="Texture2D" uid="uid://bvm6djr4v7po6" path="res://resources/sprites/sfx.png" id="8_n2xns"]
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/vfx.png" id="9_kokno"]
 [ext_resource type="Texture2D" uid="uid://cgex4bd1frmyr" path="res://resources/sprites/easteregg.png" id="10_1afcs"]
+[ext_resource type="Texture2D" uid="uid://6ypxf3pijaje" path="res://resources/sprites/IFgreduzido.png" id="10_mpglo"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_djys2"]
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="12_krryl"]
 [ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/playnelixdoc/nelixdoc.tscn" id="13_6bx3l"]
@@ -31,9 +31,10 @@
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
+[ext_resource type="PackedScene" uid="uid://dg3elxvkc55dg" path="res://resources/scenes/examples/window/window.tscn" id="29_06joo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qgy"]
-bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plunp"]
+texture = ExtResource("7_14eui")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yma61"]
 bg_color = Color(0.131791, 0.156469, 0.224271, 1)
@@ -51,11 +52,6 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("4_ljiqo")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x83uk"]
-shader = ExtResource("5_15vlg")
-shader_parameter/replaceAmount = 1.0
-shader_parameter/replaceColor = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -233,6 +229,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kmpr7")
 metadata/_edit_vertical_guides_ = [-80.0]
+metadata/_edit_horizontal_guides_ = [969.0]
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
@@ -272,7 +269,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_m1qgy")
+theme_override_styles/panel = SubResource("StyleBoxTexture_plunp")
 
 [node name="panel" type="Control" parent="desktop"]
 anchors_preset = 0
@@ -323,16 +320,15 @@ wait_time = 10.0
 autostart = true
 
 [node name="IFg" type="TextureRect" parent="desktop/panel/Panel"]
-material = SubResource("ShaderMaterial_x83uk")
 layout_mode = 0
-offset_left = 1038.0
+offset_left = 1063.0
 offset_top = 4.0
-offset_right = 1183.0
+offset_right = 1146.0
 offset_bottom = 104.0
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_7exc4")
+texture = ExtResource("10_mpglo")
 expand_mode = 1
-stretch_mode = 1
+stretch_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel"]
 layout_mode = 0
@@ -607,6 +603,8 @@ size_flags_horizontal = 4
 [node name="windows" type="Control" parent="desktop"]
 layout_mode = 1
 anchors_preset = 0
+offset_left = 2308.0
+offset_right = 2308.0
 metadata/_edit_use_anchors_ = true
 
 [node name="nelixwindow" parent="desktop/windows" instance=ExtResource("21_h37e3")]
@@ -658,6 +656,13 @@ offset_left = 128.0
 offset_top = 67.0
 offset_right = 345.0
 offset_bottom = 192.0
+
+[node name="window" parent="desktop/windows" instance=ExtResource("29_06joo")]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 401.0
+offset_right = 580.0
+offset_bottom = 458.0
 
 [node name="vfx" type="ColorRect" parent="."]
 visible = false

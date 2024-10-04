@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq48ek1cmrexf"]
+[gd_scene load_steps=15 format=3 uid="uid://dq48ek1cmrexf"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_gdggg"]
 [ext_resource type="Script" path="res://resources/scenes/lockedfolder/window/scripts/authenticate_popup.gd" id="2_t6mlv"]
@@ -6,9 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="4_2pwua"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="5_lh1qc"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="6_vfbe7"]
-[ext_resource type="Shader" uid="uid://cw5fjbt1la28f" path="res://resources/shaders/color_replace_shader.res" id="7_1o28u"]
-[ext_resource type="Texture2D" uid="uid://jt6tdmef2yl4" path="res://resources/sprites/checkmark-symbolic.svg" id="8_eankx"]
+[ext_resource type="Texture2D" uid="uid://cdceft76gvmq0" path="res://resources/sprites/checkmark-symbolic.png" id="8_dpxc3"]
 [ext_resource type="AudioStream" uid="uid://bec51h6ctq2uo" path="res://resources/audio/wrong.wav" id="9_cb5db"]
+[ext_resource type="Texture2D" uid="uid://cdu2qhot0bisp" path="res://resources/sprites/warning.png" id="11_bv565"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="11_y4xvw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6fgv"]
@@ -22,11 +22,6 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_crjd4"]
-shader = ExtResource("7_1o28u")
-shader_parameter/replaceAmount = 1.0
-shader_parameter/replaceColor = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_85uop"]
 font = ExtResource("3_78nmx")
@@ -44,6 +39,7 @@ offset_bottom = 48.0
 scale = Vector2(1, 0.96)
 theme_override_styles/panel = ExtResource("1_gdggg")
 script = ExtResource("2_t6mlv")
+visible_window = true
 
 [node name="password" type="Label" parent="."]
 layout_mode = 0
@@ -106,15 +102,13 @@ theme_override_styles/normal = ExtResource("6_vfbe7")
 metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/confirm"]
-material = SubResource("ShaderMaterial_crjd4")
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("8_eankx")
+texture = ExtResource("8_dpxc3")
 
 [node name="INCORRECT" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_top = 36.4583
@@ -126,6 +120,15 @@ label_settings = SubResource("LabelSettings_85uop")
 
 [node name="wrong" type="AudioStreamPlayer" parent="INCORRECT"]
 stream = ExtResource("9_cb5db")
+
+[node name="TextureRect" type="TextureRect" parent="INCORRECT"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = -36.4582
+offset_right = 280.0
+offset_bottom = 5.54182
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_bv565")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

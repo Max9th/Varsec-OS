@@ -64,6 +64,7 @@ offset_bottom = -266.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_dd0rh")
 script = ExtResource("2_mcqie")
+visiblewindow = true
 metadata/_edit_use_anchors_ = true
 
 [node name="separator" type="Panel" parent="."]

@@ -22,8 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if is_dragging:
-		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
-		clamp_window_inside_viewport()
+		global_position = Windowz.handle_dragging(start_drag_position, mouse_start_drag_position, get_global_mouse_position())
 
 func _on_close_pressed() -> void:
 	visible = false
@@ -37,15 +36,6 @@ func _on_draghandle_gui_input(event: InputEvent) -> void:
 			mouse_start_drag_position = get_global_mouse_position()
 		else:
 			is_dragging = false
-
-func clamp_window_inside_viewport() -> void:
-	var viewport_size = get_viewport().get_visible_rect().size
-	var position2 = global_position
-	var object_size = size * 2.78
-	
-	position.x = clamp(position2.x, 0, viewport_size.x - object_size.x)
-	position.y = clamp(position2.y, 0, viewport_size.y - object_size.y)
-	global_position = position2
 
 func _on_maximize_pressed() -> void:
 	maximize_window()

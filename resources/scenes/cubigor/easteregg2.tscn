@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnwsa1t40yf5q"]
 
+[ext_resource type="Texture2D" uid="uid://dsb312enenvgp" path="res://resources/sprites/max.png" id="1_3uovv"]
 [ext_resource type="Script" path="res://resources/scenes/cubigor/scripts/prettygaytbh.gd" id="1_fbit4"]
-[ext_resource type="AudioStream" uid="uid://nigo5atu6650" path="res://resources/audio/idk.mp3" id="2_i6i65"]
-[ext_resource type="Texture2D" uid="uid://b61vfxfoeqjxb" path="res://resources/sprites/max.jpg" id="3_nwj22"]
+[ext_resource type="AudioStream" uid="uid://bhkid4a4f4mnw" path="res://resources/audio/eek.mp3" id="3_ogkg0"]
 
 [node name="easteregg2" type="TextureRect" groups=["authentication"]]
 offset_right = 121.0
 offset_bottom = 162.0
 scale = Vector2(9.52066, 4.02469)
-texture = ExtResource("3_nwj22")
+texture = ExtResource("1_3uovv")
 script = ExtResource("1_fbit4")
 
 [node name="gaytheme" type="AudioStreamPlayer" parent="." groups=["authentication"]]
-stream = ExtResource("2_i6i65")
+stream = ExtResource("3_ogkg0")

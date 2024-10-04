@@ -1,6 +1,6 @@
+TextureRect
 VideoStreamPlayer
 AnimatedSprite2D
-TextureRect
 AudioStreamPlayer
 TextureButton
 HBoxContainer

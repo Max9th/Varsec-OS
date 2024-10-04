@@ -21,10 +21,10 @@ func _ready() -> void:
 	incorrect.visible = false
 func _process(_delta: float) -> void:
 	if is_dragging:
-		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
-		clamp_window_inside_viewport()
+		global_position = Windowz.handle_dragging(start_drag_position, mouse_start_drag_position, get_global_mouse_position())
 	if easter == false and swearing == false:
 		incorrect.text = "!!Senha incorreta!!"
+
 func _on_close_pressed() -> void:
 	visible = false
 	close_audio.play()
@@ -36,7 +36,6 @@ func _on_timer_timeout() -> void:
 func _on_confirm_pressed() -> void:
 	authenticate()
 
-
 func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
 		if event.is_pressed():
@@ -45,15 +44,6 @@ func _on_draghandle_gui_input(event: InputEvent) -> void:
 			mouse_start_drag_position = get_global_mouse_position()
 		else:
 			is_dragging = false
-
-func clamp_window_inside_viewport() -> void:
-	var viewport_size = get_viewport().get_visible_rect().size
-	var position2 = global_position
-	var object_size = size * 3
-	
-	position2.x = clamp(position2.x, 0, viewport_size.x - object_size.x)
-	position2.y = clamp(position2.y, 0, viewport_size.y - object_size.y)
-	global_position = position2
 
 func _on_line_edit_text_submitted(_new_text: String) -> void:
 	authenticate()
@@ -103,7 +93,7 @@ func authenticated():
 
 func _on_mainmenu_stop() -> void:
 	easter = false
-	
+
 func swears():
 	swearing = true
 	incorrect.text = "!!EW MANO!"

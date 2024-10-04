@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
 [ext_resource type="Texture2D" uid="uid://buijigbbbq2ao" path="res://resources/sprites/personalworkmanagerassets/bloodtower1.png" id="4_6eokd"]
-[ext_resource type="Texture2D" uid="uid://dajwjbfof67fp" path="res://resources/sprites/personalworkmanagerassets/bk2 (1).png" id="5_bqeg2"]
+[ext_resource type="Texture2D" uid="uid://dajwjbfof67fp" path="res://resources/sprites/personalworkmanagerassets/bk.png" id="5_bqeg2"]
 [ext_resource type="Texture2D" uid="uid://dydspky65dpyf" path="res://resources/sprites/personalworkmanagerassets/Darfigure.png" id="6_vrxvx"]
 [ext_resource type="Texture2D" uid="uid://dl2sn1jffnjtj" path="res://resources/sprites/personalworkmanagerassets/pfp.png" id="7_ue2kb"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_w23mc"]
@@ -292,9 +292,9 @@ custom_minimum_size = Vector2(133, 80)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.148837
-anchor_top = 0.5
-anchor_right = 0.355039
-anchor_bottom = 0.727273
+anchor_top = 0.501894
+anchor_right = 0.359948
+anchor_bottom = 0.729167
 texture = ExtResource("19_jdguw")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
