@@ -10,8 +10,4 @@
 
 https://max9th.github.io/Varsec-OS-web/
 
-The repo for the web player follows:
-
-https://github.com/Max9th/Varsec-OS-web
-
 Made in GODOT
