@@ -228,8 +228,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kmpr7")
-metadata/_edit_vertical_guides_ = [-80.0]
-metadata/_edit_horizontal_guides_ = [969.0]
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
