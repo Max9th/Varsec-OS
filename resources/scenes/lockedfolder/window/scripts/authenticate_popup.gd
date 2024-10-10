@@ -112,8 +112,11 @@ func swears():
 
 func gay():
 	swearing = true
-	randi() % 2
-	incorrect.text = "<3 gotta luv it"
+	var choose: int = randi() % 2
+	if choose == 1:
+		incorrect.text = "<3 gotta luv it"
+	else:
+		incorrect.text = "HACKER FILHO DE UMA INFELIZ, DESGRAÇADO"
 	incorrect.visible = true
 	timer.start()
 	line_edit.text = ""

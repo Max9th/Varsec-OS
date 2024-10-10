@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=42 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
@@ -126,6 +126,13 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
 font = ExtResource("4_ljiqo")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6wr3"]
+line_spacing = 1.0
+font = ExtResource("4_ljiqo")
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+shadow_size = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3j3e"]
 shader = ExtResource("25_yofc8")
@@ -492,10 +499,11 @@ stream = ExtResource("23_odcdw")
 [node name="bodytext" parent="desktop/windows/nelixwindow" index="2"]
 anchors_preset = -1
 anchor_left = 0.488
-offset_left = -24.504
-offset_top = -5.5
-offset_right = 68.5
-offset_bottom = 165.5
+offset_left = -28.504
+offset_top = -4.83333
+offset_right = 89.5
+offset_bottom = 166.167
+label_settings = SubResource("LabelSettings_n6wr3")
 vertical_alignment = 0
 autowrap_mode = 1
 

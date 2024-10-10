@@ -29,10 +29,14 @@ extends Control
 @onready var time: Label = $desktop/panel/Panel/time
 @onready var date: Label = $desktop/panel/Panel/date
 
+@onready var sfx_button: Button = $desktop/panel/Panel/sfx_button
 @onready var sfx_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/sfx_button_sprite
 
 @onready var vfx: ColorRect = $vfx
 @onready var vfx_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/vfx_button_sprite
+
+@onready var power_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/Power_button_sprite
+@onready var power_button: Button = $desktop/panel/Panel/power_button
 
 @onready var windows: Control = $desktop/windows
 @onready var personalworkswindow: Panel = $desktop/windows/personalworkswindow
@@ -112,7 +116,6 @@ func _on_gaytscn_disablebk() -> void:
 	logopor.visible = false
 	if takecare.playing:
 		takecare.stop()
-
 func _on_vfx_button_pressed() -> void:
 	vfx.visible = !vfx.visible
 	if vfx.visible == false:
