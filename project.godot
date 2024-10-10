@@ -15,7 +15,7 @@ config/description="A fanstasy OS made as an art project"
 config/version="V1.5"
 run/main_scene="res://resources/scenes/Main_scene/Main_scene.tscn"
 config/project_settings_override="ss"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.3")
 boot_splash/bg_color=Color(0.0627451, 0.0784314, 0.121569, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -47,7 +47,7 @@ folder_colors={
 "res://addons/": "red",
 "res://exports/": "yellow",
 "res://resources/": "teal",
-"res://resources/audio/": "teal",
+"res://resources/audio/": "orange",
 "res://resources/fonts/": "teal",
 "res://resources/scenes/": "teal",
 "res://resources/shaders/": "teal",

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://resources/scenes/cubigor/scripts/cubigor.gd" id="1_txcu6"]
 [ext_resource type="Texture2D" uid="uid://dxef4wd2s67rq" path="res://resources/sprites/Igor.png" id="1_xcgny"]
-[ext_resource type="AudioStream" uid="uid://4j52i1pkdhjm" path="res://resources/audio/Cubigor theme.mp3" id="4_rgf8c"]
+[ext_resource type="AudioStream" uid="uid://7nf7km5t6bu" path="res://resources/audio/Cubigor theme.wav" id="3_opkpa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4qmo"]
 albedo_color = Color(0.384314, 0, 1, 1)
@@ -90,4 +90,4 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 
 fov = 102.1
 
 [node name="Cubigor_theme" type="AudioStreamPlayer" parent="others"]
-stream = ExtResource("4_rgf8c")
+stream = ExtResource("3_opkpa")

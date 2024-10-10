@@ -1,8 +1,9 @@
+TextureButton
+LinkButton
 TextureRect
 VideoStreamPlayer
 AnimatedSprite2D
 AudioStreamPlayer
-TextureButton
 HBoxContainer
 Timer
 MaxSizeContainer
@@ -11,4 +12,3 @@ GridContainer
 BoxContainer
 VScrollBar
 VBoxContainer
-ScrollContainer

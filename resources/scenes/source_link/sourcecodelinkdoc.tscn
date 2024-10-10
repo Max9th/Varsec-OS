@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://8b1r3i26bgog"]
+[gd_scene load_steps=20 format=3 uid="uid://8b1r3i26bgog"]
 
 [ext_resource type="Texture2D" uid="uid://dkm1oehueyxep" path="res://resources/sprites/file.png" id="1_8260m"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="1_oyhqj"]
 [ext_resource type="Texture2D" uid="uid://h41su6ua5f8v" path="res://resources/sprites/file_selected.png" id="2_fyqcd"]
 [ext_resource type="Script" path="res://resources/scenes/source_link/scripts/source_code_link.gd" id="3_8s2dh"]
-[ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/chain-link-symbolic.png" id="5_rr4sf"]
+[ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="6_8s88s"]
 [ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/chain-link-symbolic.png" id="6_t5by5"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="7_uvtag"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_i3lby"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_uoows"]
@@ -139,7 +138,7 @@ offset_left = 27.0
 offset_top = 65.0
 offset_right = 46.0
 offset_bottom = 82.0
-texture = ExtResource("5_rr4sf")
+texture = ExtResource("6_t5by5")
 
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1
@@ -184,7 +183,7 @@ wait_time = 0.7
 one_shot = true
 
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_uvtag")
+stream = ExtResource("6_8s88s")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_i3lby")

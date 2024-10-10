@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/folderopenpersonal.png" id="2_1kli8"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/scripts/personalworkscript.gd" id="3_oxt5l"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_32slq"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="5_n1ouu"]
+[ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="5_b76h4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dto36"]
 bg_color = Color(1, 1, 1, 1)
@@ -76,7 +76,7 @@ wait_time = 0.7
 one_shot = true
 
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_n1ouu")
+stream = ExtResource("5_b76h4")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

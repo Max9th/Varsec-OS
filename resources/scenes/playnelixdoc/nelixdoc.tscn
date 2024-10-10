@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="2_1tobn"]
 [ext_resource type="Script" path="res://resources/scenes/playnelixdoc/scripts/nelixdoc.gd" id="2_frl7q"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="8_8oens"]
+[ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="4_huc3o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
 bg_color = Color(1, 1, 1, 1)
@@ -41,7 +41,7 @@ script = ExtResource("2_frl7q")
 metadata/_edit_use_anchors_ = true
 
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_8oens")
+stream = ExtResource("4_huc3o")
 
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1

@@ -1,12 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=41 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
+[ext_resource type="PackedScene" uid="uid://ddwpbtpu41bgp" path="res://resources/scenes/cubigor/!seil.scn" id="3_4vyws"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
-[ext_resource type="Script" path="res://resources/scenes/cubigor/scripts/easteregg_3.gd" id="3_suwtk"]
-[ext_resource type="AudioStream" uid="uid://dotwiamefjj5r" path="res://resources/audio/limbo.mp3" id="4_aubp5"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
-[ext_resource type="VideoStream" path="res://resources/sprites/output_video.ogv" id="5_6a677"]
 [ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
 [ext_resource type="Texture2D" uid="uid://frj2l5gv45ks" path="res://resources/sprites/bk.png" id="7_14eui"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
@@ -18,14 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="12_krryl"]
 [ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/playnelixdoc/nelixdoc.tscn" id="13_6bx3l"]
 [ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/sourcecodelinkdoc.tscn" id="14_r1580"]
-[ext_resource type="Texture2D" uid="uid://dbllfwvyy8448" path="res://resources/sprites/sfx_selected.png" id="15_7751k"]
-[ext_resource type="AudioStream" uid="uid://bwjs0w57phcsg" path="res://resources/audio/Take Care.mp3" id="16_7yxw8"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="17_00nwq"]
+[ext_resource type="PackedScene" uid="uid://daufpfj3xpnyb" path="res://resources/scenes/musicplayer/musicplayer.tscn" id="18_nlsao"]
 [ext_resource type="PackedScene" uid="uid://naxxreavcae8" path="res://resources/scenes/classmanager/classmanagerfolder.tscn" id="18_pkjs4"]
 [ext_resource type="PackedScene" uid="uid://bin6va1btyxpn" path="res://resources/scenes/personalworksmanager/personalworkfolder.tscn" id="19_aosso"]
 [ext_resource type="PackedScene" uid="uid://bj2mltt8gsqow" path="res://resources/scenes/lockedfolder/lockedfolder.tscn" id="20_yd3ne"]
 [ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/playnelixdoc/playnelixwindow/playnelixwindow.tscn" id="21_h37e3"]
 [ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="22_76pyy"]
+[ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="23_odcdw"]
 [ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="23_q30xu"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
@@ -53,85 +50,20 @@ font = ExtResource("4_ljiqo")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="GDScript" id="GDScript_27er6"]
+resource_name = "IFg Link"
+script/source = "extends TextureButton
+
+
+func _on_pressed() -> void:
+	OS.shell_open(\"https://ww.ifg.edu.br\")
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
 bg_color = Color(1, 0.337255, 0.321569, 0)
-
-[sub_resource type="GDScript" id="GDScript_bhlkm"]
-script/source = "extends Control
-
-@onready var selected_panel: Panel = $selected_panel
-@onready var timer: Timer = $Timer
-@onready var filename: Label = $filename
-@onready var takecare: AudioStreamPlayer = $takecare
-@onready var folder: TextureButton = $\".\"
-@onready var select_audio: AudioStreamPlayer = $select_audio
-
-var selected: bool = false
-var timer_running: bool = false
-var playing = false
-
-func _ready() -> void:
-	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
-	selected_panel.visible = false
-func _process(_delta: float) -> void:
-	timer_running = not timer.is_stopped()
-	if playing:
-		folder.texture_normal = load(\"res://resources/sprites/disabledsfx.png\")
-		folder.texture_hover = load(\"res://resources/sprites/disabledsfx.png\")
-		folder.texture_pressed = load(\"res://resources/sprites/disabledsfx.png\")
-		filename.text = \"Stop playing\"
-	else:
-		folder.texture_normal = load(\"res://resources/sprites/sfx.png\")
-		folder.texture_hover = load(\"res://resources/sprites/sfx_selected.png\")
-		folder.texture_pressed = load(\"res://resources/sprites/sfx.png\")
-		filename.text = \"play take care\"
-func select():
-	if !timer_running:
-		selected = !selected
-		if selected:
-			selected_panel.visible = true
-			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
-			timer.start() # Start the timer
-			select_audio.play()
-		else:
-			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
-			selected_panel.visible = false
-	elif selected and timer_running:
-		spawnwindow()
-
-func _on_pressed() -> void:
-	select()
-
-func spawnwindow():
-		playin()
-
-func playin():
-	playing = !playing
-	if playing:
-		takecare.play()
-	else:
-		takecare.stop()
-"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpere"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-anti_aliasing = false
-
-[sub_resource type="LabelSettings" id="LabelSettings_etf32"]
-font = ExtResource("4_ljiqo")
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_qy31b"]
 resource_name = "select"
@@ -231,20 +163,7 @@ script = ExtResource("1_kmpr7")
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
-[node name="LIES!" type="Node2D" parent="." groups=["authentication"]]
-script = ExtResource("3_suwtk")
-
-[node name="sfx" type="AudioStreamPlayer" parent="LIES!" groups=["authentication"]]
-
-[node name="sfx2" type="AudioStreamPlayer" parent="LIES!" groups=["authentication"]]
-stream = ExtResource("4_aubp5")
-
-[node name="Video" type="VideoStreamPlayer" parent="LIES!"]
-offset_right = 1152.0
-offset_bottom = 648.0
-stream = ExtResource("5_6a677")
-expand = true
-loop = true
+[node name="LIES!" parent="." instance=ExtResource("3_4vyws")]
 
 [node name="theonewhowaits" parent="." instance=ExtResource("3_bhann")]
 layout_mode = 0
@@ -317,16 +236,18 @@ metadata/_edit_use_anchors_ = true
 wait_time = 10.0
 autostart = true
 
-[node name="IFg" type="TextureRect" parent="desktop/panel/Panel"]
+[node name="TextureButton" type="TextureButton" parent="desktop/panel/Panel"]
 layout_mode = 0
-offset_left = 1063.0
-offset_top = 4.0
-offset_right = 1146.0
-offset_bottom = 104.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_mpglo")
-expand_mode = 1
-stretch_mode = 3
+offset_left = 1065.0
+offset_top = 3.0
+offset_right = 1094.0
+offset_bottom = 48.0
+texture_normal = ExtResource("10_mpglo")
+texture_pressed = ExtResource("10_mpglo")
+texture_hover = ExtResource("10_mpglo")
+ignore_texture_size = true
+stretch_mode = 4
+script = SubResource("GDScript_27er6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel"]
 layout_mode = 0
@@ -473,57 +394,8 @@ custom_minimum_size = Vector2(32, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="musicplayer" type="TextureButton" parent="desktop/Folders/rightvboxcon"]
-texture_filter = 1
-custom_minimum_size = Vector2(40, 40)
+[node name="musicplayer" parent="desktop/Folders/rightvboxcon" instance=ExtResource("18_nlsao")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("8_n2xns")
-texture_hover = ExtResource("15_7751k")
-stretch_mode = 0
-script = SubResource("GDScript_bhlkm")
-
-[node name="selected_panel" type="Panel" parent="desktop/Folders/rightvboxcon/musicplayer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.2
-anchor_top = 1.025
-anchor_right = 1.4
-anchor_bottom = 1.325
-offset_left = -36.0
-offset_top = 1.0
-offset_right = 34.0
-offset_bottom = 25.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xpere")
-
-[node name="filename" type="Label" parent="desktop/Folders/rightvboxcon/musicplayer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.99
-anchor_right = 1.0
-anchor_bottom = 1.34
-offset_left = -26.0
-offset_top = 6.39999
-offset_right = 26.0
-offset_bottom = 23.4
-grow_horizontal = 2
-grow_vertical = 2
-text = "Play 
-\"take care\""
-label_settings = SubResource("LabelSettings_etf32")
-horizontal_alignment = 1
-
-[node name="Timer" type="Timer" parent="desktop/Folders/rightvboxcon/musicplayer"]
-wait_time = 0.3
-one_shot = true
-
-[node name="takecare" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/musicplayer"]
-stream = ExtResource("16_7yxw8")
-
-[node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/musicplayer"]
-stream = ExtResource("17_00nwq")
 
 [node name="h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍" type="TextureButton" parent="desktop/Folders/rightvboxcon"]
 visible = false
@@ -538,7 +410,7 @@ stretch_mode = 0
 script = SubResource("GDScript_qy31b")
 
 [node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
-stream = ExtResource("17_00nwq")
+stream = ExtResource("23_odcdw")
 pitch_scale = 0.32
 
 [node name="selected_panel" type="Panel" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
@@ -583,7 +455,7 @@ offset_bottom = 504.0
 theme_override_constants/separation = 88
 metadata/_edit_group_ = true
 
-[node name="classmanagerfolder2" parent="desktop/Folders/leftvboxcon" instance=ExtResource("18_pkjs4")]
+[node name="classmanagerfolder2\'" parent="desktop/Folders/leftvboxcon" instance=ExtResource("18_pkjs4")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -613,6 +485,9 @@ offset_top = 136.0
 offset_right = 867.0
 offset_bottom = 173.0
 scale = Vector2(3, 3)
+
+[node name="select" parent="desktop/windows/nelixwindow" index="0"]
+stream = ExtResource("23_odcdw")
 
 [node name="bodytext" parent="desktop/windows/nelixwindow" index="2"]
 anchors_preset = -1
@@ -676,7 +551,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ambientsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_kfb2x")
-volume_db = -17.66
 
 [node name="splash_screen" parent="." instance=ExtResource("27_uwk17")]
 visible = false
@@ -685,15 +559,20 @@ visible = false
 [connection signal="stop" from="." to="theonewhowaits" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
-[connection signal="disablebk" from="LIES!" to="." method="_on_lies_disablebk"]
 [connection signal="Disablebk" from="theonewhowaits" to="." method="_on_gaytscn_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="desktop/panel/Panel/TextureButton" to="desktop/panel/Panel/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/sfx_button" to="." method="_on_sfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/vfx_button" to="." method="_on_vfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
-[connection signal="pressed" from="desktop/Folders/rightvboxcon/musicplayer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_pressed"]
-[connection signal="timeout" from="desktop/Folders/rightvboxcon/musicplayer/Timer" to="desktop/Folders/rightvboxcon/musicplayer" method="_on_timer_timeout"]
-[connection signal="pressed" from="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍" to="LIES!" method="_on_hah_pressed"]
+[connection signal="mouse_entered" from="desktop/Folders/rightvboxcon/play nelix" to="desktop/Folders/rightvboxcon/play nelix" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="desktop/Folders/rightvboxcon/play nelix" to="desktop/Folders/rightvboxcon/play nelix" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="desktop/Folders/rightvboxcon/source_link" to="desktop/Folders/rightvboxcon/source_link" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="desktop/Folders/rightvboxcon/source_link" to="desktop/Folders/rightvboxcon/source_link" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="desktop/Folders/leftvboxcon/classmanagerfolder2\'" to="desktop/Folders/leftvboxcon/classmanagerfolder2\'" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="desktop/Folders/leftvboxcon/classmanagerfolder2\'" to="desktop/Folders/leftvboxcon/classmanagerfolder2\'" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="desktop/Folders/leftvboxcon/folderlocked" to="desktop/Folders/leftvboxcon/folderlocked" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="desktop/Folders/leftvboxcon/folderlocked" to="desktop/Folders/leftvboxcon/folderlocked" method="_on_mouse_exited"]
 
 [editable path="desktop/windows/nelixwindow"]

@@ -8,6 +8,7 @@ var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
 
 func _process(delta: float) -> void:
+	visible = false
 	if is_dragging:
 		global_position = Windowz.handle_dragging(start_drag_position, mouse_start_drag_position, get_global_mouse_position())
 

@@ -8,12 +8,15 @@
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_uo7ka"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06psj"]
+line_spacing = 1.0
 font = ExtResource("5_i3tha")
+font_size = 32
 font_color = Color(1, 0, 0, 1)
 outline_size = 5
 shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_03pvy"]
+line_spacing = 1.0
 font = ExtResource("5_i3tha")
 font_color = Color(0, 0, 0, 1)
 
@@ -38,21 +41,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.6428
-offset_top = -4.5
-offset_right = 67.3571
-offset_bottom = 60.5
+offset_left = -40.6429
+offset_top = -12.5
+offset_right = 129.357
+offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-text = "Indisponivel 
-no momento
+text = "Indisponivel no momento
 
 
 "
 label_settings = SubResource("LabelSettings_06psj")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -62,7 +65,7 @@ anchor_right = 0.5
 offset_left = -59.5
 offset_top = 2.0
 offset_right = 146.5
-offset_bottom = 16.0
+offset_bottom = 18.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "nelix

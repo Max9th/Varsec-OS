@@ -13,7 +13,7 @@ var timer_running: bool = false
 var is_dragging: bool
 var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
-
+var is_mouse_hover: bool
 func _ready() -> void:
 	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
 	selected_panel.visible = false
@@ -36,8 +36,17 @@ func select():
 func _on_pressed() -> void:
 	select()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and is_mouse_hover == false:
+		filename.label_settings.font_color = Color(1,1,1) # Set label text to white
+		selected_panel.visible = false
+
 func spawnwindow():
 		authenticate_popup.visible = true
-	
 
-	
+
+func _on_mouse_entered() -> void:
+	is_mouse_hover = true
+
+func _on_mouse_exited() -> void:
+	is_mouse_hover = false

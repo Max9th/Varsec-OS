@@ -145,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -399.5
-offset_top = -25.845
-offset_right = 399.5
-offset_bottom = 50.155
+offset_left = -400.0
+offset_top = -27.0
+offset_right = 399.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
@@ -247,10 +247,18 @@ text = "Miguel Jorge Freitas de O."
 label_settings = SubResource("LabelSettings_dy2l2")
 
 [node name="skip" type="TextureButton" parent="."]
-offset_left = 1088.0
-offset_top = 584.0
-offset_right = 1128.0
-offset_bottom = 624.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -72.0
+offset_right = 20.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 0)
 tooltip_text = "Skip Bootscreen"
 texture_normal = ExtResource("9_vmk0t")
 stretch_mode = 0
@@ -272,7 +280,6 @@ one_shot = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_o50mx")
-volume_db = -17.66
 
 [connection signal="timeout" from="IFG/IFGtimer" to="." method="_on_if_gtimer_timeout"]
 [connection signal="animation_finished" from="MAX/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

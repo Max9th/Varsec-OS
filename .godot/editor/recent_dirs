@@ -1,11 +1,14 @@
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/apk
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/lin
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/web
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS-web
+res://resources/audio
+res://resources/scenes/cubigor
+res://resources/scenes/musicplayer
 res://resources/sprites
 res://resources/scenes/playnelixdoc
 res://
-/home/miguel/Documents/GitHub/Varsec-OS
-/home/miguel/Documents/GitHub/Varsec-OS-web
 res://resources/scenes/cubigor/scripts
-res://resources/scenes/cubigor
-/home/miguel/Documents/GitHub/Varsec-OS/exports
 res://resources/scenes/classmanager/window/scripts
 /usr/lib/jvm/jdk-23-oracle-x64/bin/
 /usr/java/jdk-23-oracle-x64/
@@ -14,6 +17,4 @@ res://resources
 res://resources/scenes/classmanager/scripts
 res://resources/scenes/personalworksmanager
 res://resources/scenes/classmanager
-res://resources/scenes/musicplayer
 res://resources/scenes/examples
-/home/miguel/Desktop/CC Sôdid/6 Syôkôn/Godot
