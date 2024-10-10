@@ -62,7 +62,7 @@ func authenticate():
 				swears()
 			"merda":
 				swears()
-			"pinto":
+			"penis":
 				swears()
 			"rola":
 				swears()
@@ -74,6 +74,14 @@ func authenticate():
 				swears()
 			"porra":
 				swears()
+			"xota":
+				swears()
+			"caralho":
+				swears()
+			"xereca":
+				swears()
+			"deltong":
+				gay()
 			_:
 				incorrect.visible = true
 				timer.start()
@@ -96,7 +104,16 @@ func _on_mainmenu_stop() -> void:
 
 func swears():
 	swearing = true
-	incorrect.text = "!!EW MANO!"
+	incorrect.text = "!!EW MANO!!"
+	incorrect.visible = true
+	timer.start()
+	line_edit.text = ""
+	wrong.play()
+
+func gay():
+	swearing = true
+	randi() % 2
+	incorrect.text = "<3 gotta luv it"
 	incorrect.visible = true
 	timer.start()
 	line_edit.text = ""
