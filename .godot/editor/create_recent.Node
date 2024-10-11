@@ -1,7 +1,7 @@
+TextureRect
 ColorRect
 TextureButton
 LinkButton
-TextureRect
 VideoStreamPlayer
 AnimatedSprite2D
 AudioStreamPlayer
@@ -12,4 +12,3 @@ ScaleContainer
 GridContainer
 BoxContainer
 VScrollBar
-VBoxContainer

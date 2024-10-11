@@ -22,9 +22,9 @@ extends Control
 @onready var takecare: AudioStreamPlayer = $desktop/Folders/rightvboxcon/musicplayer/takecare
 
 @onready var splash_screen: CanvasLayer = $splash_screen
-@onready var background: Panel = $desktop/background
+@onready var background: TextureRect = $desktop/background
 
-@onready var gaylon: TextureRect = $theonewhowaits
+@onready var easteregg3: TextureRect = $theonewhowaits
 
 @onready var time: Label = $desktop/panel/Panel/time
 @onready var date: Label = $desktop/panel/Panel/date
@@ -50,7 +50,7 @@ extends Control
 
 @onready var play_nelix: TextureButton = $"desktop/Folders/rightvboxcon/play nelix"
 @onready var musicplayer: TextureButton = $desktop/Folders/rightvboxcon/musicplayer
-@onready var hahahha: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
+@onready var corrupted: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
 
 var open_count: int = 0
 
@@ -71,7 +71,7 @@ func _ready() -> void:
 	easter_button_sprite.visible = false
 	easter_button.disabled = true
 	windows.visible = true
-	hahahha.visible = false
+	corrupted.visible = false
 	windows.position.x = 0
 	update_time()
 
@@ -90,7 +90,7 @@ func _on_cubigor_cubigorbk() -> void:
 	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
-	gaylon.visible = false
+	easteregg3.visible = false
 	takecare.playing = false
 	if takecare.playing:
 		takecare.stop()
@@ -100,14 +100,14 @@ func _on_lies_disablebk() -> void:
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	takecare.playing = false
-	gaylon.visible = false
+	easteregg3.visible = false
 	panel.visible = false
 	logopor.visible = false
 	if takecare.playing:
 		takecare.stop()
 	play_nelix.visible = false
 	musicplayer.visible = false
-	hahahha.visible = true
+	corrupted.visible = true
 
 func _on_gaytscn_disablebk() -> void:
 	easter_time()

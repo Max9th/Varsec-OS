@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=41 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
@@ -29,10 +29,6 @@
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
-[ext_resource type="PackedScene" uid="uid://dg3elxvkc55dg" path="res://resources/scenes/examples/window/window.tscn" id="29_06joo"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plunp"]
-texture = ExtResource("7_14eui")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yma61"]
 bg_color = Color(0.131791, 0.156469, 0.224271, 1)
@@ -171,7 +167,7 @@ script = ExtResource("1_kmpr7")
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
-[node name="LIES!" parent="." instance=ExtResource("3_4vyws")]
+[node name="!SEIL" parent="." instance=ExtResource("3_4vyws")]
 
 [node name="theonewhowaits" parent="." instance=ExtResource("3_bhann")]
 layout_mode = 0
@@ -187,14 +183,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="background" type="Panel" parent="desktop"]
+[node name="background" type="TextureRect" parent="desktop"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_plunp")
+texture = ExtResource("7_14eui")
 
 [node name="panel" type="Control" parent="desktop"]
 anchors_preset = 0
@@ -541,13 +537,6 @@ offset_top = 67.0
 offset_right = 345.0
 offset_bottom = 192.0
 
-[node name="window" parent="desktop/windows" instance=ExtResource("29_06joo")]
-layout_mode = 0
-offset_left = 457.0
-offset_top = 401.0
-offset_right = 580.0
-offset_bottom = 458.0
-
 [node name="vfx" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_v3j3e")
@@ -570,6 +559,7 @@ visible = false
 [connection signal="stop" from="." to="theonewhowaits" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
+[connection signal="disablebk" from="!SEIL" to="." method="_on_lies_disablebk"]
 [connection signal="Disablebk" from="theonewhowaits" to="." method="_on_gaytscn_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/panel/Panel/TextureButton" to="desktop/panel/Panel/TextureButton" method="_on_pressed"]

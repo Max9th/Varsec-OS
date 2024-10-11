@@ -11,7 +11,7 @@ extends Node2D
 signal disablebk
 
 func _on_authenticated_lies():
-	sfx.stream = load("res://resources/audio/morsecode_a7d8oc6h26dbp8mmuf1vcunasv.wav")
+	sfx.stream = load("res://resources/audio/morse.wav")
 	sfx.play()
 	sfx_2.play()
 	video.play()
