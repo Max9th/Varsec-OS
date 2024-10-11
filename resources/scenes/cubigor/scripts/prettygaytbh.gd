@@ -5,21 +5,19 @@ var person_mode: bool = false
 
 signal Disablebk
 
-func _process(_delta: float) -> void:
-	person_spawner()
+func _process(delta: float) -> void:
+	if not person_theme.playing and person_mode:
+		person_theme.play()
+	else:
+		person_theme.stop
 
 func person_spawner():  
+	person_mode = !person_mode
 	if person_mode:
-		if not person_theme.playing:  
-			person_theme.play() 
-			Disablebk.emit()
-	else:
-		if person_theme.playing:
-			person_theme.stop()
-
+		Disablebk.emit()
 
 func _on_authenticated_max9th() -> void:
-		person_mode = true
+	person_spawner()
 
 func _on_mainmenu_stop() -> void:
-	person_mode = false
+	person_spawner()

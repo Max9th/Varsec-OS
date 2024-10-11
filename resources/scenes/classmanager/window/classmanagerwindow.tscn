@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=26 format=3 uid="uid://b25vo8wxtko27"]
 
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_dd0rh"]
+[ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="3_qklyj"]
@@ -17,6 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cle3ns7wshbs8" path="res://resources/sprites/classmanagerassets/download.png" id="11_hkcfu"]
 [ext_resource type="Texture2D" uid="uid://b18i1n5map00e" path="res://resources/sprites/classmanagerassets/download (2).jpeg" id="12_uoi20"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="17_dg7vq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xule5"]
+texture = ExtResource("1_hvpbr")
+texture_margin_left = 4.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 41.0
+region_rect = Rect2(0, 0, 50, 50)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
 bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
@@ -62,8 +70,10 @@ anchor_bottom = 0.61574
 offset_right = -434.0
 offset_bottom = -266.0
 scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("1_dd0rh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xule5")
 script = ExtResource("2_mcqie")
+can_drag = true
+can_maximize = true
 metadata/_edit_use_anchors_ = true
 
 [node name="separator" type="Panel" parent="."]

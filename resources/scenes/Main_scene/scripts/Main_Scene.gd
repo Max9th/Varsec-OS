@@ -47,10 +47,14 @@ extends Control
 
 @onready var panel: Control = $desktop/panel
 @onready var logopor: TextureRect = $desktop/portfolio
+@onready var authenticate_popup: Panel = $desktop/windows/authenticate_popup
+@onready var nelixwindow: Panel = $desktop/windows/nelixwindow
 
 @onready var play_nelix: TextureButton = $"desktop/Folders/rightvboxcon/play nelix"
 @onready var musicplayer: TextureButton = $desktop/Folders/rightvboxcon/musicplayer
 @onready var corrupted: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
+
+@export var all_windows_visible: bool 
 
 var open_count: int = 0
 
@@ -63,7 +67,6 @@ func _on_power_button_pressed() -> void:
 	get_tree().quit()
 
 
-
 func _ready() -> void:
 	vfx.visible = true
 	vfx_button_sprite.texture = load("res://resources/sprites/vfx.png")
@@ -74,6 +77,11 @@ func _ready() -> void:
 	corrupted.visible = false
 	windows.position.x = 0
 	update_time()
+	if all_windows_visible:
+		personalworkswindow.show()
+		class_manager_window.show()
+		nelixwindow.show()
+		authenticate_popup.show()
 
 func _process(_delta: float) -> void:
 	if splash_screen.visible == false and ambientsound.playing == false and background.visible == true and playaudio == true:

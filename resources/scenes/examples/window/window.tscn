@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dg3elxvkc55dg"]
 
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_bonb7"]
+[ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_2i2cq"]
 [ext_resource type="Script" path="res://resources/scenes/examples/window/window.gd" id="2_qjpql"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="3_6s5mf"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_cjjfa"]
@@ -9,20 +9,13 @@
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="8_dwv5l"]
 [ext_resource type="Script" path="res://resources/scenes/examples/scripts/draghandle.gd" id="9_rhsfx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0s1"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 10
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_size = 2
-shadow_offset = Vector2(2, 2)
-anti_aliasing = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi20w"]
+texture = ExtResource("1_2i2cq")
+texture_margin_left = 4.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 41.0
+region_rect = Rect2(0, 0, 50, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
 font = ExtResource("5_cjjfa")
@@ -42,32 +35,17 @@ corner_radius_bottom_left = 9
 
 [node name="window" type="Panel" groups=["authentication"]]
 custom_minimum_size = Vector2(123, 57)
-offset_left = 301.0
-offset_top = 210.0
-offset_right = 424.0
-offset_bottom = 267.0
+offset_right = 123.0
+offset_bottom = 57.0
 scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("1_bonb7")
+theme_override_styles/panel = SubResource("StyleBoxTexture_oi20w")
 script = ExtResource("2_qjpql")
+can_drag = true
+can_maximize = true
 metadata/_edit_group_ = true
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6s5mf")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 65.6667
-offset_top = 15.3333
-offset_right = 84.6667
-offset_bottom = 34.3333
-theme_override_styles/panel = SubResource("StyleBoxFlat_fk0s1")
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 0
-offset_right = 19.0
-offset_bottom = 19.0
-expand_mode = 1
-stretch_mode = 4
 
 [node name="bodytext" type="Label" parent="."]
 layout_mode = 0
@@ -76,7 +54,7 @@ offset_top = 10.0
 offset_right = 106.0
 offset_bottom = 24.0
 scale = Vector2(0.5, 0.5)
-text = "Placeholder
+text = "Body text
 "
 label_settings = SubResource("LabelSettings_wnq2u")
 horizontal_alignment = 1
@@ -106,7 +84,9 @@ offset_top = 20.0
 offset_right = 281.0
 offset_bottom = 58.0
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("5_cjjfa")
 theme_override_styles/normal = ExtResource("6_ebnck")
+placeholder_text = "This is a lineedit"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -147,18 +127,20 @@ offset_top = 29.0
 offset_right = 281.0
 offset_bottom = 69.0
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("5_cjjfa")
 theme_override_styles/hover = ExtResource("8_dwv5l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
 theme_override_styles/normal = ExtResource("8_dwv5l")
+text = "This is a button"
 
 [node name="draghandle" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -65.5
+offset_left = -59.5
 offset_top = 1.0
-offset_right = 49.5
+offset_right = 43.5
 offset_bottom = 10.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("7_uwk2l")

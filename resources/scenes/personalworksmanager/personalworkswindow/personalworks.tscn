@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://dmryciivu5mdv"]
+[gd_scene load_steps=28 format=3 uid="uid://dmryciivu5mdv"]
 
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jjfn"]
+[ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_s1t2r"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
 [ext_resource type="Texture2D" uid="uid://buijigbbbq2ao" path="res://resources/sprites/personalworkmanagerassets/bloodtower1.png" id="4_6eokd"]
@@ -24,6 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://dsl4hm31u7xed" path="res://resources/sprites/personalworkmanagerassets/hand.png" id="20_kx631"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/max_size_container.gd" id="21_sekd4"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ub2do"]
+texture = ExtResource("1_s1t2r")
+texture_margin_left = 4.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 41.0
+region_rect = Rect2(0, 0, 50, 50)
+
 [sub_resource type="LabelSettings" id="LabelSettings_polhb"]
 font = ExtResource("3_2cffn")
 font_color = Color(0, 0, 0, 1)
@@ -40,13 +48,14 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [node name="personalworks" type="Panel"]
-custom_minimum_size = Vector2(217, 115)
 offset_top = 8.0
 offset_right = 323.0
 offset_bottom = 184.0
-scale = Vector2(3, 3)
-theme_override_styles/panel = ExtResource("1_1jjfn")
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ub2do")
 script = ExtResource("2_iadqj")
+can_drag = true
+can_maximize = true
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -92,12 +101,12 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Tenebrerossoturris" type="TextureRect" parent="content"]
-custom_minimum_size = Vector2(277, 155)
+custom_minimum_size = Vector2(277, 154)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.314729
+anchor_left = 0.314286
 anchor_top = 0.545455
-anchor_right = 0.744186
+anchor_right = 0.753968
 anchor_bottom = 0.985795
 texture = ExtResource("10_ldanr")
 expand_mode = 1
@@ -125,9 +134,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.148838
-anchor_top = 0.18182
+anchor_top = 0.174244
 anchor_right = 0.363722
-anchor_bottom = 0.414364
+anchor_bottom = 0.406788
 offset_right = 50.4001
 offset_bottom = 57.1444
 scale = Vector2(0.733333, 0.588889)

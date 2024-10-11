@@ -39,6 +39,10 @@ offset_bottom = 48.0
 scale = Vector2(1, 0.96)
 theme_override_styles/panel = ExtResource("1_gdggg")
 script = ExtResource("2_t6mlv")
+can_drag = true
+
+[node name="close_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_y4xvw")
 
 [node name="password" type="Label" parent="."]
 layout_mode = 0
@@ -52,26 +56,37 @@ label_settings = SubResource("LabelSettings_p6fgv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="close" type="Button" parent="."]
-custom_minimum_size = Vector2(7, 7)
-layout_direction = 1
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -9.0
-offset_top = 2.08333
+offset_left = -17.0
+offset_top = 2.0
 offset_right = -2.0
-offset_bottom = 9.08333
+offset_bottom = 9.0
 grow_horizontal = 0
+theme_override_constants/separation = 1
+metadata/_edit_group_ = true
+
+[node name="maximize" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
 theme_override_styles/hover = ExtResource("4_2pwua")
 theme_override_styles/pressed = ExtResource("4_2pwua")
 theme_override_styles/normal = ExtResource("4_2pwua")
 
-[node name="close_audio" type="AudioStreamPlayer" parent="close"]
-stream = ExtResource("11_y4xvw")
+[node name="close" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(7, 7)
+layout_direction = 1
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("4_2pwua")
+theme_override_styles/pressed = ExtResource("4_2pwua")
+theme_override_styles/normal = ExtResource("4_2pwua")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -121,6 +136,7 @@ label_settings = SubResource("LabelSettings_85uop")
 stream = ExtResource("9_cb5db")
 
 [node name="TextureRect" type="TextureRect" parent="INCORRECT"]
+visible = false
 layout_mode = 0
 offset_left = 240.0
 offset_top = -36.4582
@@ -157,7 +173,8 @@ label_settings = SubResource("LabelSettings_7enhi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="HBoxContainer2/maximize" to="." method="_on_maximize_pressed"]
+[connection signal="pressed" from="HBoxContainer2/close" to="." method="_on_close_pressed"]
 [connection signal="text_submitted" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="HBoxContainer/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
