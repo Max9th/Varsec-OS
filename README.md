@@ -6,8 +6,8 @@
  Fantasy OS made as an art project
 
 
-**play the fantasy OS here:**
+**Source for the web player:**
 
-https://max9th.github.io/Varsec-OS-web/
+https://github.com/Max9th/Varsec-OS-web
 
-Made in GODOT
+Made in GODOT 4.3
