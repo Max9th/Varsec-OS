@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bntdu5kxer360"]
+[gd_scene load_steps=8 format=3 uid="uid://bntdu5kxer360"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jiao"]
 [ext_resource type="Script" path="res://resources/scenes/playnelixdoc/nelix_window.gd" id="2_mpy32"]
-[ext_resource type="AudioStream" uid="uid://bsm2hpebhmopm" path="res://resources/audio/blipSelect.wav" id="3_27wvl"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="4_qs3cc"]
 [ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_i3tha"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_uo7ka"]
@@ -27,9 +26,6 @@ scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jiao")
 script = ExtResource("2_mpy32")
 can_drag = true
-
-[node name="select" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_27wvl")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qs3cc")

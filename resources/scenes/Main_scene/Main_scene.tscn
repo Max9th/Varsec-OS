@@ -515,13 +515,13 @@ offset_top = 90.0
 offset_right = 793.0
 offset_bottom = 147.0
 
-[node name="bodytext" parent="desktop/windows/nelixwindow" index="2"]
+[node name="bodytext" parent="desktop/windows/nelixwindow" index="1"]
 metadata/_edit_use_anchors_ = true
 
-[node name="windowname" parent="desktop/windows/nelixwindow" index="3"]
+[node name="windowname" parent="desktop/windows/nelixwindow" index="2"]
 metadata/_edit_use_anchors_ = true
 
-[node name="draghandle" parent="desktop/windows/nelixwindow" index="4"]
+[node name="draghandle" parent="desktop/windows/nelixwindow" index="3"]
 metadata/_edit_use_anchors_ = true
 
 [node name="class_manager_window" parent="desktop/windows" instance=ExtResource("24_goyto")]
