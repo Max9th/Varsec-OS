@@ -51,7 +51,7 @@ folder_colors={
 "res://resources/fonts/": "teal",
 "res://resources/scenes/": "teal",
 "res://resources/shaders/": "teal",
-"res://resources/sprites/": "teal"
+"res://resources/sprites/": "purple"
 }
 
 [global_group]

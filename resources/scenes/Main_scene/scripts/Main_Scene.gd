@@ -62,6 +62,8 @@ signal stop
 func _on_power_button_pressed() -> void:
 	get_tree().quit()
 
+
+
 func _ready() -> void:
 	vfx.visible = true
 	vfx_button_sprite.texture = load("res://resources/sprites/vfx.png")
@@ -113,9 +115,9 @@ func _on_gaytscn_disablebk() -> void:
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	takecare.playing = false
 	logopor.visible = false
-	logopor.visible = false
 	if takecare.playing:
 		takecare.stop()
+
 func _on_vfx_button_pressed() -> void:
 	vfx.visible = !vfx.visible
 	if vfx.visible == false:
@@ -134,6 +136,7 @@ func easter_time():
 
 func _on_easter_button_pressed() -> void:
 	background.visible = true
+	logopor.visible = true
 	stop.emit()
 	easter_time()
 
