@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://resources/sprites/nelix.png" id="1_0hnt3"]
 [ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="2_1tobn"]
 [ext_resource type="Script" path="res://resources/scenes/playnelixdoc/scripts/nelixdoc.gd" id="2_frl7q"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_pt81c"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="4_huc3o"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="5_d53a2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,7 +20,8 @@ corner_radius_bottom_left = 10
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
-font = ExtResource("3_pt81c")
+font = ExtResource("5_d53a2")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [node name="play nelix" type="TextureButton"]
@@ -46,9 +47,9 @@ stream = ExtResource("4_huc3o")
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.3
+anchor_left = -0.1
 anchor_top = 0.875
-anchor_right = 1.375
+anchor_right = 1.15
 anchor_bottom = 1.675
 theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
 metadata/_edit_use_anchors_ = true
@@ -56,19 +57,16 @@ metadata/_edit_use_anchors_ = true
 [node name="filename" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.9206
-anchor_top = 2.67414
-anchor_right = -2.0206
-anchor_bottom = 2.84914
-offset_left = 111.824
-offset_top = -69.9657
-offset_right = 129.824
-offset_bottom = -45.9657
+anchor_left = 0.124996
+anchor_top = 1.05
+anchor_right = 0.999996
+anchor_bottom = 1.525
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play NELIX"
 label_settings = SubResource("LabelSettings_yb2ti")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 

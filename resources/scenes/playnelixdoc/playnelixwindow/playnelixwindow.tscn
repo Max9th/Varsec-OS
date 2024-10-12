@@ -2,20 +2,22 @@
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_1jiao"]
 [ext_resource type="Script" path="res://resources/scenes/playnelixdoc/nelix_window.gd" id="2_mpy32"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="4_i2oaq"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="4_qs3cc"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_i3tha"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_uo7ka"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06psj"]
 line_spacing = 1.0
-font = ExtResource("5_i3tha")
+font = ExtResource("4_i2oaq")
+font_size = 8
 font_color = Color(1, 0, 0, 1)
-outline_size = 5
+outline_size = 4
 shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_03pvy"]
 line_spacing = 1.0
-font = ExtResource("5_i3tha")
+font = ExtResource("4_i2oaq")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [node name="window" type="Panel" groups=["authentication"]]
@@ -44,7 +46,11 @@ offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-text = "Indisponivel no momento"
+text = "Indisponivel 
+
+no 
+
+momento"
 label_settings = SubResource("LabelSettings_06psj")
 horizontal_alignment = 1
 vertical_alignment = 1

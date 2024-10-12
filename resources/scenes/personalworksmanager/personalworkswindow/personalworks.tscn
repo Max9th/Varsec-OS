@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_s1t2r"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_2cffn"]
 [ext_resource type="Texture2D" uid="uid://buijigbbbq2ao" path="res://resources/sprites/personalworkmanagerassets/bloodtower1.png" id="4_6eokd"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="4_sjqud"]
 [ext_resource type="Texture2D" uid="uid://dajwjbfof67fp" path="res://resources/sprites/personalworkmanagerassets/bk.png" id="5_bqeg2"]
 [ext_resource type="Texture2D" uid="uid://dydspky65dpyf" path="res://resources/sprites/personalworkmanagerassets/Darfigure.png" id="6_vrxvx"]
 [ext_resource type="Texture2D" uid="uid://dl2sn1jffnjtj" path="res://resources/sprites/personalworkmanagerassets/pfp.png" id="7_ue2kb"]
@@ -33,12 +33,13 @@ texture_margin_bottom = 41.0
 region_rect = Rect2(0, 0, 50, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_polhb"]
-font = ExtResource("3_2cffn")
+font = ExtResource("4_sjqud")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bb05j"]
-font = ExtResource("3_2cffn")
-font_size = 30
+font = ExtResource("4_sjqud")
+font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4pqp"]
 bg_color = Color(1, 1, 1, 1)
@@ -88,17 +89,18 @@ scale = Vector2(0.5, 0.5)
 [node name="Title" type="Label" parent="content"]
 custom_minimum_size = Vector2(324, 27)
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0990764
-anchor_right = 0.174891
-anchor_bottom = 0.0990764
-offset_right = 213.993
-offset_bottom = 34.7918
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 36.0
+offset_right = 308.0
+offset_bottom = 70.7918
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-text = "Projetos Pessoais OwO"
+text = "Projetos Pessoais"
 label_settings = SubResource("LabelSettings_bb05j")
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Tenebrerossoturris" type="TextureRect" parent="content"]
 custom_minimum_size = Vector2(277, 154)

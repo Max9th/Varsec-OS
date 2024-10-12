@@ -1,7 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="2_ase65"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="3_qklyj"]
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/download (1).jpeg" id="11_3jok6"]
 [ext_resource type="Texture2D" uid="uid://cle3ns7wshbs8" path="res://resources/sprites/classmanagerassets/download.png" id="11_hkcfu"]
 [ext_resource type="Texture2D" uid="uid://b18i1n5map00e" path="res://resources/sprites/classmanagerassets/download (2).jpeg" id="12_uoi20"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="16_3pnsg"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="17_dg7vq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xule5"]
@@ -35,18 +35,17 @@ corner_radius_bottom_left = 2
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
-font = ExtResource("2_ase65")
+font = ExtResource("16_3pnsg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
-font = ExtResource("2_ase65")
-font_size = 32
+font = ExtResource("16_3pnsg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_k6lmd"]
-font = ExtResource("2_ase65")
-font_size = 64
+font = ExtResource("16_3pnsg")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
-font = ExtResource("2_ase65")
+font = ExtResource("16_3pnsg")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -58,7 +57,8 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
-font = ExtResource("2_ase65")
+font = ExtResource("16_3pnsg")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [node name="classmanagerwindow" type="Panel"]
@@ -66,7 +66,7 @@ clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1
 anchor_right = 0.565104
-anchor_bottom = 0.61574
+anchor_bottom = 0.615741
 offset_right = -434.0
 offset_bottom = -266.0
 scale = Vector2(3, 3)
@@ -76,12 +76,12 @@ can_drag = true
 can_maximize = true
 metadata/_edit_use_anchors_ = true
 
-[node name="separator" type="Panel" parent="."]
+[node name="separator_horizontal" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 31.6667
-offset_top = 72.5863
-offset_right = 34.6667
-offset_bottom = 100.586
+offset_left = 40.0
+offset_top = 74.6667
+offset_right = 43.0
+offset_bottom = 112.667
 rotation = 1.5708
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
@@ -89,19 +89,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.974
-offset_left = 33.765
+offset_left = 40.765
 offset_top = 11.6668
-offset_right = 36.765
+offset_right = 43.765
 offset_bottom = 0.656998
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
 
 [node name="recentes" type="Label" parent="."]
 layout_mode = 0
-offset_left = 5.88547
-offset_top = 76.6668
-offset_right = 83.8854
-offset_bottom = 90.6668
-scale = Vector2(0.3, 0.3)
+offset_left = 4.55214
+offset_top = 79.6669
+offset_right = 145.552
+offset_bottom = 95.6669
+scale = Vector2(0.25, 0.25)
 text = "Recentes:"
 label_settings = SubResource("LabelSettings_wrkym")
 vertical_alignment = 1
@@ -118,33 +118,35 @@ scale = Vector2(0.5, 0.5)
 
 [node name="aula1" type="Control" parent="aulas"]
 visible = false
-clip_contents = true
 layout_mode = 1
-anchor_top = 0.02
-anchor_right = 0.995
-anchor_bottom = 1.004
+anchor_left = 0.0253461
+anchor_top = 0.0173614
+anchor_right = 0.99065
+anchor_bottom = 1.00801
 offset_left = 79.9998
 offset_top = 22.42
-offset_right = -8.94229
-offset_bottom = -4.91597
+offset_right = -2.94229
+offset_bottom = -4.91595
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ScaleContainer2" type="Container" parent="aulas/aula1"]
+[node name="images" type="Container" parent="aulas/aula1"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.386
 anchor_bottom = 1.713
-offset_top = -0.0342913
-offset_right = 15.6452
-offset_bottom = -172.839
+offset_left = 5.0
+offset_top = -3.13266
+offset_right = 14.304
+offset_bottom = -182.842
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula1/ScaleContainer2"]
+[node name="image2" type="TextureRect" parent="aulas/aula1/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -152,7 +154,7 @@ size_flags_vertical = 0
 texture = ExtResource("5_bxqsp")
 expand_mode = 1
 
-[node name="image" type="TextureRect" parent="aulas/aula1/ScaleContainer2"]
+[node name="image" type="TextureRect" parent="aulas/aula1/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -170,10 +172,10 @@ anchor_left = 0.452991
 anchor_top = 0.0196078
 anchor_right = 0.997151
 anchor_bottom = 1.0098
-offset_left = 2.67485
-offset_top = 0.446144
-offset_right = 6.08893
-offset_bottom = -2.52318
+offset_left = 1.79501
+offset_top = 1.41176
+offset_right = 0.957245
+offset_bottom = -6.29404
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -227,10 +229,10 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.014489
-anchor_top = -0.0200935
-anchor_right = 0.139894
-anchor_bottom = 0.106926
+anchor_left = 0.0158886
+anchor_top = -0.0129604
+anchor_right = 0.10815
+anchor_bottom = 0.0107214
 offset_right = 43.0
 offset_bottom = 29.5
 scale = Vector2(0.5, 0.5)
@@ -247,22 +249,24 @@ layout_mode = 1
 anchor_top = -0.0174672
 anchor_right = 0.995
 anchor_bottom = 1.004
-offset_left = 80.0
-offset_top = 27.0
-offset_right = -2.94241
-offset_bottom = -2.916
+offset_left = 91.0
+offset_top = 31.6079
+offset_right = -4.83002
+offset_bottom = -3.85831
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScaleContainer2" type="Container" parent="aulas/aula2"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.386
 anchor_bottom = 1.713
-offset_top = 5.49704
-offset_right = 15.3294
-offset_bottom = -178.41
+offset_left = 5.0
+offset_top = -2.79933
+offset_right = 14.3294
+offset_bottom = -181.705
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -289,10 +293,10 @@ expand_mode = 1
 [node name="ScaleContainer3" type="Container" parent="aulas/aula2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.452868
-anchor_top = 0.0459192
-anchor_right = 0.997456
-anchor_bottom = 0.993525
+anchor_left = 0.458333
+anchor_top = 0.0256409
+anchor_right = 1.0
+anchor_bottom = 0.982902
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -345,10 +349,10 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0143313
-anchor_top = 0.00417447
-anchor_right = 0.154778
-anchor_bottom = 0.127321
+anchor_left = 0.014881
+anchor_top = -0.0128205
+anchor_right = 0.107143
+anchor_bottom = 0.0106838
 offset_right = 49.0
 offset_bottom = 29.5
 scale = Vector2(0.5, 0.5)
@@ -360,9 +364,11 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="aula3" type="Control" parent="aulas"]
+visible = false
 layout_mode = 1
-anchor_right = 0.995
-anchor_bottom = 1.004
+anchor_left = 0.0253461
+anchor_right = 0.995259
+anchor_bottom = 1.00422
 offset_left = 79.9998
 offset_top = 27.0
 offset_right = -8.94226
@@ -371,20 +377,23 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ScaleContainer2" type="Container" parent="aulas/aula3"]
+[node name="images" type="Container" parent="aulas/aula3"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0553325
 anchor_right = 0.437
 anchor_bottom = 1.882
-offset_right = 0.157974
-offset_bottom = -215.163
+offset_left = 5.0
+offset_top = -3.00319
+offset_right = 3.916
+offset_bottom = -218.272
 grow_horizontal = 2
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula3/ScaleContainer2"]
+[node name="image2" type="TextureRect" parent="aulas/aula3/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -392,7 +401,7 @@ size_flags_vertical = 0
 texture = ExtResource("9_5m73j")
 expand_mode = 1
 
-[node name="image" type="TextureRect" parent="aulas/aula3/ScaleContainer2"]
+[node name="image" type="TextureRect" parent="aulas/aula3/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -410,10 +419,10 @@ anchor_left = 0.452174
 anchor_top = -0.00510204
 anchor_right = 1.01159
 anchor_bottom = 1.0102
-offset_left = 2.95499
-offset_top = 7.19869
-offset_right = 0.138
-offset_bottom = -0.339569
+offset_left = 3.54491
+offset_top = 7.19898
+offset_right = 0.818817
+offset_bottom = -7.39787
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -457,10 +466,10 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0137697
-anchor_top = -0.0170254
-anchor_right = 0.156674
-anchor_bottom = 0.0425635
+anchor_left = 0.0150602
+anchor_top = -0.0170213
+anchor_right = 0.108434
+anchor_bottom = 0.012766
 offset_right = 49.0
 offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
@@ -473,8 +482,9 @@ metadata/_edit_use_anchors_ = true
 [node name="aula4" type="Control" parent="aulas"]
 visible = false
 layout_mode = 1
-anchor_right = 0.995
-anchor_bottom = 1.004
+anchor_left = 0.0253456
+anchor_right = 0.995259
+anchor_bottom = 1.01559
 offset_left = 80.0
 offset_top = 27.0
 offset_right = -8.94244
@@ -483,20 +493,22 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ScaleContainer2" type="Container" parent="aulas/aula4"]
+[node name="images" type="Container" parent="aulas/aula4"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0561225
 anchor_right = 0.379
 anchor_bottom = 2.07
-offset_top = 0.0388899
-offset_right = 20.0456
-offset_bottom = -251.052
+offset_left = 6.0
+offset_top = -5.13272
+offset_right = 24.172
+offset_bottom = -260.382
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula4/ScaleContainer2"]
+[node name="image2" type="TextureRect" parent="aulas/aula4/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -504,7 +516,7 @@ size_flags_vertical = 0
 texture = ExtResource("12_uoi20")
 expand_mode = 1
 
-[node name="image" type="TextureRect" parent="aulas/aula4/ScaleContainer2"]
+[node name="image" type="TextureRect" parent="aulas/aula4/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -515,22 +527,22 @@ Lembre-se disso "
 texture = ExtResource("11_3jok6")
 expand_mode = 1
 
-[node name="ScaleContainer3" type="Container" parent="aulas/aula4"]
+[node name="images2" type="Container" parent="aulas/aula4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.452174
 anchor_top = -0.00510204
 anchor_right = 1.01159
 anchor_bottom = 1.0102
-offset_left = 2.95515
-offset_top = 9.17828
-offset_right = 0.138367
-offset_bottom = -0.298828
+offset_left = 3.54491
+offset_top = 7.19389
+offset_right = 0.818817
+offset_bottom = -6.3877
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula4/ScaleContainer3"]
+[node name="TextEdit" type="TextEdit" parent="aulas/aula4/images2"]
 texture_filter = 1
 custom_minimum_size = Vector2(960, 1000)
 layout_mode = 2
@@ -571,10 +583,10 @@ scroll_smooth = true
 custom_minimum_size = Vector2(74, 21)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0137697
-anchor_top = -0.0173203
-anchor_right = 0.156674
-anchor_bottom = 0.0433007
+anchor_left = 0.0146938
+anchor_top = -0.025905
+anchor_right = 0.157598
+anchor_bottom = 0.034716
 offset_right = 49.0
 offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
@@ -599,8 +611,10 @@ grow_vertical = 2
 [node name="title" type="Label" parent="aulas/aula5"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.144591
-anchor_bottom = 0.0596241
+anchor_left = 0.0324591
+anchor_top = -0.00141963
+anchor_right = 0.14164
+anchor_bottom = 0.0283925
 offset_right = 49.0
 offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
@@ -609,19 +623,19 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ScaleContainer3" type="Container" parent="aulas/aula5"]
+[node name="text" type="Container" parent="aulas/aula5"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00293255
-anchor_top = 0.055
-anchor_right = 0.853372
-anchor_bottom = 0.97
+anchor_left = 0.0324591
+anchor_top = 0.0553655
+anchor_right = 1.00623
+anchor_bottom = 0.992321
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula5/ScaleContainer3"]
+[node name="TextEdit" type="TextEdit" parent="aulas/aula5/text"]
 texture_filter = 1
 custom_minimum_size = Vector2(1632, 880)
 layout_mode = 2
@@ -725,12 +739,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScaleContainer3" type="Container" parent="aulas/aula6"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00293255
-anchor_top = 0.155
-anchor_right = 0.973607
-anchor_bottom = 0.98
+anchor_left = 0.0796724
+anchor_top = 0.157578
+anchor_right = 0.95902
+anchor_bottom = 0.9838
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
 metadata/_edit_group_ = true
@@ -753,7 +768,7 @@ text = "Professor de arte vira um cubo após digitar \"Cubigor\" num campo de se
 As autoridades acusam Jonas de ser o culpado pela tragédia"
 editable = false
 context_menu_enabled = false
-selecting_enabled = false
+shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
@@ -763,14 +778,15 @@ scroll_smooth = true
 [node name="title" type="Label" parent="aulas/aula6"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00195513
-anchor_right = 0.574416
-anchor_bottom = 0.119248
-offset_right = 263.776
-offset_bottom = 40.14
+anchor_left = 0.220329
+anchor_right = 0.75738
+anchor_bottom = 0.144802
+offset_right = 182.0
+offset_bottom = 34.0
 scale = Vector2(0.5, 0.5)
-text = "Breakin news"
+text = "welcome!"
 label_settings = SubResource("LabelSettings_k6lmd")
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -781,11 +797,13 @@ offset_top = 11.3333
 offset_right = 115.0
 offset_bottom = 245.333
 scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = 7
 script = ExtResource("7_gh4da")
 metadata/_edit_group_ = true
 
 [node name="selecione" type="Label" parent="Buttonmanager"]
 layout_mode = 2
+size_flags_horizontal = 8
 text = "Selecione:"
 label_settings = SubResource("LabelSettings_dbcny")
 vertical_alignment = 1
@@ -794,7 +812,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
@@ -804,7 +823,8 @@ text = "Aula 1"
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
@@ -814,7 +834,8 @@ text = "Aula 2"
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
@@ -824,7 +845,8 @@ text = "Aula 3"
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
@@ -834,26 +856,45 @@ text = "Aula 4"
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ase65")
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 5"
 
-[node name="cubigor" type="Button" parent="."]
+[node name="welcome" type="Button" parent="."]
 custom_minimum_size = Vector2(90, 40)
-layout_mode = 0
-offset_left = 5.16132
-offset_top = 82.3332
-offset_right = 110.161
-offset_bottom = 122.333
+layout_mode = 2
+offset_left = 2.66667
+offset_top = 85.3333
+offset_right = 141.667
+offset_bottom = 125.333
 scale = Vector2(0.25, 0.25)
-theme_override_fonts/font = ExtResource("2_ase65")
-theme_override_font_sizes/font_size = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Cubigor"
+text = "Welcome!"
+
+[node name="welcome2" type="Button" parent="."]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+offset_left = -9.33333
+offset_top = 124.0
+offset_right = 129.667
+offset_bottom = 164.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "54"
+flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -920,7 +961,6 @@ stream = ExtResource("8_b7u5f")
 [connection signal="pressed" from="Buttonmanager/aula3" to="Buttonmanager" method="_on_aula_3_pressed"]
 [connection signal="pressed" from="Buttonmanager/aula4" to="Buttonmanager" method="_on_aula_4_pressed"]
 [connection signal="pressed" from="Buttonmanager/aula5" to="Buttonmanager" method="_on_aula_5_pressed"]
-[connection signal="pressed" from="cubigor" to="Buttonmanager" method="_on_cubigor_pressed"]
 [connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

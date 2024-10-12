@@ -2,17 +2,18 @@
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_gdggg"]
 [ext_resource type="Script" path="res://resources/scenes/lockedfolder/window/scripts/authenticate_popup.gd" id="2_t6mlv"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="3_78nmx"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="4_2pwua"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="5_lh1qc"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="6_vfbe7"]
 [ext_resource type="Texture2D" uid="uid://cdceft76gvmq0" path="res://resources/sprites/checkmark-symbolic.png" id="8_dpxc3"]
 [ext_resource type="AudioStream" uid="uid://bec51h6ctq2uo" path="res://resources/audio/wrong.wav" id="9_cb5db"]
 [ext_resource type="Texture2D" uid="uid://cdu2qhot0bisp" path="res://resources/sprites/warning.png" id="11_bv565"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="11_jrutn"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="11_y4xvw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6fgv"]
-font = ExtResource("3_78nmx")
+font = ExtResource("11_jrutn")
+font_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rhlb"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -24,16 +25,16 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
 [sub_resource type="LabelSettings" id="LabelSettings_85uop"]
-font = ExtResource("3_78nmx")
-font_size = 32
+font = ExtResource("11_jrutn")
 font_color = Color(1, 0, 0, 1)
-outline_size = 4
+outline_size = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_7enhi"]
-font = ExtResource("3_78nmx")
+font = ExtResource("11_jrutn")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="popup" type="Panel" groups=["authentication"]]
+[node name="authenticator" type="Panel" groups=["authentication"]]
 offset_right = 112.0
 offset_bottom = 48.0
 scale = Vector2(1, 0.96)
@@ -51,7 +52,7 @@ offset_top = 18.6666
 offset_right = 131.667
 offset_bottom = 32.6666
 scale = Vector2(0.5, 0.5)
-text = "Digite a senha:"
+text = "Digite a senha"
 label_settings = SubResource("LabelSettings_p6fgv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -101,11 +102,12 @@ metadata/_edit_group_ = true
 custom_minimum_size = Vector2(277, 38)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_78nmx")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("11_jrutn")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = ExtResource("5_lh1qc")
 theme_override_styles/normal = ExtResource("5_lh1qc")
-max_length = 9
+alignment = 1
+max_length = 15
 
 [node name="confirm" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -136,7 +138,6 @@ label_settings = SubResource("LabelSettings_85uop")
 stream = ExtResource("9_cb5db")
 
 [node name="TextureRect" type="TextureRect" parent="INCORRECT"]
-visible = false
 layout_mode = 0
 offset_left = 240.0
 offset_top = -36.4582
@@ -161,10 +162,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -30.0
-offset_top = 2.08333
-offset_right = 54.0
-offset_bottom = 16.0833
+offset_left = -26.0
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 19.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "Autenticar

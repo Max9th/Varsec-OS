@@ -24,7 +24,7 @@ extends Control
 @onready var splash_screen: CanvasLayer = $splash_screen
 @onready var background: TextureRect = $desktop/background
 
-@onready var easteregg3: TextureRect = $theonewhowaits
+@onready var gay: TextureRect = $gay
 
 @onready var time: Label = $desktop/panel/Panel/time
 @onready var date: Label = $desktop/panel/Panel/date
@@ -34,6 +34,7 @@ extends Control
 
 @onready var vfx: ColorRect = $vfx
 @onready var vfx_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/vfx_button_sprite
+@onready var panelpanel: Panel = $desktop/panel/Panel
 
 @onready var power_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/Power_button_sprite
 @onready var power_button: Button = $desktop/panel/Panel/power_button
@@ -46,7 +47,7 @@ extends Control
 @onready var easter_button_sprite: TextureRect = $desktop/panel/Panel/HBoxContainer/easter_button_sprite
 
 @onready var panel: Control = $desktop/panel
-@onready var logopor: TextureRect = $desktop/portfolio
+@onready var logopor: Label = $desktop/portfolio
 @onready var authenticate_popup: Panel = $desktop/windows/authenticate_popup
 @onready var nelixwindow: Panel = $desktop/windows/nelixwindow
 
@@ -84,12 +85,16 @@ func _ready() -> void:
 		authenticate_popup.show()
 
 func _process(_delta: float) -> void:
-	if splash_screen.visible == false and ambientsound.playing == false and background.visible == true and playaudio == true:
+	if splash_screen.visible == false and ambientsound.playing == false and background.visible == true and playaudio == true and !easter:
 		ambientsound.playing = true
 		sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	elif ambientsound.playing == true and playaudio == false:
 		sfx_button_sprite.texture = load("res://resources/sprites/disabledsfx.png")
 		ambientsound.playing = false
+	elif easter:
+		ambientsound.stop()
+		if takecare.playing:
+			takecare.stop()
 
 func _on_sfx_button_pressed() -> void:
 	playaudio = !playaudio
@@ -98,33 +103,37 @@ func _on_cubigor_cubigorbk() -> void:
 	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
-	easteregg3.visible = false
+	gay.visible = false
 	takecare.playing = false
-	if takecare.playing:
-		takecare.stop()
 
 func _on_lies_disablebk() -> void:
 	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
-	takecare.playing = false
-	easteregg3.visible = false
+	gay.visible = false
 	panel.visible = false
-	logopor.visible = false
-	if takecare.playing:
-		takecare.stop()
 	play_nelix.visible = false
 	musicplayer.visible = false
 	corrupted.visible = true
+
+func _on_labo_disablebk() -> void:
+	easter_time()
+
+func _on_fourtyfive_disablebk() -> void:
+	background.texture = load("res://resources/sprites/45.png")
+	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
+	easter_time()
+	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
+	var stylebox = load("res://resources/scenes/Main_scene/Main_scene.tscn::StyleBoxFlat_yma61")
+	if stylebox is StyleBoxFlat:
+		stylebox.bg_color = Color(0.309, 0.352, 0.472)
+		panelpanel.set("custom_styles/panel", stylebox)
 
 func _on_gaytscn_disablebk() -> void:
 	easter_time()
 	background.visible = false
 	sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
-	takecare.playing = false
-	logopor.visible = false
-	if takecare.playing:
-		takecare.stop()
+
 
 func _on_vfx_button_pressed() -> void:
 	vfx.visible = !vfx.visible
@@ -138,15 +147,16 @@ func easter_time():
 	if easter:
 		easter_button.disabled = false
 		easter_button_sprite.visible = true
-	else:
-		easter_button.disabled = true
-		easter_button_sprite.visible = false
-
+		logopor.visible = false
 func _on_easter_button_pressed() -> void:
 	background.visible = true
+	background.texture = load("res://resources/sprites/bk.png")
 	logopor.visible = true
+	gay.visible = true
 	stop.emit()
-	easter_time()
+	easter = false
+	easter_button.disabled = true
+	easter_button_sprite.visible = false
 
 func update_time() -> void:
 	var date_dict: Dictionary = Time.get_datetime_dict_from_system()

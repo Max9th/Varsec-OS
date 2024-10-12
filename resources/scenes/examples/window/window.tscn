@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_2i2cq"]
 [ext_resource type="Script" path="res://resources/scenes/examples/window/window.gd" id="2_qjpql"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="3_6s5mf"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="5_cjjfa"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="5_m06ko"]
 [ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="6_ebnck"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_uwk2l"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="8_dwv5l"]
@@ -18,10 +18,12 @@ texture_margin_bottom = 41.0
 region_rect = Rect2(0, 0, 50, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnq2u"]
-font = ExtResource("5_cjjfa")
+font = ExtResource("5_m06ko")
+font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
-font = ExtResource("5_cjjfa")
+font = ExtResource("5_m06ko")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
@@ -84,9 +86,11 @@ offset_top = 20.0
 offset_right = 281.0
 offset_bottom = 58.0
 scale = Vector2(0.2, 0.2)
-theme_override_fonts/font = ExtResource("5_cjjfa")
+theme_override_fonts/font = ExtResource("5_m06ko")
+theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = ExtResource("6_ebnck")
 placeholder_text = "This is a lineedit"
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -127,7 +131,8 @@ offset_top = 29.0
 offset_right = 281.0
 offset_bottom = 69.0
 scale = Vector2(0.2, 0.2)
-theme_override_fonts/font = ExtResource("5_cjjfa")
+theme_override_fonts/font = ExtResource("5_m06ko")
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("8_dwv5l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
 theme_override_styles/normal = ExtResource("8_dwv5l")

@@ -6,8 +6,8 @@
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="3_5f70m"]
 [ext_resource type="Shader" path="res://resources/shaders/glint.gdshader" id="4_e55yc"]
 [ext_resource type="Texture2D" uid="uid://clqirh6socmxk" path="res://resources/sprites/Themaxwellcompany_dark.png" id="4_kmykr"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="6_1fxpe"]
 [ext_resource type="Texture2D" uid="uid://bu3sg34npou7c" path="res://resources/sprites/max9th.png" id="6_ufm2q"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="7_6h4xt"]
 [ext_resource type="AudioStream" uid="uid://cf168qxl8ldor" path="res://resources/audio/boot.mp3" id="7_o50mx"]
 [ext_resource type="Texture2D" uid="uid://4hlbl2jngrh7" path="res://resources/sprites/skip.png" id="9_vmk0t"]
 
@@ -45,8 +45,8 @@ shader_parameter/Alpha = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy2l2"]
 line_spacing = 2.0
-font = ExtResource("6_1fxpe")
-font_size = 32
+font = ExtResource("7_6h4xt")
+font_size = 24
 font_color = Color(0.545098, 0.607843, 0.705882, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf3s5"]
@@ -91,16 +91,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -643.5
+offset_left = -645.0
 offset_top = -24.0
-offset_right = 642.5
+offset_right = 660.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(643, 0)
 size_flags_horizontal = 4
-text = "The Maxwell company(Miguel J.)© 2024"
+text = "The Maxwell company (Miguel J.)© 2024"
 label_settings = SubResource("LabelSettings_12up3")
 
 [node name="IFG" type="Control" parent="."]
@@ -211,11 +211,11 @@ rotation = 3.14159
 
 [node name="Label" type="Label" parent="MAX"]
 layout_mode = 0
-offset_left = 445.0
-offset_top = 361.0
-offset_right = 837.0
-offset_bottom = 389.0
-scale = Vector2(0.75, 0.75)
+offset_left = 438.0
+offset_top = 364.0
+offset_right = 972.0
+offset_bottom = 392.0
+scale = Vector2(0.6, 0.6)
 text = "Miguel Jorge Freitas de O."
 label_settings = SubResource("LabelSettings_dy2l2")
 

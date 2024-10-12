@@ -1,3 +1,8 @@
+AudioStreamPlayer
+Label
+VScrollBar
+Node2D
+Node
 Timer
 ColorRect
 Marker2D
@@ -6,9 +11,4 @@ TextureButton
 LinkButton
 VideoStreamPlayer
 AnimatedSprite2D
-AudioStreamPlayer
 HBoxContainer
-MaxSizeContainer
-ScaleContainer
-GridContainer
-BoxContainer

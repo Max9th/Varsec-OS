@@ -1,107 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://8b1r3i26bgog"]
+[gd_scene load_steps=10 format=3 uid="uid://8b1r3i26bgog"]
 
 [ext_resource type="Texture2D" uid="uid://dkm1oehueyxep" path="res://resources/sprites/file.png" id="1_8260m"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="1_oyhqj"]
 [ext_resource type="Texture2D" uid="uid://h41su6ua5f8v" path="res://resources/sprites/file_selected.png" id="2_fyqcd"]
 [ext_resource type="Script" path="res://resources/scenes/source_link/scripts/source_code_link.gd" id="3_8s2dh"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="5_p2i0l"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="6_8s88s"]
 [ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/chain-link-symbolic.png" id="6_t5by5"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_i3lby"]
-
-[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_uoows"]
-operator = 2
-
-[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorUniform_jx7il"]
-parameter_name = "replaceColor"
-default_value_enabled = true
-
-[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatUniform_fi245"]
-parameter_name = "replaceAmount"
-hint = 1
-
-[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_vgmfj"]
-source = 5
-
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wesjj"]
-input_name = "texture"
-
-[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_456hi"]
-
-[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_3cl4w"]
-function = 31
-
-[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7f6a7"]
-operator = 2
-
-[sub_resource type="VisualShader" id="VisualShader_368ui"]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-uniform float replaceAmount : hint_range(0, 1);
-uniform vec4 replaceColor : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-
-
-
-void fragment() {
-	vec4 n_out4p0;
-// Texture2D:4
-	n_out4p0 = vec4(0.0);
-
-
-// FloatParameter:12
-	float n_out12p0 = replaceAmount;
-
-
-// FloatFunc:8
-	float n_out8p0 = 1.0 - n_out12p0;
-
-
-// VectorOp:10
-	vec3 n_out10p0 = vec3(n_out4p0.xyz) * vec3(n_out8p0);
-
-
-// ColorParameter:11
-	vec4 n_out11p0 = replaceColor;
-
-
-// VectorOp:9
-	vec3 n_out9p0 = vec3(n_out12p0) * vec3(n_out11p0.xyz);
-
-
-// VectorOp:6
-	vec3 n_out6p0 = n_out10p0 + n_out9p0;
-
-
-// Output:0
-	COLOR.rgb = n_out6p0;
-
-
-}
-"
-mode = 1
-flags/light_only = false
-nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_vgmfj")
-nodes/fragment/4/position = Vector2(-1040, -60)
-nodes/fragment/5/node = SubResource("VisualShaderNodeInput_wesjj")
-nodes/fragment/5/position = Vector2(-1480, 40)
-nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_456hi")
-nodes/fragment/6/position = Vector2(0, 220)
-nodes/fragment/8/node = SubResource("VisualShaderNodeFloatFunc_3cl4w")
-nodes/fragment/8/position = Vector2(-720, 480)
-nodes/fragment/9/node = SubResource("VisualShaderNodeVectorOp_7f6a7")
-nodes/fragment/9/position = Vector2(-320, 540)
-nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_uoows")
-nodes/fragment/10/position = Vector2(-360, 200)
-nodes/fragment/11/node = SubResource("VisualShaderNodeColorUniform_jx7il")
-nodes/fragment/11/position = Vector2(-820, 800)
-nodes/fragment/12/node = SubResource("VisualShaderNodeFloatUniform_fi245")
-nodes/fragment/12/position = Vector2(-1260.92, 580.827)
-nodes/fragment/connections = PackedInt32Array(9, 0, 6, 1, 4, 0, 10, 0, 10, 0, 6, 0, 8, 0, 10, 1, 12, 0, 8, 0, 12, 0, 9, 0, 11, 0, 9, 1, 6, 0, 0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmbbi"]
-shader = SubResource("VisualShader_368ui")
-shader_parameter/replaceAmount = 1.0
-shader_parameter/replaceColor = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0knqs"]
 bg_color = Color(1, 1, 1, 1)
@@ -117,7 +22,8 @@ corner_radius_bottom_left = 10
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_ls8qt"]
-font = ExtResource("1_oyhqj")
+font = ExtResource("5_p2i0l")
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [node name="source_link" type="TextureButton"]
@@ -130,15 +36,6 @@ texture_pressed = ExtResource("1_8260m")
 texture_hover = ExtResource("2_fyqcd")
 stretch_mode = 0
 script = ExtResource("3_8s2dh")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_jmbbi")
-layout_mode = 0
-offset_left = 27.0
-offset_top = 65.0
-offset_right = 46.0
-offset_bottom = 82.0
-texture = ExtResource("6_t5by5")
 
 [node name="selected_panel" type="Panel" parent="."]
 layout_mode = 1
@@ -155,10 +52,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0knqs")
 
 [node name="TextureRect" type="TextureRect" parent="selected_panel"]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 15.0
-offset_right = 62.0
-offset_bottom = 32.0
+offset_left = 39.0
+offset_top = 14.0
+offset_right = 58.0
+offset_bottom = 31.0
 texture = ExtResource("6_t5by5")
 
 [node name="filename" type="Label" parent="."]
@@ -177,6 +74,7 @@ grow_vertical = 2
 text = "Source
 code"
 label_settings = SubResource("LabelSettings_ls8qt")
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

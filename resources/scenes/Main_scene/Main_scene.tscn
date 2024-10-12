@@ -1,19 +1,19 @@
-[gd_scene load_steps=42 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=44 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
+[ext_resource type="PackedScene" uid="uid://r3bi28xbbmhh" path="res://resources/scenes/cubigor/45.scn" id="2_if7td"]
 [ext_resource type="PackedScene" uid="uid://ddwpbtpu41bgp" path="res://resources/scenes/cubigor/!seil.scn" id="3_4vyws"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
-[ext_resource type="FontFile" uid="uid://cpmmo07pbocsh" path="res://resources/fonts/Vermin Vibes 1989.ttf" id="4_ljiqo"]
 [ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
 [ext_resource type="Texture2D" uid="uid://frj2l5gv45ks" path="res://resources/sprites/bk.png" id="7_14eui"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
+[ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="8_0rumy"]
 [ext_resource type="Texture2D" uid="uid://bvm6djr4v7po6" path="res://resources/sprites/sfx.png" id="8_n2xns"]
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/vfx.png" id="9_kokno"]
 [ext_resource type="Texture2D" uid="uid://cgex4bd1frmyr" path="res://resources/sprites/easteregg.png" id="10_1afcs"]
 [ext_resource type="Texture2D" uid="uid://6ypxf3pijaje" path="res://resources/sprites/IFgreduzido.png" id="10_mpglo"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_djys2"]
-[ext_resource type="Texture2D" uid="uid://butnmpkhfwho4" path="res://resources/sprites/logo.png" id="12_krryl"]
 [ext_resource type="PackedScene" uid="uid://clsapeh5doyoe" path="res://resources/scenes/playnelixdoc/nelixdoc.tscn" id="13_6bx3l"]
 [ext_resource type="PackedScene" uid="uid://8b1r3i26bgog" path="res://resources/scenes/source_link/sourcecodelinkdoc.tscn" id="14_r1580"]
 [ext_resource type="PackedScene" uid="uid://daufpfj3xpnyb" path="res://resources/scenes/musicplayer/musicplayer.tscn" id="18_nlsao"]
@@ -30,6 +30,11 @@
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
 [ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
+[ext_resource type="AudioStream" uid="uid://f1jsc7nfoabc" path="res://resources/audio/labo.mp3" id="29_gpogc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mp5pi"]
+font = ExtResource("8_0rumy")
+font_size = 33
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yma61"]
 bg_color = Color(0.131791, 0.156469, 0.224271, 1)
@@ -39,12 +44,14 @@ corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_dnbm7"]
-font = ExtResource("4_ljiqo")
+font = ExtResource("8_0rumy")
+font_size = 8
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ylh16"]
-font = ExtResource("4_ljiqo")
+font = ExtResource("8_0rumy")
+font_size = 8
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
@@ -122,7 +129,7 @@ corner_radius_bottom_left = 10
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
-font = ExtResource("4_ljiqo")
+font = ExtResource("8_0rumy")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7ij8"]
@@ -171,7 +178,9 @@ script = ExtResource("1_kmpr7")
 
 [node name="!SEIL" parent="." instance=ExtResource("3_4vyws")]
 
-[node name="theonewhowaits" parent="." instance=ExtResource("3_bhann")]
+[node name="45" parent="." groups=["authentication"] instance=ExtResource("2_if7td")]
+
+[node name="gay" parent="." instance=ExtResource("3_bhann")]
 layout_mode = 0
 scale = Vector2(9.52066, 4)
 mouse_filter = 2
@@ -193,6 +202,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_14eui")
+
+[node name="portfolio" type="Label" parent="desktop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -14.0
+offset_right = 138.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(138, 16)
+text = "Portfolio"
+label_settings = SubResource("LabelSettings_mp5pi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="panel" type="Control" parent="desktop"]
 anchors_preset = 0
@@ -325,7 +353,6 @@ offset_right = 120.0
 offset_bottom = 47.0
 tooltip_text = "Disable SFX"
 focus_mode = 0
-theme_override_fonts/font = ExtResource("4_ljiqo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
 theme_override_styles/pressed = ExtResource("11_djys2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
@@ -358,23 +385,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
 theme_override_styles/pressed = ExtResource("11_djys2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
 toggle_mode = true
-
-[node name="portfolio" type="TextureRect" parent="desktop"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_right = 53.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(53, 14.5)
-texture = ExtResource("12_krryl")
 
 [node name="Folders" type="Control" parent="desktop"]
 layout_mode = 1
@@ -499,6 +509,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_p7ij8")
 metadata/_edit_use_anchors_ = true
 
 [node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = 128.0
@@ -546,6 +557,10 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="labo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_gpogc")
+volume_db = 10.111
+
 [node name="ambientsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_kfb2x")
 
@@ -553,11 +568,13 @@ stream = ExtResource("26_kfb2x")
 visible = false
 
 [connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
-[connection signal="stop" from="." to="theonewhowaits" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="45" method="_on_main_scene_stop"]
+[connection signal="stop" from="." to="gay" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
 [connection signal="disablebk" from="!SEIL" to="." method="_on_lies_disablebk"]
-[connection signal="Disablebk" from="theonewhowaits" to="." method="_on_gaytscn_disablebk"]
+[connection signal="Disablebk" from="45" to="." method="_on_fourtyfive_disablebk"]
+[connection signal="Disablebk" from="gay" to="." method="_on_gaytscn_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/panel/Panel/TextureButton" to="desktop/panel/Panel/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
@@ -572,5 +589,6 @@ visible = false
 [connection signal="mouse_exited" from="desktop/Folders/leftvboxcon/classmanagerfolder2\'" to="desktop/Folders/leftvboxcon/classmanagerfolder2\'" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="desktop/Folders/leftvboxcon/folderlocked" to="desktop/Folders/leftvboxcon/folderlocked" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="desktop/Folders/leftvboxcon/folderlocked" to="desktop/Folders/leftvboxcon/folderlocked" method="_on_mouse_exited"]
+[connection signal="disablebk" from="desktop/windows/authenticate_popup" to="." method="_on_labo_disablebk"]
 
 [editable path="desktop/windows/nelixwindow"]

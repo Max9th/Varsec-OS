@@ -5,6 +5,7 @@ extends Panel
 @onready var timer: Timer = $Timer
 @onready var wrong: AudioStreamPlayer = $INCORRECT/wrong
 @onready var close_audio: AudioStreamPlayer = $close_audio
+@onready var labobar: AudioStreamPlayer = $"../../../labo"
 
 var is_dragging: bool
 var start_drag_position: Vector2
@@ -79,6 +80,10 @@ func authenticate():
 				authenticated()
 			"lies":
 				authenticated()
+			"fourtyfive":
+				authenticated()
+			"labobarco":
+				labo()
 			"ass":
 				swears()
 			"merda":
@@ -146,3 +151,10 @@ func gay():
 func _on_timer_timeout() -> void:
 	incorrect.visible = false
 	swearing = false
+signal disablebk
+
+func labo():
+	line_edit.text = ""
+	labobar.play()
+	easter = true
+	disablebk.emit()
