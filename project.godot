@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 boot_splash/version="V1.5"
 boot_splash/description="A fanstasy OS made as an art project"
 
+[autoload]
+
+SelectionManager="*res://resources/scenes/examples/scripts/selection_manager.gd"
+
 [debug]
 
 file_logging/max_log_files=1

@@ -1,3 +1,7 @@
+CenterContainer
+PanelContainer
+HBoxContainer
+HSlider
 AudioStreamPlayer
 Label
 VScrollBar
@@ -9,6 +13,3 @@ Marker2D
 TextureRect
 TextureButton
 LinkButton
-VideoStreamPlayer
-AnimatedSprite2D
-HBoxContainer

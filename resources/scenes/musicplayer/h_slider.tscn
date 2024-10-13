@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwfmy5ug6gp5c"]
+
+[sub_resource type="GDScript" id="GDScript_qhqnn"]
+resource_name = "audiocontrol"
+script/source = "extends HSlider
+
+@export
+var bus_name: String
+
+var bus_index: int
+
+func _ready() -> void:
+	bus_index = AudioServer.get_bus_index(bus_name)
+	value_changed.connect(_on_value_changed)
+
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+"
+
+[node name="HSlider" type="HSlider"]
+offset_right = 356.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = SubResource("GDScript_qhqnn")
