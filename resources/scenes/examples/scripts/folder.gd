@@ -88,7 +88,7 @@ func _on_mouse_exited() -> void:
 
 func spawnwindow():
 	if !is_window_present:
-		var scene = load(window_path)  # Ensure 'window' points to your panel scene path
+		var scene = load(window_path)
 		if scene == null:
 			print("Error: Unable to load scene:", window_path)
 			return
