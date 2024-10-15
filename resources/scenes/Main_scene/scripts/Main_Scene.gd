@@ -17,7 +17,13 @@ extends Control
 		   #,OWXdoooooOWMMMMMMMMMNl.               
 			 #'oxWWWMMMMMMMMWWKol.                 
 				#...lxxxxxx'..                     
+
 	# The Maxwell Company
+
+
+
+
+
 @onready var ambientsound: AudioStreamPlayer = $ambientsound
 @onready var takecare: AudioStreamPlayer = $desktop/Folders/rightvboxcon/musicplayer/takecare
 @onready var splash_screen: CanvasLayer = $splash_screen
@@ -41,9 +47,9 @@ extends Control
 @onready var logopor: Label = $desktop/portfolio
 @onready var authenticate_popup: Panel = $desktop/windows/authenticate_popup
 @onready var nelixwindow: Panel = $desktop/windows/nelixwindow
-@onready var play_nelix: TextureButton = $"desktop/Folders/rightvboxcon/play nelix"
 @onready var musicplayer: TextureButton = $desktop/Folders/rightvboxcon/musicplayer
 @onready var corrupted: TextureButton = $"desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
+@onready var nelix: TextureButton = $desktop/Folders/rightvboxcon/nelix
 
 @export var all_windows_visible: bool 
 
@@ -106,7 +112,7 @@ func _on_lies_disablebk() -> void:
 	background.visible = false
 	gay.visible = false
 	panel.visible = false
-	play_nelix.visible = false
+	nelix.visible = false
 	musicplayer.visible = false
 	corrupted.visible = true
 

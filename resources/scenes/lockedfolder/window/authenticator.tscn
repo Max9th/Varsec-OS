@@ -57,7 +57,7 @@ label_settings = SubResource("LabelSettings_p6fgv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="windowbuttons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -70,7 +70,7 @@ grow_horizontal = 0
 theme_override_constants/separation = 1
 metadata/_edit_group_ = true
 
-[node name="maximize" type="Button" parent="HBoxContainer2"]
+[node name="maximize" type="Button" parent="windowbuttons"]
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -79,7 +79,7 @@ theme_override_styles/hover = ExtResource("4_2pwua")
 theme_override_styles/pressed = ExtResource("4_2pwua")
 theme_override_styles/normal = ExtResource("4_2pwua")
 
-[node name="close" type="Button" parent="HBoxContainer2"]
+[node name="close" type="Button" parent="windowbuttons"]
 custom_minimum_size = Vector2(7, 7)
 layout_direction = 1
 layout_mode = 2
@@ -174,8 +174,8 @@ label_settings = SubResource("LabelSettings_7enhi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer2/maximize" to="." method="_on_maximize_pressed"]
-[connection signal="pressed" from="HBoxContainer2/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]
+[connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]
 [connection signal="text_submitted" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="HBoxContainer/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -93,7 +93,9 @@ generate_mipmaps = true
 antialiasing = 0
 font_name = "ViperVibes"
 style_name = "Regular"
+subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 hinting = 0
 cache/0/16/0/ascent = 12.0
 cache/0/16/0/descent = 4.0
@@ -892,6 +894,10 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_etf32"]
@@ -904,11 +910,14 @@ custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("1_egd73")
 texture_pressed = ExtResource("1_egd73")
 texture_hover = ExtResource("3_etd47")
 texture_disabled = ExtResource("3_io77e")
-stretch_mode = 0
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("3_5kliy")
 
 [node name="filename" type="Label" parent="."]
@@ -916,10 +925,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.0
-offset_top = 44.0
-offset_right = 29.0
-offset_bottom = 52.0
+offset_left = -23.0
+offset_top = 45.0
+offset_right = 12.0
+offset_bottom = 53.0
 grow_horizontal = 2
 text = "Test"
 label_settings = SubResource("LabelSettings_5ytib")
@@ -931,21 +940,34 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -25.5
-offset_top = 42.0
-offset_right = 29.5
+offset_left = -25.0
+offset_top = 44.0
+offset_right = 25.0
 offset_bottom = 54.0
 grow_horizontal = 2
+pivot_offset = Vector2(25, 5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yolnj")
+metadata/_edit_group_ = true
 
-[node name="filename" type="Label" parent="selected_panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="selected_panel"]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="filename" type="Label" parent="selected_panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Test
-"
+text = "Test"
 label_settings = SubResource("LabelSettings_etf32")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="text_icon" type="TextureRect" parent="selected_panel/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+expand_mode = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
@@ -953,6 +975,10 @@ one_shot = true
 
 [node name="select_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fjroi")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(20, 20)
+gizmo_extents = 27.8
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

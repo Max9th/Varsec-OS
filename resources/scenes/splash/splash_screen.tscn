@@ -64,8 +64,8 @@ shader_parameter/roll_variation = 1.8
 shader_parameter/distort_intensity = 0.0
 shader_parameter/noise_opacity = 0.0
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.015
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 4.75e-08
 shader_parameter/brightness = 1.055
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.157
@@ -171,8 +171,8 @@ one_shot = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Maxthelogo2" type="TextureRect" parent="MAX"]
 material = SubResource("ShaderMaterial_psndg")
@@ -183,23 +183,33 @@ offset_right = 400.0
 offset_bottom = 396.0
 texture = ExtResource("4_kmykr")
 
-[node name="TextureRect" type="TextureRect" parent="MAX"]
+[node name="center" type="Control" parent="MAX"]
+anchors_preset = 0
+offset_left = 260.0
+offset_top = 256.0
+offset_right = 786.0
+offset_bottom = 394.0
+
+[node name="TextureRect" type="TextureRect" parent="MAX/center"]
 clip_children = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 14.8
-anchor_top = 8.375
-anchor_right = 14.8
-anchor_bottom = 8.375
-offset_left = -189.0
-offset_top = -60.0
-offset_right = -126.0
-offset_bottom = -40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.5
+offset_top = -51.0
+offset_right = 105.5
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(6, 6)
+pivot_offset = Vector2(31.5, 0)
 texture = ExtResource("6_ufm2q")
 stretch_mode = 4
 
-[node name="glint" type="ColorRect" parent="MAX/TextureRect"]
+[node name="glint" type="ColorRect" parent="MAX/center/TextureRect"]
 visible = false
 material = SubResource("ShaderMaterial_rfvjg")
 layout_mode = 0
@@ -209,12 +219,12 @@ offset_right = 123.0
 offset_bottom = 36.0
 rotation = 3.14159
 
-[node name="Label" type="Label" parent="MAX"]
+[node name="Label" type="Label" parent="MAX/center"]
 layout_mode = 0
-offset_left = 438.0
-offset_top = 364.0
-offset_right = 972.0
-offset_bottom = 392.0
+offset_left = 177.0
+offset_top = 108.0
+offset_right = 711.0
+offset_bottom = 136.0
 scale = Vector2(0.6, 0.6)
 text = "Miguel Jorge Freitas de O."
 label_settings = SubResource("LabelSettings_dy2l2")

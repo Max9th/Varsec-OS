@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
 [ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/classmanagerassets/1727438391663.jpg" id="5_bxqsp"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
-[ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/button_manager.gd" id="7_gh4da"]
 [ext_resource type="Texture2D" uid="uid://cmxf2l7frdplr" path="res://resources/sprites/classmanagerassets/aula_2a.jpeg" id="7_lysfj"]
 [ext_resource type="Texture2D" uid="uid://cw0x17dao7of2" path="res://resources/sprites/classmanagerassets/1271416569_4a3d19b1ff_b.jpg" id="7_xvj6i"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
@@ -26,26 +25,9 @@ texture_margin_right = 20.0
 texture_margin_bottom = 41.0
 region_rect = Rect2(0, 0, 50, 50)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
-bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
 [sub_resource type="LabelSettings" id="LabelSettings_wrkym"]
 font = ExtResource("16_3pnsg")
-
-[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
-font = ExtResource("16_3pnsg")
-
-[sub_resource type="LabelSettings" id="LabelSettings_k6lmd"]
-font = ExtResource("16_3pnsg")
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
-font = ExtResource("16_3pnsg")
+font_size = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgnvq"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -55,6 +37,32 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vxdf"]
+bg_color = Color(0.0935537, 0.113284, 0.167523, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbcny"]
+font = ExtResource("16_3pnsg")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_60y8t"]
+font = ExtResource("16_3pnsg")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_scfmy"]
+font = ExtResource("16_3pnsg")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+outline_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6avh"]
+font = ExtResource("4_l3xm2")
+font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
 font = ExtResource("16_3pnsg")
@@ -66,129 +74,385 @@ clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1
 anchor_right = 0.565104
-anchor_bottom = 0.615741
+anchor_bottom = 0.532407
 offset_right = -434.0
-offset_bottom = -266.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_styles/panel = SubResource("StyleBoxTexture_xule5")
 script = ExtResource("2_mcqie")
+is_visible = true
 can_drag = true
 can_maximize = true
-metadata/_edit_use_anchors_ = true
+can_close = true
+can_resize = true
 
-[node name="separator_horizontal" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 74.6667
-offset_right = 43.0
-offset_bottom = 112.667
-rotation = 1.5708
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
-
-[node name="separator2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.974
-offset_left = 40.765
-offset_top = 11.6668
-offset_right = 43.765
-offset_bottom = 0.656998
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
-
-[node name="recentes" type="Label" parent="."]
-layout_mode = 0
-offset_left = 4.55214
-offset_top = 79.6669
-offset_right = 145.552
-offset_bottom = 95.6669
-scale = Vector2(0.25, 0.25)
-text = "Recentes:"
-label_settings = SubResource("LabelSettings_wrkym")
-vertical_alignment = 1
-
-[node name="aulas" type="Control" parent="."]
-layout_mode = 1
-anchor_right = 1.769
-anchor_bottom = 1.878
-offset_right = 50.127
-offset_bottom = 14.03
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-
-[node name="aula1" type="Control" parent="aulas"]
-visible = false
-layout_mode = 1
-anchor_left = 0.0253461
-anchor_top = 0.0173614
-anchor_right = 0.99065
-anchor_bottom = 1.00801
-offset_left = 79.9998
-offset_top = 22.42
-offset_right = -2.94229
-offset_bottom = -4.91595
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="images" type="Container" parent="aulas/aula1"]
+[node name="sidebarcontainer" type="Container" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0561225
-anchor_right = 0.386
-anchor_bottom = 1.713
-offset_left = 5.0
-offset_top = -3.13266
-offset_right = 14.304
-offset_bottom = -182.842
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
-metadata/_edit_group_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula1/images"]
-custom_minimum_size = Vector2(149, 74)
+[node name="sidebar" type="Control" parent="sidebarcontainer"]
+custom_minimum_size = Vector2(252, 134)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("5_bxqsp")
-expand_mode = 1
+mouse_filter = 2
 
-[node name="image" type="TextureRect" parent="aulas/aula1/images"]
-custom_minimum_size = Vector2(149, 74)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-tooltip_text = "Jonas disse:
-\"CUBIGOR\"
-Lembre-se disso "
-texture = ExtResource("7_xvj6i")
-expand_mode = 1
-
-[node name="ScaleContainer3" type="Container" parent="aulas/aula1"]
+[node name="recentes" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.452991
-anchor_top = 0.0196078
-anchor_right = 0.997151
-anchor_bottom = 1.0098
-offset_left = 1.79501
-offset_top = 1.41176
-offset_right = 0.957245
-offset_bottom = -6.29404
+anchor_left = 0.0138427
+anchor_top = 0.705907
+anchor_right = 0.15337
+anchor_bottom = 1.05479
+offset_left = 0.499843
+offset_top = 0.408463
+offset_right = 106.22
+offset_bottom = 78.6581
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="recentes" type="Label" parent="sidebarcontainer/sidebar/recentes"]
+layout_mode = 2
+text = " Recentes:"
+label_settings = SubResource("LabelSettings_wrkym")
+
+[node name="welcome" type="Button" parent="sidebarcontainer/sidebar/recentes"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Bem vindo!"
+
+[node name="changelog" type="Button" parent="sidebarcontainer/sidebar/recentes"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 7
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "changelog"
+
+[node name="separators" type="Control" parent="sidebarcontainer/sidebar"]
+clip_contents = true
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="separator_vertical" type="Panel" parent="sidebarcontainer/sidebar/separators"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16215
+anchor_top = 0.0895522
+anchor_right = 0.17006
+anchor_bottom = 0.977612
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+metadata/_edit_use_anchors_ = true
+
+[node name="separator_horizontal" type="Panel" parent="sidebarcontainer/sidebar/separators"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0158195
+anchor_top = 0.671642
+anchor_right = 0.0158195
+anchor_bottom = 0.694029
+offset_left = 34.0
+offset_right = 37.0
+offset_bottom = 31.0001
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vxdf")
+metadata/_edit_use_anchors_ = true
+
+[node name="select_bim" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0134629
+anchor_top = 0.0852045
+anchor_right = 0.150895
+anchor_bottom = 0.691548
+offset_right = 104.25
+offset_bottom = 243.75
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+theme_override_constants/separation = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = " Selecione:"
+label_settings = SubResource("LabelSettings_dbcny")
+text_overrun_behavior = 1
+
+[node name="bim" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "1 BIM"
+
+[node name="bim2" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "2 BIM"
+
+[node name="bim3" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "3 BIM"
+
+[node name="bim4" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "4 BIM"
+
+[node name="personal" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Personal 
+works"
+alignment = 2
+icon_alignment = 1
+
+[node name="select_class_bim_2" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
+visible = false
+layout_mode = 2
+anchor_left = 0.0118646
+anchor_top = 0.0837553
+anchor_right = 0.149297
+anchor_bottom = 0.790845
+offset_right = 104.25
+offset_bottom = 284.25
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+theme_override_constants/separation = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = " Selecione:"
+label_settings = SubResource("LabelSettings_dbcny")
+
+[node name="aula1" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 1"
+
+[node name="aula2" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 2"
+
+[node name="aula5" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 5"
+
+[node name="aula3" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 3"
+
+[node name="aula4" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 4"
+
+[node name="back" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Back"
+
+[node name="go_back" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0119268
+anchor_top = 0.0812243
+anchor_right = 0.149359
+anchor_bottom = 0.571896
+offset_right = 104.25
+offset_bottom = 197.25
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+theme_override_constants/separation = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/go_back"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = " Selecione:"
+label_settings = SubResource("LabelSettings_dbcny")
+text_overrun_behavior = 1
+
+[node name="back" type="Button" parent="sidebarcontainer/sidebar/go_back"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Go back"
+
+[node name="contentcontainer" type="Container" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175115
+anchor_top = 0.104348
+anchor_right = 0.967742
+anchor_bottom = 0.965217
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("17_dg7vq")
 stretch_mode = 1
-metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula1/ScaleContainer3"]
-texture_filter = 1
-custom_minimum_size = Vector2(960, 1000)
+[node name="contents" type="Control" parent="contentcontainer"]
+custom_minimum_size = Vector2(217, 115)
 layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="1bim" type="Control" parent="contentcontainer/contents"]
+anchors_preset = 0
+offset_right = 203.0
+offset_bottom = 125.0
+mouse_filter = 2
+
+[node name="aula1" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.7188
+anchor_bottom = 2.12974
+offset_right = 1350.24
+offset_bottom = 769.08
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -224,93 +488,79 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-
-[node name="title" type="Label" parent="aulas/aula1"]
-custom_minimum_size = Vector2(74, 21)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0158886
-anchor_top = -0.0129604
-anchor_right = 0.10815
-anchor_bottom = 0.0107214
-offset_right = 43.0
-offset_bottom = 29.5
-scale = Vector2(0.5, 0.5)
-text = "Aula 1
-
-"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="aula2" type="Control" parent="aulas"]
-visible = false
-layout_mode = 1
-anchor_top = -0.0174672
-anchor_right = 0.995
-anchor_bottom = 1.004
-offset_left = 91.0
-offset_top = 31.6079
-offset_right = -4.83002
-offset_bottom = -3.85831
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ScaleContainer2" type="Container" parent="aulas/aula2"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0561225
-anchor_right = 0.386
-anchor_bottom = 1.713
-offset_left = 5.0
-offset_top = -2.79933
-offset_right = 14.3294
-offset_bottom = -181.705
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/1bim/aula1"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 35
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula2/ScaleContainer2"]
+[node name="image1iden" type="TextureRect" parent="contentcontainer/contents/1bim/aula1/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("7_lysfj")
-expand_mode = 1
+size_flags_vertical = 4
+texture = ExtResource("5_bxqsp")
+expand_mode = 5
+stretch_mode = 6
 
-[node name="image" type="TextureRect" parent="aulas/aula2/ScaleContainer2"]
+[node name="image2iden" type="TextureRect" parent="contentcontainer/contents/1bim/aula1/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 8
 tooltip_text = "Jonas disse:
 \"CUBIGOR\"
 Lembre-se disso "
-texture = ExtResource("8_t4clq")
-expand_mode = 1
+texture = ExtResource("7_xvj6i")
+expand_mode = 5
+stretch_mode = 6
 
-[node name="ScaleContainer3" type="Container" parent="aulas/aula2"]
+[node name="aula2" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.458333
-anchor_top = 0.0256409
-anchor_right = 1.0
-anchor_bottom = 0.982902
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula2/ScaleContainer3"]
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula2"]
 texture_filter = 1
-custom_minimum_size = Vector2(960, 1000)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -333,9 +583,7 @@ Madeira Esculpida
 Os colegas tiveram a oportunidade de ver esculturas em madeira que representavam animais, adornadas com desenhos que contam histórias e mostram a conexão dos indígenas com a natureza.
 
 Mural com Grafismos
-Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente.
-
-"
+Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente."
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
@@ -344,98 +592,77 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-
-[node name="title" type="Label" parent="aulas/aula2"]
-custom_minimum_size = Vector2(74, 21)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014881
-anchor_top = -0.0128205
-anchor_right = 0.107143
-anchor_bottom = 0.0106838
-offset_right = 49.0
-offset_bottom = 29.5
-scale = Vector2(0.5, 0.5)
-text = "Aula 2
-
-"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="aula3" type="Control" parent="aulas"]
-visible = false
-layout_mode = 1
-anchor_left = 0.0253461
-anchor_right = 0.995259
-anchor_bottom = 1.00422
-offset_left = 79.9998
-offset_top = 27.0
-offset_right = -8.94226
-offset_bottom = -2.91609
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="images" type="Container" parent="aulas/aula3"]
-clip_contents = true
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/1bim/aula2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0553325
-anchor_right = 0.437
-anchor_bottom = 1.882
-offset_left = 5.0
-offset_top = -3.00319
-offset_right = 3.916
-offset_bottom = -218.272
-grow_horizontal = 2
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.98983
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula3/images"]
+[node name="image1mus" type="TextureRect" parent="contentcontainer/contents/1bim/aula2/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("9_5m73j")
-expand_mode = 1
+size_flags_vertical = 4
+texture = ExtResource("8_t4clq")
+expand_mode = 5
+stretch_mode = 6
 
-[node name="image" type="TextureRect" parent="aulas/aula3/images"]
+[node name="image2mus" type="TextureRect" parent="contentcontainer/contents/1bim/aula2/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 8
 tooltip_text = "Jonas disse:
 \"CUBIGOR\"
 Lembre-se disso "
-texture = ExtResource("11_hkcfu")
-expand_mode = 1
+texture = ExtResource("7_lysfj")
 
-[node name="ScaleContainer3" type="Container" parent="aulas/aula3"]
+[node name="aula3" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.20985
+anchor_bottom = 2.12217
+offset_right = 1452.03
+offset_bottom = 769.95
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.452174
-anchor_top = -0.00510204
-anchor_right = 1.01159
-anchor_bottom = 1.0102
-offset_left = 3.54491
-offset_top = 7.19898
-offset_right = 0.818817
-offset_bottom = -7.39787
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula3/ScaleContainer3"]
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula3"]
 texture_filter = 1
-custom_minimum_size = Vector2(960, 1000)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -461,96 +688,77 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-
-[node name="title" type="Label" parent="aulas/aula3"]
-custom_minimum_size = Vector2(74, 21)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0150602
-anchor_top = -0.0170213
-anchor_right = 0.108434
-anchor_bottom = 0.012766
-offset_right = 49.0
-offset_bottom = 14.0
-scale = Vector2(0.5, 0.5)
-text = "Aula 3
-"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="aula4" type="Control" parent="aulas"]
-visible = false
-layout_mode = 1
-anchor_left = 0.0253456
-anchor_right = 0.995259
-anchor_bottom = 1.01559
-offset_left = 80.0
-offset_top = 27.0
-offset_right = -8.94244
-offset_bottom = -6.91602
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="images" type="Container" parent="aulas/aula4"]
-clip_contents = true
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/1bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0561225
-anchor_right = 0.379
-anchor_bottom = 2.07
-offset_left = 6.0
-offset_top = -5.13272
-offset_right = 24.172
-offset_bottom = -260.382
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.961582
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
 
-[node name="image2" type="TextureRect" parent="aulas/aula4/images"]
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula3/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("12_uoi20")
-expand_mode = 1
+size_flags_vertical = 4
+texture = ExtResource("9_5m73j")
+expand_mode = 5
+stretch_mode = 6
 
-[node name="image" type="TextureRect" parent="aulas/aula4/images"]
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula3/images"]
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 8
 tooltip_text = "Jonas disse:
 \"CUBIGOR\"
 Lembre-se disso "
-texture = ExtResource("11_3jok6")
-expand_mode = 1
+texture = ExtResource("11_hkcfu")
 
-[node name="images2" type="Container" parent="aulas/aula4"]
+[node name="aula4" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.452174
-anchor_top = -0.00510204
-anchor_right = 1.01159
-anchor_bottom = 1.0102
-offset_left = 3.54491
-offset_top = 7.19389
-offset_right = 0.818817
-offset_bottom = -6.3877
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula4/images2"]
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula4"]
 texture_filter = 1
-custom_minimum_size = Vector2(960, 1000)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -578,72 +786,80 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
-
-[node name="title" type="Label" parent="aulas/aula4"]
-custom_minimum_size = Vector2(74, 21)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0146938
-anchor_top = -0.025905
-anchor_right = 0.157598
-anchor_bottom = 0.034716
-offset_right = 49.0
-offset_bottom = 14.0
-scale = Vector2(0.5, 0.5)
-text = "Aula 4"
-label_settings = SubResource("LabelSettings_60y8t")
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="aula5" type="Control" parent="aulas"]
-visible = false
-clip_contents = true
-layout_mode = 1
-anchor_right = 0.995
-anchor_bottom = 1.0
-offset_left = 85.3333
-offset_top = 22.6667
-offset_right = -7.6091
-offset_bottom = -6.33331
-grow_horizontal = 2
-grow_vertical = 2
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/1bim/aula4"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="title" type="Label" parent="aulas/aula5"]
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_uoi20")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula5" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_5_title" type="Label" parent="contentcontainer/contents/1bim/aula5"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0324591
-anchor_top = -0.00141963
-anchor_right = 0.14164
-anchor_bottom = 0.0283925
-offset_right = 49.0
-offset_bottom = 14.0
-scale = Vector2(0.5, 0.5)
+anchor_left = 0.190779
+anchor_top = 0.121603
+anchor_right = 0.281852
+anchor_bottom = 0.157761
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
 text = "Aula 5"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text" type="Container" parent="aulas/aula5"]
+[node name="text_aula5" type="TextEdit" parent="contentcontainer/contents/1bim/aula5"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0324591
-anchor_top = 0.0553655
-anchor_right = 1.00623
-anchor_bottom = 0.992321
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
-metadata/_edit_use_anchors_ = true
-
-[node name="TextEdit" type="TextEdit" parent="aulas/aula5/text"]
-texture_filter = 1
-custom_minimum_size = Vector2(1632, 880)
-layout_mode = 2
+anchor_left = 0.183942
+anchor_top = 0.174208
+anchor_right = 0.944877
+anchor_bottom = 0.964932
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -724,179 +940,145 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
+metadata/_edit_use_anchors_ = true
 
-[node name="aula6" type="Control" parent="aulas"]
-visible = false
-clip_contents = true
+[node name="select_somethin" type="Control" parent="contentcontainer/contents"]
 layout_mode = 1
-anchor_right = 0.995
-anchor_bottom = 1.0
-offset_left = 85.3333
-offset_top = 22.6667
-offset_right = -7.6091
-offset_bottom = -6.33331
+anchor_left = -0.221198
+anchor_top = -0.120095
+anchor_right = 3.47406
+anchor_bottom = 2.64945
+offset_right = 1304.13
+offset_bottom = 769.08
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="select" type="Label" parent="contentcontainer/contents/select_somethin"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.328929
+anchor_top = 0.492257
+anchor_right = 0.72589
+anchor_bottom = 0.541585
+offset_left = 6.10352e-05
+offset_top = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ScaleContainer3" type="Container" parent="aulas/aula6"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0796724
-anchor_top = 0.157578
-anchor_right = 0.95902
-anchor_bottom = 0.9838
-script = ExtResource("17_dg7vq")
-stretch_mode = 1
-metadata/_edit_group_ = true
+text = "Por favor selecione uma aula"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="aulas/aula6/ScaleContainer3"]
-texture_filter = 1
-custom_minimum_size = Vector2(1632, 880)
-layout_mode = 2
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
-text = "Professor de arte vira um cubo após digitar \"Cubigor\" num campo de senha! 
+[node name="not_ready" type="Control" parent="contentcontainer/contents"]
+visible = false
+layout_mode = 1
+anchor_left = -0.115207
+anchor_top = -0.121739
+anchor_right = 2.12429
+anchor_bottom = 2.12217
+offset_right = 1452.03
+offset_bottom = 769.95
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
-As autoridades acusam Jonas de ser o culpado pela tragédia"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-
-[node name="title" type="Label" parent="aulas/aula6"]
+[node name="select" type="Label" parent="contentcontainer/contents/not_ready"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.220329
-anchor_right = 0.75738
-anchor_bottom = 0.144802
-offset_right = 182.0
-offset_bottom = 34.0
-scale = Vector2(0.5, 0.5)
-text = "welcome!"
-label_settings = SubResource("LabelSettings_k6lmd")
+anchor_left = 0.194628
+anchor_top = 0.475694
+anchor_right = 0.959157
+anchor_bottom = 0.525468
+offset_left = 8.5
+offset_top = 3.05176e-05
+offset_right = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Essa parte de filemanager nao esta pronta."
+label_settings = SubResource("LabelSettings_scfmy")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="welcome" type="Control" parent="contentcontainer/contents"]
+visible = false
+layout_mode = 1
+anchor_left = -0.732857
+anchor_top = 0.0869565
+anchor_right = -0.732857
+anchor_bottom = 0.391739
+offset_left = 111.03
+offset_top = -25.861
+offset_right = 2217.03
+offset_bottom = 1052.07
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="contentcontainer/contents/welcome"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.987678
+anchor_top = 0.0779661
+anchor_right = 1.68323
+anchor_bottom = 0.967232
+offset_left = -1655.83
+offset_top = 67.1938
+offset_right = -1556.65
+offset_bottom = -42.2266
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 75
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="welcome_title" type="Label" parent="contentcontainer/contents/welcome/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = " BEM VINDO AO VARSEC OS!"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="welcome_bodytext" type="Label" parent="contentcontainer/contents/welcome/VBoxContainer"]
+layout_mode = 2
+text = "Primeiramente, obrigado por acessar esse site. sua presença é apreciada!
+
+Se você for meu professor, favor me dá um deiz man, cê é top !111!1111!1
+
+O Varsec OS é o meu maior projeto até o momento. Ele é um portfólio de artes feito com o objetivo de não só exibir o que aprendi no decorrer do meu bimestre de artes no IFg, mas também para testar minhas abilidades em programação e pixel art.
+Ele é um projeto Open Source desenvolvido somente por mim.
+"
+label_settings = SubResource("LabelSettings_e6avh")
 horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="welcome_title2" type="Label" parent="contentcontainer/contents/welcome/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = " O QUE VOCE PRECISA SABER"
+label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Buttonmanager" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 11.3333
-offset_right = 115.0
-offset_bottom = 245.333
-scale = Vector2(0.25, 0.25)
-theme_override_constants/separation = 7
-script = ExtResource("7_gh4da")
-metadata/_edit_group_ = true
-
-[node name="selecione" type="Label" parent="Buttonmanager"]
+[node name="welcome_bodytext2" type="Label" parent="contentcontainer/contents/welcome/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "Selecione:"
-label_settings = SubResource("LabelSettings_dbcny")
-vertical_alignment = 1
+text = "Abra pastas com dois cliques
+As janelas podem ser maximizadas e fechadas usando os botões que ficam no canto superior direito e podem ser redimensinadas ao clicar e arrastar o canto inferior direito.
 
-[node name="aula1" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 1"
+Você também poderá encontrar senhas para a pasta trancada espalhadas pelo sistema (SÓ APARTIR DA RELEASE 2.0), que irão desbloquear easter eggs e novos papéis de parede.
 
-[node name="aula2" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 2"
+Se divirta!"
+label_settings = SubResource("LabelSettings_e6avh")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="aula3" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 3"
-
-[node name="aula4" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 4"
-
-[node name="aula5" type="Button" parent="Buttonmanager"]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 5"
-
-[node name="welcome" type="Button" parent="."]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-offset_left = 2.66667
-offset_top = 85.3333
-offset_right = 141.667
-offset_bottom = 125.333
-scale = Vector2(0.25, 0.25)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Welcome!"
-
-[node name="welcome2" type="Button" parent="."]
-custom_minimum_size = Vector2(90, 40)
-layout_mode = 2
-offset_left = -9.33333
-offset_top = 124.0
-offset_right = 129.667
-offset_bottom = 164.0
-scale = Vector2(0.25, 0.25)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "54"
-flat = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="windowbuttons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -909,7 +1091,8 @@ grow_horizontal = 0
 theme_override_constants/separation = 1
 metadata/_edit_group_ = true
 
-[node name="maximize" type="Button" parent="HBoxContainer"]
+[node name="maximize" type="Button" parent="windowbuttons"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
@@ -917,7 +1100,8 @@ theme_override_styles/hover = ExtResource("6_nydlm")
 theme_override_styles/pressed = ExtResource("6_nydlm")
 theme_override_styles/normal = ExtResource("6_nydlm")
 
-[node name="close" type="Button" parent="HBoxContainer"]
+[node name="close" type="Button" parent="windowbuttons"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
@@ -925,7 +1109,19 @@ theme_override_styles/hover = ExtResource("6_nydlm")
 theme_override_styles/pressed = ExtResource("6_nydlm")
 theme_override_styles/normal = ExtResource("6_nydlm")
 
-[node name="draghandle" type="Panel" parent="."]
+[node name="resizehandle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="draghandle" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -935,20 +1131,19 @@ offset_top = 1.0
 offset_right = 90.5
 offset_bottom = 10.0
 grow_horizontal = 2
-theme_override_styles/panel = ExtResource("6_nydlm")
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.8445
+offset_left = -28.5
 offset_top = 2.0
-offset_right = 83.1555
+offset_right = 83.5
 offset_bottom = 16.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-text = "class manager"
+text = "file manager"
 label_settings = SubResource("LabelSettings_2xelb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -956,11 +1151,21 @@ vertical_alignment = 1
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_b7u5f")
 
-[connection signal="pressed" from="Buttonmanager/aula1" to="Buttonmanager" method="_on_aula_1_pressed"]
-[connection signal="pressed" from="Buttonmanager/aula2" to="Buttonmanager" method="_on_aula_2_pressed"]
-[connection signal="pressed" from="Buttonmanager/aula3" to="Buttonmanager" method="_on_aula_3_pressed"]
-[connection signal="pressed" from="Buttonmanager/aula4" to="Buttonmanager" method="_on_aula_4_pressed"]
-[connection signal="pressed" from="Buttonmanager/aula5" to="Buttonmanager" method="_on_aula_5_pressed"]
-[connection signal="pressed" from="HBoxContainer/maximize" to="." method="_on_maximize_pressed"]
-[connection signal="pressed" from="HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/recentes/welcome" to="." method="_on_welcome_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/recentes/changelog" to="." method="_on_changelog_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim" to="." method="_on_bim_1_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim2" to="." method="_on_bim_2_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim3" to="." method="_on_bim_3_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim4" to="." method="_on_bim_4_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/personal" to="." method="_on_personal_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula1" to="." method="_on_aula_1_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula2" to="." method="_on_aula_2_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula5" to="." method="_on_aula_5_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula3" to="." method="_on_aula_3_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula4" to="." method="_on_aula_4_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/back" to="." method="_on_back_classes_bim1_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/go_back/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]
+[connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]
+[connection signal="gui_input" from="resizehandle" to="." method="_on_resizehandle_gui_input"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

@@ -10,16 +10,17 @@ extends VBoxContainer
 ]
 
 func _ready() -> void:
-	hide_all_aulas()
+	#hide_all_aulas()
+	pass
 
 # Function to hide all aula nodes
-func hide_all_aulas() -> void:
-	for aula in aulas:
-		aula.visible = false
+#func hide_all_aulas() -> void:
+	#for aula in aulas:
+		#aula.visible = false
 
 # Function to show a specific aula
 func show_aula(index: int) -> void:
-	hide_all_aulas()  # Hide all aulas first
+	#hide_all_aulas()  # Hide all aulas first
 	if index >= 0 and index < aulas.size():
 		aulas[index].visible = true  # Show the selected aula
 

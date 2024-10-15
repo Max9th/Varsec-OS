@@ -1,10 +1,10 @@
-res://resources/scenes/examples/scripts
-res://
-/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/apk
-/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/lin
-/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS-web
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/exe
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS-web
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/lin
+/home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/apk
+res://
 res://resources/audio
+res://resources/scenes/examples/scripts
 res://resources/scenes/cubigor
 res://resources/shaders
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot
@@ -18,5 +18,4 @@ res://resources/scenes/classmanager/window/scripts
 /usr/java/jdk-23-oracle-x64/
 /home/miguel/Android/Sdk
 res://resources
-res://resources/scenes/classmanager/scripts
 res://resources/scenes/personalworksmanager

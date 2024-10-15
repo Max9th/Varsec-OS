@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	cubigor_spawner()
 	if cubigor_mode:
 		mesh.rotate_x(5 * delta)
+		mesh.rotate_z(5 * delta)
 		mesh1.rotate_y(5 * delta)
 		mesh2.rotate_y(5 * delta)
 		mesh3.rotate_x(5 * delta)

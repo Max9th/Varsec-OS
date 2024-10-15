@@ -10,8 +10,8 @@ extends CanvasLayer
 @onready var skip: TextureButton = $skip
 @onready var splash_subscreen: CanvasLayer = $"."
 @onready var glintstart: Timer = $MAX/glintstart
-@onready var glint: ColorRect = $MAX/TextureRect/glint
 @onready var maxtimer: Timer = $MAX/Maxtimer
+@onready var glint: ColorRect = $MAX/center/TextureRect/glint
 
 @export var Full_boot = true
 
