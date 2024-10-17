@@ -54,6 +54,7 @@ signal textcolorchange
 signal welcome_display
 
 func _on_power_button_pressed() -> void:
+	self.visible = false
 	get_tree().quit()
 
 func _ready() -> void:
