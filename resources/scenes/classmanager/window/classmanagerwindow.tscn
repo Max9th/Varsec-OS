@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=27 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
@@ -11,10 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
 [ext_resource type="Texture2D" uid="uid://ca8ikd8p44gm6" path="res://resources/sprites/classmanagerassets/aula_2d.jpeg" id="8_t4clq"]
 [ext_resource type="Texture2D" uid="uid://cf77bwyb1714g" path="res://resources/sprites/classmanagerassets/IMG_20240928_002046.jpg" id="9_5m73j"]
-[ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/download (1).jpeg" id="11_3jok6"]
+[ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/xilogravados.jpeg" id="11_3jok6"]
 [ext_resource type="Texture2D" uid="uid://cle3ns7wshbs8" path="res://resources/sprites/classmanagerassets/download.png" id="11_hkcfu"]
 [ext_resource type="Texture2D" uid="uid://b18i1n5map00e" path="res://resources/sprites/classmanagerassets/download (2).jpeg" id="12_uoi20"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="16_3pnsg"]
+[ext_resource type="Texture2D" uid="uid://wcaro4fcivsi" path="res://resources/sprites/classmanagerassets/78f4a1a665f4d80f121ac7625e584b0f.jpg" id="16_yeqfc"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="17_dg7vq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xule5"]
@@ -126,6 +127,7 @@ label_settings = SubResource("LabelSettings_wrkym")
 [node name="welcome" type="Button" parent="sidebarcontainer/sidebar/recentes"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 13
@@ -137,6 +139,7 @@ text = "Bem vindo!"
 [node name="changelog" type="Button" parent="sidebarcontainer/sidebar/recentes"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 7
 theme_override_fonts/font = ExtResource("16_3pnsg")
@@ -206,6 +209,7 @@ text_overrun_behavior = 1
 [node name="bim" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -217,6 +221,7 @@ text = "1 BIM"
 [node name="bim2" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -228,6 +233,7 @@ text = "2 BIM"
 [node name="bim3" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -239,6 +245,7 @@ text = "3 BIM"
 [node name="bim4" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -250,6 +257,7 @@ text = "4 BIM"
 [node name="personal" type="Button" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -261,7 +269,7 @@ works"
 alignment = 2
 icon_alignment = 1
 
-[node name="select_class_bim_2" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
+[node name="select_class" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
 visible = false
 layout_mode = 2
 anchor_left = 0.0118646
@@ -277,15 +285,16 @@ mouse_filter = 2
 theme_override_constants/separation = 7
 metadata/_edit_use_anchors_ = true
 
-[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = " Selecione:"
 label_settings = SubResource("LabelSettings_dbcny")
 
-[node name="aula1" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="aula1" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -294,9 +303,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 1"
 
-[node name="aula2" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="aula2" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -305,20 +315,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 2"
 
-[node name="aula5" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="aula3" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("16_3pnsg")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/hover = ExtResource("3_qklyj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
-theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Aula 5"
-
-[node name="aula3" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -327,9 +327,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 3"
 
-[node name="aula4" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="aula4" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -338,9 +339,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 4"
 
-[node name="back" type="Button" parent="sidebarcontainer/sidebar/select_class_bim_2"]
+[node name="aula5" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 5"
+
+[node name="back" type="Button" parent="sidebarcontainer/sidebar/select_class"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 16
@@ -376,13 +390,14 @@ text_overrun_behavior = 1
 [node name="back" type="Button" parent="sidebarcontainer/sidebar/go_back"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_3pnsg")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
-text = "Go back"
+text = "Voltar"
 
 [node name="contentcontainer" type="Container" parent="."]
 clip_contents = true
@@ -942,14 +957,1611 @@ wrap_mode = 1
 scroll_smooth = true
 metadata/_edit_use_anchors_ = true
 
+[node name="2bim" type="Control" parent="contentcontainer/contents"]
+anchors_preset = 0
+offset_right = 203.0
+offset_bottom = 125.0
+mouse_filter = 2
+
+[node name="aula1" type="Control" parent="contentcontainer/contents/2bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.7188
+anchor_bottom = 2.12974
+offset_right = 1350.24
+offset_bottom = 769.08
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado: 
+identidade cultural, povos originários, arte marajoara
+
+Atividades desenvolvidas em sala:
+Desenho baseado em duas especies de
+animais brasileiros fundidos em 
+um único ser . Eu usei um morcego fruteiro e uma 
+jararaca-de-alcatrazes
+
+Nós falamos sobre o que é a arte marajoara e também sobre os povos originários e a 
+identidade cultural.
+
+Arte Marajoara
+A arte marajoara foi criada pelo povo que vivia na Ilha de Marajó entre os anos 400 e 1400 d.C. 
+Ela é mais conhecida pelas cerâmicas com formas geométricas e detalhes bem elaborados.
+
+Povos Originários
+Os povos indígenas no Brasil têm uma diversidade cultural e artística gigante. Eles produzem 
+coisas como pinturas corporais, cerâmicas, cestaria e histórias mitológicas. A arte 
+é super importante para rituais religiosos, se conectar com a natureza e manter viva a memória cultural.
+
+Identidade Cultural
+A identidade cultural está ligada aos valores, tradições e crenças de cada grupo. Na arte, ela aparece através de símbolos, estilos e técnicas que são passados de geração em geração. Os povos usam a arte para mostrar como veem o mundo e registrar suas experiências.
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/2bim/aula1"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 35
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1iden" type="TextureRect" parent="contentcontainer/contents/2bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_bxqsp")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2iden" type="TextureRect" parent="contentcontainer/contents/2bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_xvj6i")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula2" type="Control" parent="contentcontainer/contents/2bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Atividades desenvolvidas em sala:
+Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
+
+Máscaras Indígenas
+As máscaras que eles viram, usadas em rituais e cerimônias, eram intrigantes. Cada uma possui sua própria simbologia e serve para representar espíritos ou personagens significativos nas tradições culturais.
+
+Vasilhas de Cerâmica
+As vasilhas de cerâmica que foram exibidas eram notáveis, com algumas apresentando desenhos ricos e detalhados, refletindo as tradições e a identidade cultural de cada povo.
+
+Colar de Penas
+Eles também viram colares feitos com penas, que são adornos tradicionais e têm um papel importante nas expressões culturais e espirituais dos indígenas.
+
+Cestas Coloridas
+As cestas que eles observaram eram de diversos tamanhos e formatos, confeccionadas com materiais vibrantes, evidenciando a habilidade e a criatividade dos artesãos indígenas.
+
+Madeira Esculpida
+Os colegas tiveram a oportunidade de ver esculturas em madeira que representavam animais, adornadas com desenhos que contam histórias e mostram a conexão dos indígenas com a natureza.
+
+Mural com Grafismos
+Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/2bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.98983
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1mus" type="TextureRect" parent="contentcontainer/contents/2bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_t4clq")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2mus" type="TextureRect" parent="contentcontainer/contents/2bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_lysfj")
+
+[node name="aula3" type="Control" parent="contentcontainer/contents/2bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.20985
+anchor_bottom = 2.12217
+offset_right = 1452.03
+offset_bottom = 769.95
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Grafismo indígena, povos Yanomami, arte indígena.
+
+Atividades desenvolvidas em sala:
+Vimos sobre o grafismo indígena, com foco especial nos Yanomami e seus grafismos.
+
+Grafismo Indígena
+O grafismo indígena é caracterizado pelo uso de linhas, zigue-zagues, espirais, triângulos e losangos repetidos. Esses desenhos são inspirados em animais, plantas e fenômenos naturais. Eles representam mitos, lendas, crenças e rituais, e cada etnia possui seu próprio estilo de grafismo, refletindo sua identidade cultural.
+
+Yanomami
+Os Yanomami são habitantes da Amazônia, vivendo entre o Brasil e a Venezuela. Suas pinturas são usadas em rituais, cerimônias e caçadas, utilizando tintas naturais como o urucum (vermelho) e o genipapo (preto). Eles aplicam padrões geométricos e abstratos no corpo para expressar proteção espiritual, força e status. Cada grafismo tem um significado profundo, podendo representar espíritos da floresta, animais ou proteção.
+
+Atividade
+Realizamos uma atividade onde desenhamos um grafismo indígena que vimos na visita técnica ao museu indígena. Eu escolhi criar uma máscara típica dos indígenas, usada em rituais e cerimônias, incorporando os elementos que aprendemos sobre os grafismos."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/2bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.961582
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/2bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_5m73j")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/2bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_hkcfu")
+
+[node name="aula4" type="Control" parent="contentcontainer/contents/2bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura, literatura de cordel e arte popular.
+
+Atividades desenvolvidas em sala:
+Os colegas discutiram o que é a xilogravura, como ela é feita, onde é usada e quem é o principal artista. Também falaram sobre o cordel que leram e analisaram.
+
+O que é a Xilogravura?
+A xilogravura é uma técnica artística de impressão que consiste em gravar desenhos em uma matriz de madeira. Depois, a imagem é transferida para o papel por meio de tinta. Para criar a xilogravura, utiliza-se uma madeira apropriada e ferramentas específicas para rasgar e fazer sulcos na superfície. Após a arte estar pronta, aplica-se tinta sobre a matriz, e o papel é pressionado contra ela, transferindo assim o desenho.
+
+J. Borges
+J. Borges é um dos xilogravadores mais renomados do Brasil. Suas obras retratam cenas do sertão nordestino, trazendo à vida personagens folclóricos e festas populares que fazem parte da cultura local.
+
+Literatura de Cordel
+A capa da literatura de cordel é ilustrada utilizando a técnica da xilogravura. A preservação e divulgação da xilogravura na cultura popular nordestina são de extrema importância, pois ajudam a manter vivas as tradições e histórias dessa rica região.
+
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/2bim/aula4"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/2bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_uoi20")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/2bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula5" type="Control" parent="contentcontainer/contents/2bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_5_title" type="Label" parent="contentcontainer/contents/2bim/aula5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190779
+anchor_top = 0.121603
+anchor_right = 0.281852
+anchor_bottom = 0.157761
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 5"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula5" type="TextEdit" parent="contentcontainer/contents/2bim/aula5"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183942
+anchor_top = 0.174208
+anchor_right = 0.944877
+anchor_bottom = 0.964932
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura e literatura de cordel.
+
+Atividades desenvolvidas em sala:
+Na aula, os colegas começaram a trabalhar no projeto bimestral, que consistia em criar um cordel e uma xilogravura para ser a capa do cordel.
+
+Estrutura do Cordel
+Nós aprendemos sobre a estrutura do cordel, que consiste em 6 versos, sendo que no caso deles seriam 8 estrofes. As rimas são feitas apenas nos versos pares (2, 4 e 6), e cada verso precisa ter em média 7 sílabas.
+
+Fazendo o Cordel
+Depois de aprender a estrutura, os alunos começaram a escrever seus cordéis.
+Apesar de não ter entregue o meu cordel, eu o fiz após a data de entrega. 
+
+O cordel segue:
+
+ A Cobra do Cerrado
+
+Nas terras do cerrado,
+Vaga a cobra em seu andar,
+Com escamas reluzentes,
+Ela sabe se ocultar.
+Entre as folhas e as pedras,
+É um mistério a vagar.
+
+Cobra que dança e se esconde,
+Na sombra do matagal,
+Ela traz uma sabedoria,
+Que vem do ancestral.
+Sussurrando os segredos,
+Do verde, do bem e do mal.
+
+Com língua bifurcada,
+Ela capta o ar sutil,
+Um olhar penetrante,
+E um jeito tão sutil.
+Caçadora do silêncio,
+Nos trilhos do seu perfil.
+
+Em lendas é reverenciada,
+Mestre das transformações,
+Na natureza é sagrada,
+Nos ritos e tradições.
+Representa a força e o poder,
+E suas lições são canções.
+
+Mas cuidado, viajante,
+Com seu jeito de atuar,
+Respeite a cobra, amigo,
+Ela não vem pra atacar.
+Se você a deixar em paz,
+Ela vai te respeitar.
+
+Se avistar uma serpente,
+Com calma, saiba lidar,
+No mundo animal, ela é
+Parte do que deve estar.
+Cobra do cerrado, encanto,
+Na natureza a brilhar.
+
+Assim seguimos em frente,
+Com amor e gratidão,
+A cobra é proteção,
+E parte da criação.
+Um ser que traz harmonia,
+Em cada canção.
+
+Xilogravura do Cordel
+___
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="3bim" type="Control" parent="contentcontainer/contents"]
+anchors_preset = 0
+offset_right = 203.0
+offset_bottom = 125.0
+mouse_filter = 2
+
+[node name="aula1" type="Control" parent="contentcontainer/contents/3bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.7188
+anchor_bottom = 2.12974
+offset_right = 1350.24
+offset_bottom = 769.08
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado: 
+Introdução a história da arte
+Arte romana: Moisaicos e arquitetura
+
+Atividades desenvolvidas em sala:
+Construção de mosaico usando recortes de papel
+
+Nós observamos diversas fotos de pinturas, construções e outras formas de arte feitas pelos romanos
+
+Um dos exemplos de arquitetura romana apresentado foi o Panteão, uma contrução formada por um domoo gigantesco e por paredes grossas, de seis metros de largura
+
+Os romanos também são conhecidos pelos arcos do triunfo e por arcos em geral.
+
+A arte romana foi inspirada pela cultura grega, muitas das estátuas feitas pelos romanos usaram tecnicas e estilos muito parecidos, se não idênticos aos estilos gregos.
+
+Os romanos também são conhecidos pelas suas estátuas de cobre, mas muitas delas foram derretidas pela necessidade de cobre dos romanos e por serem consideradas pagãs"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/3bim/aula1"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 35
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1iden" type="TextureRect" parent="contentcontainer/contents/3bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("16_yeqfc")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="image2iden" type="TextureRect" parent="contentcontainer/contents/3bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_xvj6i")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula2" type="Control" parent="contentcontainer/contents/3bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Atividades desenvolvidas em sala:
+Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
+
+Máscaras Indígenas
+As máscaras que eles viram, usadas em rituais e cerimônias, eram intrigantes. Cada uma possui sua própria simbologia e serve para representar espíritos ou personagens significativos nas tradições culturais.
+
+Vasilhas de Cerâmica
+As vasilhas de cerâmica que foram exibidas eram notáveis, com algumas apresentando desenhos ricos e detalhados, refletindo as tradições e a identidade cultural de cada povo.
+
+Colar de Penas
+Eles também viram colares feitos com penas, que são adornos tradicionais e têm um papel importante nas expressões culturais e espirituais dos indígenas.
+
+Cestas Coloridas
+As cestas que eles observaram eram de diversos tamanhos e formatos, confeccionadas com materiais vibrantes, evidenciando a habilidade e a criatividade dos artesãos indígenas.
+
+Madeira Esculpida
+Os colegas tiveram a oportunidade de ver esculturas em madeira que representavam animais, adornadas com desenhos que contam histórias e mostram a conexão dos indígenas com a natureza.
+
+Mural com Grafismos
+Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/3bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.98983
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1mus" type="TextureRect" parent="contentcontainer/contents/3bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_t4clq")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2mus" type="TextureRect" parent="contentcontainer/contents/3bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_lysfj")
+
+[node name="aula3" type="Control" parent="contentcontainer/contents/3bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.20985
+anchor_bottom = 2.12217
+offset_right = 1452.03
+offset_bottom = 769.95
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Grafismo indígena, povos Yanomami, arte indígena.
+
+Atividades desenvolvidas em sala:
+Vimos sobre o grafismo indígena, com foco especial nos Yanomami e seus grafismos.
+
+Grafismo Indígena
+O grafismo indígena é caracterizado pelo uso de linhas, zigue-zagues, espirais, triângulos e losangos repetidos. Esses desenhos são inspirados em animais, plantas e fenômenos naturais. Eles representam mitos, lendas, crenças e rituais, e cada etnia possui seu próprio estilo de grafismo, refletindo sua identidade cultural.
+
+Yanomami
+Os Yanomami são habitantes da Amazônia, vivendo entre o Brasil e a Venezuela. Suas pinturas são usadas em rituais, cerimônias e caçadas, utilizando tintas naturais como o urucum (vermelho) e o genipapo (preto). Eles aplicam padrões geométricos e abstratos no corpo para expressar proteção espiritual, força e status. Cada grafismo tem um significado profundo, podendo representar espíritos da floresta, animais ou proteção.
+
+Atividade
+Realizamos uma atividade onde desenhamos um grafismo indígena que vimos na visita técnica ao museu indígena. Eu escolhi criar uma máscara típica dos indígenas, usada em rituais e cerimônias, incorporando os elementos que aprendemos sobre os grafismos."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/3bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.961582
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/3bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_5m73j")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/3bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_hkcfu")
+
+[node name="aula4" type="Control" parent="contentcontainer/contents/3bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura, literatura de cordel e arte popular.
+
+Atividades desenvolvidas em sala:
+Os colegas discutiram o que é a xilogravura, como ela é feita, onde é usada e quem é o principal artista. Também falaram sobre o cordel que leram e analisaram.
+
+O que é a Xilogravura?
+A xilogravura é uma técnica artística de impressão que consiste em gravar desenhos em uma matriz de madeira. Depois, a imagem é transferida para o papel por meio de tinta. Para criar a xilogravura, utiliza-se uma madeira apropriada e ferramentas específicas para rasgar e fazer sulcos na superfície. Após a arte estar pronta, aplica-se tinta sobre a matriz, e o papel é pressionado contra ela, transferindo assim o desenho.
+
+J. Borges
+J. Borges é um dos xilogravadores mais renomados do Brasil. Suas obras retratam cenas do sertão nordestino, trazendo à vida personagens folclóricos e festas populares que fazem parte da cultura local.
+
+Literatura de Cordel
+A capa da literatura de cordel é ilustrada utilizando a técnica da xilogravura. A preservação e divulgação da xilogravura na cultura popular nordestina são de extrema importância, pois ajudam a manter vivas as tradições e histórias dessa rica região.
+
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/3bim/aula4"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/3bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_uoi20")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/3bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula5" type="Control" parent="contentcontainer/contents/3bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_5_title" type="Label" parent="contentcontainer/contents/3bim/aula5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190779
+anchor_top = 0.121603
+anchor_right = 0.281852
+anchor_bottom = 0.157761
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 5"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula5" type="TextEdit" parent="contentcontainer/contents/3bim/aula5"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183942
+anchor_top = 0.174208
+anchor_right = 0.944877
+anchor_bottom = 0.964932
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura e literatura de cordel.
+
+Atividades desenvolvidas em sala:
+Na aula, os colegas começaram a trabalhar no projeto bimestral, que consistia em criar um cordel e uma xilogravura para ser a capa do cordel.
+
+Estrutura do Cordel
+Nós aprendemos sobre a estrutura do cordel, que consiste em 6 versos, sendo que no caso deles seriam 8 estrofes. As rimas são feitas apenas nos versos pares (2, 4 e 6), e cada verso precisa ter em média 7 sílabas.
+
+Fazendo o Cordel
+Depois de aprender a estrutura, os alunos começaram a escrever seus cordéis.
+Apesar de não ter entregue o meu cordel, eu o fiz após a data de entrega. 
+
+O cordel segue:
+
+ A Cobra do Cerrado
+
+Nas terras do cerrado,
+Vaga a cobra em seu andar,
+Com escamas reluzentes,
+Ela sabe se ocultar.
+Entre as folhas e as pedras,
+É um mistério a vagar.
+
+Cobra que dança e se esconde,
+Na sombra do matagal,
+Ela traz uma sabedoria,
+Que vem do ancestral.
+Sussurrando os segredos,
+Do verde, do bem e do mal.
+
+Com língua bifurcada,
+Ela capta o ar sutil,
+Um olhar penetrante,
+E um jeito tão sutil.
+Caçadora do silêncio,
+Nos trilhos do seu perfil.
+
+Em lendas é reverenciada,
+Mestre das transformações,
+Na natureza é sagrada,
+Nos ritos e tradições.
+Representa a força e o poder,
+E suas lições são canções.
+
+Mas cuidado, viajante,
+Com seu jeito de atuar,
+Respeite a cobra, amigo,
+Ela não vem pra atacar.
+Se você a deixar em paz,
+Ela vai te respeitar.
+
+Se avistar uma serpente,
+Com calma, saiba lidar,
+No mundo animal, ela é
+Parte do que deve estar.
+Cobra do cerrado, encanto,
+Na natureza a brilhar.
+
+Assim seguimos em frente,
+Com amor e gratidão,
+A cobra é proteção,
+E parte da criação.
+Um ser que traz harmonia,
+Em cada canção.
+
+Xilogravura do Cordel
+___
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="4bim" type="Control" parent="contentcontainer/contents"]
+anchors_preset = 0
+offset_right = 203.0
+offset_bottom = 125.0
+mouse_filter = 2
+
+[node name="aula1" type="Control" parent="contentcontainer/contents/4bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.7188
+anchor_bottom = 2.12974
+offset_right = 1350.24
+offset_bottom = 769.08
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado: 
+Introdução a história da arte
+Arte romana: Moisaicos e arquitetura
+
+Atividades desenvolvidas em sala:
+Construção de mosaico usando recortes de papel
+
+Nós observamos diversas fotos de pinturas, construções e outras formas de arte feitas pelos romanos
+
+Um dos exemplos de arquitetura romana apresentado foi o Panteão, uma contrução formada por um domoo gigantesco e por paredes grossas, de seis metros de largura
+
+Os romanos também são conhecidos pelos arcos do triunfo e por arcos em geral.
+
+A arte romana foi inspirada pela cultura grega, muitas das estátuas feitas pelos romanos usaram tecnicas e estilos muito parecidos, se não idênticos aos estilos gregos.
+
+Os romanos também são conhecidos pelas suas estátuas de cobre, mas muitas delas foram derretidas pela necessidade de cobre dos romanos e por serem consideradas pagãs"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/4bim/aula1"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 35
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1iden" type="TextureRect" parent="contentcontainer/contents/4bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("16_yeqfc")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="image2iden" type="TextureRect" parent="contentcontainer/contents/4bim/aula1/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_xvj6i")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula2" type="Control" parent="contentcontainer/contents/4bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Atividades desenvolvidas em sala:
+Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
+
+Máscaras Indígenas
+As máscaras que eles viram, usadas em rituais e cerimônias, eram intrigantes. Cada uma possui sua própria simbologia e serve para representar espíritos ou personagens significativos nas tradições culturais.
+
+Vasilhas de Cerâmica
+As vasilhas de cerâmica que foram exibidas eram notáveis, com algumas apresentando desenhos ricos e detalhados, refletindo as tradições e a identidade cultural de cada povo.
+
+Colar de Penas
+Eles também viram colares feitos com penas, que são adornos tradicionais e têm um papel importante nas expressões culturais e espirituais dos indígenas.
+
+Cestas Coloridas
+As cestas que eles observaram eram de diversos tamanhos e formatos, confeccionadas com materiais vibrantes, evidenciando a habilidade e a criatividade dos artesãos indígenas.
+
+Madeira Esculpida
+Os colegas tiveram a oportunidade de ver esculturas em madeira que representavam animais, adornadas com desenhos que contam histórias e mostram a conexão dos indígenas com a natureza.
+
+Mural com Grafismos
+Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/4bim/aula2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.98983
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1mus" type="TextureRect" parent="contentcontainer/contents/4bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_t4clq")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2mus" type="TextureRect" parent="contentcontainer/contents/4bim/aula2/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("7_lysfj")
+
+[node name="aula3" type="Control" parent="contentcontainer/contents/4bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 2.20985
+anchor_bottom = 2.12217
+offset_right = 1452.03
+offset_bottom = 769.95
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Grafismo indígena, povos Yanomami, arte indígena.
+
+Atividades desenvolvidas em sala:
+Vimos sobre o grafismo indígena, com foco especial nos Yanomami e seus grafismos.
+
+Grafismo Indígena
+O grafismo indígena é caracterizado pelo uso de linhas, zigue-zagues, espirais, triângulos e losangos repetidos. Esses desenhos são inspirados em animais, plantas e fenômenos naturais. Eles representam mitos, lendas, crenças e rituais, e cada etnia possui seu próprio estilo de grafismo, refletindo sua identidade cultural.
+
+Yanomami
+Os Yanomami são habitantes da Amazônia, vivendo entre o Brasil e a Venezuela. Suas pinturas são usadas em rituais, cerimônias e caçadas, utilizando tintas naturais como o urucum (vermelho) e o genipapo (preto). Eles aplicam padrões geométricos e abstratos no corpo para expressar proteção espiritual, força e status. Cada grafismo tem um significado profundo, podendo representar espíritos da floresta, animais ou proteção.
+
+Atividade
+Realizamos uma atividade onde desenhamos um grafismo indígena que vimos na visita técnica ao museu indígena. Eu escolhi criar uma máscara típica dos indígenas, usada em rituais e cerimônias, incorporando os elementos que aprendemos sobre os grafismos."
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/4bim/aula3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190533
+anchor_top = 0.19661
+anchor_right = 0.443978
+anchor_bottom = 0.961582
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/4bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_5m73j")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/4bim/aula3/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_hkcfu")
+
+[node name="aula4" type="Control" parent="contentcontainer/contents/4bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura, literatura de cordel e arte popular.
+
+Atividades desenvolvidas em sala:
+Os colegas discutiram o que é a xilogravura, como ela é feita, onde é usada e quem é o principal artista. Também falaram sobre o cordel que leram e analisaram.
+
+O que é a Xilogravura?
+A xilogravura é uma técnica artística de impressão que consiste em gravar desenhos em uma matriz de madeira. Depois, a imagem é transferida para o papel por meio de tinta. Para criar a xilogravura, utiliza-se uma madeira apropriada e ferramentas específicas para rasgar e fazer sulcos na superfície. Após a arte estar pronta, aplica-se tinta sobre a matriz, e o papel é pressionado contra ela, transferindo assim o desenho.
+
+J. Borges
+J. Borges é um dos xilogravadores mais renomados do Brasil. Suas obras retratam cenas do sertão nordestino, trazendo à vida personagens folclóricos e festas populares que fazem parte da cultura local.
+
+Literatura de Cordel
+A capa da literatura de cordel é ilustrada utilizando a técnica da xilogravura. A preservação e divulgação da xilogravura na cultura popular nordestina são de extrema importância, pois ajudam a manter vivas as tradições e histórias dessa rica região.
+
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/4bim/aula4"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/4bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_uoi20")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/4bim/aula4/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="aula5" type="Control" parent="contentcontainer/contents/4bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_5_title" type="Label" parent="contentcontainer/contents/4bim/aula5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190779
+anchor_top = 0.121603
+anchor_right = 0.281852
+anchor_bottom = 0.157761
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 5"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula5" type="TextEdit" parent="contentcontainer/contents/4bim/aula5"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183942
+anchor_top = 0.174208
+anchor_right = 0.944877
+anchor_bottom = 0.964932
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura e literatura de cordel.
+
+Atividades desenvolvidas em sala:
+Na aula, os colegas começaram a trabalhar no projeto bimestral, que consistia em criar um cordel e uma xilogravura para ser a capa do cordel.
+
+Estrutura do Cordel
+Nós aprendemos sobre a estrutura do cordel, que consiste em 6 versos, sendo que no caso deles seriam 8 estrofes. As rimas são feitas apenas nos versos pares (2, 4 e 6), e cada verso precisa ter em média 7 sílabas.
+
+Fazendo o Cordel
+Depois de aprender a estrutura, os alunos começaram a escrever seus cordéis.
+Apesar de não ter entregue o meu cordel, eu o fiz após a data de entrega. 
+
+O cordel segue:
+
+ A Cobra do Cerrado
+
+Nas terras do cerrado,
+Vaga a cobra em seu andar,
+Com escamas reluzentes,
+Ela sabe se ocultar.
+Entre as folhas e as pedras,
+É um mistério a vagar.
+
+Cobra que dança e se esconde,
+Na sombra do matagal,
+Ela traz uma sabedoria,
+Que vem do ancestral.
+Sussurrando os segredos,
+Do verde, do bem e do mal.
+
+Com língua bifurcada,
+Ela capta o ar sutil,
+Um olhar penetrante,
+E um jeito tão sutil.
+Caçadora do silêncio,
+Nos trilhos do seu perfil.
+
+Em lendas é reverenciada,
+Mestre das transformações,
+Na natureza é sagrada,
+Nos ritos e tradições.
+Representa a força e o poder,
+E suas lições são canções.
+
+Mas cuidado, viajante,
+Com seu jeito de atuar,
+Respeite a cobra, amigo,
+Ela não vem pra atacar.
+Se você a deixar em paz,
+Ela vai te respeitar.
+
+Se avistar uma serpente,
+Com calma, saiba lidar,
+No mundo animal, ela é
+Parte do que deve estar.
+Cobra do cerrado, encanto,
+Na natureza a brilhar.
+
+Assim seguimos em frente,
+Com amor e gratidão,
+A cobra é proteção,
+E parte da criação.
+Um ser que traz harmonia,
+Em cada canção.
+
+Xilogravura do Cordel
+___
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
 [node name="select_somethin" type="Control" parent="contentcontainer/contents"]
 layout_mode = 1
 anchor_left = -0.221198
 anchor_top = -0.120095
-anchor_right = 3.47406
-anchor_bottom = 2.64945
-offset_right = 1304.13
-offset_bottom = 769.08
+anchor_right = 1.04046
+anchor_bottom = 1.04042
+offset_right = 1832.22
+offset_bottom = 970.049
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
@@ -1158,12 +2770,12 @@ stream = ExtResource("8_b7u5f")
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim3" to="." method="_on_bim_3_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/bim4" to="." method="_on_bim_4_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_bim/personal" to="." method="_on_personal_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula1" to="." method="_on_aula_1_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula2" to="." method="_on_aula_2_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula5" to="." method="_on_aula_5_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula3" to="." method="_on_aula_3_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/aula4" to="." method="_on_aula_4_pressed"]
-[connection signal="pressed" from="sidebarcontainer/sidebar/select_class_bim_2/back" to="." method="_on_back_classes_bim1_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula1" to="." method="_on_aula_1_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula2" to="." method="_on_aula_2_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula3" to="." method="_on_aula_3_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula4" to="." method="_on_aula_4_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula5" to="." method="_on_aula_5_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/back" to="." method="_on_back_classes_bim1_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/go_back/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]

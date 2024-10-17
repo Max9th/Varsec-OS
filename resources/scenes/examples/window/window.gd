@@ -14,7 +14,7 @@ var is_dragging: bool = false
 var is_maximized: bool = false
 var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
-var old_unmaximized_position: Vector2
+var unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
 
 var start_size: Vector2
@@ -22,6 +22,7 @@ var is_resizing: bool = false
 const SCALE_FACTOR: float = 3
 const MAX_WIDTH: float = 384
 const MAX_HEIGHT: float = 216
+
 # ---- Static functions that can be used in other scripts ----
 
 static func handle_dragging(start_drag_position: Vector2, mouse_start_drag_position: Vector2, current_mouse_position: Vector2) -> Vector2:
@@ -31,7 +32,7 @@ static func close_window(target: Panel, close_audio: AudioStreamPlayer) -> void:
 	target.visible = false
 	close_audio.play()
 
-static func maximize_window(target: Panel, old_unmaximized_position: Vector2, old_unmaximized_size: Vector2) -> void:
+static func maximize_window(target: Panel, unmaximized_position: Vector2, old_unmaximized_size: Vector2) -> void:
 	var tween: Tween = target.create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -41,11 +42,11 @@ static func maximize_window(target: Panel, old_unmaximized_position: Vector2, ol
 	tween.tween_property(target, "global_position", new_position, 0.25)
 	await tween.tween_property(target, "size", new_size, 0.25).finished
 
-static func restore_window(target: Panel, old_unmaximized_position: Vector2, old_unmaximized_size: Vector2) -> void:
+static func restore_window(target: Panel, unmaximized_position: Vector2, old_unmaximized_size: Vector2) -> void:
 	var tween: Tween = target.create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	tween.tween_property(target, "global_position", old_unmaximized_position, 0.25)
+	tween.tween_property(target, "global_position", unmaximized_position, 0.25)
 	await tween.tween_property(target, "size", old_unmaximized_size, 0.25).finished
 
 static func clamp_window_inside_viewport(global_pos: Vector2, window_size: Vector2, viewport_size: Vector2, scale_factor) -> Vector2:
@@ -93,13 +94,12 @@ func _on_close_pressed() -> void:
 func _on_maximize_pressed() -> void:
 	if can_maximize:
 		if is_maximized:
-			restore_window(self, old_unmaximized_position, old_unmaximized_size)
+			restore_window(self, unmaximized_position, old_unmaximized_size)
 		else:
-			old_unmaximized_position = global_position
+			unmaximized_position = global_position
 			old_unmaximized_size = size
-			maximize_window(self, old_unmaximized_position, old_unmaximized_size)
+			maximize_window(self, unmaximized_position, old_unmaximized_size)
 		is_maximized = !is_maximized
-
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:

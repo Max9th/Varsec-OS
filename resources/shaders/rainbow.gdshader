@@ -22,7 +22,7 @@ vec2 sprite_sheet_size = vec2(textureSize(TEXTURE,0));
 vec2 frame_size;
 frame_size.x = sprite_sheet_size.x/float(sprite_sheet_columns);
 frame_size.y = sprite_sheet_size.y/float(sprite_sheet_rows);
-// seperate the sprite sheet into "frames" so that the rainbow is 
+// seperate the sprite sheet into "frames" so that the rainbow is
 // repeated for each frame individually, and not across the whole thing
 // together
 vec2 current_point = sprite_sheet_size * UV;
@@ -30,7 +30,7 @@ float row = floor(current_point.y / frame_size.y);
 float column = floor(current_point.x / frame_size.x);
 vec2 max_point = (frame_size * vec2(column, row)) + frame_size;
 vec2 new_uv = 1.0 - (max_point - current_point) / frame_size;
-	
+
 // get the current desired hue value in time
 float hue = new_uv.x * cos(radians(angle)) - new_uv.y * sin(radians(angle));
 hue = fract(hue + fract(TIME  * speed));

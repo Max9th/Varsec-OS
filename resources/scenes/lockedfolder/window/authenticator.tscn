@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq48ek1cmrexf"]
+[gd_scene load_steps=16 format=3 uid="uid://dq48ek1cmrexf"]
 
 [ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_gdggg"]
 [ext_resource type="Script" path="res://resources/scenes/lockedfolder/window/scripts/authenticate_popup.gd" id="2_t6mlv"]
@@ -14,6 +14,14 @@
 [sub_resource type="LabelSettings" id="LabelSettings_p6fgv"]
 font = ExtResource("11_jrutn")
 font_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nls6g"]
+bg_color = Color(0.084246, 0.102116, 0.152784, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rhlb"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -37,9 +45,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="authenticator" type="Panel" groups=["authentication"]]
 offset_right = 112.0
 offset_bottom = 48.0
-scale = Vector2(1, 0.96)
+scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_gdggg")
 script = ExtResource("2_t6mlv")
+is_visible = true
 can_drag = true
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
@@ -105,9 +114,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_jrutn")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = ExtResource("5_lh1qc")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_nls6g")
 theme_override_styles/normal = ExtResource("5_lh1qc")
 alignment = 1
 max_length = 15
+clear_button_enabled = true
 
 [node name="confirm" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -146,6 +157,9 @@ offset_bottom = 5.54182
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_bv565")
 
+[node name="Timer" type="Timer" parent="INCORRECT"]
+wait_time = 3.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
@@ -178,5 +192,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]
 [connection signal="text_submitted" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="HBoxContainer/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="timeout" from="INCORRECT/Timer" to="." method="_on_timer_incorrect_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]

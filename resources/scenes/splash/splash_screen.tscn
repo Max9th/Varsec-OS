@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://clqirh6socmxk" path="res://resources/sprites/Themaxwellcompany_dark.png" id="4_kmykr"]
 [ext_resource type="Texture2D" uid="uid://bu3sg34npou7c" path="res://resources/sprites/max9th.png" id="6_ufm2q"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="7_6h4xt"]
-[ext_resource type="AudioStream" uid="uid://cf168qxl8ldor" path="res://resources/audio/boot.mp3" id="7_o50mx"]
 [ext_resource type="Texture2D" uid="uid://4hlbl2jngrh7" path="res://resources/sprites/skip.png" id="9_vmk0t"]
+[ext_resource type="AudioStream" uid="uid://wrlc801ukxib" path="res://resources/audio/startup.mp3" id="10_3437e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63reo"]
 bg_color = Color(0.0627451, 0.0784314, 0.121569, 1)
@@ -234,7 +234,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Maxtimer" type="Timer" parent="MAX"]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="skip" type="TextureButton" parent="."]
@@ -265,19 +265,21 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="changescene" type="Timer" parent="."]
-wait_time = 3.5
-one_shot = true
-
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_o50mx")
+stream = ExtResource("10_3437e")
+bus = &"boot"
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(576, 324)
 gizmo_extents = 69.0
 
+[node name="start" type="Timer" parent="."]
+one_shot = true
+
+[node name="Node" type="Node" parent="."]
+
 [connection signal="timeout" from="IFG/IFGtimer" to="." method="_on_if_gtimer_timeout"]
 [connection signal="timeout" from="MAX/glintstart" to="." method="_on_glintstart_timeout"]
 [connection signal="timeout" from="MAX/Maxtimer" to="." method="_on_maxtimer_timeout"]
 [connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]
-[connection signal="timeout" from="changescene" to="." method="_on_changescene_timeout"]
+[connection signal="timeout" from="start" to="." method="_on_start_timeout"]

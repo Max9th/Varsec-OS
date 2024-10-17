@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=61 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
 [ext_resource type="PackedScene" uid="uid://r3bi28xbbmhh" path="res://resources/scenes/cubigor/45.scn" id="2_if7td"]
+[ext_resource type="PackedScene" uid="uid://dnaahx82rtx4k" path="res://resources/scenes/cubigor/deziangle.scn" id="2_pqjwe"]
 [ext_resource type="PackedScene" uid="uid://ddwpbtpu41bgp" path="res://resources/scenes/cubigor/!seil.scn" id="3_4vyws"]
 [ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
 [ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
@@ -14,38 +15,44 @@
 [ext_resource type="Texture2D" uid="uid://cgex4bd1frmyr" path="res://resources/sprites/easteregg.png" id="10_1afcs"]
 [ext_resource type="Texture2D" uid="uid://6ypxf3pijaje" path="res://resources/sprites/IFgreduzido.png" id="10_mpglo"]
 [ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_djys2"]
-[ext_resource type="PackedScene" uid="uid://daufpfj3xpnyb" path="res://resources/scenes/musicplayer/musicplayer.tscn" id="18_nlsao"]
+[ext_resource type="Texture2D" uid="uid://dgjulap3jquhk" path="res://resources/sprites/star.png" id="18_ogdwq"]
+[ext_resource type="Texture2D" uid="uid://cio7qqf1l3rgb" path="res://resources/sprites/lock.png" id="20_62612"]
 [ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://resources/sprites/folderwithfile.png" id="20_gong0"]
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://resources/sprites/folderopenwithfile.png" id="21_225qt"]
 [ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/playnelixdoc/playnelixwindow.tscn" id="21_h37e3"]
-[ext_resource type="Texture2D" uid="uid://dcpv0py5ywrif" path="res://resources/sprites/lock_icon.png" id="21_j3nm1"]
 [ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/lockedfolder.png" id="21_ygj4y"]
+[ext_resource type="Texture2D" uid="uid://dcpv0py5ywrif" path="res://resources/sprites/lock_icon.png" id="22_8ptuo"]
 [ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="22_76pyy"]
 [ext_resource type="Texture2D" uid="uid://bdlqaq7q8jata" path="res://resources/sprites/folderdisabled.png" id="22_mbhjt"]
 [ext_resource type="Texture2D" uid="uid://hne5em2y8fbb" path="res://resources/sprites/lockedfolderopen.png" id="22_oxlxm"]
 [ext_resource type="PackedScene" uid="uid://brx8sg8p6a6pp" path="res://resources/scenes/examples/folder.tscn" id="23_n1jfo"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="23_odcdw"]
 [ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="23_q30xu"]
-[ext_resource type="Texture2D" uid="uid://dgjulap3jquhk" path="res://resources/sprites/person_icon.png" id="23_ylf3v"]
+[ext_resource type="Texture2D" uid="uid://bxgodidc4ng4d" path="res://resources/sprites/play_icon.png" id="24_1debg"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
-[ext_resource type="Texture2D" uid="uid://bxgodidc4ng4d" path="res://resources/sprites/play_icon.png" id="24_j7cyk"]
-[ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/personalfolder.png" id="24_sy72q"]
+[ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/greenfolder.png" id="24_sy72q"]
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="24_ybw46"]
-[ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/personalfolderopen.png" id="25_1d1kw"]
-[ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/chain-link-symbolic.png" id="25_ch6cd"]
+[ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/greenfolderopen.png" id="25_1d1kw"]
 [ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://resources/sprites/nelix.png" id="25_id6ci"]
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
 [ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="26_bvb2l"]
 [ext_resource type="Texture2D" uid="uid://dkm1oehueyxep" path="res://resources/sprites/file.png" id="26_k0y4p"]
-[ext_resource type="AudioStream" uid="uid://b50muw4vmi0ug" path="res://resources/audio/ambientloop.wav" id="26_kfb2x"]
+[ext_resource type="Texture2D" uid="uid://dbllfwvyy8448" path="res://resources/sprites/sfx_selected.png" id="26_yikmh"]
 [ext_resource type="Texture2D" uid="uid://h41su6ua5f8v" path="res://resources/sprites/file_selected.png" id="27_glfqm"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
 [ext_resource type="Texture2D" uid="uid://cj5fb4vd7wlqj" path="res://resources/sprites/disabled.png" id="28_68pih"]
-[ext_resource type="AudioStream" uid="uid://f1jsc7nfoabc" path="res://resources/audio/labo.mp3" id="29_gpogc"]
+[ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/link_icon.png" id="31_xp046"]
+[ext_resource type="PackedScene" uid="uid://c0u5benmxohr4" path="res://resources/scenes/musicplayer/window/musicplayerwindow.scn" id="36_i5kvt"]
+[ext_resource type="PackedScene" uid="uid://bjw2c702dg15x" path="res://resources/scenes/personalworksmanager/walpapermanagerwindow/walpapermanager.tscn" id="37_88uh8"]
+[ext_resource type="AudioStream" uid="uid://fm0ge4ls8qmc" path="res://resources/audio/ambiance.mp3" id="41_hvyfa"]
+[ext_resource type="AudioStream" uid="uid://dbwafl1gdm8ts" path="res://resources/audio/Building_Stuff.mp3" id="43_g8qj3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mp5pi"]
 font = ExtResource("8_0rumy")
 font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwank"]
+font = ExtResource("8_0rumy")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yma61"]
 bg_color = Color(0.106409, 0.127812, 0.186642, 1)
@@ -81,6 +88,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
 bg_color = Color(1, 0.337255, 0.321569, 0)
 
+[sub_resource type="GDScript" id="GDScript_aql14"]
+resource_name = "note"
+script/source = "extends GridContainer
+
+#note: Can hold 40 items max.
+"
+
 [sub_resource type="GDScript" id="GDScript_qy31b"]
 resource_name = "select"
 script/source = "extends TextureButton
@@ -90,7 +104,6 @@ script/source = "extends TextureButton
 
 @onready var timer: Timer = $doubleclicktimer
 @onready var filename: Label = $filename
-@onready var nelixwindow: Panel = $\"../../../windows/nelixwindow\"
 @onready var selected_panel: Panel = $selected_panel
 @onready var select_audio: AudioStreamPlayer = $select_audio
 
@@ -100,6 +113,7 @@ var timer_running: bool = false
 func _ready() -> void:
 	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
 	selected_panel.visible = false
+	self.hide()
 func _process(_delta: float) -> void:
 	timer_running = not timer.is_stopped()
 func select():
@@ -112,7 +126,6 @@ func select():
 			select_audio.play()
 		else:
 			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
-			selected_panel.visible = false
 	elif selected and timer_running:
 		spawnwindow()
 
@@ -185,6 +198,8 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kmpr7")
 
+[node name="deziangle" parent="." groups=["authentication"] instance=ExtResource("2_pqjwe")]
+
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
 [node name="!SEIL" parent="." instance=ExtResource("3_4vyws")]
@@ -230,6 +245,25 @@ grow_vertical = 2
 pivot_offset = Vector2(138, 16)
 text = "Varsec OS"
 label_settings = SubResource("LabelSettings_mp5pi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="portfolio2" type="Label" parent="desktop/portfolio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.5
+offset_top = 18.0
+offset_right = 202.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(138, 16)
+text = "O portfolio"
+label_settings = SubResource("LabelSettings_dwank")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -307,7 +341,6 @@ offset_top = 9.0
 offset_right = 283.0
 offset_bottom = 41.0
 theme_override_constants/separation = 24
-metadata/_edit_group_ = true
 
 [node name="Power_button_sprite" type="TextureRect" parent="desktop/panel/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(29, 29)
@@ -409,144 +442,25 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="desktop/Folders"]
-visible = false
 layout_mode = 0
 offset_left = 151.0
-offset_top = 88.0
+offset_top = 87.0
 offset_right = 1001.0
-offset_bottom = 536.0
+offset_bottom = 535.0
 pivot_offset = Vector2(425, 0)
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 88
 columns = 10
+script = SubResource("GDScript_aql14")
 metadata/_edit_group_ = true
-
-[node name="default_folder" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder2" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder3" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder4" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder5" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder6" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder7" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder8" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder9" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder10" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder11" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder12" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder13" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder14" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder15" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder16" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder17" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder18" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder19" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder20" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder21" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder22" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder23" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder24" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder25" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder26" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder27" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder28" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder29" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder30" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder31" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder32" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder33" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder34" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder35" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder36" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder37" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder38" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder39" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
-
-[node name="default_folder40" parent="desktop/Folders/GridContainer" instance=ExtResource("23_n1jfo")]
-layout_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="leftvboxcon" type="VBoxContainer" parent="desktop/Folders"]
 layout_mode = 0
 offset_left = 60.0
-offset_top = 88.0
+offset_top = 89.0
 offset_right = 100.0
-offset_bottom = 384.0
+offset_bottom = 385.0
 theme_override_constants/separation = 88
 metadata/_edit_group_ = true
 
@@ -557,67 +471,77 @@ texture_n = ExtResource("20_gong0")
 texture_h = ExtResource("21_225qt")
 texture_d = ExtResource("22_mbhjt")
 is_window_present = true
-window_link = NodePath("../../../windows/class_manager_window")
+window_link = NodePath("../../../windows/class_manager")
 
-[node name="personal" parent="desktop/Folders/leftvboxcon" instance=ExtResource("23_n1jfo")]
+[node name="walpapers" parent="desktop/Folders/leftvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
-filename = "Meus 
-trabalhos"
-icon = ExtResource("23_ylf3v")
+filename = "Wallpapers"
+text_icon = ExtResource("18_ogdwq")
 texture_n = ExtResource("24_sy72q")
 texture_h = ExtResource("25_1d1kw")
 texture_d = ExtResource("22_mbhjt")
 is_window_present = true
-window_link = NodePath("../../../windows/personalworkswindow")
+window_link = NodePath("../../../windows/walpaper_manager")
 
 [node name="locked" parent="desktop/Folders/leftvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
 filename = "Pasta
 trancada"
-icon = ExtResource("21_j3nm1")
+file_icon = ExtResource("20_62612")
+text_icon = ExtResource("22_8ptuo")
 texture_n = ExtResource("21_ygj4y")
 texture_h = ExtResource("22_oxlxm")
 texture_d = ExtResource("22_mbhjt")
 is_window_present = true
-window_link = NodePath("../../../windows/authenticate_popup")
+window_link = NodePath("../../../windows/auth_pop")
 
 [node name="rightvboxcon" type="VBoxContainer" parent="desktop/Folders"]
 layout_mode = 0
-offset_left = 1004.0
+offset_left = 1047.0
 offset_top = 88.0
-offset_right = 1132.0
-offset_bottom = 440.0
+offset_right = 1087.0
+offset_bottom = 384.0
 theme_override_constants/separation = 88
 
 [node name="nelix" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
 filename = "Play 
 nelix"
-icon = ExtResource("24_j7cyk")
+text_icon = ExtResource("24_1debg")
 texture_n = ExtResource("25_id6ci")
 texture_h = ExtResource("26_bvb2l")
 texture_d = ExtResource("28_68pih")
 is_window_present = true
 window_link = NodePath("../../../windows/nelixwindow")
 
+[node name="music" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
+layout_mode = 2
+filename = "Play 
+music"
+texture_n = ExtResource("8_n2xns")
+texture_h = ExtResource("26_yikmh")
+texture_d = ExtResource("28_68pih")
+is_window_present = true
+window_link = NodePath("../../../windows/musicplayerwindow")
+
 [node name="link" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
 filename = "Source
 code"
-icon = ExtResource("25_ch6cd")
+text_icon = ExtResource("31_xp046")
 texture_n = ExtResource("26_k0y4p")
 texture_h = ExtResource("27_glfqm")
 texture_d = ExtResource("28_68pih")
 is_link = true
 link = "https://github.com/Max9th/Varsec-OS"
 
-[node name="musicplayer" parent="desktop/Folders/rightvboxcon" instance=ExtResource("18_nlsao")]
-layout_mode = 2
-
-[node name="h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍" type="TextureButton" parent="desktop/Folders/rightvboxcon"]
-visible = false
+[node name="corrupted" type="TextureButton" parent="desktop"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+offset_left = 1047.0
+offset_top = 472.0
+offset_right = 1087.0
+offset_bottom = 512.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture_normal = ExtResource("6_lno83")
@@ -626,11 +550,11 @@ texture_hover = ExtResource("6_lno83")
 stretch_mode = 0
 script = SubResource("GDScript_qy31b")
 
-[node name="select_audio" type="AudioStreamPlayer" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+[node name="select_audio" type="AudioStreamPlayer" parent="desktop/corrupted"]
 stream = ExtResource("23_odcdw")
 pitch_scale = 0.32
 
-[node name="selected_panel" type="Panel" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+[node name="selected_panel" type="Panel" parent="desktop/corrupted"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.2
@@ -640,7 +564,7 @@ anchor_bottom = 1.825
 theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
 metadata/_edit_use_anchors_ = true
 
-[node name="filename" type="Label" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+[node name="filename" type="Label" parent="desktop/corrupted"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.8206
@@ -659,7 +583,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="doubleclicktimer" type="Timer" parent="desktop/Folders/rightvboxcon/h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"]
+[node name="doubleclicktimer" type="Timer" parent="desktop/corrupted"]
 wait_time = 0.3
 one_shot = true
 
@@ -670,7 +594,7 @@ offset_left = 1160.0
 offset_right = 1160.0
 metadata/_edit_use_anchors_ = true
 
-[node name="authenticate_popup" parent="desktop/windows" instance=ExtResource("22_76pyy")]
+[node name="auth_pop" parent="desktop/windows" instance=ExtResource("22_76pyy")]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 376.0
@@ -678,17 +602,7 @@ offset_right = 240.0
 offset_bottom = 424.0
 scale = Vector2(2.80527, 2.69586)
 theme_override_styles/panel = SubResource("StyleBoxTexture_p7ij8")
-metadata/_edit_use_anchors_ = true
-
-[node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
-visible = false
-clip_contents = true
-layout_mode = 0
-offset_left = 128.0
-offset_top = 88.0
-offset_right = 451.0
-offset_bottom = 264.0
-scale = Vector2(3, 3)
+is_visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="nelixwindow" parent="desktop/windows" instance=ExtResource("21_h37e3")]
@@ -707,7 +621,31 @@ metadata/_edit_use_anchors_ = true
 [node name="draghandle" parent="desktop/windows/nelixwindow" index="3"]
 metadata/_edit_use_anchors_ = true
 
-[node name="class_manager_window" parent="desktop/windows" instance=ExtResource("24_goyto")]
+[node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
+clip_contents = true
+layout_mode = 0
+offset_left = 2214.0
+offset_top = 143.0
+offset_right = 2537.0
+offset_bottom = 319.0
+scale = Vector2(3, 3)
+
+[node name="musicplayerwindow" parent="desktop/windows" instance=ExtResource("36_i5kvt")]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 288.0
+offset_right = 818.0
+offset_bottom = 340.0
+is_visible = false
+
+[node name="walpaper_manager" parent="desktop/windows" instance=ExtResource("37_88uh8")]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 130.0
+offset_right = 352.0
+offset_bottom = 261.0
+
+[node name="class_manager" parent="desktop/windows" instance=ExtResource("24_goyto")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -718,6 +656,7 @@ offset_right = 363.0
 offset_bottom = 192.0
 grow_horizontal = 1
 grow_vertical = 1
+is_visible = false
 
 [node name="vfx" type="ColorRect" parent="."]
 visible = false
@@ -732,11 +671,11 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="labo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_gpogc")
+stream = ExtResource("43_g8qj3")
 volume_db = 10.111
 
 [node name="ambientsound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_kfb2x")
+stream = ExtResource("41_hvyfa")
 
 [node name="splash_screen" parent="." instance=ExtResource("27_uwk17")]
 visible = false
@@ -745,10 +684,14 @@ visible = false
 position = Vector2(576, 324)
 gizmo_extents = 204.4
 
+[connection signal="stop" from="." to="deziangle" method="_on_main_scene_stop"]
 [connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
 [connection signal="stop" from="." to="45" method="_on_main_scene_stop"]
 [connection signal="stop" from="." to="gay" method="_on_mainmenu_stop"]
-[connection signal="stop" from="." to="desktop/windows/authenticate_popup" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="desktop/windows/auth_pop" method="_on_mainmenu_stop"]
+[connection signal="textcolorchange" from="." to="desktop/Folders/leftvboxcon/walpapers" method="_on_main_scene_textcolorchange"]
+[connection signal="welcome_display" from="." to="desktop/windows/class_manager" method="_on_main_scene_welcome_display"]
+[connection signal="dezianglebk" from="deziangle" to="." method="_on_deziangle_dezianglebk"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
 [connection signal="disablebk" from="!SEIL" to="." method="_on_lies_disablebk"]
 [connection signal="Disablebk" from="45" to="." method="_on_fourtyfive_disablebk"]
@@ -759,6 +702,7 @@ gizmo_extents = 204.4
 [connection signal="pressed" from="desktop/panel/Panel/sfx_button" to="." method="_on_sfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/vfx_button" to="." method="_on_vfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
-[connection signal="disablebk" from="desktop/windows/authenticate_popup" to="." method="_on_labo_disablebk"]
+[connection signal="disablebk" from="desktop/windows/auth_pop" to="." method="_on_labo_disablebk"]
+[connection signal="changebk" from="desktop/windows/walpaper_manager" to="." method="_on_walpaper_manager_changebk"]
 
 [editable path="desktop/windows/nelixwindow"]

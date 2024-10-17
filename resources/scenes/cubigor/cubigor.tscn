@@ -30,13 +30,13 @@ size = Vector3(14, 14, 14)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_svmov"]
+[sub_resource type="Sky" id="Sky_n3fuc"]
 sky_material = SubResource("ProceduralSkyMaterial_wclh3")
 
 [sub_resource type="Environment" id="Environment_tqw1p"]
 background_mode = 2
 background_energy_multiplier = 0.0
-sky = SubResource("Sky_svmov")
+sky = SubResource("Sky_n3fuc")
 tonemap_mode = 2
 
 [node name="cubigor" type="Node3D" groups=["authentication"]]

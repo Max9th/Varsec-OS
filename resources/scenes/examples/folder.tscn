@@ -904,6 +904,7 @@ anti_aliasing = false
 font = SubResource("FontFile_e3j06")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="default_folder" type="TextureButton"]
 custom_minimum_size = Vector2(40, 40)
@@ -934,6 +935,18 @@ text = "Test"
 label_settings = SubResource("LabelSettings_5ytib")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="file_icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+expand_mode = 1
+stretch_mode = 4
 
 [node name="selected_panel" type="PanelContainer" parent="."]
 layout_mode = 1

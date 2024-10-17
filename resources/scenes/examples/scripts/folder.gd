@@ -3,13 +3,15 @@ extends TextureButton
 @onready var filenamelabel: Label = $selected_panel/HBoxContainer/filename
 @onready var timer: Timer = $Timer
 @onready var select_audio: AudioStreamPlayer = $select_audio
-@onready var filenamelabel_v: Label = $filename
+@onready var filename_colorable: Label = $filename
 @onready var selected_panel: PanelContainer = $selected_panel
-@onready var text_icon: TextureRect = $selected_panel/HBoxContainer/text_icon
+@onready var text_icon2: TextureRect = $selected_panel/HBoxContainer/text_icon
+@onready var file_icon2: TextureRect = $file_icon
 
 @export_category("Folder settings")
 @export_multiline var filename: String
-@export var icon: Texture
+@export var file_icon: Texture
+@export var text_icon: Texture
 
 @export_subgroup("Textures")
 @export var texture_n: Texture
@@ -37,8 +39,9 @@ var is_mouse_hover: bool
 func _ready() -> void:
 	selected_panel.visible = false
 	filenamelabel.text = filename
-	filenamelabel_v.text = filename
-	text_icon.texture = icon
+	filename_colorable.text = filename
+	text_icon2.texture = text_icon
+	file_icon2.texture = file_icon
 	# --- Define provided custom textures ---
 	texture_normal = texture_n
 	texture_pressed = texture_n
@@ -60,7 +63,7 @@ func _ready() -> void:
 		print("Error: Texture_d found. Default loaded")
 	if filename == "":
 		filenamelabel.text = "folder"
-		filenamelabel_v.text = "folder"
+		filename_colorable.text = "folder"
 
 func _process(_delta: float) -> void:
 	timer_running = not timer.is_stopped()
@@ -113,3 +116,11 @@ func spawnwindow():
 		get_node(window_link).show()
 	elif is_link:
 		OS.shell_open(link)
+
+
+func _on_main_scene_textcolorchange(textcolor: bool) -> void:
+	if textcolor:
+		filename_colorable.label_settings.font_color = Color(1,1,1)
+	else:
+		filename_colorable.label_settings.font_color = Color(0,0,0)
+		

@@ -1,29 +1,41 @@
 extends Panel
 
-@onready var incorrect: Label = $INCORRECT
-@onready var line_edit: LineEdit = $HBoxContainer/LineEdit
-@onready var timer: Timer = $Timer
-@onready var wrong: AudioStreamPlayer = $INCORRECT/wrong
-@onready var close_audio: AudioStreamPlayer = $close_audio
-@onready var labobar: AudioStreamPlayer = $"../../../labo"
+						  #:xkl..                  
+						   #'kWMNd.                
+				 #:lll,       .xMMWd.              
+			 #.oXNMMMMWXK:     .xWMMWx.            
+		   #.dNMMWOk;...,kd.    .NMMMMO.           
+		  #.OMMWk'               ,NMMMMO           
+		  #0MMWx   .okko.        .XMMMMNd          
+		  #0MMx    0MMMMK         XMMMMMK          
+		  #;KMx    :KWWK:       .oNMMMMMK          
+		   #;0Wk                .NMMMMMMK          
+			 #,O0:             .XMMMMMM0.          
+			   #..           .lXMMMMMMNo           
+						  #.oXMMMMMMMNl            
+		  #:x:..       .'xkNMMMMMMMNo.             
+		   #,OWXdoooooOWMMMMMMMMMNl.               
+			 #'oxWWWMMMMMMMMWWKol.                 
+				#...lxxxxxx'..                     
+
+# The Maxwell Company
+
+# WARNING I KNOW WHAT YOU ARE DOING, YOU LITTLE INSIGNIFICANT FUCK. STOP SNOOPING AROUND THE AUTHENTICATOR CODE.
+# DANGER YOU DESERVE TO BE CRUSHED BY A MANGO TRUCK'S WHEELS ON A SUNDAY AFTERNNOON
+# INFO Thanks :3
 
 var is_dragging: bool
 var start_drag_position: Vector2
 var mouse_start_drag_position: Vector2
 
 var is_maximized: bool
-var old_unmaximized_position: Vector2
+var unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
 
 @export var is_visible: bool
 @export var can_drag: bool
 @export var can_maximize: bool
 @export var can_close: bool
-
-# ---
-var easter: bool
-var swearing: bool
-# ---
 
 func _ready() -> void:
 	if is_visible:
@@ -55,35 +67,51 @@ func _on_draghandle_gui_input(event: InputEvent) -> void:
 func _on_maximize_pressed() -> void:
 	if can_maximize:
 		if is_maximized:
-			Windowz.restore_window(self, old_unmaximized_position, old_unmaximized_size)
+			Windowz.restore_window(self, unmaximized_position, old_unmaximized_size)
 		else:
-			old_unmaximized_position = global_position
+			unmaximized_position = global_position
 			old_unmaximized_size = size
-			Windowz.maximize_window(self, old_unmaximized_position, old_unmaximized_size)
+			Windowz.maximize_window(self, unmaximized_position, old_unmaximized_size)
 		is_maximized = !is_maximized
 
 # --- Authenticator Logic ---
 
+@onready var incorrect: Label = $INCORRECT
+@onready var line_edit: LineEdit = $HBoxContainer/LineEdit
+@onready var timer: Timer = $Timer
+@onready var wrong: AudioStreamPlayer = $INCORRECT/wrong
+@onready var close_audio: AudioStreamPlayer = $close_audio
+@onready var labobar: AudioStreamPlayer = $"../../../labo"
+@onready var timer_incorrect: Timer = $INCORRECT/Timer
+
+var easter: bool
+var swearing: bool
+var can_play: bool = true
+
+signal disablebk
+
 func _on_line_edit_text_submitted(_new_text: String) -> void:
-	authenticate()
+	verify()
 
 func _on_confirm_pressed() -> void:
-	authenticate()
+	verify()
 	
-func authenticate():
+func verify():
 	var user_input = line_edit.text
-	if easter == false:
+	if easter == false and can_play == true:
 		match user_input:
 			"cubigor":
-				authenticated()
+				authenticate()
 			"max9th":
-				authenticated()
+				authenticate()
 			"lies":
-				authenticated()
+				authenticate()
 			"fourtyfive":
-				authenticated()
+				authenticate()
 			"labobarco":
 				labo()
+			"deziangle":
+				authenticate()
 			"ass":
 				swears()
 			"merda":
@@ -107,23 +135,33 @@ func authenticate():
 			"xereca":
 				swears()
 			"deltong":
-				gay()
-			_:
+				swearing = true
+				incorrect.text = "<3"
 				incorrect.visible = true
 				timer.start()
 				line_edit.text = ""
 				wrong.play()
+			_:
+				incorrect.visible = true
+				timer.start()
+				line_edit.text = ""
+				if can_play == true:
+					wrong.play()
+				timer_incorrect.start()
+				line_edit.editable = false
+				can_play = false
 	elif easter == true:
 		incorrect.text = "!!IT'S EASTER ALREADY!!"
 		incorrect.visible = true
 		timer.start()
 		wrong.play()
 
-func authenticated():
+func authenticate():
 	var user_input = line_edit.text
 	visible = false
 	get_tree().call_group("authentication", "_on_authenticated" + "_" + str(user_input))
 	easter = true
+	line_edit.text = ""
 
 func _on_mainmenu_stop() -> void:
 	easter = false
@@ -136,25 +174,16 @@ func swears():
 	line_edit.text = ""
 	wrong.play()
 
-func gay():
-	swearing = true
-	var choose: int = randi() % 2
-	if choose == 1:
-		incorrect.text = "<3 gotta luv it"
-	else:
-		incorrect.text = "HACKER FILHO DE UMA INFELIZ, DESGRAÇADO"
-	incorrect.visible = true
-	timer.start()
-	line_edit.text = ""
-	wrong.play()
-
 func _on_timer_timeout() -> void:
 	incorrect.visible = false
 	swearing = false
-signal disablebk
 
 func labo():
 	line_edit.text = ""
 	labobar.play()
 	easter = true
 	disablebk.emit()
+
+func _on_timer_incorrect_timeout() -> void:
+	line_edit.editable = true
+	can_play = true

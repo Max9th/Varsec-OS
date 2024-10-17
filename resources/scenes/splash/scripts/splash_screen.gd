@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @onready var ifgtimer: Timer = $IFG/IFGtimer
-@onready var changescenetimer: Timer = $changescene
 @onready var ifg: Control = $IFG
 @onready var max_node: Control = $MAX
 @onready var crt: ColorRect = $crt
@@ -12,6 +11,7 @@ extends CanvasLayer
 @onready var glintstart: Timer = $MAX/glintstart
 @onready var maxtimer: Timer = $MAX/Maxtimer
 @onready var glint: ColorRect = $MAX/center/TextureRect/glint
+@onready var start: Timer = $start
 
 @export var Full_boot = true
 
@@ -20,13 +20,10 @@ var clicknumber = 0
 
 func _ready() -> void:
 	if Full_boot == true:
-		ifgtimer.start()
-		ifg.show()
+		start.start()
+		visible = true
 		crt.show()
 		sfx.play()
-		visible = true
-		copyright.show()
-		skip.show()
 	else:
 		finish_boot()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,14 +37,11 @@ func _on_if_gtimer_timeout() -> void:
 	ifg.hide()
 	glintstart.start()
 
-func _on_changescene_timeout() -> void:
-	finish_boot()
-func _on_animated_sprite_2d_animation_finished() -> void:
-	changescenetimer.start()
-
 func _on_glintstart_timeout() -> void:
 	glint.show()
 	maxtimer.start()
+	fade_out_bus_volume()
+
 
 func _on_maxtimer_timeout() -> void:
 	finish_boot()
@@ -58,3 +52,23 @@ func _on_skip_pressed() -> void:
 func finish_boot():
 	visible = false
 	sfx.stop()
+
+
+func _on_start_timeout() -> void:
+		ifgtimer.start()
+		ifg.show()
+		copyright.show()
+		skip.show()
+
+var bus_name = "boot"
+var fade_duration = 9.0
+var target_volume = -80.0
+@onready var node: Node = $Node
+
+func fade_out_bus_volume():
+	var current_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))
+	var tween = create_tween()
+	tween.tween_method(Callable(self, "_set_bus_volume"), current_volume, target_volume, fade_duration)
+
+func _set_bus_volume(volume):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)

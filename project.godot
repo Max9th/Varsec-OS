@@ -54,6 +54,8 @@ folder_colors={
 "res://resources/audio/": "orange",
 "res://resources/fonts/": "teal",
 "res://resources/scenes/": "teal",
+"res://resources/scenes/Main_scene/": "purple",
+"res://resources/scenes/examples/": "red",
 "res://resources/shaders/": "teal",
 "res://resources/sprites/": "purple"
 }
