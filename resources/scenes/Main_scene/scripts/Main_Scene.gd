@@ -1,22 +1,22 @@
+@icon("res://resources/sprites/Themaxwellcompany_dark.png")
 extends Control
 
-						  #:xkl..                  
-						   #'kWMNd.                
-				 #:lll,       .xMMWd.              
-			 #.oXNMMMMWXK:     .xWMMWx.            
-		   #.dNMMWOk;...,kd.    .NMMMMO.           
-		  #.OMMWk'               ,NMMMMO           
-		  #0MMWx   .okko.        .XMMMMNd          
-		  #0MMx    0MMMMK         XMMMMMK          
-		  #;KMx    :KWWK:       .oNMMMMMK          
-		   #;0Wk                .NMMMMMMK          
-			 #,O0:             .XMMMMMM0.          
-			   #..           .lXMMMMMMNo           
-						  #.oXMMMMMMMNl            
-		  #:x:..       .'xkNMMMMMMMNo.             
-		   #,OWXdoooooOWMMMMMMMMMNl.               
-			 #'oxWWWMMMMMMMMWWKol.                 
-				#...lxxxxxx'..                     
+		   #''''''':::.      .:::,''''''.          
+		  #.ddddddxMMMc      ;MMMkdddddd'          
+		  #.ddd,...;;;.      .;;;'..'ddd'          
+		  #.ddd.                    .ddd'          
+		  #,WWW,          loo:      .WWW:          
+		  #.OOO.   .......odd:      .OOO,          
+				 #.dddddddddd:                     
+				  #,,,cddddddl,,,                  
+					 #;dddddddddd.                 
+		  #.000.      ;ddd.......   .000,          
+		  #'WWW'      ,ooo          .WWW;          
+		  #.ddd.                    .ddd'          
+		  #.ddd;''':::.      .:::''',ddd'          
+		  #.ddddddxMMMc      ;MMMkdddddd'          
+		   #......';;;.      .;;;'.......          
+
 
 	# The Maxwell Company
 
@@ -55,8 +55,7 @@ signal textcolorchange
 signal welcome_display
 
 func _on_power_button_pressed() -> void:
-	self.visible = false
-	camera_3d.queue_free()
+	self.queue_free()
 	get_tree().quit()
 
 func _ready() -> void:

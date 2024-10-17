@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/folder.png")
 extends TextureButton
 
 @onready var filenamelabel: Label = $selected_panel/HBoxContainer/filename

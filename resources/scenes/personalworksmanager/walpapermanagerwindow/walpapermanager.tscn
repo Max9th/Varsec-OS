@@ -472,7 +472,6 @@ anchor_bottom = 0.707512
 metadata/_edit_use_anchors_ = true
 
 [node name="wallpaper1" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
 layout_mode = 2
 anchor_left = 0.000316118
 anchor_top = 0.0100689
