@@ -705,4 +705,5 @@ gizmo_extents = 204.4
 [connection signal="disablebk" from="desktop/windows/auth_pop" to="." method="_on_labo_disablebk"]
 [connection signal="changebk" from="desktop/windows/walpaper_manager" to="." method="_on_walpaper_manager_changebk"]
 
+[editable path="cubigor"]
 [editable path="desktop/windows/nelixwindow"]

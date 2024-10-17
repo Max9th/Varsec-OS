@@ -42,6 +42,7 @@ extends Control
 @onready var panel: Panel = $desktop/panel/Panel
 @onready var logo_proj_name: Label = $desktop/portfolio
 @onready var class_manager: Panel = $desktop/windows/class_manager
+@onready var camera_3d: Camera3D = $cubigor/others/Camera3D
 
 var open_count: int = 0
 
@@ -55,6 +56,7 @@ signal welcome_display
 
 func _on_power_button_pressed() -> void:
 	self.visible = false
+	camera_3d.queue_free()
 	get_tree().quit()
 
 func _ready() -> void:
