@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://hne5em2y8fbb" path="res://resources/sprites/lockedfolderopen.png" id="22_oxlxm"]
 [ext_resource type="PackedScene" uid="uid://brx8sg8p6a6pp" path="res://resources/scenes/examples/folder.tscn" id="23_n1jfo"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="23_odcdw"]
-[ext_resource type="PackedScene" uid="uid://dmryciivu5mdv" path="res://resources/scenes/personalworksmanager/personalworkswindow/personalworks.tscn" id="23_q30xu"]
 [ext_resource type="Texture2D" uid="uid://bxgodidc4ng4d" path="res://resources/sprites/play_icon.png" id="24_1debg"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/greenfolder.png" id="24_sy72q"]
@@ -91,6 +90,7 @@ bg_color = Color(1, 0.337255, 0.321569, 0)
 [sub_resource type="GDScript" id="GDScript_vne7a"]
 resource_name = "icon"
 script/source = "@icon(\"res://resources/sprites/folder.png\")
+extends Control
 "
 
 [sub_resource type="GDScript" id="GDScript_aql14"]
@@ -160,6 +160,12 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
 font = ExtResource("8_0rumy")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_tm30a"]
+resource_name = "windows"
+script/source = "@icon(\"res://resources/sprites/window_icon.png\")
+extends Control
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7ij8"]
 texture = ExtResource("24_ybw46")
@@ -332,6 +338,7 @@ offset_right = -27.2499
 offset_bottom = 39.0
 grow_horizontal = 0
 tooltip_text = "Vá para o site do IFg"
+focus_mode = 0
 texture_normal = ExtResource("10_mpglo")
 texture_pressed = ExtResource("10_mpglo")
 texture_hover = ExtResource("10_mpglo")
@@ -598,6 +605,7 @@ layout_mode = 1
 anchors_preset = 0
 offset_left = 1160.0
 offset_right = 1160.0
+script = SubResource("GDScript_tm30a")
 metadata/_edit_use_anchors_ = true
 
 [node name="auth_pop" parent="desktop/windows" instance=ExtResource("22_76pyy")]
@@ -626,15 +634,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="draghandle" parent="desktop/windows/nelixwindow" index="3"]
 metadata/_edit_use_anchors_ = true
-
-[node name="personalworkswindow" parent="desktop/windows" instance=ExtResource("23_q30xu")]
-clip_contents = true
-layout_mode = 0
-offset_left = 2214.0
-offset_top = 143.0
-offset_right = 2537.0
-offset_bottom = 319.0
-scale = Vector2(3, 3)
 
 [node name="musicplayerwindow" parent="desktop/windows" instance=ExtResource("36_i5kvt")]
 layout_mode = 0
@@ -710,6 +709,7 @@ gizmo_extents = 204.4
 [connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
 [connection signal="disablebk" from="desktop/windows/auth_pop" to="." method="_on_labo_disablebk"]
 [connection signal="changebk" from="desktop/windows/walpaper_manager" to="." method="_on_walpaper_manager_changebk"]
+[connection signal="finished_boot" from="splash_screen" to="." method="_on_splash_screen_finished_boot"]
 
 [editable path="cubigor"]
 [editable path="desktop/windows/nelixwindow"]

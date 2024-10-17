@@ -15,9 +15,3 @@ func _on_authenticated_lies():
 	sfx_2.play()
 	video.play()
 	disablebk.emit()
-
-
-func _on_hah_pressed() -> void:
-	nelixwindow.visible = true
-	windowname.text = ""
-	bodytext.text = ""

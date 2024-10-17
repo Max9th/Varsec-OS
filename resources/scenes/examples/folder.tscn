@@ -906,7 +906,7 @@ font_size = 8
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[node name="default_folder" type="TextureButton"]
+[node name="default_folder" type="TextureButton" groups=["folders"]]
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0

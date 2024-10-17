@@ -1,21 +1,21 @@
 @icon("res://resources/sprites/Themaxwellcompany_dark.png")
 extends Control
 
-		   #''''''':::.      .:::,''''''.          
-		  #.ddddddxMMMc      ;MMMkdddddd'          
-		  #.ddd,...;;;.      .;;;'..'ddd'          
-		  #.ddd.                    .ddd'          
-		  #,WWW,          loo:      .WWW:          
-		  #.OOO.   .......odd:      .OOO,          
-				 #.dddddddddd:                     
-				  #,,,cddddddl,,,                  
-					 #;dddddddddd.                 
-		  #.000.      ;ddd.......   .000,          
-		  #'WWW'      ,ooo          .WWW;          
-		  #.ddd.                    .ddd'          
-		  #.ddd;''':::.      .:::''',ddd'          
-		  #.ddddddxMMMc      ;MMMkdddddd'          
-		   #......';;;.      .;;;'.......          
+			 #''''''':::.      .:::,''''''.
+			#.ddddddxMMMc      ;MMMkdddddd'
+			#.ddd,...;;;.      .;;;'..'ddd'
+			#.ddd.                    .ddd'
+			#,WWW,          loo:      .WWW:
+			#.OOO.   .......odd:      .OOO,
+				 #.dddddddddd:
+					#,,,cddddddl,,,
+					 #;dddddddddd.
+			#.000.      ;ddd.......   .000,
+			#'WWW'      ,ooo          .WWW;
+			#.ddd.                    .ddd'
+			#.ddd;''':::.      .:::''',ddd'
+			#.ddddddxMMMc      ;MMMkdddddd'
+			 #......';;;.      .;;;'.......
 
 
 	# The Maxwell Company
@@ -44,9 +44,7 @@ extends Control
 @onready var class_manager: Panel = $desktop/windows/class_manager
 @onready var camera_3d: Camera3D = $cubigor/others/Camera3D
 
-var open_count: int = 0
-
-var playaudio: bool = true
+var playaudio: bool = false
 var easter: bool
 var textcolor: bool = true
 
@@ -66,8 +64,8 @@ func _ready() -> void:
 	easter_button.disabled = true
 	windows.position.x = 0
 	update_time()
-	
-	if JavaScriptBridge:
+
+	if JavaScriptBridge.eval("checkVisit();"):
 		var result = JavaScriptBridge.eval("checkVisit();")
 		if result:
 			pass
@@ -79,7 +77,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if !splash_screen.visible and !ambientsound.playing and playaudio:
+	if !ambientsound.playing and playaudio:
 		ambientsound.play()
 		sfx_button_sprite.texture = load("res://resources/sprites/sfx.png")
 	elif ambientsound.playing == true and playaudio == false:
@@ -111,7 +109,7 @@ func _on_lies_disablebk() -> void:
 	panel.hide()
 	corrupted.show()
 	folders.hide()
-	
+
 func _on_labo_disablebk() -> void:
 	easter_time()
 	logo_proj_name.hide()
@@ -203,3 +201,7 @@ func _on_walpaper_manager_changebk(wallpaper_int: int) -> void:
 			textcolor = true
 			logo_proj_name.show()
 	textcolorchange.emit(textcolor)
+
+
+func _on_splash_screen_finished_boot() -> void:
+	playaudio = true

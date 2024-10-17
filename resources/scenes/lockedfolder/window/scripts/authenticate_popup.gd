@@ -1,20 +1,21 @@
+@icon("res://resources/sprites/window_icon.png")
 extends Panel
 
-		   #''''''':::.      .:::,''''''.          
-		  #.ddddddxMMMc      ;MMMkdddddd'          
-		  #.ddd,...;;;.      .;;;'..'ddd'          
-		  #.ddd.                    .ddd'          
-		  #,WWW,          loo:      .WWW:          
-		  #.OOO.   .......odd:      .OOO,          
-				 #.dddddddddd:                     
-				  #,,,cddddddl,,,                  
-					 #;dddddddddd.                 
-		  #.000.      ;ddd.......   .000,          
-		  #'WWW'      ,ooo          .WWW;          
-		  #.ddd.                    .ddd'          
-		  #.ddd;''':::.      .:::''',ddd'          
-		  #.ddddddxMMMc      ;MMMkdddddd'          
-		   #......';;;.      .;;;'.......          
+			 #''''''':::.      .:::,''''''.
+			#.ddddddxMMMc      ;MMMkdddddd'
+			#.ddd,...;;;.      .;;;'..'ddd'
+			#.ddd.                    .ddd'
+			#,WWW,          loo:      .WWW:
+			#.OOO.   .......odd:      .OOO,
+				 #.dddddddddd:
+					#,,,cddddddl,,,
+					 #;dddddddddd.
+			#.000.      ;ddd.......   .000,
+			#'WWW'      ,ooo          .WWW;
+			#.ddd.                    .ddd'
+			#.ddd;''':::.      .:::''',ddd'
+			#.ddddddxMMMc      ;MMMkdddddd'
+			 #......';;;.      .;;;'.......
 
 # The Maxwell Company
 
@@ -93,7 +94,7 @@ func _on_line_edit_text_submitted(_new_text: String) -> void:
 
 func _on_confirm_pressed() -> void:
 	verify()
-	
+
 func verify():
 	var user_input = line_edit.text
 	if easter == false and can_play == true:

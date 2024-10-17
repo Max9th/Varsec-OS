@@ -20,7 +20,7 @@ font = ExtResource("4_i2oaq")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="window" type="Panel" groups=["authentication"]]
+[node name="window" type="Panel" groups=["windows"]]
 custom_minimum_size = Vector2(123, 57)
 offset_right = 123.0
 offset_bottom = 57.0
@@ -28,6 +28,7 @@ scale = Vector2(3, 3)
 theme_override_styles/panel = ExtResource("1_1jiao")
 script = ExtResource("2_mpy32")
 can_drag = true
+is_instance_type = true
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qs3cc")

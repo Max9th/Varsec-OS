@@ -36,6 +36,7 @@ extends TextureButton
 var selected: bool = false
 var timer_running: bool = false
 var is_mouse_hover: bool
+var window_exists
 
 func _ready() -> void:
 	selected_panel.visible = false
@@ -68,7 +69,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	timer_running = not timer.is_stopped()
-	
+
 func select():
 	if !timer_running:
 		if !selected:
@@ -100,17 +101,19 @@ func _on_mouse_exited() -> void:
 	is_mouse_hover = false
 
 func spawnwindow():
-	if is_instantiated:
+	if is_instantiated and !window_exists:
 		var scene = load(window_path)
 		if scene == null:
 			print("Error: Unable to load scene:", window_path)
 			return
-		var window_node = get_node(where_to_instantiate)
-		if window_node:
-			var new_window = scene.instantiate() 
-			window_node.add_child(new_window) 
-			new_window.position = Vector2(100, 100)
+		var path_node = get_node(where_to_instantiate)
+		if path_node:
+			var new_window = scene.instantiate()
+			path_node.add_child(new_window)
+			new_window.position.x = self.position.x + self.size.x + 20
+			new_window.position.y = self.position.y
 			new_window.visible = true
+			window_exists = true
 		else:
 			print("Error: window node not found:", where_to_instantiate)
 	elif is_window_present:
@@ -124,4 +127,6 @@ func _on_main_scene_textcolorchange(textcolor: bool) -> void:
 		filename_colorable.label_settings.font_color = Color(1,1,1)
 	else:
 		filename_colorable.label_settings.font_color = Color(0,0,0)
-		
+
+func window_state():
+	window_exists = false

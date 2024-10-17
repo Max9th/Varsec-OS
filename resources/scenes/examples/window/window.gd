@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/window_icon.png")
 class_name Windowz extends Panel
 
 @onready var close_audio: AudioStreamPlayer = $close_audio
@@ -9,6 +10,7 @@ class_name Windowz extends Panel
 @export var can_maximize: bool
 @export var can_close: bool
 @export var can_resize: bool
+@export var is_instance_type: bool
 
 var is_dragging: bool = false
 var is_maximized: bool = false
@@ -89,7 +91,11 @@ func _process(_delta: float) -> void:
 			window.size.y = MAX_HEIGHT
 
 func _on_close_pressed() -> void:
-	close_window(window, close_audio)
+	get_tree().call_group("folders", "window_state")
+	if is_instance_type:
+		queue_free()
+	else:
+		close_window(window, close_audio)
 
 func _on_maximize_pressed() -> void:
 	if can_maximize:

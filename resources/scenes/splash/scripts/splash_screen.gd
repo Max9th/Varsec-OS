@@ -18,6 +18,8 @@ extends CanvasLayer
 var seconds_passed = 0
 var clicknumber = 0
 
+signal finished_boot
+
 func _ready() -> void:
 	if Full_boot == true:
 		start.start()
@@ -50,9 +52,9 @@ func _on_skip_pressed() -> void:
 	finish_boot()
 
 func finish_boot():
-	visible = false
+	finished_boot.emit()
 	sfx.stop()
-
+	self.queue_free()
 
 func _on_start_timeout() -> void:
 		ifgtimer.start()

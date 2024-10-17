@@ -42,7 +42,7 @@ font = ExtResource("11_jrutn")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="authenticator" type="Panel" groups=["authentication"]]
+[node name="authenticator" type="Panel" groups=["authentication", "windows"]]
 offset_right = 112.0
 offset_bottom = 48.0
 scale = Vector2(3, 3)

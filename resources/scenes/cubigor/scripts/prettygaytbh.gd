@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	elif person_theme.playing and person_mode == false:
 		person_theme.stop()
 
-func person_spawner():  
+func person_spawner():
 	person_mode = true
 	if person_mode:
 		Disablebk.emit()

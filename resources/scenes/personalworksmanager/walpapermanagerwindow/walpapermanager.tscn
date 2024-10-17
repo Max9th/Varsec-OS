@@ -30,7 +30,8 @@ region_rect = Rect2(0, 0, 50, 50)
 
 [sub_resource type="GDScript" id="GDScript_e7qei"]
 resource_name = "walpaper_manager_script"
-script/source = "extends Panel
+script/source = "@icon(\"res://resources/sprites/window_icon.png\")
+extends Panel
 
 @onready var maximize: Button = %maximize
 @onready var close: Button = %close
@@ -251,7 +252,7 @@ shader_parameter/angle = 45.0
 shader_parameter/sprite_sheet_columns = 1
 shader_parameter/sprite_sheet_rows = 1
 
-[node name="walpaper_manager" type="Panel" groups=["authentication"]]
+[node name="walpaper_manager" type="Panel" groups=["windows"]]
 custom_minimum_size = Vector2(120, 80)
 offset_right = 222.0
 offset_bottom = 125.0

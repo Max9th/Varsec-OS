@@ -40,7 +40,7 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 
-[node name="window" type="Panel" groups=["authentication"]]
+[node name="window" type="Panel" groups=["windows"]]
 custom_minimum_size = Vector2(80, 45)
 offset_right = 80.0
 offset_bottom = 45.0

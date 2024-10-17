@@ -63,6 +63,8 @@ folder_colors={
 [global_group]
 
 authentication=""
+folders="Default folder's group"
+windows=""
 
 [input]
 

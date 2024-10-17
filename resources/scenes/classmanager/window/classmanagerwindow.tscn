@@ -70,7 +70,7 @@ font = ExtResource("16_3pnsg")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="classmanagerwindow" type="Panel"]
+[node name="classmanagerwindow" type="Panel" groups=["windows"]]
 clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1

@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/window_icon.png")
 extends Panel
 
 @onready var maximize: Button = $HBoxContainer/maximize

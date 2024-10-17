@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/window_icon.png")
 extends Panel
 
 @onready var maximize: Button = %maximize
@@ -109,6 +110,7 @@ $"contentcontainer/contents/2bim/aula5"
 @onready var aulas_tresbim: Array = [
 	$"contentcontainer/contents/3bim/aula1"
 ]
+
 @onready var aulas_quatrobim: Array = [
 	1
 ]
@@ -119,10 +121,16 @@ var current_bim: int = 0
 func hide_all_aulas() -> void:
 	for aula in aulas_doisbim:
 		aula.hide()
-	not_ready.hide()
 	for aula in aulas_tresbim:
 		aula.hide()
+	for aula in aulas_quatrobim:
+		aula.hide()
 	not_ready.hide()
+
+func show_aula_umbim(index: int) -> void:
+	hide_all_aulas()
+	if index >= 0 and index < aulas_umbim.size():
+		aulas_umbim[index].visible = true
 
 func show_aula_doisbim(index: int) -> void:
 	hide_all_aulas()
@@ -133,6 +141,11 @@ func show_aula_tresbim(index: int) -> void:
 	hide_all_aulas()
 	if index >= 0 and index < aulas_tresbim.size():
 		aulas_tresbim[index].visible = true
+
+func show_aula_quatrobim(index: int) -> void:
+	hide_all_aulas()
+	if index >= 0 and index < aulas_quatrobim.size():
+		aulas_quatrobim[index].visible = true
 
 func _on_bim_1_pressed() -> void:
 	if !is_menu_active:
@@ -156,48 +169,69 @@ func _on_bim_3_pressed() -> void:
 
 func _on_bim_4_pressed() -> void:
 	if !is_menu_active:
-		not_ready_yet()
 		is_menu_active = true
+		select_bim.hide()
+		select_class.show()
 		current_bim = 4
 
 func _on_aula_1_pressed() -> void:
 	is_menu_active = true
+	if current_bim == 1:
+		show_aula_umbim(0)
 	if current_bim == 2:
 		show_aula_doisbim(0)
 	if current_bim == 3:
 		show_aula_tresbim(0)
+	if current_bim == 4:
+		show_aula_quatrobim(0)
 	select_somethin.hide()
 
 func _on_aula_2_pressed() -> void:
 	is_menu_active = true
+	if current_bim == 1:
+		show_aula_umbim(1)
 	if current_bim == 2:
 		show_aula_doisbim(1)
 	if current_bim == 3:
 		show_aula_tresbim(1)
+	if current_bim == 4:
+		show_aula_quatrobim(1)
 	select_somethin.hide()
 
 func _on_aula_3_pressed() -> void:
 	is_menu_active = true
+	if current_bim == 1:
+		show_aula_umbim(2)
 	if current_bim == 2:
 		show_aula_doisbim(2)
 	if current_bim == 3:
 		show_aula_tresbim(2)
+	if current_bim == 4:
+		show_aula_quatrobim(2)
 	select_somethin.hide()
 
 func _on_aula_4_pressed() -> void:
 	is_menu_active = true
+	if current_bim == 1:
+		show_aula_umbim(3)
 	if current_bim == 2:
 		show_aula_doisbim(3)
 	if current_bim == 3:
 		show_aula_tresbim(3)
+	if current_bim == 4:
+		show_aula_quatrobim(3)
 	select_somethin.hide()
 
 func _on_aula_5_pressed() -> void:
 	is_menu_active = true
+	if current_bim == 1:
+		show_aula_umbim(4)
 	if current_bim == 2:
 		show_aula_doisbim(4)
 	if current_bim == 3:
 		show_aula_tresbim(4)
+	if current_bim == 4:
+		show_aula_quatrobim(4)
 	select_somethin.hide()
 
 func _on_personal_pressed() -> void:

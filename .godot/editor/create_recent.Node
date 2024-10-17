@@ -1,3 +1,4 @@
+AudioStreamPlayer
 CPUParticles3D
 Timer
 SubViewport
@@ -12,4 +13,3 @@ PanelContainer
 VBoxContainer
 ScaleContainer
 Node
-Camera3D
