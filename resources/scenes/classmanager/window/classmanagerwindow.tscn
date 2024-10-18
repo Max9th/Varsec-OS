@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=28 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cw0x17dao7of2" path="res://resources/sprites/classmanagerassets/1271416569_4a3d19b1ff_b.jpg" id="7_xvj6i"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
 [ext_resource type="Texture2D" uid="uid://ca8ikd8p44gm6" path="res://resources/sprites/classmanagerassets/aula_2d.jpeg" id="8_t4clq"]
+[ext_resource type="Texture2D" uid="uid://ch6sjtxx1imvo" path="res://resources/sprites/classmanagerassets/pontilhismo.jpg" id="8_wcrku"]
 [ext_resource type="Texture2D" uid="uid://cf77bwyb1714g" path="res://resources/sprites/classmanagerassets/IMG_20240928_002046.jpg" id="9_5m73j"]
 [ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/xilogravados.jpeg" id="11_3jok6"]
 [ext_resource type="Texture2D" uid="uid://cle3ns7wshbs8" path="res://resources/sprites/classmanagerassets/download.png" id="11_hkcfu"]
@@ -440,7 +441,6 @@ offset_bottom = 125.0
 mouse_filter = 2
 
 [node name="aula1" type="Control" parent="contentcontainer/contents/1bim"]
-visible = false
 layout_mode = 1
 anchor_left = -0.22
 anchor_top = -0.121739
@@ -452,7 +452,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula1"]
+[node name="aula_1_title" type="Label" parent="contentcontainer/contents/1bim/aula1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -461,12 +461,13 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 1
+"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula1"]
+[node name="text_aula_1" type="TextEdit" parent="contentcontainer/contents/1bim/aula1"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -480,34 +481,21 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
-text = "Assunto tratado: 
-identidade cultural, povos originários, arte marajoara
+text = "Assunto tratado:
+Pontilhismo
 
-Atividades desenvolvidas em sala:
-Desenho baseado em duas especies de
-animais brasileiros fundidos em 
-um único ser . Eu usei um morcego fruteiro e uma 
-jararaca-de-alcatrazes
+O pontilhismo é a arte de desenhar apenas com pontos.
 
-Nós falamos sobre o que é a arte marajoara e também sobre os povos originários e a 
-identidade cultural.
+Um ponto pode representar o inicio e o fim de uma linha. Pode ta
+mbém representar uma posição e/ou um cruzamento entre duas linhas
 
-Arte Marajoara
-A arte marajoara foi criada pelo povo que vivia na Ilha de Marajó entre os anos 400 e 1400 d.C. 
-Ela é mais conhecida pelas cerâmicas com formas geométricas e detalhes bem elaborados.
+Vale notar que toda linha é composta por diversos pontos
 
-Povos Originários
-Os povos indígenas no Brasil têm uma diversidade cultural e artística gigante. Eles produzem 
-coisas como pinturas corporais, cerâmicas, cestaria e histórias mitológicas. A arte 
-é super importante para rituais religiosos, se conectar com a natureza e manter viva a memória cultural.
-
-Identidade Cultural
-A identidade cultural está ligada aos valores, tradições e crenças de cada grupo. Na arte, ela aparece através de símbolos, estilos e técnicas que são passados de geração em geração. Os povos usam a arte para mostrar como veem o mundo e registrar suas experiências.
-"
+Os pontos são essenciais para a arte como um todo."
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
@@ -532,7 +520,7 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("5_bxqsp")
+texture = ExtResource("8_wcrku")
 expand_mode = 5
 stretch_mode = 6
 
@@ -560,7 +548,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula2"]
+[node name="aula_2_title" type="Label" parent="contentcontainer/contents/1bim/aula2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -569,12 +557,12 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 2"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula2"]
+[node name="text_aula2" type="TextEdit" parent="contentcontainer/contents/1bim/aula2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -588,7 +576,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -662,7 +650,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula3"]
+[node name="aula_3_title" type="Label" parent="contentcontainer/contents/1bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -671,12 +659,13 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 3
+"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula3"]
+[node name="text_aula3" type="TextEdit" parent="contentcontainer/contents/1bim/aula3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -690,7 +679,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -786,7 +775,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -887,7 +876,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -983,7 +972,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula6"]
+[node name="aula_6_title" type="Label" parent="contentcontainer/contents/1bim/aula6"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -992,12 +981,12 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 6"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula6"]
+[node name="text_aula6" type="TextEdit" parent="contentcontainer/contents/1bim/aula6"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1011,7 +1000,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -1089,16 +1078,19 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula1"]
+[node name="aula_1_title" type="Label" parent="contentcontainer/contents/2bim/aula1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
 anchor_top = 0.121687
 anchor_right = 0.279178
 anchor_bottom = 0.157845
+offset_top = -1.00774
+offset_right = -6.10352e-05
+offset_bottom = 1.0105
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 1"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -1117,7 +1109,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -1206,7 +1198,8 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 2
+"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -1225,7 +1218,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -1308,7 +1301,7 @@ anchor_right = 0.279178
 anchor_bottom = 0.157845
 grow_horizontal = 2
 grow_vertical = 2
-text = "Aula 4"
+text = "Aula 3"
 label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -1327,7 +1320,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -1423,7 +1416,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -1524,7 +1517,7 @@ theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("6_nydlm")
 theme_override_styles/focus = ExtResource("6_nydlm")
 theme_override_styles/read_only = ExtResource("6_nydlm")
@@ -2668,6 +2661,7 @@ scroll_smooth = true
 metadata/_edit_use_anchors_ = true
 
 [node name="select_somethin" type="Control" parent="contentcontainer/contents"]
+visible = false
 layout_mode = 1
 anchor_left = -0.221198
 anchor_top = -0.120095
@@ -2801,6 +2795,68 @@ Se divirta!"
 label_settings = SubResource("LabelSettings_e6avh")
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="changelog" type="Control" parent="contentcontainer/contents"]
+visible = false
+layout_mode = 1
+anchor_left = -0.732857
+anchor_top = 0.0869565
+anchor_right = -0.732857
+anchor_bottom = 0.391739
+offset_left = 111.03
+offset_top = -25.861
+offset_right = 2217.03
+offset_bottom = 1052.07
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="contentcontainer/contents/changelog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.987678
+anchor_top = 0.0779661
+anchor_right = 1.68323
+anchor_bottom = 0.967232
+offset_left = -1655.83
+offset_top = 67.1938
+offset_right = -1556.65
+offset_bottom = -42.2266
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="changelog_title" type="Label" parent="contentcontainer/contents/changelog/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "VARSEC OS 1.8 UPDATE"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="changelog_bodytext" type="Label" parent="contentcontainer/contents/changelog/VBoxContainer"]
+layout_mode = 2
+text = "- Adicionado o gerenciador de papéis de parede (Parte da atualização de conquistas, que ainda está em desenvolvimento).
+- Adicionada a pasta de papéis de parede.
+- Removido o gerenciador de trabalhos pessoais.
+- Adicionada a opção de adicionar ícones às pastas.
+- Atualizada a fonte ViperVibes.
+- Adicionada a fonte Tril conlang.
+- Adicionados novos easter eggs.
+- Adicionada uma mensagem de boas-vindas para novos visitantes.
+- Adicionadas outras pequenas melhorias na qualidade de vida (QoL).
+- Expandida a personalização da pasta e da janela de exemplo.
+- Alterados os sons padrão de inicialização e ambiente.
+- Reformulado o tocador de música.
+- Adicionada uma grade para uma futura implementação de um sistema de criação de pastas."
+label_settings = SubResource("LabelSettings_e6avh")
+horizontal_alignment = 1
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="windowbuttons" type="HBoxContainer" parent="."]

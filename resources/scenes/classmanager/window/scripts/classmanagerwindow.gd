@@ -33,6 +33,7 @@ func _ready() -> void:
 	else:
 		self.hide()
 	hide_all_aulas()
+	select_somethin.show()
 
 func _process(_delta: float) -> void:
 	if is_dragging and can_drag:
@@ -95,9 +96,10 @@ func _on_aulas_window_selected() -> void:
 @onready var not_ready: Control = $contentcontainer/contents/not_ready
 @onready var welcome: Control = $contentcontainer/contents/welcome
 @onready var aula_6: Button = $sidebarcontainer/sidebar/select_class/aula6
+@onready var changelog: Control = $contentcontainer/contents/changelog
 
 @onready var aulas_umbim: Array = [
-$contentcontainer/contents/not_ready
+$"contentcontainer/contents/1bim/aula1"
 ]
 
 @onready var aulas_doisbim: Array = [
@@ -211,6 +213,7 @@ func _on_aula_5_pressed() -> void:
 
 func _on_aula_6_pressed() -> void:
 	_on_aula_pressed(5)
+
 func _on_personal_pressed() -> void:
 	if !is_menu_active:
 		not_ready_yet()
@@ -227,13 +230,14 @@ func _on_changelog_pressed() -> void:
 	is_menu_active = true
 	welcome.hide()
 	backtrack()
-	not_ready_yet()
+	changelog.show()
 
 func _on_back_pressed() -> void:
 	is_menu_active = false
 	go_back.hide()
 	not_ready.hide()
 	welcome.hide()
+	changelog.hide()
 	hide_all_aulas()
 	select_somethin.show()
 	select_bim.show()
@@ -244,9 +248,11 @@ func _on_back_classes_bim1_pressed() -> void:
 	select_class.hide()
 	select_bim.show()
 	welcome.hide()
+	changelog.hide()
 	hide_all_aulas()
 	select_somethin.show()
 	current_bim = 0
+	aula_6.show()
 
 func not_ready_yet():
 	go_back.show()
