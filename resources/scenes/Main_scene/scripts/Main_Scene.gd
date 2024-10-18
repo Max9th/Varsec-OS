@@ -64,7 +64,6 @@ func _ready() -> void:
 	easter_button.disabled = true
 	windows.position.x = 0
 	update_time()
-
 	if JavaScriptBridge.eval("checkVisit();"):
 		var result = JavaScriptBridge.eval("checkVisit();")
 		if result:

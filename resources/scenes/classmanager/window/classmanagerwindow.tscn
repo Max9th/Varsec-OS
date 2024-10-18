@@ -1189,7 +1189,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula2"]
+[node name="aula_2_title" type="Label" parent="contentcontainer/contents/2bim/aula2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -1292,7 +1292,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/2bim/aula3"]
+[node name="aula_3_title" type="Label" parent="contentcontainer/contents/2bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503

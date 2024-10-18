@@ -11,18 +11,18 @@ config_version=5
 [application]
 
 config/name="Varsec Fantasy OS"
-config/description="A fanstasy OS made as an art project"
+config/description="A fanstasy OS made as an art project for the Federal Institute of Science and Technology"
 config/version="V1.8"
 run/main_scene="res://resources/scenes/Main_scene/Main_scene.tscn"
-config/project_settings_override="ss"
 config/features=PackedStringArray("4.3")
+run/max_fps=60
 boot_splash/bg_color=Color(0.0627451, 0.0784314, 0.121569, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
-boot_splash/version="V1.5"
-boot_splash/description="A fanstasy OS made as an art project"
+boot_splash/version="V1.8"
+boot_splash/description="A fanstasy OS made as an art project for the Federal Institute of Science and Technology"
 
 [autoload]
 
@@ -30,6 +30,8 @@ SelectionManager="*res://resources/scenes/examples/scripts/selection_manager.gd"
 
 [debug]
 
+settings/crash_handler/message="Please include this when reporting to Max9th"
+settings/crash_handler/message.editor="https://github.com/Max9th/Varsec-OS/issues"
 file_logging/max_log_files=1
 settings/stdout/print_fps=true
 gdscript/warnings/unused_parameter=0
