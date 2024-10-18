@@ -107,17 +107,17 @@ mouse_filter = 2
 [node name="recentes" type="VBoxContainer" parent="sidebarcontainer/sidebar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0138427
-anchor_top = 0.705907
-anchor_right = 0.15337
-anchor_bottom = 1.05479
-offset_left = 0.499843
-offset_top = 0.408463
-offset_right = 106.22
-offset_bottom = 78.6581
+anchor_left = 0.0158195
+anchor_top = 0.766926
+anchor_right = 0.155229
+anchor_bottom = 1.00013
+offset_top = -5.04929
+offset_right = 105.75
+offset_bottom = 88.7007
 scale = Vector2(0.25, 0.25)
 mouse_filter = 2
 theme_override_constants/separation = 7
+metadata/_edit_use_anchors_ = true
 
 [node name="recentes" type="Label" parent="sidebarcontainer/sidebar/recentes"]
 layout_mode = 2
@@ -172,10 +172,10 @@ metadata/_edit_use_anchors_ = true
 [node name="separator_horizontal" type="Panel" parent="sidebarcontainer/sidebar/separators"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0158195
-anchor_top = 0.671642
-anchor_right = 0.0158195
-anchor_bottom = 0.694029
+anchor_left = 0.0158196
+anchor_top = 0.691932
+anchor_right = 0.0158196
+anchor_bottom = 0.714319
 offset_left = 34.0
 offset_right = 37.0
 offset_bottom = 31.0001
@@ -292,7 +292,7 @@ text = " Selecione:"
 label_settings = SubResource("LabelSettings_dbcny")
 
 [node name="aula1" type="Button" parent="sidebarcontainer/sidebar/select_class"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -304,7 +304,7 @@ theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 1"
 
 [node name="aula2" type="Button" parent="sidebarcontainer/sidebar/select_class"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -316,7 +316,7 @@ theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 2"
 
 [node name="aula3" type="Button" parent="sidebarcontainer/sidebar/select_class"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -328,7 +328,7 @@ theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 3"
 
 [node name="aula4" type="Button" parent="sidebarcontainer/sidebar/select_class"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -340,7 +340,7 @@ theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 4"
 
 [node name="aula5" type="Button" parent="sidebarcontainer/sidebar/select_class"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -350,6 +350,19 @@ theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Aula 5"
+
+[node name="aula6" type="Button" parent="sidebarcontainer/sidebar/select_class"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_3pnsg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = ExtResource("3_qklyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
+theme_override_styles/normal = ExtResource("3_qklyj")
+text = "Aula 6
+"
 
 [node name="back" type="Button" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 40)
@@ -956,6 +969,106 @@ middle_mouse_paste_enabled = false
 wrap_mode = 1
 scroll_smooth = true
 metadata/_edit_use_anchors_ = true
+
+[node name="aula6" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
+layout_mode = 1
+anchor_left = -0.22
+anchor_top = -0.121739
+anchor_right = 1.0397
+anchor_bottom = 1.04035
+offset_right = 1686.06
+offset_bottom = 894.36
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="aula_4_title" type="Label" parent="contentcontainer/contents/1bim/aula6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190503
+anchor_top = 0.121687
+anchor_right = 0.279178
+anchor_bottom = 0.157845
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aula 4"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/1bim/aula6"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465548
+anchor_top = 0.162712
+anchor_right = 0.944877
+anchor_bottom = 0.964972
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l3xm2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/focus = ExtResource("6_nydlm")
+theme_override_styles/read_only = ExtResource("6_nydlm")
+text = "Assunto tratado:
+Xilogravura, literatura de cordel e arte popular.
+
+Atividades desenvolvidas em sala:
+Os colegas discutiram o que é a xilogravura, como ela é feita, onde é usada e quem é o principal artista. Também falaram sobre o cordel que leram e analisaram.
+
+O que é a Xilogravura?
+A xilogravura é uma técnica artística de impressão que consiste em gravar desenhos em uma matriz de madeira. Depois, a imagem é transferida para o papel por meio de tinta. Para criar a xilogravura, utiliza-se uma madeira apropriada e ferramentas específicas para rasgar e fazer sulcos na superfície. Após a arte estar pronta, aplica-se tinta sobre a matriz, e o papel é pressionado contra ela, transferindo assim o desenho.
+
+J. Borges
+J. Borges é um dos xilogravadores mais renomados do Brasil. Suas obras retratam cenas do sertão nordestino, trazendo à vida personagens folclóricos e festas populares que fazem parte da cultura local.
+
+Literatura de Cordel
+A capa da literatura de cordel é ilustrada utilizando a técnica da xilogravura. A preservação e divulgação da xilogravura na cultura popular nordestina são de extrema importância, pois ajudam a manter vivas as tradições e histórias dessa rica região.
+
+"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+metadata/_edit_use_anchors_ = true
+
+[node name="images" type="VBoxContainer" parent="contentcontainer/contents/1bim/aula6"]
+layout_mode = 0
+anchor_left = 0.190503
+anchor_top = 0.197017
+anchor_right = 0.443948
+anchor_bottom = 0.949559
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="image1xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula6/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_uoi20")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="image2xilo" type="TextureRect" parent="contentcontainer/contents/1bim/aula6/images"]
+custom_minimum_size = Vector2(149, 74)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Jonas disse:
+\"CUBIGOR\"
+Lembre-se disso "
+texture = ExtResource("11_3jok6")
+expand_mode = 5
+stretch_mode = 6
 
 [node name="2bim" type="Control" parent="contentcontainer/contents"]
 anchors_preset = 0
@@ -2775,6 +2888,7 @@ stream = ExtResource("8_b7u5f")
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula3" to="." method="_on_aula_3_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula4" to="." method="_on_aula_4_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula5" to="." method="_on_aula_5_pressed"]
+[connection signal="pressed" from="sidebarcontainer/sidebar/select_class/aula6" to="." method="_on_aula_6_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/select_class/back" to="." method="_on_back_classes_bim1_pressed"]
 [connection signal="pressed" from="sidebarcontainer/sidebar/go_back/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]

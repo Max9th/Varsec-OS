@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/easteregg_icon.png")
 extends Node3D
 
 @onready var cubigor_theme: AudioStreamPlayer = $others/Cubigor_theme

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=61 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
@@ -91,13 +91,6 @@ bg_color = Color(1, 0.337255, 0.321569, 0)
 resource_name = "icon"
 script/source = "@icon(\"res://resources/sprites/folder.png\")
 extends Control
-"
-
-[sub_resource type="GDScript" id="GDScript_aql14"]
-resource_name = "note"
-script/source = "extends GridContainer
-
-#note: Can hold 40 items max.
 "
 
 [sub_resource type="GDScript" id="GDScript_qy31b"]
@@ -464,7 +457,6 @@ pivot_offset = Vector2(425, 0)
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 88
 columns = 10
-script = SubResource("GDScript_aql14")
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 

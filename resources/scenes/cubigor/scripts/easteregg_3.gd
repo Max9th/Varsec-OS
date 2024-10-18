@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/easteregg_icon.png")
 extends Node2D
 
 @onready var sfx: AudioStreamPlayer = $sfx

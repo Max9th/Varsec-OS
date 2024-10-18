@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/easteregg_icon.png")
 extends Control
 #these are variables:
 @onready var person_theme: AudioStreamPlayer = $gaytheme
