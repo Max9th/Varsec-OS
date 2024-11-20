@@ -3,8 +3,10 @@ class_name Windowz extends Panel
 
 @onready var close_audio: AudioStreamPlayer = $close_audio
 @onready var window: Windowz = $"."
+@onready var windowname: Label = $windowname
 
 @export_category("Window properties")
+@export var window_name: String
 @export var is_visible: bool
 @export var can_drag: bool
 @export var can_maximize: bool
@@ -24,6 +26,8 @@ var is_resizing: bool = false
 const SCALE_FACTOR: float = 3
 const MAX_WIDTH: float = 384
 const MAX_HEIGHT: float = 216
+
+signal closed
 
 # ---- Static functions that can be used in other scripts ----
 
@@ -74,6 +78,7 @@ func _ready() -> void:
 		self.show()
 	else:
 		self.hide()
+	windowname.text = window_name
 
 func _process(_delta: float) -> void:
 	if is_dragging and can_drag:
@@ -91,6 +96,7 @@ func _process(_delta: float) -> void:
 			window.size.y = MAX_HEIGHT
 
 func _on_close_pressed() -> void:
+	closed.emit()
 	get_tree().call_group("folders", "window_state")
 	if is_instance_type:
 		queue_free()

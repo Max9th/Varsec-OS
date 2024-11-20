@@ -91,19 +91,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -617.0
-offset_top = -25.0
-offset_right = 462.0
-offset_bottom = 51.0
+offset_left = -556.0
+offset_top = -21.0
+offset_right = 37.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(643, 0)
 size_flags_horizontal = 4
-text = "The Maxwell company (Miguel J.)"
+text = "Max9th (Miguel J.)"
 label_settings = SubResource("LabelSettings_12up3")
 
-[node name="IFG" type="Control" parent="."]
+[node name="ifg_bootscreen" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -116,7 +116,7 @@ offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel2" type="Panel" parent="IFG"]
+[node name="Panel2" type="Panel" parent="ifg_bootscreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,7 +130,7 @@ grow_vertical = 2
 pivot_offset = Vector2(88, 112)
 theme_override_styles/panel = SubResource("StyleBoxFlat_nski4")
 
-[node name="Label" type="Label" parent="IFG"]
+[node name="Label" type="Label" parent="ifg_bootscreen"]
 texture_filter = 5
 layout_mode = 0
 offset_left = 224.0
@@ -145,7 +145,7 @@ Campûs: Valparaíso de Goiás
 2º Bimestre de Arte I regido pelo Mestre Igor Carvalho Rodrigues"
 label_settings = SubResource("LabelSettings_2umt0")
 
-[node name="IFg_logo" type="TextureRect" parent="IFG"]
+[node name="IFg_logo" type="TextureRect" parent="ifg_bootscreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -163,7 +163,7 @@ texture = ExtResource("2_b36d3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="IFGtimer" type="Timer" parent="IFG"]
+[node name="ifg_bootscreen_timer" type="Timer" parent="ifg_bootscreen"]
 wait_time = 2.0
 one_shot = true
 
@@ -234,7 +234,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Maxtimer" type="Timer" parent="MAX"]
-wait_time = 4.0
+wait_time = 4.2
 one_shot = true
 
 [node name="skip" type="TextureButton" parent="."]
@@ -252,9 +252,9 @@ grow_vertical = 0
 pivot_offset = Vector2(20, 0)
 tooltip_text = "Skip Bootscreen"
 texture_normal = ExtResource("9_vmk0t")
-stretch_mode = 0
+stretch_mode = 5
 
-[node name="crt" type="ColorRect" parent="."]
+[node name="vfx" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_yf3s5")
 anchors_preset = 15
@@ -278,7 +278,7 @@ one_shot = true
 
 [node name="Node" type="Node" parent="."]
 
-[connection signal="timeout" from="IFG/IFGtimer" to="." method="_on_if_gtimer_timeout"]
+[connection signal="timeout" from="ifg_bootscreen/ifg_bootscreen_timer" to="." method="_on_if_gtimer_timeout"]
 [connection signal="timeout" from="MAX/glintstart" to="." method="_on_glintstart_timeout"]
 [connection signal="timeout" from="MAX/Maxtimer" to="." method="_on_maxtimer_timeout"]
 [connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]

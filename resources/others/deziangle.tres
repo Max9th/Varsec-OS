@@ -26,5 +26,6 @@ emission_enabled = true
 emission_energy_multiplier = 0.91
 emission_texture = ExtResource("1_xvhy8")
 normal_enabled = true
-uv1_offset = Vector3(-0.065, 0.18, 0)
+uv1_scale = Vector3(0.48, 0.48, 0.48)
+uv1_offset = Vector3(0.335, -1.065, 0)
 texture_filter = 0

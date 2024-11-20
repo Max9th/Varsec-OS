@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=33 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="3_qklyj"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/others/button.tres" id="3_qklyj"]
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="4_l3xm2"]
 [ext_resource type="Texture2D" uid="uid://cpid2vrpdbht0" path="res://resources/sprites/classmanagerassets/1727438391663.jpg" id="5_bxqsp"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="6_nydlm"]
 [ext_resource type="Texture2D" uid="uid://cmxf2l7frdplr" path="res://resources/sprites/classmanagerassets/aula_2a.jpeg" id="7_lysfj"]
 [ext_resource type="Texture2D" uid="uid://cw0x17dao7of2" path="res://resources/sprites/classmanagerassets/1271416569_4a3d19b1ff_b.jpg" id="7_xvj6i"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="8_b7u5f"]
@@ -56,6 +55,12 @@ font_size = 14
 font = ExtResource("16_3pnsg")
 font_size = 32
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4diaa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqeo0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7313m"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_scfmy"]
 font = ExtResource("16_3pnsg")
 font_size = 32
@@ -66,12 +71,18 @@ outline_size = 9
 font = ExtResource("4_l3xm2")
 font_size = 28
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn60k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhqjn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfwn4"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_2xelb"]
 font = ExtResource("16_3pnsg")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="classmanagerwindow" type="Panel" groups=["windows"]]
+[node name="class_manager" type="Panel" groups=["windows"]]
 clip_contents = true
 custom_minimum_size = Vector2(217, 115)
 anchors_preset = -1
@@ -89,6 +100,7 @@ can_drag = true
 can_maximize = true
 can_close = true
 can_resize = true
+metadata/_edit_use_anchors_ = true
 
 [node name="sidebarcontainer" type="Container" parent="."]
 clip_contents = true
@@ -200,7 +212,7 @@ mouse_filter = 2
 theme_override_constants/separation = 12
 metadata/_edit_use_anchors_ = true
 
-[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_bim"]
+[node name="select" type="Label" parent="sidebarcontainer/sidebar/select_bim"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = " Selecione:"
@@ -286,7 +298,7 @@ mouse_filter = 2
 theme_override_constants/separation = 7
 metadata/_edit_use_anchors_ = true
 
-[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/select_class"]
+[node name="select" type="Label" parent="sidebarcontainer/sidebar/select_class"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = " Selecione:"
@@ -394,7 +406,7 @@ mouse_filter = 2
 theme_override_constants/separation = 7
 metadata/_edit_use_anchors_ = true
 
-[node name="selecione" type="Label" parent="sidebarcontainer/sidebar/go_back"]
+[node name="select" type="Label" parent="sidebarcontainer/sidebar/go_back"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = " Selecione:"
@@ -412,6 +424,7 @@ theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Voltar"
+icon = ExtResource("7_xvj6i")
 
 [node name="contentcontainer" type="Container" parent="."]
 clip_contents = true
@@ -441,16 +454,18 @@ offset_bottom = 125.0
 mouse_filter = 2
 
 [node name="aula1" type="Control" parent="contentcontainer/contents/1bim"]
+visible = false
 layout_mode = 1
 anchor_left = -0.22
 anchor_top = -0.121739
 anchor_right = 2.7188
 anchor_bottom = 2.12974
-offset_right = 1350.24
-offset_bottom = 769.08
+offset_left = -3.34
+offset_top = 0.217375
+offset_right = 1506.08
+offset_bottom = 833.782
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="aula_1_title" type="Label" parent="contentcontainer/contents/1bim/aula1"]
 layout_mode = 1
@@ -467,7 +482,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula_1" type="TextEdit" parent="contentcontainer/contents/1bim/aula1"]
+[node name="text_aula1" type="TextEdit" parent="contentcontainer/contents/1bim/aula1"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -482,9 +497,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Pontilhismo
 
@@ -538,12 +553,12 @@ stretch_mode = 6
 [node name="aula2" type="Control" parent="contentcontainer/contents/1bim"]
 visible = false
 layout_mode = 1
-anchor_left = -0.22
-anchor_top = -0.121739
-anchor_right = 1.0397
-anchor_bottom = 1.04035
-offset_right = 1686.06
-offset_bottom = 894.36
+anchor_left = -0.236453
+anchor_top = -0.12
+anchor_right = 1.11222
+anchor_bottom = 1.05936
+offset_right = 1832.22
+offset_bottom = 986.58
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
@@ -577,9 +592,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Atividades desenvolvidas em sala:
 Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
 
@@ -640,10 +655,10 @@ texture = ExtResource("7_lysfj")
 [node name="aula3" type="Control" parent="contentcontainer/contents/1bim"]
 visible = false
 layout_mode = 1
-anchor_left = -0.22
-anchor_top = -0.121739
-anchor_right = 2.20985
-anchor_bottom = 2.12217
+anchor_left = -0.221675
+anchor_top = -0.12
+anchor_right = 2.88655
+anchor_bottom = 2.7924
 offset_right = 1452.03
 offset_bottom = 769.95
 scale = Vector2(0.13, 0.13)
@@ -680,9 +695,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Grafismo indígena, povos Yanomami, arte indígena.
 
@@ -776,9 +791,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura, literatura de cordel e arte popular.
 
@@ -877,9 +892,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura e literatura de cordel.
 
@@ -1001,9 +1016,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura, literatura de cordel e arte popular.
 
@@ -1095,7 +1110,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula1"]
+[node name="text_aula1" type="TextEdit" parent="contentcontainer/contents/2bim/aula1"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1110,9 +1125,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado: 
 identidade cultural, povos originários, arte marajoara
 
@@ -1179,10 +1194,10 @@ stretch_mode = 6
 [node name="aula2" type="Control" parent="contentcontainer/contents/2bim"]
 visible = false
 layout_mode = 1
-anchor_left = -0.22
-anchor_top = -0.121739
-anchor_right = 1.0397
-anchor_bottom = 1.04035
+anchor_left = -0.221675
+anchor_top = -0.12
+anchor_right = 1.73369
+anchor_bottom = 1.64512
 offset_right = 1686.06
 offset_bottom = 894.36
 scale = Vector2(0.13, 0.13)
@@ -1204,7 +1219,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula2"]
+[node name="text_aula2" type="TextEdit" parent="contentcontainer/contents/2bim/aula2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1219,9 +1234,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Atividades desenvolvidas em sala:
 Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
 
@@ -1306,7 +1321,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/2bim/aula3"]
+[node name="text_aula3" type="TextEdit" parent="contentcontainer/contents/2bim/aula3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1321,9 +1336,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Grafismo indígena, povos Yanomami, arte indígena.
 
@@ -1417,9 +1432,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura, literatura de cordel e arte popular.
 
@@ -1518,9 +1533,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura e literatura de cordel.
 
@@ -1619,7 +1634,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula1"]
+[node name="aula_1_title" type="Label" parent="contentcontainer/contents/3bim/aula1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -1633,7 +1648,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula1"]
+[node name="text_aula1" type="TextEdit" parent="contentcontainer/contents/3bim/aula1"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1649,9 +1664,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado: 
 Introdução a história da arte
 Arte romana: Moisaicos e arquitetura
@@ -1710,17 +1725,17 @@ stretch_mode = 6
 [node name="aula2" type="Control" parent="contentcontainer/contents/3bim"]
 visible = false
 layout_mode = 1
-anchor_left = -0.22
-anchor_top = -0.121739
-anchor_right = 1.0397
-anchor_bottom = 1.04035
+anchor_left = -0.236453
+anchor_top = -0.12
+anchor_right = 1.83222
+anchor_bottom = 1.64512
 offset_right = 1686.06
 offset_bottom = 894.36
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula2"]
+[node name="aula_2_title" type="Label" parent="contentcontainer/contents/3bim/aula2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -1734,7 +1749,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula2"]
+[node name="text_aula2" type="TextEdit" parent="contentcontainer/contents/3bim/aula2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1749,9 +1764,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Atividades desenvolvidas em sala:
 Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
 
@@ -1822,7 +1837,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/3bim/aula3"]
+[node name="aula_3_title" type="Label" parent="contentcontainer/contents/3bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -1836,7 +1851,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/3bim/aula3"]
+[node name="text_aula3" type="TextEdit" parent="contentcontainer/contents/3bim/aula3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -1851,9 +1866,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Grafismo indígena, povos Yanomami, arte indígena.
 
@@ -1947,9 +1962,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura, literatura de cordel e arte popular.
 
@@ -2048,9 +2063,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura e literatura de cordel.
 
@@ -2141,15 +2156,15 @@ visible = false
 layout_mode = 1
 anchor_left = -0.22
 anchor_top = -0.121739
-anchor_right = 2.7188
-anchor_bottom = 2.12974
-offset_right = 1350.24
-offset_bottom = 769.08
+anchor_right = 1.02673
+anchor_bottom = 0.970796
+offset_right = 1693.73
+offset_bottom = 913.948
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula1"]
+[node name="aula_1_title" type="Label" parent="contentcontainer/contents/4bim/aula1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -2163,7 +2178,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula1"]
+[node name="text_aula1" type="TextEdit" parent="contentcontainer/contents/4bim/aula1"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -2179,9 +2194,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado: 
 Introdução a história da arte
 Arte romana: Moisaicos e arquitetura
@@ -2240,17 +2255,17 @@ stretch_mode = 6
 [node name="aula2" type="Control" parent="contentcontainer/contents/4bim"]
 visible = false
 layout_mode = 1
-anchor_left = -0.22
-anchor_top = -0.121739
-anchor_right = 1.0397
-anchor_bottom = 1.04035
-offset_right = 1686.06
-offset_bottom = 894.36
+anchor_left = -0.236453
+anchor_top = -0.12
+anchor_right = 1.11222
+anchor_bottom = 1.0396
+offset_right = 1832.22
+offset_bottom = 970.05
 scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula2"]
+[node name="aula_2_title" type="Label" parent="contentcontainer/contents/4bim/aula2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -2264,7 +2279,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula2"]
+[node name="text_aula2" type="TextEdit" parent="contentcontainer/contents/4bim/aula2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -2279,9 +2294,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Atividades desenvolvidas em sala:
 Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
 
@@ -2352,7 +2367,7 @@ scale = Vector2(0.13, 0.13)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="aula_4_title" type="Label" parent="contentcontainer/contents/4bim/aula3"]
+[node name="aula_3_title" type="Label" parent="contentcontainer/contents/4bim/aula3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190503
@@ -2366,7 +2381,7 @@ label_settings = SubResource("LabelSettings_60y8t")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="text_aula4" type="TextEdit" parent="contentcontainer/contents/4bim/aula3"]
+[node name="text_aula3" type="TextEdit" parent="contentcontainer/contents/4bim/aula3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -2381,9 +2396,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Grafismo indígena, povos Yanomami, arte indígena.
 
@@ -2477,9 +2492,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura, literatura de cordel e arte popular.
 
@@ -2578,9 +2593,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_l3xm2")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = ExtResource("6_nydlm")
-theme_override_styles/focus = ExtResource("6_nydlm")
-theme_override_styles/read_only = ExtResource("6_nydlm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
 text = "Assunto tratado:
 Xilogravura e literatura de cordel.
 
@@ -2859,6 +2874,42 @@ horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="personal_works" type="Control" parent="contentcontainer/contents"]
+layout_mode = 1
+anchor_left = -0.732857
+anchor_top = 0.0869565
+anchor_right = -0.732857
+anchor_bottom = 0.391739
+offset_left = 111.03
+offset_top = -25.861
+offset_right = 2217.03
+offset_bottom = 1052.07
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.13, 0.13)
+mouse_filter = 2
+
+[node name="personal_works_title" type="Label" parent="contentcontainer/contents/personal_works"]
+layout_mode = 2
+offset_left = 948.286
+offset_top = 163.909
+offset_right = 1404.29
+offset_bottom = 203.909
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Personal works"
+label_settings = SubResource("LabelSettings_60y8t")
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="contentcontainer/contents/personal_works"]
+clip_contents = true
+layout_mode = 0
+offset_left = 402.0
+offset_top = 238.0
+offset_right = 2038.0
+offset_bottom = 1073.0
+columns = 3
+
 [node name="windowbuttons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -2877,18 +2928,18 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("6_nydlm")
-theme_override_styles/pressed = ExtResource("6_nydlm")
-theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gn60k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhqjn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfwn4")
 
 [node name="close" type="Button" parent="windowbuttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("6_nydlm")
-theme_override_styles/pressed = ExtResource("6_nydlm")
-theme_override_styles/normal = ExtResource("6_nydlm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gn60k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhqjn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfwn4")
 
 [node name="resizehandle" type="Control" parent="."]
 layout_mode = 1

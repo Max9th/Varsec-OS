@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq48ek1cmrexf"]
+[gd_scene load_steps=18 format=3 uid="uid://dq48ek1cmrexf"]
 
-[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/betterwindow.tres" id="1_gdggg"]
+[ext_resource type="StyleBox" uid="uid://db2rsd8ficf4o" path="res://resources/others/betterwindow.tres" id="1_gdggg"]
 [ext_resource type="Script" path="res://resources/scenes/lockedfolder/window/scripts/authenticate_popup.gd" id="2_t6mlv"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="4_2pwua"]
-[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="5_lh1qc"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="6_vfbe7"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/others/passwordinputbox.tres" id="5_lh1qc"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/others/button.tres" id="6_vfbe7"]
 [ext_resource type="Texture2D" uid="uid://cdceft76gvmq0" path="res://resources/sprites/checkmark-symbolic.png" id="8_dpxc3"]
 [ext_resource type="AudioStream" uid="uid://bec51h6ctq2uo" path="res://resources/audio/wrong.wav" id="9_cb5db"]
 [ext_resource type="Texture2D" uid="uid://cdu2qhot0bisp" path="res://resources/sprites/warning.png" id="11_bv565"]
@@ -14,6 +13,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_p6fgv"]
 font = ExtResource("11_jrutn")
 font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tdjfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qvgrr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apnfm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nls6g"]
 bg_color = Color(0.084246, 0.102116, 0.152784, 1)
@@ -84,9 +89,9 @@ custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("4_2pwua")
-theme_override_styles/pressed = ExtResource("4_2pwua")
-theme_override_styles/normal = ExtResource("4_2pwua")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tdjfd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qvgrr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_apnfm")
 
 [node name="close" type="Button" parent="windowbuttons"]
 custom_minimum_size = Vector2(7, 7)
@@ -94,9 +99,9 @@ layout_direction = 1
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("4_2pwua")
-theme_override_styles/pressed = ExtResource("4_2pwua")
-theme_override_styles/normal = ExtResource("4_2pwua")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tdjfd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qvgrr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_apnfm")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -163,23 +168,22 @@ wait_time = 3.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="draghandle" type="Panel" parent="."]
-layout_mode = 0
+[node name="draghandle" type="Control" parent="."]
+anchors_preset = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 94.0
 offset_bottom = 10.0
-theme_override_styles/panel = ExtResource("4_2pwua")
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -26.0
+offset_left = -29.6667
 offset_top = 2.0
-offset_right = 80.0
-offset_bottom = 19.0
+offset_right = 76.3333
+offset_bottom = 18.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 text = "Autenticar

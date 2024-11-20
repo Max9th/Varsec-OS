@@ -1,16 +1,15 @@
-[gd_scene load_steps=32 format=3 uid="uid://bjw2c702dg15x"]
+[gd_scene load_steps=37 format=3 uid="uid://bjw2c702dg15x"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_u3u1c"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="3_f7joa"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="4_241rg"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="4_rqyx4"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="5_vx6fq"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="6_y1jaw"]
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="7_a6n47"]
-[ext_resource type="Texture2D" uid="uid://iixsukpw5www" path="res://resources/sprites/45.png" id="7_h5g5e"]
+[ext_resource type="Texture2D" uid="uid://iixsukpw5www" path="res://resources/sprites/nightcity.png" id="7_h5g5e"]
 [ext_resource type="Texture2D" uid="uid://c0wkujx37i4q" path="res://resources/sprites/arrow.png" id="8_d6jss"]
 [ext_resource type="Shader" path="res://resources/shaders/rainbow.gdshader" id="8_feboy"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="9_h1bue"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/others/button.tres" id="9_h1bue"]
 [ext_resource type="Texture2D" uid="uid://dsb312enenvgp" path="res://resources/sprites/max.png" id="9_m6gv5"]
 [ext_resource type="Texture2D" uid="uid://cafatd154n2xv" path="res://resources/sprites/arrow2.png" id="9_sobgx"]
 [ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/xilogravados.jpeg" id="10_0lum3"]
@@ -166,6 +165,12 @@ func _on_reset_pressed() -> void:
 	print(str(wallpaper_int))
 "
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8n4uw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8gim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vocvv"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
 font = ExtResource("4_rqyx4")
 font_size = 8
@@ -241,6 +246,12 @@ anti_aliasing = false
 font = ExtResource("4_rqyx4")
 font_size = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_taxw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0t43"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kft1"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mox75"]
 shader = ExtResource("8_feboy")
 shader_parameter/oldColorBody1 = Color(0.521141, 0.521141, 0.521141, 1)
@@ -283,9 +294,9 @@ custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("3_f7joa")
-theme_override_styles/pressed = ExtResource("3_f7joa")
-theme_override_styles/normal = ExtResource("3_f7joa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8n4uw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u8gim")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vocvv")
 
 [node name="close" type="Button" parent="windowbuttons"]
 unique_name_in_owner = true
@@ -294,9 +305,9 @@ layout_direction = 1
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("3_f7joa")
-theme_override_styles/pressed = ExtResource("3_f7joa")
-theme_override_styles/normal = ExtResource("3_f7joa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8n4uw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u8gim")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vocvv")
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -362,10 +373,10 @@ mouse_filter = 2
 [node name="bodytext" type="Label" parent="windowcontent/Windowcontent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.280781
-anchor_top = 0.125333
-anchor_right = 0.74013
-anchor_bottom = 0.197528
+anchor_left = 0.0530436
+anchor_top = 0.140283
+anchor_right = 0.512393
+anchor_bottom = 0.212478
 offset_right = 56.5
 offset_bottom = 4.99998
 scale = Vector2(0.5, 0.5)
@@ -381,6 +392,7 @@ offset_left = 18.0
 offset_top = 30.0
 offset_right = 68.0
 offset_bottom = 34.0
+metadata/_edit_use_anchors_ = true
 
 [node name="select" type="Button" parent="windowcontent/Windowcontent"]
 custom_minimum_size = Vector2(178, 27)
@@ -515,14 +527,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
-
-
-Raridade:
-"
+A noite é bela."
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
@@ -577,9 +586,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -642,9 +651,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -701,9 +710,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -763,9 +772,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -825,9 +834,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -888,9 +897,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 
@@ -951,9 +960,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6n47")
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = ExtResource("3_f7joa")
-theme_override_styles/focus = ExtResource("3_f7joa")
-theme_override_styles/read_only = ExtResource("3_f7joa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
 text = "Descrição:
 
 

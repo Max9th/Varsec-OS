@@ -221,6 +221,7 @@ func _on_personal_pressed() -> void:
 
 func _on_welcome_pressed() -> void:
 	welcome.show()
+	changelog.hide()
 	hide_all_aulas()
 	is_menu_active = true
 	backtrack()

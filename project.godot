@@ -50,22 +50,21 @@ enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/script-
 
 folder_colors={
 "res://addons/": "red",
-"res://exports/": "yellow",
-"res://resources/": "teal",
-"res://resources/audio/": "orange",
-"res://resources/fonts/": "teal",
-"res://resources/scenes/": "teal",
+"res://exports/": "orange",
+"res://resources/": "yellow",
+"res://resources/audio/": "red",
+"res://resources/fonts/": "orange",
+"res://resources/others/": "yellow",
+"res://resources/scenes/": "green",
 "res://resources/scenes/Main_scene/": "purple",
 "res://resources/scenes/examples/": "red",
 "res://resources/shaders/": "teal",
-"res://resources/sprites/": "purple"
+"res://resources/sprites/": "blue"
 }
 
 [global_group]
 
 authentication=""
-folders="Default folder's group"
-windows=""
 
 [input]
 

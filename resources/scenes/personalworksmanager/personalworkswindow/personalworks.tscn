@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dmryciivu5mdv"]
+[gd_scene load_steps=30 format=3 uid="uid://dmryciivu5mdv"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_s1t2r"]
 [ext_resource type="Script" path="res://resources/scenes/personalworksmanager/personalworkswindow/scripts/personalworks.gd" id="2_iadqj"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dajwjbfof67fp" path="res://resources/sprites/personalworkmanagerassets/bk.png" id="5_bqeg2"]
 [ext_resource type="Texture2D" uid="uid://dydspky65dpyf" path="res://resources/sprites/personalworkmanagerassets/Darfigure.png" id="6_vrxvx"]
 [ext_resource type="Texture2D" uid="uid://dl2sn1jffnjtj" path="res://resources/sprites/personalworkmanagerassets/pfp.png" id="7_ue2kb"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_w23mc"]
 [ext_resource type="Texture2D" uid="uid://de110x5p2ukqa" path="res://resources/sprites/personalworkmanagerassets/wtf.png" id="8_gju6p"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="9_hwie5"]
 [ext_resource type="Texture2D" uid="uid://cgoudni7y0lh" path="res://resources/sprites/personalworkmanagerassets/Sprite-0001.png" id="9_lh7x7"]
@@ -47,6 +46,12 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oq0jv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xld6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi2mg"]
 
 [node name="personalworks" type="Panel" groups=["windows"]]
 offset_top = 8.0
@@ -345,19 +350,19 @@ metadata/_edit_group_ = true
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("7_w23mc")
-theme_override_styles/pressed = ExtResource("7_w23mc")
-theme_override_styles/normal = ExtResource("7_w23mc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oq0jv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7xld6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi2mg")
 
 [node name="close" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/hover = ExtResource("7_w23mc")
-theme_override_styles/pressed = ExtResource("7_w23mc")
-theme_override_styles/normal = ExtResource("7_w23mc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oq0jv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7xld6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xi2mg")
 
-[node name="draghandle" type="Panel" parent="."]
+[node name="draghandle" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -367,7 +372,6 @@ offset_top = 1.0
 offset_right = 143.5
 offset_bottom = 10.0
 grow_horizontal = 2
-theme_override_styles/panel = ExtResource("7_w23mc")
 
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_hwie5")

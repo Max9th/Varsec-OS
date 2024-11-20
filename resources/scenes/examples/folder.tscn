@@ -879,17 +879,17 @@ cache/0/25/0/glyphs/2/size = Vector2(3, 3)
 cache/0/25/0/glyphs/2/uv_rect = Rect2(63, 1, 3, 3)
 cache/0/25/0/glyphs/2/texture_idx = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_5ytib"]
+[sub_resource type="LabelSettings" id="LabelSettings_poh4g"]
 font = SubResource("FontFile_e3j06")
 font_size = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yolnj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liljj"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -898,15 +898,15 @@ expand_margin_left = 4.0
 expand_margin_top = 2.0
 expand_margin_right = 4.0
 expand_margin_bottom = 2.0
-anti_aliasing = false
+anti_aliasing_size = 0.053
 
-[sub_resource type="LabelSettings" id="LabelSettings_etf32"]
+[sub_resource type="LabelSettings" id="LabelSettings_ij4ov"]
 font = SubResource("FontFile_e3j06")
 font_size = 8
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[node name="default_folder" type="TextureButton" groups=["folders"]]
+[node name="default_folder" type="TextureButton" groups=["windows"]]
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -932,7 +932,7 @@ offset_right = 12.0
 offset_bottom = 53.0
 grow_horizontal = 2
 text = "Test"
-label_settings = SubResource("LabelSettings_5ytib")
+label_settings = SubResource("LabelSettings_poh4g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -959,7 +959,7 @@ offset_right = 25.0
 offset_bottom = 54.0
 grow_horizontal = 2
 pivot_offset = Vector2(25, 5)
-theme_override_styles/panel = SubResource("StyleBoxFlat_yolnj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_liljj")
 metadata/_edit_group_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="selected_panel"]
@@ -971,7 +971,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Test"
-label_settings = SubResource("LabelSettings_etf32")
+label_settings = SubResource("LabelSettings_ij4ov")
 horizontal_alignment = 1
 vertical_alignment = 1
 

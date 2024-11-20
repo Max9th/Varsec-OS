@@ -1,21 +1,21 @@
 @icon("res://resources/sprites/window_icon.png")
 extends Panel
 
-			 #''''''':::.      .:::,''''''.
-			#.ddddddxMMMc      ;MMMkdddddd'
-			#.ddd,...;;;.      .;;;'..'ddd'
-			#.ddd.                    .ddd'
-			#,WWW,          loo:      .WWW:
-			#.OOO.   .......odd:      .OOO,
-				 #.dddddddddd:
-					#,,,cddddddl,,,
-					 #;dddddddddd.
-			#.000.      ;ddd.......   .000,
-			#'WWW'      ,ooo          .WWW;
-			#.ddd.                    .ddd'
-			#.ddd;''':::.      .:::''',ddd'
-			#.ddddddxMMMc      ;MMMkdddddd'
-			 #......';;;.      .;;;'.......
+#MMMMMMMMMMNdddddddxxxKMMMMMMXxxxxddddddXMMMMMMMMMM
+#MMMMMMMMMMO          dMMMMMMk          xMMMMMMMMMM
+#MMMMMMMMMMO   lkkkkkkXMMMMMMNkkkkkko   xMMMMMMMMMM
+#MMMMMMMMMMO   OMMMMMMMMMMMMMMMMMMMMK   xMMMMMMMMMM
+#MMMMMMMMMMO   OMMMMMMMMMM.  :MMMMMMK   xMMMMMMMMMM
+#MMMMMMMMMMK,,,KMMWOOOOOOO   ;MMMMMMX,,,OMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMX          ;MMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMWooo'      .lllXMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMc          0MMMMMMMMMMMMMMMMM
+#MMMMMMMMMM0'''0MMMMMMc   O000000WMMX'''OMMMMMMMMMM
+#MMMMMMMMMMO   OMMMMMMl...NMMMMMMMMMK   xMMMMMMMMMM
+#MMMMMMMMMMO   OMMMMMMMMMMMMMMMMMMMMK   xMMMMMMMMMM
+#MMMMMMMMMMO   cxxxkkkXMMMMMMXxkkxxxo   xMMMMMMMMMM
+#MMMMMMMMMMO          dMMMMMMk          xMMMMMMMMMM
+#MMMMMMMMMMNxxxxxxxkkkXMMMMMMNkkkxxxxxxxXMMMMMMMMMM
 
 # The Maxwell Company
 
@@ -31,10 +31,13 @@ var is_maximized: bool
 var unmaximized_position: Vector2
 var old_unmaximized_size: Vector2
 
+@export_category("Window properties")
 @export var is_visible: bool
 @export var can_drag: bool
 @export var can_maximize: bool
 @export var can_close: bool
+@export var can_resize: bool
+@export var is_instance_type: bool
 
 func _ready() -> void:
 	if is_visible:
@@ -51,7 +54,11 @@ func _process(_delta: float) -> void:
 		incorrect.text = "!!Senha incorreta!!"
 
 func _on_close_pressed() -> void:
-	Windowz.close_window(self, close_audio)
+	get_tree().call_group("folders", "window_state")
+	if is_instance_type:
+		queue_free()
+	else:
+		Windowz.close_window(self, close_audio)
 
 func _on_draghandle_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and is_maximized == false:
@@ -103,43 +110,21 @@ func verify():
 				authenticate()
 			"max9th":
 				authenticate()
-			"lies":
-				authenticate()
-			"fourtyfive":
+			"nightcity":
 				authenticate()
 			"labobarco":
-				labo()
+				line_edit.text = ""
+				labobar.play()
+				easter = true
+				disablebk.emit()
 			"deziangle":
 				authenticate()
-			"ass":
+			"fuck":
 				swears()
-			"merda":
+			"no u":
 				swears()
-			"penis":
+			"bitch":
 				swears()
-			"rola":
-				swears()
-			"pussy":
-				swears()
-			"xereca":
-				swears()
-			"pika":
-				swears()
-			"porra":
-				swears()
-			"xota":
-				swears()
-			"caralho":
-				swears()
-			"xereca":
-				swears()
-			"deltong":
-				swearing = true
-				incorrect.text = "<3"
-				incorrect.visible = true
-				timer.start()
-				line_edit.text = ""
-				wrong.play()
 			_:
 				incorrect.visible = true
 				timer.start()
@@ -176,12 +161,6 @@ func swears():
 func _on_timer_timeout() -> void:
 	incorrect.visible = false
 	swearing = false
-
-func labo():
-	line_edit.text = ""
-	labobar.play()
-	easter = true
-	disablebk.emit()
 
 func _on_timer_incorrect_timeout() -> void:
 	line_edit.editable = true

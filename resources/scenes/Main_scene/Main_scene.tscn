@@ -1,12 +1,10 @@
-[gd_scene load_steps=61 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=53 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
-[ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/cubigor/cubigor.tscn" id="2_4mv8t"]
-[ext_resource type="PackedScene" uid="uid://r3bi28xbbmhh" path="res://resources/scenes/cubigor/45.scn" id="2_if7td"]
-[ext_resource type="PackedScene" uid="uid://dnaahx82rtx4k" path="res://resources/scenes/cubigor/deziangle.scn" id="2_pqjwe"]
-[ext_resource type="PackedScene" uid="uid://ddwpbtpu41bgp" path="res://resources/scenes/cubigor/!seil.scn" id="3_4vyws"]
-[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/cubigor/easteregg2.tscn" id="3_bhann"]
-[ext_resource type="Texture2D" uid="uid://mnt77udqo15o" path="res://resources/sprites/corrupted.png" id="6_lno83"]
+[ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/easter_assets/cubigor.tscn" id="2_4mv8t"]
+[ext_resource type="PackedScene" uid="uid://r3bi28xbbmhh" path="res://resources/scenes/easter_assets/nightcity.scn" id="2_if7td"]
+[ext_resource type="PackedScene" uid="uid://dnaahx82rtx4k" path="res://resources/scenes/easter_assets/deziangle.scn" id="2_pqjwe"]
+[ext_resource type="PackedScene" uid="uid://bnwsa1t40yf5q" path="res://resources/scenes/easter_assets/max.tscn" id="3_bhann"]
 [ext_resource type="Texture2D" uid="uid://frj2l5gv45ks" path="res://resources/sprites/bk.png" id="7_14eui"]
 [ext_resource type="Texture2D" uid="uid://bab8yt52b1a3o" path="res://resources/sprites/power.png" id="7_mwwwy"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="8_0rumy"]
@@ -14,32 +12,29 @@
 [ext_resource type="Texture2D" uid="uid://yx7brorivehg" path="res://resources/sprites/vfx.png" id="9_kokno"]
 [ext_resource type="Texture2D" uid="uid://cgex4bd1frmyr" path="res://resources/sprites/easteregg.png" id="10_1afcs"]
 [ext_resource type="Texture2D" uid="uid://6ypxf3pijaje" path="res://resources/sprites/IFgreduzido.png" id="10_mpglo"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="11_djys2"]
+[ext_resource type="Texture2D" uid="uid://2x04m76nr1mp" path="res://resources/sprites/star_icon.png" id="17_dswmd"]
 [ext_resource type="Texture2D" uid="uid://dgjulap3jquhk" path="res://resources/sprites/star.png" id="18_ogdwq"]
 [ext_resource type="Texture2D" uid="uid://cio7qqf1l3rgb" path="res://resources/sprites/lock.png" id="20_62612"]
 [ext_resource type="Texture2D" uid="uid://ch8stip28flkd" path="res://resources/sprites/folderwithfile.png" id="20_gong0"]
 [ext_resource type="Texture2D" uid="uid://cdvuptxyankmj" path="res://resources/sprites/folderopenwithfile.png" id="21_225qt"]
-[ext_resource type="PackedScene" uid="uid://bntdu5kxer360" path="res://resources/scenes/playnelixdoc/playnelixwindow.tscn" id="21_h37e3"]
 [ext_resource type="Texture2D" uid="uid://dimp6o2obpb2w" path="res://resources/sprites/lockedfolder.png" id="21_ygj4y"]
 [ext_resource type="Texture2D" uid="uid://dcpv0py5ywrif" path="res://resources/sprites/lock_icon.png" id="22_8ptuo"]
 [ext_resource type="PackedScene" uid="uid://dq48ek1cmrexf" path="res://resources/scenes/lockedfolder/window/authenticator.tscn" id="22_76pyy"]
 [ext_resource type="Texture2D" uid="uid://bdlqaq7q8jata" path="res://resources/sprites/folderdisabled.png" id="22_mbhjt"]
 [ext_resource type="Texture2D" uid="uid://hne5em2y8fbb" path="res://resources/sprites/lockedfolderopen.png" id="22_oxlxm"]
 [ext_resource type="PackedScene" uid="uid://brx8sg8p6a6pp" path="res://resources/scenes/examples/folder.tscn" id="23_n1jfo"]
-[ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="23_odcdw"]
-[ext_resource type="Texture2D" uid="uid://bxgodidc4ng4d" path="res://resources/sprites/play_icon.png" id="24_1debg"]
 [ext_resource type="PackedScene" uid="uid://b25vo8wxtko27" path="res://resources/scenes/classmanager/window/classmanagerwindow.tscn" id="24_goyto"]
+[ext_resource type="Texture2D" uid="uid://djxmiuoc3n67r" path="res://resources/sprites/pencil.png" id="24_py32f"]
 [ext_resource type="Texture2D" uid="uid://351bdc0s545r" path="res://resources/sprites/greenfolder.png" id="24_sy72q"]
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="24_ybw46"]
 [ext_resource type="Texture2D" uid="uid://wpvylbrgip3w" path="res://resources/sprites/greenfolderopen.png" id="25_1d1kw"]
-[ext_resource type="Texture2D" uid="uid://gqpog044tklw" path="res://resources/sprites/nelix.png" id="25_id6ci"]
 [ext_resource type="Shader" path="res://resources/shaders/crt_postprocess.gdshader" id="25_yofc8"]
-[ext_resource type="Texture2D" uid="uid://cdns0yv2jl36l" path="res://resources/sprites/nelix_selected.png" id="26_bvb2l"]
 [ext_resource type="Texture2D" uid="uid://dkm1oehueyxep" path="res://resources/sprites/file.png" id="26_k0y4p"]
 [ext_resource type="Texture2D" uid="uid://dbllfwvyy8448" path="res://resources/sprites/sfx_selected.png" id="26_yikmh"]
 [ext_resource type="Texture2D" uid="uid://h41su6ua5f8v" path="res://resources/sprites/file_selected.png" id="27_glfqm"]
 [ext_resource type="PackedScene" uid="uid://btl1e5x4iv3p5" path="res://resources/scenes/splash/splash_screen.tscn" id="27_uwk17"]
 [ext_resource type="Texture2D" uid="uid://cj5fb4vd7wlqj" path="res://resources/sprites/disabled.png" id="28_68pih"]
+[ext_resource type="PackedScene" uid="uid://fyr5hx7d8awq" path="res://resources/scenes/splash/texteditor/text_editor.scn" id="30_sjmym"]
 [ext_resource type="Texture2D" uid="uid://cncg8skxqmtxo" path="res://resources/sprites/link_icon.png" id="31_xp046"]
 [ext_resource type="PackedScene" uid="uid://c0u5benmxohr4" path="res://resources/scenes/musicplayer/window/musicplayerwindow.scn" id="36_i5kvt"]
 [ext_resource type="PackedScene" uid="uid://bjw2c702dg15x" path="res://resources/scenes/personalworksmanager/walpapermanagerwindow/walpapermanager.tscn" id="37_88uh8"]
@@ -76,89 +71,17 @@ outline_color = Color(0, 0, 0, 1)
 resource_name = "IFg Link"
 script/source = "extends TextureButton
 
-
 func _on_pressed() -> void:
 	OS.shell_open(\"https://www.ifg.edu.br\")
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr3d"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cb2ub"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlm0k"]
-bg_color = Color(1, 0.337255, 0.321569, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbwkb"]
 
-[sub_resource type="GDScript" id="GDScript_vne7a"]
-resource_name = "icon"
-script/source = "@icon(\"res://resources/sprites/folder.png\")
-extends Control
-"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhqj8"]
 
-[sub_resource type="GDScript" id="GDScript_qy31b"]
-resource_name = "select"
-script/source = "extends TextureButton
-
-
-# extends Control
-
-@onready var timer: Timer = $doubleclicktimer
-@onready var filename: Label = $filename
-@onready var selected_panel: Panel = $selected_panel
-@onready var select_audio: AudioStreamPlayer = $select_audio
-
-var selected: bool = false
-var timer_running: bool = false
-
-func _ready() -> void:
-	filename.label_settings.font_color = Color(1,1,1) # Set label text to white
-	selected_panel.visible = false
-	self.hide()
-func _process(_delta: float) -> void:
-	timer_running = not timer.is_stopped()
-func select():
-	if !timer_running:
-		selected = !selected
-		if selected:
-			selected_panel.visible = true
-			filename.label_settings.font_color = Color(0,0,0) # Set label text to black
-			timer.start() # Start the timer
-			select_audio.play()
-		else:
-			filename.label_settings.font_color = Color(1,1,1) # Set label text to white
-	elif selected and timer_running:
-		spawnwindow()
-
-func _on_pressed() -> void:
-	select()
-
-func spawnwindow():
-	#get_tree().change_scene_to_file(\"res://scenes/nelix_game/components/levels/proto1.tscn\")
-	pass
-	
-	
-"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqv7"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-anti_aliasing = false
-
-[sub_resource type="LabelSettings" id="LabelSettings_yb2ti"]
-font = ExtResource("8_0rumy")
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="GDScript" id="GDScript_tm30a"]
-resource_name = "windows"
-script/source = "@icon(\"res://resources/sprites/window_icon.png\")
-extends Control
-"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vstum"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7ij8"]
 texture = ExtResource("24_ybw46")
@@ -183,7 +106,7 @@ shader_parameter/roll_variation = 1.8
 shader_parameter/distort_intensity = 0.0
 shader_parameter/noise_opacity = 0.0
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.03
+shader_parameter/static_noise_intensity = 0.02
 shader_parameter/aberration = 4.75e-08
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
@@ -206,11 +129,9 @@ script = ExtResource("1_kmpr7")
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
-[node name="!SEIL" parent="." instance=ExtResource("3_4vyws")]
+[node name="nightcity" parent="." groups=["authentication"] instance=ExtResource("2_if7td")]
 
-[node name="45" parent="." groups=["authentication"] instance=ExtResource("2_if7td")]
-
-[node name="gay" parent="." instance=ExtResource("3_bhann")]
+[node name="easteregg2_max" parent="." instance=ExtResource("3_bhann")]
 layout_mode = 0
 scale = Vector2(9.52066, 4)
 mouse_filter = 2
@@ -294,7 +215,7 @@ anchor_right = 0.59375
 anchor_bottom = 0.65051
 grow_horizontal = 2
 grow_vertical = 2
-text = "cinco pra daqui a pouco owo
+text = "time
 "
 label_settings = SubResource("LabelSettings_dnbm7")
 horizontal_alignment = 1
@@ -310,7 +231,7 @@ anchor_right = 0.596429
 anchor_bottom = 0.872449
 grow_horizontal = 2
 grow_vertical = 0
-text = "max9th's property baby uwu"
+text = "date"
 label_settings = SubResource("LabelSettings_ylh16")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -336,7 +257,7 @@ texture_normal = ExtResource("10_mpglo")
 texture_pressed = ExtResource("10_mpglo")
 texture_hover = ExtResource("10_mpglo")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 5
 script = SubResource("GDScript_27er6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="desktop/panel/Panel"]
@@ -390,9 +311,9 @@ offset_right = 70.0
 offset_bottom = 48.0
 tooltip_text = "Turn off Varsec OS"
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("11_djys2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cb2ub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vbwkb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhqj8")
 toggle_mode = true
 
 [node name="sfx_button" type="Button" parent="desktop/panel/Panel"]
@@ -403,9 +324,9 @@ offset_right = 120.0
 offset_bottom = 47.0
 tooltip_text = "Desligar SFX"
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("11_djys2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cb2ub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vbwkb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhqj8")
 toggle_mode = true
 
 [node name="vfx_button" type="Button" parent="desktop/panel/Panel"]
@@ -416,9 +337,9 @@ offset_right = 172.0
 offset_bottom = 44.0
 tooltip_text = "Desligar VFX"
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("11_djys2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cb2ub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vbwkb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhqj8")
 toggle_mode = true
 
 [node name="easter_button" type="Button" parent="desktop/panel/Panel"]
@@ -429,11 +350,10 @@ offset_right = 221.0
 offset_bottom = 39.0
 tooltip_text = "Desligar o easteregg"
 focus_mode = 0
-theme_override_styles/disabled_mirrored = ExtResource("11_djys2")
-theme_override_styles/disabled = ExtResource("11_djys2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcr3d")
-theme_override_styles/pressed = ExtResource("11_djys2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jlm0k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vstum")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cb2ub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vbwkb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhqj8")
 toggle_mode = true
 
 [node name="Folders" type="Control" parent="desktop"]
@@ -445,9 +365,9 @@ offset_right = -1152.0
 offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_vne7a")
 
 [node name="GridContainer" type="GridContainer" parent="desktop/Folders"]
+visible = false
 layout_mode = 0
 offset_left = 151.0
 offset_top = 87.0
@@ -481,6 +401,7 @@ window_link = NodePath("../../../windows/class_manager")
 [node name="walpapers" parent="desktop/Folders/leftvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
 filename = "Wallpapers"
+file_icon = ExtResource("17_dswmd")
 text_icon = ExtResource("18_ogdwq")
 texture_n = ExtResource("24_sy72q")
 texture_h = ExtResource("25_1d1kw")
@@ -508,16 +429,18 @@ offset_right = 1087.0
 offset_bottom = 384.0
 theme_override_constants/separation = 88
 
-[node name="nelix" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
+[node name="text editor" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
-filename = "Play 
-nelix"
-text_icon = ExtResource("24_1debg")
-texture_n = ExtResource("25_id6ci")
-texture_h = ExtResource("26_bvb2l")
+filename = "Text
+editor"
+file_icon = ExtResource("24_py32f")
+texture_n = ExtResource("26_k0y4p")
+texture_h = ExtResource("27_glfqm")
 texture_d = ExtResource("28_68pih")
 is_window_present = true
-window_link = NodePath("../../../windows/nelixwindow")
+window_link = NodePath("../../../windows/text_editor")
+window_path = "res://resources/scenes/splash/texteditor/text_editor.scn"
+where_to_instantiate = NodePath("../../../windows")
 
 [node name="music" parent="desktop/Folders/rightvboxcon" instance=ExtResource("23_n1jfo")]
 layout_mode = 2
@@ -537,67 +460,13 @@ text_icon = ExtResource("31_xp046")
 texture_n = ExtResource("26_k0y4p")
 texture_h = ExtResource("27_glfqm")
 texture_d = ExtResource("28_68pih")
-is_link = true
 link = "https://github.com/Max9th/Varsec-OS"
-
-[node name="corrupted" type="TextureButton" parent="desktop"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_left = 1047.0
-offset_top = 472.0
-offset_right = 1087.0
-offset_bottom = 512.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture_normal = ExtResource("6_lno83")
-texture_pressed = ExtResource("6_lno83")
-texture_hover = ExtResource("6_lno83")
-stretch_mode = 0
-script = SubResource("GDScript_qy31b")
-
-[node name="select_audio" type="AudioStreamPlayer" parent="desktop/corrupted"]
-stream = ExtResource("23_odcdw")
-pitch_scale = 0.32
-
-[node name="selected_panel" type="Panel" parent="desktop/corrupted"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.2
-anchor_top = 1.025
-anchor_right = 1.475
-anchor_bottom = 1.825
-theme_override_styles/panel = SubResource("StyleBoxFlat_iyqv7")
-metadata/_edit_use_anchors_ = true
-
-[node name="filename" type="Label" parent="desktop/corrupted"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.8206
-anchor_top = 2.82414
-anchor_right = -1.9206
-anchor_bottom = 2.99914
-offset_left = 111.824
-offset_top = -69.9657
-offset_right = 129.824
-offset_bottom = -45.9657
-grow_horizontal = 2
-grow_vertical = 2
-text = "h̴͉̋ò̸̜m̵̢͘ë̸̦ ̸̺͐s̶̘̀ẃ̷̙é̷͜e̵̻̓ṱ̷̏ ̵̞́h̴̝̀o̷̬͋m̶̠̐ḛ̶̍"
-label_settings = SubResource("LabelSettings_yb2ti")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="doubleclicktimer" type="Timer" parent="desktop/corrupted"]
-wait_time = 0.3
-one_shot = true
 
 [node name="windows" type="Control" parent="desktop"]
 layout_mode = 1
 anchors_preset = 0
 offset_left = 1160.0
 offset_right = 1160.0
-script = SubResource("GDScript_tm30a")
 metadata/_edit_use_anchors_ = true
 
 [node name="auth_pop" parent="desktop/windows" instance=ExtResource("22_76pyy")]
@@ -611,29 +480,20 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_p7ij8")
 is_visible = false
 metadata/_edit_use_anchors_ = true
 
-[node name="nelixwindow" parent="desktop/windows" instance=ExtResource("21_h37e3")]
-layout_mode = 0
-offset_left = 671.0
-offset_top = 90.0
-offset_right = 794.0
-offset_bottom = 147.0
-
-[node name="bodytext" parent="desktop/windows/nelixwindow" index="1"]
-metadata/_edit_use_anchors_ = true
-
-[node name="windowname" parent="desktop/windows/nelixwindow" index="2"]
-metadata/_edit_use_anchors_ = true
-
-[node name="draghandle" parent="desktop/windows/nelixwindow" index="3"]
-metadata/_edit_use_anchors_ = true
-
 [node name="musicplayerwindow" parent="desktop/windows" instance=ExtResource("36_i5kvt")]
 layout_mode = 0
-offset_left = 719.0
-offset_top = 288.0
-offset_right = 826.0
-offset_bottom = 340.0
+offset_left = 702.0
+offset_top = 183.0
+offset_right = 809.0
+offset_bottom = 235.0
 is_visible = false
+
+[node name="text_editor" parent="desktop/windows" instance=ExtResource("30_sjmym")]
+layout_mode = 1
+offset_left = 635.0
+offset_top = 67.0
+offset_right = 764.0
+offset_bottom = 202.0
 
 [node name="walpaper_manager" parent="desktop/windows" instance=ExtResource("37_88uh8")]
 layout_mode = 0
@@ -679,20 +539,19 @@ visible = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(576, 324)
-gizmo_extents = 204.4
+gizmo_extents = 200.0
 
 [connection signal="stop" from="." to="deziangle" method="_on_main_scene_stop"]
 [connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
-[connection signal="stop" from="." to="45" method="_on_main_scene_stop"]
-[connection signal="stop" from="." to="gay" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="nightcity" method="_on_main_scene_stop"]
+[connection signal="stop" from="." to="easteregg2_max" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/auth_pop" method="_on_mainmenu_stop"]
 [connection signal="textcolorchange" from="." to="desktop/Folders/leftvboxcon/walpapers" method="_on_main_scene_textcolorchange"]
 [connection signal="welcome_display" from="." to="desktop/windows/class_manager" method="_on_main_scene_welcome_display"]
 [connection signal="dezianglebk" from="deziangle" to="." method="_on_deziangle_dezianglebk"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
-[connection signal="disablebk" from="!SEIL" to="." method="_on_lies_disablebk"]
-[connection signal="Disablebk" from="45" to="." method="_on_fourtyfive_disablebk"]
-[connection signal="Disablebk" from="gay" to="." method="_on_gaytscn_disablebk"]
+[connection signal="Disablebk" from="nightcity" to="." method="_on_nightcity_disablebk"]
+[connection signal="Disablebk" from="easteregg2_max" to="." method="_on_easteregg_2_max_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/panel/Panel/TextureButton" to="desktop/panel/Panel/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
@@ -704,4 +563,3 @@ gizmo_extents = 204.4
 [connection signal="finished_boot" from="splash_screen" to="." method="_on_splash_screen_finished_boot"]
 
 [editable path="cubigor"]
-[editable path="desktop/windows/nelixwindow"]

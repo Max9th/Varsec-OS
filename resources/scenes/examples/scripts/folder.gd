@@ -8,10 +8,12 @@ extends TextureButton
 @onready var selected_panel: PanelContainer = $selected_panel
 @onready var text_icon2: TextureRect = $selected_panel/HBoxContainer/text_icon
 @onready var file_icon2: TextureRect = $file_icon
+@onready var filename_label_2: Label = $filename
 
 @export_category("Folder settings")
 @export_multiline var filename: String
 @export var file_icon: Texture
+#@export var has_text_icon: bool
 @export var text_icon: Texture
 
 @export_subgroup("Textures")
@@ -21,7 +23,7 @@ extends TextureButton
 @export var texture_d: Texture
 
 @export_subgroup("Link Document")
-@export var is_link: bool
+@export var is_web_link: bool
 @export var link: String
 
 @export_subgroup("Pre-instantiated Window")
@@ -30,7 +32,7 @@ extends TextureButton
 
 @export_subgroup("Instantiated Window")
 @export var is_instantiated: bool
-@export var window_path: String = "Assign path"
+@export var window_path: String
 @export var where_to_instantiate: NodePath
 
 var selected: bool = false
@@ -38,11 +40,16 @@ var timer_running: bool = false
 var is_mouse_hover: bool
 var window_exists
 
+signal opened
+
 func _ready() -> void:
 	selected_panel.visible = false
 	filenamelabel.text = filename
 	filename_colorable.text = filename
-	text_icon2.texture = text_icon
+	#if has_text_icon:
+		#text_icon2.texture = text_icon
+	#else:
+		#text_icon2.hide()
 	file_icon2.texture = file_icon
 	# --- Define provided custom textures ---
 	texture_normal = texture_n
@@ -82,6 +89,7 @@ func select():
 			deselect()
 	elif selected and timer_running:
 		spawnwindow()
+		opened.emit()
 
 func deselect():
 	selected = false
@@ -103,10 +111,10 @@ func _on_mouse_exited() -> void:
 func spawnwindow():
 	if is_instantiated and !window_exists:
 		var scene = load(window_path)
+		var path_node = get_node(where_to_instantiate)
 		if scene == null:
 			print("Error: Unable to load scene:", window_path)
 			return
-		var path_node = get_node(where_to_instantiate)
 		if path_node:
 			var new_window = scene.instantiate()
 			path_node.add_child(new_window)
@@ -118,9 +126,8 @@ func spawnwindow():
 			print("Error: window node not found:", where_to_instantiate)
 	elif is_window_present:
 		get_node(window_link).show()
-	elif is_link:
+	elif is_web_link:
 		OS.shell_open(link)
-
 
 func _on_main_scene_textcolorchange(textcolor: bool) -> void:
 	if textcolor:

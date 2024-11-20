@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://dg3elxvkc55dg"]
+[gd_scene load_steps=17 format=3 uid="uid://dg3elxvkc55dg"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_2i2cq"]
 [ext_resource type="Script" path="res://resources/scenes/examples/window/window.gd" id="2_qjpql"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="3_6s5mf"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="5_m06ko"]
-[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/passwordinputbox.tres" id="6_ebnck"]
+[ext_resource type="StyleBox" uid="uid://b8d6vo61he8cd" path="res://resources/others/passwordinputbox.tres" id="6_ebnck"]
 [ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="7_lkhgu"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="7_s5nd0"]
-[ext_resource type="StyleBox" uid="uid://djpqbyxyro8sk" path="res://resources/invisible.tres" id="7_uwk2l"]
-[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/button.tres" id="8_dwv5l"]
+[ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/others/button.tres" id="8_dwv5l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi20w"]
 texture = ExtResource("1_2i2cq")
@@ -17,6 +16,12 @@ texture_margin_top = 16.0
 texture_margin_right = 20.0
 texture_margin_bottom = 41.0
 region_rect = Rect2(0, 0, 50, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lk0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60sxg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xolnm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
 font = ExtResource("5_m06ko")
@@ -47,6 +52,7 @@ offset_bottom = 45.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = SubResource("StyleBoxTexture_oi20w")
 script = ExtResource("2_qjpql")
+window_name = "test"
 is_visible = true
 can_drag = true
 can_maximize = true
@@ -71,9 +77,9 @@ custom_minimum_size = Vector2(7, 7)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("7_uwk2l")
-theme_override_styles/pressed = ExtResource("7_uwk2l")
-theme_override_styles/normal = ExtResource("7_uwk2l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7lk0b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_60sxg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xolnm")
 
 [node name="close" type="Button" parent="windowbuttons"]
 custom_minimum_size = Vector2(7, 7)
@@ -81,9 +87,9 @@ layout_direction = 1
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("7_uwk2l")
-theme_override_styles/pressed = ExtResource("7_uwk2l")
-theme_override_styles/normal = ExtResource("7_uwk2l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7lk0b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_60sxg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xolnm")
 
 [node name="windowname" type="Label" parent="."]
 layout_mode = 1
@@ -137,6 +143,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_s5nd0")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Windowcontent" type="Control" parent="windowcontent"]
 custom_minimum_size = Vector2(123, 57)

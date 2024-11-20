@@ -1,10 +1,11 @@
+res://resources/scenes/examples
+res://resources/scenes/splash/texteditor/scripts
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/lin
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS-web
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/exe
 /home/miguel/Desktop/CC_Sôdid/6_Syôkôn/Godot/Varsec-OS/exports/apk
 res://resources/others
 res://resources/sprites
-res://resources/scenes/cubigor
 res://resources/scenes/personalworksmanager/walpapermanagerwindow
 res://resources/scenes/musicplayer/window
 res://
@@ -15,7 +16,6 @@ res://resources/shaders
 /home/miguel
 res://resources/scenes/musicplayer
 res://resources/scenes/playnelixdoc
-res://resources/scenes/cubigor/scripts
 res://resources/scenes/classmanager/window/scripts
 /usr/lib/jvm/jdk-23-oracle-x64/bin/
 /usr/java/jdk-23-oracle-x64/
