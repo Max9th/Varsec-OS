@@ -65,6 +65,7 @@ folder_colors={
 [global_group]
 
 authentication=""
+main_scene=""
 
 [input]
 

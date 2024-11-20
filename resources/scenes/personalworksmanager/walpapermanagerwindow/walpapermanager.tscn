@@ -1,23 +1,14 @@
-[gd_scene load_steps=37 format=3 uid="uid://bjw2c702dg15x"]
+[gd_scene load_steps=21 format=3 uid="uid://bjw2c702dg15x"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_u3u1c"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="4_241rg"]
 [ext_resource type="FontFile" uid="uid://crc4df8q4f8i6" path="res://resources/fonts/Vipervibes.ttf" id="4_rqyx4"]
 [ext_resource type="AudioStream" uid="uid://cn8sj2ajke2r6" path="res://resources/audio/close.wav" id="5_vx6fq"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scale_container.gd" id="6_y1jaw"]
-[ext_resource type="FontFile" uid="uid://caq3b34gdt0oj" path="res://resources/fonts/Comfortaa-VariableFont_wght.ttf" id="7_a6n47"]
 [ext_resource type="Texture2D" uid="uid://iixsukpw5www" path="res://resources/sprites/nightcity.png" id="7_h5g5e"]
 [ext_resource type="Texture2D" uid="uid://c0wkujx37i4q" path="res://resources/sprites/arrow.png" id="8_d6jss"]
-[ext_resource type="Shader" path="res://resources/shaders/rainbow.gdshader" id="8_feboy"]
 [ext_resource type="StyleBox" uid="uid://cqwcpaf5fy6a7" path="res://resources/others/button.tres" id="9_h1bue"]
-[ext_resource type="Texture2D" uid="uid://dsb312enenvgp" path="res://resources/sprites/max.png" id="9_m6gv5"]
 [ext_resource type="Texture2D" uid="uid://cafatd154n2xv" path="res://resources/sprites/arrow2.png" id="9_sobgx"]
-[ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/xilogravados.jpeg" id="10_0lum3"]
-[ext_resource type="Texture2D" uid="uid://wgr5ws6b007s" path="res://resources/sprites/federar.png" id="13_d3dnh"]
-[ext_resource type="Texture2D" uid="uid://b7jre8j3vho1" path="res://resources/sprites/belathazar.png" id="14_v75nu"]
-[ext_resource type="Texture2D" uid="uid://cmcpsmaw4gejf" path="res://resources/sprites/personalworkmanagerassets/skely.png" id="15_7ynvf"]
-[ext_resource type="Texture2D" uid="uid://55hispqjxfsb" path="res://resources/sprites/personalworkmanagerassets/citylandscape2.png" id="16_87888"]
-[ext_resource type="Texture2D" uid="uid://cfyix42ek766m" path="res://resources/sprites/personalworkmanagerassets/MATRIX MADNESS.png" id="19_j0acv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi20w"]
 texture = ExtResource("1_u3u1c")
@@ -63,7 +54,6 @@ func _ready() -> void:
 		self.show()
 	else:
 		self.hide()
-	show_wallpaper(0)
 
 
 func _process(_delta: float) -> void:
@@ -115,66 +105,7 @@ func _on_maximize_pressed() -> void:
 		is_maximized = !is_maximized
 
 # --- Wallpaper Logic ---
-
-signal changebk
-
-@onready var wallpapers: Array = [
-	$windowcontent/Windowcontent/wallpapers/wallpaper1,
-	$windowcontent/Windowcontent/wallpapers/wallpaper2,
-	$windowcontent/Windowcontent/wallpapers/wallpaper3,
-	$windowcontent/Windowcontent/wallpapers/wallpaper4,
-	$windowcontent/Windowcontent/wallpapers/wallpaper5,
-	$windowcontent/Windowcontent/wallpapers/wallpaper6,
-	$windowcontent/Windowcontent/wallpapers/wallpaper7,
-	$windowcontent/Windowcontent/wallpapers/wallpaper8
-]
-
-var wallpaper_int: int = 0
-
-func hide_all_wallpapers() -> void:
-	for wallpaper in wallpapers:
-		wallpaper.hide()
-
-func show_wallpaper(index: int) -> void:
-	hide_all_wallpapers()
-	if index >= 0 and index < wallpapers.size():
-		wallpapers[index].visible = true
-
-func _on_left_pressed() -> void:
-	if wallpaper_int > 0:
-		wallpaper_int -= 1
-		show_wallpaper(wallpaper_int)
-		print(str(wallpaper_int))
-
-func _on_right_pressed() -> void:
-	if wallpaper_int < 7:
-		wallpaper_int += 1
-		show_wallpaper(wallpaper_int)
-		print(str(wallpaper_int))
-
-func _on_select_pressed() -> void:
-	select_audio.play()
-	changebk.emit(wallpaper_int)
-
-func _on_reset_pressed() -> void:
-	var old_value = wallpaper_int
-	wallpaper_int = 8
-	print(str(wallpaper_int))
-	changebk.emit(wallpaper_int)
-	wallpaper_int = old_value
-	print(str(wallpaper_int))
 "
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8n4uw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8gim"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vocvv"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
-font = ExtResource("4_rqyx4")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0nqck"]
 font = ExtResource("4_rqyx4")
@@ -188,6 +119,10 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3nib"]
+font = ExtResource("4_rqyx4")
+font_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31bkb"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
@@ -208,72 +143,188 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpyoo"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.046295, 0.0593375, 0.0963323, 1)
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
-anti_aliasing = false
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8n4uw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsgy7"]
-bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
-anti_aliasing = false
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8gim"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6150"]
-bg_color = Color(0.046295, 0.0593375, 0.0963323, 1)
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
-anti_aliasing = false
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vocvv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_g3nib"]
+[sub_resource type="LabelSettings" id="LabelSettings_xcy33"]
 font = ExtResource("4_rqyx4")
-font_size = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_taxw6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0t43"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kft1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mox75"]
-shader = ExtResource("8_feboy")
-shader_parameter/oldColorBody1 = Color(0.521141, 0.521141, 0.521141, 1)
-shader_parameter/oldColorBody2 = Color(0.442911, 0.442911, 0.442911, 1)
-shader_parameter/precision = 1.0
-shader_parameter/strength = 0.169
-shader_parameter/speed = 0.655
-shader_parameter/angle = 45.0
-shader_parameter/sprite_sheet_columns = 1
-shader_parameter/sprite_sheet_rows = 1
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="walpaper_manager" type="Panel" groups=["windows"]]
 custom_minimum_size = Vector2(120, 80)
-offset_right = 222.0
+offset_right = 147.0
 offset_bottom = 125.0
 scale = Vector2(3, 3)
 theme_override_styles/panel = SubResource("StyleBoxTexture_oi20w")
 script = SubResource("GDScript_e7qei")
+is_visible = true
 can_drag = true
 can_maximize = true
 can_close = true
 can_resize = true
+
+[node name="windowcontent" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_y1jaw")
+stretch_mode = 1
+
+[node name="Windowcontent" type="Control" parent="windowcontent"]
+custom_minimum_size = Vector2(123, 57)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="bodytext" type="Label" parent="windowcontent/Windowcontent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30839
+anchor_top = 0.149333
+anchor_right = 0.767739
+anchor_bottom = 0.221528
+offset_right = 56.5
+offset_bottom = 4.99998
+scale = Vector2(0.5, 0.5)
+text = "Papel de parede"
+label_settings = SubResource("LabelSettings_0nqck")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="windowcontent/Windowcontent"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 30.0
+offset_right = 68.0
+offset_bottom = 34.0
+metadata/_edit_use_anchors_ = true
+
+[node name="select" type="Button" parent="windowcontent/Windowcontent"]
+custom_minimum_size = Vector2(178, 27)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.252033
+anchor_top = 0.812683
+anchor_right = 0.725203
+anchor_bottom = 0.873873
+offset_right = 232.8
+offset_bottom = 25.6
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rqyx4")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("9_h1bue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
+theme_override_styles/normal = ExtResource("9_h1bue")
+text = "Selecionar!"
+metadata/_edit_use_anchors_ = true
+
+[node name="reset" type="Button" parent="windowcontent/Windowcontent/select"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317845
+anchor_top = 1.1304
+anchor_right = 0.672488
+anchor_bottom = 1.78761
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rqyx4")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("9_h1bue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
+theme_override_styles/normal = ExtResource("9_h1bue")
+text = "Descartar"
+metadata/_edit_use_anchors_ = true
+
+[node name="wallpapers" type="Control" parent="windowcontent/Windowcontent"]
+layout_mode = 1
+anchor_top = 0.00956098
+anchor_right = 1.0
+anchor_bottom = 1.0039
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="wallpaper1" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.130081
+anchor_top = 0.230769
+anchor_right = 0.869919
+anchor_bottom = 0.721154
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_h5g5e")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper1"]
+layout_mode = 0
+anchor_left = 0.288367
+anchor_top = 1.04796
+anchor_right = 0.735735
+anchor_bottom = 1.12149
+offset_right = 25.5
+offset_bottom = 2.5
+scale = Vector2(0.5, 0.5)
+text = "The night city"
+label_settings = SubResource("LabelSettings_g3nib")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="windowcontent/Windowcontent"]
+layout_mode = 0
+anchor_left = 0.0731707
+anchor_top = 0.468488
+anchor_right = 0.941463
+anchor_bottom = 0.552624
+offset_right = 160.2
+offset_bottom = 13.2
+scale = Vector2(0.4, 0.4)
+theme_override_constants/separation = 230
+metadata/_edit_use_anchors_ = true
+
+[node name="left" type="Button" parent="windowcontent/Windowcontent/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 22)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_rqyx4")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("9_h1bue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_31bkb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gcf4")
+icon = ExtResource("8_d6jss")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="right" type="Button" parent="windowcontent/Windowcontent/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 22)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_rqyx4")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("9_h1bue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_31bkb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gcf4")
+icon = ExtResource("9_sobgx")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="windowbuttons" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -354,636 +405,12 @@ grow_vertical = 0
 [node name="close_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vx6fq")
 
-[node name="windowcontent" type="Container" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("6_y1jaw")
-stretch_mode = 1
-
-[node name="Windowcontent" type="Control" parent="windowcontent"]
-custom_minimum_size = Vector2(123, 57)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="bodytext" type="Label" parent="windowcontent/Windowcontent"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0530436
-anchor_top = 0.140283
-anchor_right = 0.512393
-anchor_bottom = 0.212478
-offset_right = 56.5
-offset_bottom = 4.99998
-scale = Vector2(0.5, 0.5)
-text = "Papel de parede"
-label_settings = SubResource("LabelSettings_0nqck")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="windowcontent/Windowcontent"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 30.0
-offset_right = 68.0
-offset_bottom = 34.0
-metadata/_edit_use_anchors_ = true
-
-[node name="select" type="Button" parent="windowcontent/Windowcontent"]
-custom_minimum_size = Vector2(178, 27)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0569106
-anchor_top = 0.812071
-anchor_right = 0.520325
-anchor_bottom = 0.893395
-offset_right = 228.0
-offset_bottom = 22.5289
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_rqyx4")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = ExtResource("9_h1bue")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
-theme_override_styles/normal = ExtResource("9_h1bue")
-text = "Selecionar!"
-metadata/_edit_use_anchors_ = true
-
-[node name="reset" type="Button" parent="windowcontent/Windowcontent/select"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.317845
-anchor_top = 1.1304
-anchor_right = 0.672488
-anchor_bottom = 1.78761
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_rqyx4")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = ExtResource("9_h1bue")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i7hes")
-theme_override_styles/normal = ExtResource("9_h1bue")
-text = "Resetar"
-metadata/_edit_use_anchors_ = true
-
-[node name="left" type="Button" parent="windowcontent/Windowcontent"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0270273
-anchor_top = 0.427395
-anchor_right = 0.0530436
-anchor_bottom = 0.483418
-offset_right = 12.8
-offset_bottom = 15.52
-scale = Vector2(0.2, 0.2)
-focus_mode = 0
-theme_override_fonts/font = ExtResource("4_rqyx4")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = ExtResource("9_h1bue")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_31bkb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_4gcf4")
-icon = ExtResource("8_d6jss")
-icon_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="right" type="Button" parent="windowcontent/Windowcontent"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.526341
-anchor_top = 0.427395
-anchor_right = 0.55626
-anchor_bottom = 0.483419
-offset_right = 14.72
-offset_bottom = 15.52
-scale = Vector2(0.2, 0.2)
-focus_mode = 0
-theme_override_fonts/font = ExtResource("4_rqyx4")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = SubResource("StyleBoxFlat_wpyoo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nsgy7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_i6150")
-icon = ExtResource("9_sobgx")
-icon_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpapers" type="Control" parent="windowcontent/Windowcontent"]
-layout_mode = 1
-anchor_left = 0.0569106
-anchor_top = 0.216585
-anchor_right = 0.520325
-anchor_bottom = 0.707512
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper1" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("7_h5g5e")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper1"]
-layout_mode = 0
-anchor_left = 0.288367
-anchor_top = 1.04796
-anchor_right = 0.735735
-anchor_bottom = 1.12149
-offset_right = 25.5
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "The night city"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper1"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-A noite é bela."
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper2" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("10_0lum3")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper2"]
-layout_mode = 0
-anchor_left = 0.288366
-anchor_top = 1.04796
-anchor_right = 0.735733
-anchor_bottom = 1.12149
-offset_right = 25.5
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "Xilogravados"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper2"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper3" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-material = SubResource("ShaderMaterial_mox75")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_m6gv5")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.197961
-anchor_top = 1.05803
-anchor_right = 0.82954
-anchor_bottom = 1.13156
-offset_right = 36.0
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "Max9th, the useless"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper3"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper4" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("13_d3dnh")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper4"]
-layout_mode = 0
-offset_left = 11.2658
-offset_top = 35.6306
-offset_right = 78.2658
-offset_bottom = 40.6306
-scale = Vector2(0.5, 0.5)
-text = "CAMPUS VALTEMBORA"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper4"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper5" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("14_v75nu")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper5"]
-layout_mode = 0
-anchor_left = 0.288367
-anchor_top = 1.04796
-anchor_right = 0.735735
-anchor_bottom = 1.12149
-offset_right = 25.5
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "prejudice"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper5"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper6" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("15_7ynvf")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper6"]
-layout_mode = 0
-anchor_left = 0.288366
-anchor_top = 1.04796
-anchor_right = 0.735733
-anchor_bottom = 1.12149
-offset_right = 25.5
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "Forgotten"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper6"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper7" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("16_87888")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper7"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.197645
-anchor_top = 1.04796
-anchor_right = 0.881856
-anchor_bottom = 1.12149
-offset_right = 39.0
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "Tenebre rosso turris"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper7"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
-[node name="wallpaper8" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
-visible = false
-layout_mode = 2
-anchor_left = 0.000316118
-anchor_top = 0.0100689
-anchor_right = 1.00032
-anchor_bottom = 1.01007
-texture = ExtResource("19_j0acv")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper8"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.197645
-anchor_top = 1.04796
-anchor_right = 0.881856
-anchor_bottom = 1.12149
-offset_right = 39.0
-offset_bottom = 2.5
-scale = Vector2(0.5, 0.5)
-text = "Matrix madness"
-label_settings = SubResource("LabelSettings_g3nib")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="windowcontent/Windowcontent/wallpapers/wallpaper8"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.17544
-anchor_right = 1.93035
-anchor_bottom = 1.39176
-offset_right = 287.97
-offset_bottom = 316.68
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.13, 0.13)
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6n47")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxEmpty_taxw6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k0t43")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_8kft1")
-text = "Descrição:
-
-
-Raridade:
-"
-editable = false
-context_menu_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
-
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="windowcontent/Windowcontent/select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="windowcontent/Windowcontent/select/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="windowcontent/Windowcontent/HBoxContainer2/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="windowcontent/Windowcontent/HBoxContainer2/right" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]
 [connection signal="gui_input" from="resizehandle" to="." method="_on_resizehandle_gui_input"]
-[connection signal="pressed" from="windowcontent/Windowcontent/select" to="." method="_on_select_pressed"]
-[connection signal="pressed" from="windowcontent/Windowcontent/select/reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="windowcontent/Windowcontent/left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="windowcontent/Windowcontent/right" to="." method="_on_right_pressed"]

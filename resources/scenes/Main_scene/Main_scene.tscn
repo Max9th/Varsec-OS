@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bnt5241iy3pp7"]
+[gd_scene load_steps=54 format=3 uid="uid://bnt5241iy3pp7"]
 
 [ext_resource type="Script" path="res://resources/scenes/Main_scene/scripts/Main_Scene.gd" id="1_kmpr7"]
 [ext_resource type="PackedScene" uid="uid://cpim0hfyc3kr0" path="res://resources/scenes/easter_assets/cubigor.tscn" id="2_4mv8t"]
@@ -40,6 +40,30 @@
 [ext_resource type="PackedScene" uid="uid://bjw2c702dg15x" path="res://resources/scenes/personalworksmanager/walpapermanagerwindow/walpapermanager.tscn" id="37_88uh8"]
 [ext_resource type="AudioStream" uid="uid://fm0ge4ls8qmc" path="res://resources/audio/ambiance.mp3" id="41_hvyfa"]
 [ext_resource type="AudioStream" uid="uid://dbwafl1gdm8ts" path="res://resources/audio/Building_Stuff.mp3" id="43_g8qj3"]
+
+[sub_resource type="GDScript" id="GDScript_5qsst"]
+resource_name = "soundmanager"
+script/source = "extends AudioStreamPlayer
+
+@onready var sfx_button_sprite: TextureRect = $\"../desktop/panel/Panel/HBoxContainer/sfx_button_sprite\"
+var easter_state: bool = false
+var play_ambient_noise: bool = false
+
+func _process(_delta: float) -> void:
+	if !self.playing and play_ambient_noise:
+		self.play()
+		sfx_button_sprite.texture = load(\"res://resources/sprites/sfx.png\")
+	elif self.playing == true and play_ambient_noise == false:
+		sfx_button_sprite.texture = load(\"res://resources/sprites/disabledsfx.png\")
+		self.stop()
+
+func _on_sfx_button_pressed() -> void:
+	play_ambient_noise = !play_ambient_noise
+
+
+func _on_splash_screen_finished_boot() -> void:
+	play_ambient_noise = true
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_mp5pi"]
 font = ExtResource("8_0rumy")
@@ -115,7 +139,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[node name="Main_Scene" type="Control"]
+[node name="Main_Scene" type="Control" groups=["main_scene"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,16 +149,21 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kmpr7")
 
-[node name="deziangle" parent="." groups=["authentication"] instance=ExtResource("2_pqjwe")]
+[node name="deziangle" parent="." instance=ExtResource("2_pqjwe")]
 
 [node name="cubigor" parent="." instance=ExtResource("2_4mv8t")]
 
-[node name="nightcity" parent="." groups=["authentication"] instance=ExtResource("2_if7td")]
+[node name="nightcity" parent="." instance=ExtResource("2_if7td")]
 
-[node name="easteregg2_max" parent="." instance=ExtResource("3_bhann")]
+[node name="gax" parent="." instance=ExtResource("3_bhann")]
+visible = false
 layout_mode = 0
 scale = Vector2(9.52066, 4)
 mouse_filter = 2
+
+[node name="ambientsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_hvyfa")
+script = SubResource("GDScript_5qsst")
 
 [node name="desktop" type="Control" parent="."]
 layout_mode = 1
@@ -531,9 +560,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("43_g8qj3")
 volume_db = 10.111
 
-[node name="ambientsound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("41_hvyfa")
-
 [node name="splash_screen" parent="." instance=ExtResource("27_uwk17")]
 visible = false
 
@@ -544,22 +570,18 @@ gizmo_extents = 200.0
 [connection signal="stop" from="." to="deziangle" method="_on_main_scene_stop"]
 [connection signal="stop" from="." to="cubigor" method="_on_mm_stop"]
 [connection signal="stop" from="." to="nightcity" method="_on_main_scene_stop"]
-[connection signal="stop" from="." to="easteregg2_max" method="_on_mainmenu_stop"]
+[connection signal="stop" from="." to="gax" method="_on_mainmenu_stop"]
 [connection signal="stop" from="." to="desktop/windows/auth_pop" method="_on_mainmenu_stop"]
 [connection signal="textcolorchange" from="." to="desktop/Folders/leftvboxcon/walpapers" method="_on_main_scene_textcolorchange"]
 [connection signal="welcome_display" from="." to="desktop/windows/class_manager" method="_on_main_scene_welcome_display"]
-[connection signal="dezianglebk" from="deziangle" to="." method="_on_deziangle_dezianglebk"]
 [connection signal="cubigorbk" from="cubigor" to="." method="_on_cubigor_cubigorbk"]
-[connection signal="Disablebk" from="nightcity" to="." method="_on_nightcity_disablebk"]
-[connection signal="Disablebk" from="easteregg2_max" to="." method="_on_easteregg_2_max_disablebk"]
 [connection signal="timeout" from="desktop/panel/Panel/timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="desktop/panel/Panel/TextureButton" to="desktop/panel/Panel/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/power_button" to="." method="_on_power_button_pressed"]
-[connection signal="pressed" from="desktop/panel/Panel/sfx_button" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="desktop/panel/Panel/sfx_button" to="ambientsound" method="_on_sfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/vfx_button" to="." method="_on_vfx_button_pressed"]
 [connection signal="pressed" from="desktop/panel/Panel/easter_button" to="." method="_on_easter_button_pressed"]
 [connection signal="disablebk" from="desktop/windows/auth_pop" to="." method="_on_labo_disablebk"]
-[connection signal="changebk" from="desktop/windows/walpaper_manager" to="." method="_on_walpaper_manager_changebk"]
-[connection signal="finished_boot" from="splash_screen" to="." method="_on_splash_screen_finished_boot"]
+[connection signal="finished_boot" from="splash_screen" to="ambientsound" method="_on_splash_screen_finished_boot"]
 
 [editable path="cubigor"]

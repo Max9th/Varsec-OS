@@ -1,8 +1,9 @@
+HBoxContainer
+Control
+Node2D
 Camera3D
 TextureRect
 GridContainer
-HBoxContainer
-Control
 CodeEdit
 MarginContainer
 AudioStreamPlayer
@@ -11,5 +12,3 @@ Timer
 SubViewport
 Panel
 HSlider
-MeshInstance3D
-CanvasGroup

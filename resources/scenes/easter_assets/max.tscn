@@ -16,7 +16,7 @@ shader_parameter/angle = 45.0
 shader_parameter/sprite_sheet_columns = 1
 shader_parameter/sprite_sheet_rows = 1
 
-[node name="easteregg2_max" type="TextureRect" groups=["authentication"]]
+[node name="gax" type="TextureRect" groups=["authentication"]]
 material = SubResource("ShaderMaterial_mox75")
 offset_right = 121.0
 offset_bottom = 162.0
@@ -24,5 +24,5 @@ scale = Vector2(9.52066, 4.02469)
 texture = ExtResource("1_3uovv")
 script = ExtResource("1_fbit4")
 
-[node name="gaytheme" type="AudioStreamPlayer" parent="." groups=["authentication"]]
+[node name="sfx" type="AudioStreamPlayer" parent="." groups=["authentication"]]
 stream = ExtResource("3_ogkg0")

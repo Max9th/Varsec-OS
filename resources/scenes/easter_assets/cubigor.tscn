@@ -89,5 +89,5 @@ environment = SubResource("Environment_tqw1p")
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -37.9224)
 fov = 102.1
 
-[node name="Cubigor_theme" type="AudioStreamPlayer" parent="others"]
+[node name="sfx" type="AudioStreamPlayer" parent="others"]
 stream = ExtResource("3_ly5vm")
