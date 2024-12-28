@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Comfortaa-VariableFont_wght.ttf-6e0d90ac18577
 [params]
 
 Rendering=null
-antialiasing=0
-generate_mipmaps=false
+antialiasing=1
+generate_mipmaps=true
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
@@ -23,7 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
-oversampling=1.9
+oversampling=0.0
 Fallbacks=null
 fallbacks=[]
 Compress=null

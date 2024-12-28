@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 func _on_authenticated_cubigor() -> void:
 	cubigor_mode = true
-	get_tree().call_group("main_scene", "easter_state_manager", "cubigor", true)
+	get_tree().call_group("main_scene", "easter_state_enabler", "cubigor", true)
 
 func _on_mm_stop() -> void:
 	cubigor_mode = false

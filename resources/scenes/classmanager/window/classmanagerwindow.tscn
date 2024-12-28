@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b25vo8wxtko27"]
+[gd_scene load_steps=34 format=3 uid="uid://b25vo8wxtko27"]
 
 [ext_resource type="Texture2D" uid="uid://u37075llycfy" path="res://resources/sprites/UItileset.png" id="1_hvpbr"]
 [ext_resource type="Script" path="res://resources/scenes/classmanager/window/scripts/classmanagerwindow.gd" id="2_mcqie"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8ikd8p44gm6" path="res://resources/sprites/classmanagerassets/aula_2d.jpeg" id="8_t4clq"]
 [ext_resource type="Texture2D" uid="uid://ch6sjtxx1imvo" path="res://resources/sprites/classmanagerassets/pontilhismo.jpg" id="8_wcrku"]
 [ext_resource type="Texture2D" uid="uid://cf77bwyb1714g" path="res://resources/sprites/classmanagerassets/IMG_20240928_002046.jpg" id="9_5m73j"]
+[ext_resource type="Texture2D" uid="uid://dregnvkrxlpmf" path="res://resources/sprites/classmanagerassets/images.jpeg" id="9_rttfd"]
 [ext_resource type="Texture2D" uid="uid://4d1t3fjr2fbq" path="res://resources/sprites/classmanagerassets/xilogravados.jpeg" id="11_3jok6"]
 [ext_resource type="Texture2D" uid="uid://cle3ns7wshbs8" path="res://resources/sprites/classmanagerassets/download.png" id="11_hkcfu"]
 [ext_resource type="Texture2D" uid="uid://b18i1n5map00e" path="res://resources/sprites/classmanagerassets/download (2).jpeg" id="12_uoi20"]
@@ -424,7 +425,6 @@ theme_override_styles/hover = ExtResource("3_qklyj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgnvq")
 theme_override_styles/normal = ExtResource("3_qklyj")
 text = "Voltar"
-icon = ExtResource("7_xvj6i")
 
 [node name="contentcontainer" type="Container" parent="."]
 clip_contents = true
@@ -551,7 +551,6 @@ expand_mode = 5
 stretch_mode = 6
 
 [node name="aula2" type="Control" parent="contentcontainer/contents/1bim"]
-visible = false
 layout_mode = 1
 anchor_left = -0.236453
 anchor_top = -0.12
@@ -595,26 +594,28 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4diaa")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pqeo0")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_7313m")
-text = "Atividades desenvolvidas em sala:
-Meus colegas foram ao museu dos povos indígenas, onde tiveram a oportunidade de conhecer diversas etnias e suas culturas. Eles observaram uma rica variedade de grafismos indígenas, tanto em cerâmicas quanto em máscaras e cestos.
+text = "Atividades desenvolvidas em sala  
 
-Máscaras Indígenas
-As máscaras que eles viram, usadas em rituais e cerimônias, eram intrigantes. Cada uma possui sua própria simbologia e serve para representar espíritos ou personagens significativos nas tradições culturais.
+Linha  
+Vimos sobre o conceito de linha. Analisamos algumas obras que utilizaram apenas linhas em sua composição.  
+A linha é a trajetória de um ponto em movimento, tendo comprimento, mas sem largura.  
+Ela é considerada um rastro invisível e representa uma tensão ativa, contrastando com a calma do ponto fixo.  
 
-Vasilhas de Cerâmica
-As vasilhas de cerâmica que foram exibidas eram notáveis, com algumas apresentando desenhos ricos e detalhados, refletindo as tradições e a identidade cultural de cada povo.
+Planos  
+Vimos sobre o conceito de planos.  
+O plano é formado pela trajetória de uma linha em movimento, possuindo comprimento e largura, mas sem espessura.  
+Ele é delimitado por linhas e é responsável por definir os limites externos de um volume.  
 
-Colar de Penas
-Eles também viram colares feitos com penas, que são adornos tradicionais e têm um papel importante nas expressões culturais e espirituais dos indígenas.
+Luz e Sombra  
+Vimos sobre a relação entre luz e sombra.  
+A linha é o elemento que define o formato, enquanto a sombra revela a forma tridimensional dos objetos.  
+A iluminação pode guiar a atenção de forma seletiva, destacando objetos sem depender de tamanho, cor ou posição central.  
+Um exemplo disso foi a observação de uma cena em que a luz parecia emanar de um livro que Maria lê, iluminando a criança e projetando a sombra ampliada de José.  
 
-Cestas Coloridas
-As cestas que eles observaram eram de diversos tamanhos e formatos, confeccionadas com materiais vibrantes, evidenciando a habilidade e a criatividade dos artesãos indígenas.
-
-Madeira Esculpida
-Os colegas tiveram a oportunidade de ver esculturas em madeira que representavam animais, adornadas com desenhos que contam histórias e mostram a conexão dos indígenas com a natureza.
-
-Mural com Grafismos
-Por fim, eles encontraram um mural desenhado no estilo do grafismo indígena, repleto de figuras de animais e formas geométricas. Esse mural destaca a biodiversidade e a profunda relação espiritual que os povos indígenas mantêm com o meio ambiente."
+Atividade Prática  
+Fizemos uma atividade prática sobre degradê utilizando linhas.  
+O exercício consistiu em criar linhas mais espaçadas no início e gradualmente torná-las mais próximas, cruzando-as para gerar um efeito mais escuro.  
+Essa técnica foi usada para simular diferentes intensidades de luz e sombra.  "
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
@@ -639,18 +640,9 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(149, 74)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("8_t4clq")
+texture = ExtResource("9_rttfd")
 expand_mode = 5
 stretch_mode = 6
-
-[node name="image2mus" type="TextureRect" parent="contentcontainer/contents/1bim/aula2/images"]
-custom_minimum_size = Vector2(149, 74)
-layout_mode = 2
-size_flags_vertical = 8
-tooltip_text = "Jonas disse:
-\"CUBIGOR\"
-Lembre-se disso "
-texture = ExtResource("7_lysfj")
 
 [node name="aula3" type="Control" parent="contentcontainer/contents/1bim"]
 visible = false
@@ -2875,6 +2867,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="personal_works" type="Control" parent="contentcontainer/contents"]
+visible = false
 layout_mode = 1
 anchor_left = -0.732857
 anchor_top = 0.0869565

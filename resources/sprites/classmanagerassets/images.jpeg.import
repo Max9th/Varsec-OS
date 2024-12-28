@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmbhcxtwt0chn"
-path="res://.godot/imported/nemo++.png-6b6b2f084c98994e4ed4750cc7c19655.ctex"
+uid="uid://dregnvkrxlpmf"
+path="res://.godot/imported/images.jpeg-f7dc5c98dcde4f6fef3d4b2beaaba81e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/personalworkmanagerassets/nemo++.png"
-dest_files=["res://.godot/imported/nemo++.png-6b6b2f084c98994e4ed4750cc7c19655.ctex"]
+source_file="res://resources/sprites/classmanagerassets/images.jpeg"
+dest_files=["res://.godot/imported/images.jpeg-f7dc5c98dcde4f6fef3d4b2beaaba81e.ctex"]
 
 [params]
 

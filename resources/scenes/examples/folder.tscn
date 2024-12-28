@@ -1,10 +1,28 @@
-[gd_scene load_steps=19 format=4 uid="uid://brx8sg8p6a6pp"]
+[gd_scene load_steps=18 format=4 uid="uid://brx8sg8p6a6pp"]
 
 [ext_resource type="Texture2D" uid="uid://binyoo4xwctip" path="res://resources/sprites/folder.png" id="1_egd73"]
 [ext_resource type="Script" path="res://resources/scenes/examples/scripts/folder.gd" id="3_5kliy"]
 [ext_resource type="Texture2D" uid="uid://bgcl5cn4pi0xu" path="res://resources/sprites/folderopen.png" id="3_etd47"]
 [ext_resource type="Texture2D" uid="uid://bdlqaq7q8jata" path="res://resources/sprites/folderdisabled.png" id="3_io77e"]
 [ext_resource type="AudioStream" uid="uid://cgus8vr1klb3n" path="res://resources/audio/open.sfxr" id="7_fjroi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liljj"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+anti_aliasing_size = 0.053
 
 [sub_resource type="Image" id="Image_y8eo5"]
 data = {
@@ -879,34 +897,14 @@ cache/0/25/0/glyphs/2/size = Vector2(3, 3)
 cache/0/25/0/glyphs/2/uv_rect = Rect2(63, 1, 3, 3)
 cache/0/25/0/glyphs/2/texture_idx = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_poh4g"]
-font = SubResource("FontFile_e3j06")
-font_size = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liljj"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-expand_margin_left = 4.0
-expand_margin_top = 2.0
-expand_margin_right = 4.0
-expand_margin_bottom = 2.0
-anti_aliasing_size = 0.053
-
 [sub_resource type="LabelSettings" id="LabelSettings_ij4ov"]
 font = SubResource("FontFile_e3j06")
 font_size = 8
 font_color = Color(0.0352941, 0.0392157, 0.0784314, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[node name="default_folder" type="TextureButton" groups=["windows"]]
+[node name="default_folder" type="TextureButton" groups=["folders"]]
+texture_filter = 1
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -920,21 +918,7 @@ texture_disabled = ExtResource("3_io77e")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_5kliy")
-
-[node name="filename" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -23.0
-offset_top = 45.0
-offset_right = 12.0
-offset_bottom = 53.0
-grow_horizontal = 2
-text = "Test"
-label_settings = SubResource("LabelSettings_poh4g")
-horizontal_alignment = 1
-vertical_alignment = 1
+text_color = Color(1, 1, 1, 1)
 
 [node name="file_icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(8, 8)

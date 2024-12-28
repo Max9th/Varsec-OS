@@ -103,7 +103,7 @@ func _on_confirm_pressed() -> void:
 	verify()
 
 func verify():
-	var user_input = line_edit.text
+	var user_input = line_edit.text.to_lower()
 	if easter == false and can_play == true:
 		match user_input:
 			"cubigor":

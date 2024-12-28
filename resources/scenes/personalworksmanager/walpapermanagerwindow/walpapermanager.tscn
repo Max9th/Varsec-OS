@@ -22,6 +22,7 @@ region_rect = Rect2(0, 0, 50, 50)
 resource_name = "walpaper_manager_script"
 script/source = "@icon(\"res://resources/sprites/window_icon.png\")
 extends Panel
+class_name window_wallpapermgr
 
 @onready var maximize: Button = %maximize
 @onready var close: Button = %close
@@ -48,6 +49,7 @@ const MAX_HEIGHT: float = 216
 @export var can_maximize: bool
 @export var can_close: bool
 @export var can_resize: bool
+@export var desktop_background: TextureRect
 
 func _ready() -> void:
 	if is_visible:
@@ -105,6 +107,65 @@ func _on_maximize_pressed() -> void:
 		is_maximized = !is_maximized
 
 # --- Wallpaper Logic ---
+
+@onready var wallpapers: Dictionary = {
+	\"night_city\": {
+		\"texture\": preload(\"res://resources/sprites/nightcity.png\"),
+		\"text_color\": Color.WHITE
+	},
+	\"turret\": {
+		\"texture\": preload(\"res://resources/sprites/personalworkmanagerassets/tpe100x.png\"),
+		\"text_color\": Color.WHITE
+	},
+	\"skely\": {
+		\"texture\": preload(\"res://resources/sprites/personalworkmanagerassets/skely.png\"),
+		\"text_color\": Color.WHITE
+	},
+	\"matrix\": {
+		\"texture\": preload(\"res://resources/sprites/personalworkmanagerassets/MATRIX MADNESS.png\"),
+		\"text_color\": Color.BLACK
+	},
+	\"rakatak\": {
+		\"texture\": preload(\"res://resources/sprites/personalworkmanagerassets/rakatak.png\"),
+		\"text_color\": Color.WHITE
+	},
+	\"tenebre\": {
+		\"texture\": preload(\"res://resources/sprites/personalworkmanagerassets/tenebrerossoturris.png\"),
+		\"text_color\": Color.WHITE
+	},
+}
+
+@onready var default_texture = preload(\"res://resources/sprites/bk.png\")
+@onready var wallpaper_display: TextureRect = $windowcontent/Windowcontent/wallpapers/wallpaper_display
+
+var x := 0
+
+func change_wallpaper(is_right_button: bool):
+
+	if is_right_button:
+		x += 1 if x <= (wallpapers.keys().size() - 2) else 0
+		wallpaper_display.texture = wallpapers[wallpapers.keys()[x]][\"texture\"]
+	else:
+		x -= 1 if x > 0 else 0
+		wallpaper_display.texture = wallpapers[wallpapers.keys()[x]][\"texture\"]
+	print(str(x))
+
+
+func _on_left_pressed() -> void:
+	change_wallpaper(false)
+
+
+func _on_right_pressed() -> void:
+	change_wallpaper(true)
+
+
+func _on_select_pressed() -> void:
+	desktop_background.texture = wallpaper_display.texture
+	get_tree().call_group(\"folders\", \"change_text_color\", wallpapers[wallpapers.keys()[x]][\"text_color\"])
+
+
+func _on_reset_pressed() -> void:
+	desktop_background.texture = default_texture
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_0nqck"]
@@ -113,7 +174,7 @@ font_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hes"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
-border_width_bottom = 2
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
@@ -126,7 +187,7 @@ font_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31bkb"]
 bg_color = Color(0.064075, 0.0793855, 0.122807, 1)
-border_width_bottom = 2
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
@@ -135,7 +196,7 @@ corner_radius_bottom_left = 9
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gcf4"]
 bg_color = Color(0.046295, 0.0593375, 0.0963323, 1)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
@@ -212,9 +273,9 @@ custom_minimum_size = Vector2(178, 27)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.252033
-anchor_top = 0.812683
+anchor_top = 0.796684
 anchor_right = 0.725203
-anchor_bottom = 0.873873
+anchor_bottom = 0.857874
 offset_right = 232.8
 offset_bottom = 25.6
 grow_horizontal = 2
@@ -234,9 +295,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.317845
-anchor_top = 1.1304
+anchor_top = 1.21756
 anchor_right = 0.672488
-anchor_bottom = 1.78761
+anchor_bottom = 1.87477
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -257,7 +318,7 @@ anchor_bottom = 1.0039
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="wallpaper1" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
+[node name="wallpaper_display" type="TextureRect" parent="windowcontent/Windowcontent/wallpapers"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.130081
@@ -271,14 +332,14 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper1"]
+[node name="name" type="Label" parent="windowcontent/Windowcontent/wallpapers/wallpaper_display"]
 layout_mode = 0
 anchor_left = 0.288367
 anchor_top = 1.04796
-anchor_right = 0.735735
-anchor_bottom = 1.12149
-offset_right = 25.5
-offset_bottom = 2.5
+anchor_right = 0.652161
+anchor_bottom = 1.10923
+offset_right = 33.1053
+offset_bottom = 3.12502
 scale = Vector2(0.5, 0.5)
 text = "The night city"
 label_settings = SubResource("LabelSettings_g3nib")
@@ -384,9 +445,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -109.0
+offset_left = -73.5
 offset_top = 1.0
-offset_right = 93.0
+offset_right = 55.5
 offset_bottom = 10.0
 grow_horizontal = 2
 
@@ -409,7 +470,7 @@ stream = ExtResource("5_vx6fq")
 [connection signal="pressed" from="windowcontent/Windowcontent/select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="windowcontent/Windowcontent/select/reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="windowcontent/Windowcontent/HBoxContainer2/left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="windowcontent/Windowcontent/HBoxContainer2/right" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="windowcontent/Windowcontent/HBoxContainer2/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="windowbuttons/maximize" to="." method="_on_maximize_pressed"]
 [connection signal="pressed" from="windowbuttons/close" to="." method="_on_close_pressed"]
 [connection signal="gui_input" from="draghandle" to="." method="_on_draghandle_gui_input"]
