@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cwfmy5ug6gp5c"]
-
-[node name="HSlider" type="HSlider"]
-offset_right = 356.0
-offset_bottom = 16.0
-max_value = 1.0
-step = 0.001
-value = 0.5

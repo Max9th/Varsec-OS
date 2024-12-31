@@ -2,10 +2,10 @@
 
 [resource]
 bg_color = Color(0.046295, 0.0593375, 0.0963323, 1)
-border_width_bottom = 2
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 anti_aliasing = false
