@@ -14,7 +14,7 @@ Made in GODOT 4.3
 
 # Credits
 
-Thanks to popcar2 and the rest of the Godot OS team. Godot OS was an inspiration for this project. Window-related logic was inspired on their code
+Thanks to popcar2 and the rest of the Godot OS team. Godot OS was an inspiration for this project, along Progressbar98 and some others.
 
 Thanks to the creators of [You spin me round (like a record)](https://en.wikipedia.org/wiki/You_Spin_Me_Round_(Like_a_Record)) and [Before](). Their songs were used in the project
 
