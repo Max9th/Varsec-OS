@@ -1,40 +1,94 @@
+@icon("res://resources/sprites/Themaxwellcompany_dark.png")
 class_name Desktop_vos
 extends Node
 
 @onready var background: TextureRect = $Contents/Core_components/Background
 @onready var audioplayer: AudioStreamPlayer = $Other_components/Audioplayer
+@onready var canvas_layer: CanvasLayer = $vfx/CanvasLayer
+@onready var vfx_node: ColorRect = $vfx/CanvasLayer/ColorRect
+@onready var panel: Panel = $Contents/Core_components/Panel/Panel
 
-func _ready() -> void:
-	update_time()
-	canvas_layer.show()
-	$vfx/CanvasLayer/ColorRect.material = load("res://resources/shaders/shader_crt.tres")
-	connect_to_corec()
-	print(Corec.Database["class_data"]["1bim"]["aula_1"]["title"])
-	print(Corec.Database["class_data"]["1bim"]["aula_1"]["text"])
-
-func connect_to_corec():
-	Corec.connect("wallpaper_change", wallpaper_change)
-	Corec.connect("change_audio", change_audio)
-	Corec.connect("vfx_switch", change_vfx)
-	Corec.connect("cng_vfx_shader", switch_vfx)
-	Corec.connect("trigger_event_x", trigger_evx)
-	Corec.connect("interrupt_event_x", stop_evx)
-
-#region Callable features
-
-func wallpaper_change(texture: String):
-	background.texture = load(texture)
-
-func change_audio(audio:String):
-	audioplayer.stream = load(audio)
-	audioplayer.play()
+@onready var window_storage: Node = $Contents/Window_storage
+@onready var popup_storage: CanvasLayer = $Popups/CanvasLayer
 
 var vfx_status: bool = true
 
-func change_vfx(shader):
-	$vfx/CanvasLayer/ColorRect.material = load(shader)
+func _ready() -> void:
+	audioplayer.play()
+	update_time()
+	connect_to_corec()
+	canvas_layer.show()
+	vfx_node.material = load("res://resources/shaders/shader_crt.tres")
+	print(Corec.Database["class_data"][1][1]["title"] + "Testing database")
+	print(Corec.Database["class_data"][1][1]["text"] + "Testing database")
 
-func switch_vfx():
+#region Callable features
+
+func spawn_window(window_path: String, window_pos: Vector2):
+	var scene = load(window_path)
+	var destination_node = window_storage
+	if destination_node:
+		var new_window = scene.instantiate()
+		destination_node.add_child(new_window)
+		new_window.position = window_pos
+		new_window.show()
+		new_window.is_instance_type = true
+		print("A window was spawned via corec!")
+
+func spawn_popup(popup_text: String, popup_name: String, has_pwd_query: bool):
+	var scene = load("res://resources/scenes/core/Popup dialogue/popup.scn")
+	var destination_node = popup_storage
+	if destination_node:
+		var popup = scene.instantiate()
+		destination_node.add_child(popup)
+		popup.show()
+		popup.window_name = popup_name
+		popup.window_text = popup_text
+		popup.has_pwd_query = has_pwd_query
+		popup.configure_popup()
+		print("A popup was spawned via corec!")
+
+#func spawn_file_dialog():
+	#var destination_node = popup_storage
+	#if destination_node:
+		#var window = FileDialog.new()
+		#destination_node.add_child(window)
+		#window.filters =
+		#window.show()
+		#window.access = FileDialog.ACCESS_FILESYSTEM
+		#window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		#window.use_native_dialog = false
+
+func spawn_file_dialog():
+	$Popups/CanvasLayer/FileDialog.show()
+	print("A file dialog was spawned via corec!")
+
+func change_panel_colors(color: Color):
+	var existing_stylebox = panel.get_theme_stylebox("panel")
+	if existing_stylebox:
+		var new_stylebox = existing_stylebox.duplicate()
+		# NOTE Default value is Color(27, 33, 48, 255)
+		new_stylebox.bg_color = color
+		panel.add_theme_stylebox_override("panel", new_stylebox)
+
+func change_wallpaper(path: String):
+	var img = Image.new()
+	var err = img.load(path)
+	if err == OK:
+		var texture = ImageTexture.create_from_image(img)
+		background.texture = texture
+	else:
+		print("Failed to load image:", path)
+
+
+func change_background_music(audio:String):
+	audioplayer.stream = load(audio)
+	audioplayer.play()
+
+func change_vfx_shader(shader: String):
+	vfx_node.material = load(shader)
+
+func switch_vfx_status():
 	vfx_status = !vfx_status
 	if vfx_status == true:
 		canvas_layer.show()
@@ -42,14 +96,41 @@ func switch_vfx():
 		canvas_layer.hide()
 
 func trigger_evx():
-	$vfx/CanvasLayer/ColorRect.material = load("res://resources/shaders/vignette.tres")
+	vfx_node.material = load("res://resources/shaders/vignette.tres")
+	Corec.spawn_popup("Auth required", "insert passcode", true)
 
 func stop_evx():
-	$vfx/CanvasLayer/ColorRect.material = load("res://resources/shaders/shader_crt.tres")
+	vfx_node.material = load("res://resources/shaders/shader_crt.tres")
+
+var music_status: bool = true
+
+func switch_background_music():
+	music_status = !music_status
+	if !music_status:
+		audioplayer.stop()
+	else:
+		audioplayer.play()
 
 #endregion
 
 #region Core components
+
+#region Connect to Corec
+
+func connect_to_corec():
+	Corec.connect("change_wallpaper_signal", change_wallpaper)
+	Corec.connect("change_background_music_signal", change_background_music)
+	Corec.connect("switch_vfx_status_signal", switch_vfx_status)
+	Corec.connect("change_vfx_shader_signal", change_vfx_shader)
+	Corec.connect("trigger_event_x", trigger_evx)
+	Corec.connect("interrupt_event_x", stop_evx)
+	Corec.connect("change_panel_colors_signal", change_panel_colors)
+	Corec.connect("spawn_window_signal", spawn_window)
+	Corec.connect("spawn_popup_signal", spawn_popup)
+	Corec.connect("spawn_file_dialog_signal", spawn_file_dialog)
+	Corec.connect("switch_background_music_signal", switch_background_music)
+
+#endregion
 
 #region Time manager
 
@@ -66,9 +147,5 @@ func _on_time_update_timer_timeout() -> void:
 	print("time updated!")
 
 #endregion
-
-@onready var canvas_layer: CanvasLayer = $vfx/CanvasLayer
-
-
 
 #endregion

@@ -11,6 +11,7 @@ var times_switched: int = 0
 
 func _ready() -> void:
 	hide_all_screens()
+	Corec.is_in_splash = true
 	for timer in timers:
 		timer.connect("timeout", switch_screen)
 		timer.one_shot = true
@@ -36,6 +37,7 @@ func switch_screen():
 
 func change_scene():
 	if path_to_scene_target != "":
+		Corec.is_in_splash = false
 		get_tree().change_scene_to_file(path_to_scene_target)
 	else:
 		print("Error: Empty scene path")

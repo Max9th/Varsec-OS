@@ -1,3 +1,4 @@
+@icon("res://resources/sprites/window_icon.png")
 class_name window_vos extends Panel
 
 @export_category("Necessary children:")
