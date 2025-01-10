@@ -9,7 +9,7 @@ class_name popup_window_vos extends window_vos
 func _ready() -> void:
 	super._ready()
 	configure_popup()
-	self.position = viewport_size / 2 - self.size / 2
+	self.position = (viewport_size / 2 - self.size / 2) + Vector2(0, 40)
 
 func _process(delta: float) -> void:
 	super ._process(delta)

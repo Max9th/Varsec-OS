@@ -102,13 +102,15 @@ func restore_window(target: Panel, unmaxed_position: Vector2, unmaxed_size: Vect
 #endregion
 
 func close_window():
+	audioplayer.play()
+	await audioplayer.finished
 	if can_close:
 		if is_instance_type:
 			closed.emit()
 			self.queue_free()
 		else:
 			self.visible = false
-		audioplayer.play()
+
 
 #endregion
 

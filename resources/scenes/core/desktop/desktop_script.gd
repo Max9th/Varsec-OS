@@ -7,20 +7,26 @@ extends Node
 @onready var canvas_layer: CanvasLayer = $vfx/CanvasLayer
 @onready var vfx_node: ColorRect = $vfx/CanvasLayer/ColorRect
 @onready var panel: Panel = $Contents/Core_components/Panel/Panel
-
+@onready var viewport_size = get_viewport().get_visible_rect().size
 @onready var window_storage: Node = $Contents/Window_storage
 @onready var popup_storage: CanvasLayer = $Popups/CanvasLayer
 
 var vfx_status: bool = true
+
+var default_vfx_shader = preload("res://resources/shaders/shader_crt.tres")
 
 func _ready() -> void:
 	audioplayer.play()
 	update_time()
 	connect_to_corec()
 	canvas_layer.show()
-	vfx_node.material = load("res://resources/shaders/shader_crt.tres")
+	vfx_node.material = default_vfx_shader
 	print(Corec.Database["class_data"][1][1]["title"] + "Testing database")
 	print(Corec.Database["class_data"][1][1]["text"] + "Testing database")
+
+func _process(delta: float) -> void:
+	if Corec.is_in_event == true:
+		pass
 
 #region Callable features
 
@@ -48,26 +54,27 @@ func spawn_popup(popup_text: String, popup_name: String, has_pwd_query: bool):
 		popup.configure_popup()
 		print("A popup was spawned via corec!")
 
-#func spawn_file_dialog():
-	#var destination_node = popup_storage
-	#if destination_node:
-		#var window = FileDialog.new()
-		#destination_node.add_child(window)
-		#window.filters =
-		#window.show()
-		#window.access = FileDialog.ACCESS_FILESYSTEM
-		#window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
-		#window.use_native_dialog = false
-
 func spawn_file_dialog():
-	$Popups/CanvasLayer/FileDialog.show()
-	print("A file dialog was spawned via corec!")
+	var destination_node = popup_storage
+	if destination_node:
+		var window = FileDialog.new()
+		destination_node.add_child(window)
+		window.filters = ["*.png", "*.jpeg"]
+		window.show()
+		window.access = FileDialog.ACCESS_FILESYSTEM
+		window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		window.use_native_dialog = false
+		#window.position = Vector2(viewport_size.x / 2 - window.size.x/2, viewport_size.y / 2 - window.size.y/2 + 40)
+		window.position = Vector2(102, 184)
+
+#func spawn_file_dialog():
+	#$Popups/CanvasLayer/FileDialog.show()
+	#print("A file dialog was spawned via corec!")
 
 func change_panel_colors(color: Color):
 	var existing_stylebox = panel.get_theme_stylebox("panel")
 	if existing_stylebox:
 		var new_stylebox = existing_stylebox.duplicate()
-		# NOTE Default value is Color(27, 33, 48, 255)
 		new_stylebox.bg_color = color
 		panel.add_theme_stylebox_override("panel", new_stylebox)
 
@@ -98,9 +105,10 @@ func switch_vfx_status():
 func trigger_evx():
 	vfx_node.material = load("res://resources/shaders/vignette.tres")
 	Corec.spawn_popup("Auth required", "insert passcode", true)
-
-func stop_evx():
-	vfx_node.material = load("res://resources/shaders/shader_crt.tres")
+	if Corec.is_in_event:
+		vfx_node.material = default_vfx_shader
+		for popup in popup_storage.get_children():
+			popup.queue_free()
 
 var music_status: bool = true
 
@@ -123,7 +131,7 @@ func connect_to_corec():
 	Corec.connect("switch_vfx_status_signal", switch_vfx_status)
 	Corec.connect("change_vfx_shader_signal", change_vfx_shader)
 	Corec.connect("trigger_event_x", trigger_evx)
-	Corec.connect("interrupt_event_x", stop_evx)
+	Corec.connect("interrupt_event_x", trigger_evx)
 	Corec.connect("change_panel_colors_signal", change_panel_colors)
 	Corec.connect("spawn_window_signal", spawn_window)
 	Corec.connect("spawn_popup_signal", spawn_popup)

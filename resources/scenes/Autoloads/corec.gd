@@ -77,7 +77,6 @@ signal spawn_file_dialog_signal
 signal trigger_event_x
 signal interrupt_event_x
 
-var eventx_status: bool = false
 var is_in_splash: bool = false
 var is_in_event: bool = false
 
@@ -96,7 +95,7 @@ func change_vfx_shader(shader: String):
 	emit_signal("change_vfx_shader_signal", shader)
 	print("CorecCVS")
 
-func change_panel_colors(color: Color):
+func change_panel_colors(color: Color = Color(27, 33, 48, 255)):
 	emit_signal("change_panel_colors_signal", color)
 
 func change_background_music(audio: String):
@@ -106,14 +105,17 @@ func change_background_music(audio: String):
 func switch_background_music():
 	emit_signal("switch_background_music_signal")
 
-func spawn_window(path_to_window: String, window_position: Vector2):
+func spawn_window(path_to_window: String, window_position: Vector2 = Vector2(0, 80)):
 	emit_signal("spawn_window_signal", path_to_window, window_position)
 
-func spawn_popup(popup_title: String, popup_text: String, has_pwd_query: bool):
+func spawn_popup(popup_title: String = "Warning", popup_text: String = "Test", has_pwd_query: bool = false):
 	emit_signal("spawn_popup_signal", popup_title, popup_text, has_pwd_query)
 
 func spawn_file_dialog():
 	emit_signal("spawn_file_dialog_signal")
+
+#func start_event(shader: String = "res://resources/shaders/vignette.tres", background_image: String = "res://resources/sprites/background_unaligned.png", other_parameter: String = ""):
+	#pass
 
 func switch_vfx_status():
 	switch_vfx_status_signal.emit()
@@ -121,13 +123,16 @@ func switch_vfx_status():
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("trigger_event_x_action") and is_in_splash == false:
-		trigger_event_x.emit()
-		eventx_status = true
-		print("Triggered event X")
+		if is_in_event == true:
+			interrupt_event_x.emit()
+			is_in_event = false
+		else:
+			trigger_event_x.emit()
+			is_in_event = true
+			print("Triggered event X")
 
 func stop_event_x():
-	if eventx_status == false:
-		interrupt_event_x.emit()
+	interrupt_event_x.emit()
 
 var Database: Dictionary = {
 	"class_data": {

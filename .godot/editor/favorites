@@ -1,0 +1,6 @@
+res://resources/scenes/core/desktop/desktop.scn
+res://resources/scenes/core/window/window.scn
+res://resources/scenes/Splash_screen/splash_screen.scn
+res://resources/scenes/core/Popup dialogue/popup.scn
+res://resources/scenes/core/folder/folder_default.scn
+res://resources/scenes/Autoloads/corec.gd
