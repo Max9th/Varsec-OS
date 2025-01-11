@@ -66,7 +66,7 @@ func spawn_file_dialog():
 
 		#window.position = Vector2(viewport_size.x / 2 - window.size.x/2, viewport_size.y / 2 - window.size.y/2 + 40)
 		window.position = Vector2(102, 184)
-		window.use_native_dialog = true
+		window.use_native_dialog = false
 #func spawn_file_dialog():
 	#$Popups/CanvasLayer/FileDialog.show()
 	#print("A file dialog was spawned via corec!")
