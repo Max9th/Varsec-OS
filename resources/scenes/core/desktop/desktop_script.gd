@@ -6,7 +6,7 @@ extends Node
 @onready var audioplayer: AudioStreamPlayer = $Other_components/Audioplayer
 @onready var canvas_layer: CanvasLayer = $vfx/CanvasLayer
 @onready var vfx_node: ColorRect = $vfx/CanvasLayer/ColorRect
-@onready var panel: Panel = $Contents/Core_components/Panel/Panel
+@onready var panel: PanelContainer = $Contents/Core_components/Panel/Panel
 @onready var viewport_size = get_viewport().get_visible_rect().size
 @onready var window_storage: Node = $Contents/Window_storage
 @onready var popup_storage: CanvasLayer = $Popups/CanvasLayer
@@ -63,10 +63,10 @@ func spawn_file_dialog():
 		window.show()
 		window.access = FileDialog.ACCESS_FILESYSTEM
 		window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
-		window.use_native_dialog = false
+
 		#window.position = Vector2(viewport_size.x / 2 - window.size.x/2, viewport_size.y / 2 - window.size.y/2 + 40)
 		window.position = Vector2(102, 184)
-
+		window.use_native_dialog = true
 #func spawn_file_dialog():
 	#$Popups/CanvasLayer/FileDialog.show()
 	#print("A file dialog was spawned via corec!")
@@ -87,6 +87,8 @@ func change_wallpaper(path: String):
 	else:
 		print("Failed to load image:", path)
 
+func notifications_vos():
+	pass
 
 func change_background_music(audio:String):
 	audioplayer.stream = load(audio)
@@ -105,6 +107,8 @@ func switch_vfx_status():
 func trigger_evx():
 	vfx_node.material = load("res://resources/shaders/vignette.tres")
 	Corec.spawn_popup("Auth required", "insert passcode", true)
+
+func stop_evx():
 	if Corec.is_in_event:
 		vfx_node.material = default_vfx_shader
 		for popup in popup_storage.get_children():
@@ -131,7 +135,7 @@ func connect_to_corec():
 	Corec.connect("switch_vfx_status_signal", switch_vfx_status)
 	Corec.connect("change_vfx_shader_signal", change_vfx_shader)
 	Corec.connect("trigger_event_x", trigger_evx)
-	Corec.connect("interrupt_event_x", trigger_evx)
+	Corec.connect("interrupt_event_x", stop_evx)
 	Corec.connect("change_panel_colors_signal", change_panel_colors)
 	Corec.connect("spawn_window_signal", spawn_window)
 	Corec.connect("spawn_popup_signal", spawn_popup)

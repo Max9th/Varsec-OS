@@ -26,7 +26,6 @@ Thanks to the creator of the [Computer Startup Sound](https://www.youtube.com/wa
 
 Thanks to my art teacher and to my physics teacher for their cameos in the OS
 
-And finally, thanks to the Godot Community for being helpful 
+And finally, thanks to the Godot Community for being helpful
 
 (I still plan on adding credits for the creators of the shaders used in the project)
-

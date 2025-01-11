@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6ovj2sh64g3"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+uid="uid://b4xfv1l3qnc75"
+path="res://.godot/imported/atividade-5b.jpg-724453cc5c4092ffcd14be7fac929551.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+source_file="res://resources/sprites/classmanagerassets/atividade-5b.jpg"
+dest_files=["res://.godot/imported/atividade-5b.jpg-724453cc5c4092ffcd14be7fac929551.ctex"]
 
 [params]
 

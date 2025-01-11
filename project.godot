@@ -26,6 +26,7 @@ Corec="*res://resources/scenes/Autoloads/corec.gd"
 
 [display]
 
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://resources/sprites/cursor.png"
 
@@ -46,4 +47,5 @@ trigger_event_x_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 occlusion_culling/use_occlusion_culling=true
