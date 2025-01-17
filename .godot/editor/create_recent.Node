@@ -1,3 +1,9 @@
+Camera3D
+MeshInstance3D
+Control
+SubViewport
+SubViewportContainer
+ColorRect
 corecoms
 MarginContainer
 PanelContainer
@@ -7,8 +13,3 @@ GridContainer
 TextureButton
 TextEdit
 LineEdit
-FileDialog
-Control
-ColorRect
-Timer
-VBoxContainer

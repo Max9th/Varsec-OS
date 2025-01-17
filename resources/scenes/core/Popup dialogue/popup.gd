@@ -22,28 +22,31 @@ func configure_popup():
 	else:
 		pwd_input_box.hide()
 
-
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	verify(new_text)
 
 func verify(user_input: String):
 		match user_input:
 			"cubigor":
-				authenticate()
+				Corec.start_event()
+				Corec.stop_event_x()
 			"max9th":
-				authenticate()
+				Corec.start_event()
+				Corec.stop_event_x()
 			"nightcity":
-				authenticate()
+				Corec.start_event()
+				Corec.stop_event_x()
 			"labobarco":
 				pass
 			"deziangle":
-				authenticate()
+				Corec.start_event()
+				Corec.stop_event_x()
 			"fuck":
-				swears()
+				pass
 			"no u":
-				swears()
+				pass
 			"bitch":
-				swears()
+				pass
 			#_:
 				#incorrect.visible = true
 				#timer.start()
@@ -53,9 +56,3 @@ func verify(user_input: String):
 				#timer_incorrect.start()
 				#line_edit.editable = false
 				#can_play = false
-
-func authenticate():
-	pass
-
-func swears():
-	pass

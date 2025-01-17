@@ -74,6 +74,7 @@ signal change_panel_colors_signal(color: Color)
 signal spawn_window_signal(path_to_window: String, window_position: Vector2)
 signal spawn_popup_signal(popup_title: String, popup_text: String, has_pwd_query: bool)
 signal spawn_file_dialog_signal
+signal hide_os_billboards_signal
 signal trigger_event_x
 signal interrupt_event_x
 
@@ -114,8 +115,14 @@ func spawn_popup(popup_title: String = "Warning", popup_text: String = "Test", h
 func spawn_file_dialog():
 	emit_signal("spawn_file_dialog_signal")
 
-#func start_event(shader: String = "res://resources/shaders/vignette.tres", background_image: String = "res://resources/sprites/background_unaligned.png", other_parameter: String = ""):
-	#pass
+func start_event(shader: String = "res://resources/shaders/vignette.tres", background_image: String = "res://resources/sprites/background_unaligned.png", background_music: String = "res://resources/audio/eek.mp3", panel_color: Color = Color(27, 33, 48, 255), has_3d_wallpaper: bool = false,_3d_bk_path: String = "res://resources/scenes/others/easter/TEST.scn"):
+	emit_signal("change_background_music_signal", background_music)
+	emit_signal("change_panel_colors_signal", panel_color)
+	emit_signal("change_vfx_shader_signal", shader)
+	emit_signal("change_wallpaper_signal", background_image)
+	hide_os_billboards_signal.emit()
+	is_in_event = true
+	print("CorecSE")
 
 func switch_vfx_status():
 	switch_vfx_status_signal.emit()
@@ -241,48 +248,48 @@ func stop_event_x():
 				"title": "Arte romana",
 				"text": "Atividades desenvolvidas em sala:\nNos vimos sobre a arte no período romano. Vimos a arquitetura, escultura, pintura e mosaico nessa época.\n\nArquitetura\nA arquitetura romana é uma das maiores contribuições deixadas pelos romanos para a história da arte.\n\nCaracterística principal: Uso dos arcos, uma técnica revolucionária para a época. O arco permitia a construção de estruturas mais resistentes e amplas.\n\nExemplo: Arco do Triunfo, um monumento construído para celebrar vitórias militares e homenagear os imperadores.\n\nPanteão de Agripa\nDestaque arquitetônico: Maior domo (abóboda) do mundo na época. Até hoje, ninguém fez outro domo com as mesmas proporções.\n\nFunção: Era um templo dedicado a todos os deuses da época, refletindo a religião politeísta romana.\n\nContexto histórico: A construção ocorreu antes da cristianização de Roma\n\nEscultura\nA escultura romana tem inspiração direta na escultura grega, mas com diferenças notáveis:\n\nRealismo: Os romanos adicionaram mais detalhes realísticos, especialmente nas feições humanas.\n\nMateriais utilizados: Usavam principalmente mármore e cobre.\n\nPintura\nAs pinturas romanas eram amplamente utilizadas para decoração de interiores e monumentos.\n\nUso: Decoração de palácios, templos e residências.\n\nDesgaste: Muitas pinturas desbotaram com o tempo, devido às condições climáticas e falta de preservação adequada.\n\nMosaico\nO mosaico foi uma das principais formas de arte decorativa romana\n\nFunção: Utilizado para decorar edifícios como casas, templos e banhos públicos.\n\nTécnica: Pequenas peças de pedra ou vidro (tesselas) eram organizadas para formar padrões, cenas mitológicas e paisagens.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "res://resources/sprites/classmanagerassets/aula_1b.png",
+					2: "res://resources/sprites/classmanagerassets/aula_1e.png"
 					}
 			},
 			2: {
 				"title": "Mosaicos romanos",
 				"text": "Atividades desenvolvidas em sala:\nFizemos uma atividade inspirada na arte mosaica romana. Os romanos pegavam pedras quase do mesmo tamanho e formavam um desenho.\n\nAtividade\nNós cortamos papéis em quadrados de mais ou menos o mesmo tamanho e de várias cores. Logo depois, colamos esses papéis em uma folha A4, formando, assim, um desenho.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "res://resources/sprites/classmanagerassets/IMG_20250111_171741.jpg",
+					2: "res://resources/sprites/classmanagerassets/images (3).jpeg"
 					}
 			},
 			3: {
 				"title": "Arte gótica",
 				"text": "Atividades desenvolvidas em sala:\nA gente viu sobre a arte gótica que surgiu na Europa durante a Idade Média. Essa arte substituiu as formas pesadas e robustas por construções mais leves, altas e ornamentadas. Vimos sobre a sua arquitetura, escultura e pintura.\n\nArquitetura\nA arquitetura gótica se destaca pela sua verticalidade, leveza estrutural e inovações técnicas que possibilitaram a construção de catedrais monumentais.\n\nInovações principais:\nArco ogival: Substituiu os arcos redondos românicos. Sua grande vantagem é a flexibilidade, permitindo maior altura e largura.\n\nAbóbadas em cruzaria: Distribuem o peso com eficiência, tornando desnecessárias paredes maciças.\n\nContrafortes externos: Sustentam a estrutura e permitem grandes vãos.\n\nVitrais: Painéis coloridos que iluminam o interior das catedrais, criando um efeito místico.\n\nEscultura\nA escultura gótica estava fortemente ligada à arquitetura e desempenhava um papel decorativo e religioso.\n\nCaracterísticas principais:\nEsculturas integradas às fachadas de igrejas e catedrais.\n\nRostos e poses naturalistas.\n\nUso frequente de figuras alongadas em pose de \"S\", como forma de representar leveza e movimento.\n\nPintura\nA pintura gótica evoluiu da iluminação de manuscritos para obras mais realistas e expressivas, mantendo a função educativa e religiosa.\n\nCaracterísticas principais:\nFiguras com proporções mais naturais e realistas.\n\nUso de luz e sombra para criar volume e profundidade.\n\nTemas religiosos, como cenas bíblicas e representações de santos.\n\nArtista destaque - Giotto di Bondone: Quebrou com o conservadorismo bizantino ao trazer realismo para a pintura.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "res://resources/sprites/classmanagerassets/Vitral-na-Catedral-de-Chartres.jpeg",
+					2: "res://resources/sprites/classmanagerassets/33ed332a031fcd7c7e0581bb0aeae137.webp"
 					}
 			},
 			4: {
 				"title": "Fotos dos acontecimentos da semana",
 				"text": "Assunto tratado:\nFotografia no IFG\n\nNessa aula, o professor propôs um trabalho que consistia em tirar uma foto que representasse um dia no IFG. O objetivo era capturar 5 momentos diferentes, cada um simbolizando a rotina de cada integrante na instituição.\n Eu infelizmente não participei dessa aula devido a problemas de saude.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "",
+					2: ""
 					}
 			},
 			5: {
 				"title": "Atividade com folhas",
 				"text": "A aula foi realizada no auditório junto com o MEC. 1. Nela, fizemos uma atividade em que pegamos folhas das árvores do IFG. Colocamos uma folha A4 por cima da folha e passamos giz, de modo que os desenhos das folhas ficassem marcados no papel. Também desenhamos as folhas à mão.\n\nAtividade\nEu peguei três folhas e escolhi três cores, uma para cada folha. Depois, desenhei as folhas por cima da marca deixada pelo giz.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "res://resources/sprites/classmanagerassets/IMG_20250111_171735.jpg",
+					2: ""
 					}
 			},
 			6: {
 				"title": "Arte no Renascimento",
 				"text": "Vimos sobre a arte no Renascimento, conhecendo seus principais artistas e obras, além das características que definiram esse período.\n\nRenascimento\nO Renascimento foi a união da vontade metódica dos romanos de estudar as coisas com o espírito explorador herdado dos góticos. Esse período marcou um renascimento das artes, ciências e do pensamento humano, trazendo avanços técnicos e estéticos.\n\nArtista e Obra\nLeonardo da Vinci\nConsiderado um dos maiores artistas do Renascimento, com contribuições revolucionárias tanto na arte quanto na ciência.\n\n- Obra icônica: A Última Ceia\n- Técnica utilizada: Têmpera, que combina pigmentos com clara de ovo para criar a tinta.\n- Inovações: Uso da perspectiva, profundidade e pontos de fuga para criar traços harmoniosos.\n- Detalhe provocador: Leonardo colocou rostos de filósofos nos lugares dos discípulos, numa sutil crítica à Igreja.\n\nReleitura da obra de Leonardo da Vinci\nReleitura é uma forma de usar uma obra de referência, mas acrescentar outros aspectos.\n\nMestre Ataíde\nArtista brasileiro do período Barroco. Nascido em Minas Gerais (1762-1830). Pintou a Última Ceia, mas com uma abordagem diferente.\n\n- Respeitou mais a tradição religiosa, incluindo elementos como a auréola e o cálice, ausentes na obra de Leonardo.\n- Sua versão apresenta mais movimento e descontração, conferindo um toque original.\n\nCaracterísticas do Renascimento\n- Perspectiva: Uso de pontos de fuga para criar profundidade e proporção nas pinturas.\n- Realismo: Detalhes mais naturais e expressivos.",
 				"images": {
-					1: "res://resources/sprites/arrow.png",
-					2: "res://resources/sprites/arrow.png"
+					1: "res://resources/sprites/classmanagerassets/a-última-ceia_637685536.jpg",
+					2: "res://resources/sprites/classmanagerassets/aula_6c.png"
 					}
 			}
 		},

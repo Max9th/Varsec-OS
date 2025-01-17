@@ -10,6 +10,7 @@ extends Node
 @onready var viewport_size = get_viewport().get_visible_rect().size
 @onready var window_storage: Node = $Contents/Window_storage
 @onready var popup_storage: CanvasLayer = $Popups/CanvasLayer
+@onready var os_billboards: Control = $Contents/Core_components/Os_billboards
 
 var vfx_status: bool = true
 
@@ -123,6 +124,15 @@ func switch_background_music():
 	else:
 		audioplayer.play()
 
+var billboard_status: bool = true
+
+func hide_os_billboards():
+	billboard_status = !billboard_status
+	if !music_status:
+		os_billboards.hide()
+	else:
+		os_billboards.show()
+
 #endregion
 
 #region Core components
@@ -141,6 +151,7 @@ func connect_to_corec():
 	Corec.connect("spawn_popup_signal", spawn_popup)
 	Corec.connect("spawn_file_dialog_signal", spawn_file_dialog)
 	Corec.connect("switch_background_music_signal", switch_background_music)
+	Corec.connect("hide_os_billboards_signal", hide_os_billboards)
 
 #endregion
 
