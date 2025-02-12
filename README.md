@@ -10,5 +10,5 @@
 
 https://github.com/Max9th/Varsec-OS-web
 
-Made in GODOT 4.3
+Made in Godot-4.4 beta3
 
