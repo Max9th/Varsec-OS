@@ -1,3 +1,6 @@
+VSplitContainer
+HSeparator
+VBoxContainer
 Camera3D
 MeshInstance3D
 Control
@@ -10,6 +13,3 @@ PanelContainer
 Label
 HBoxContainer
 GridContainer
-TextureButton
-TextEdit
-LineEdit

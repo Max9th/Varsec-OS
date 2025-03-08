@@ -12,23 +12,23 @@ config_version=5
 
 config/name="Varsec Fantasy OS 2.0"
 config/description="Varsec OS is a fantasy Operating System made as an art project. It is Max9th's biggest project to date. It serves as a portfolio for his school and personal projects"
-run/main_scene="res://resources/scenes/Splash_screen/splash_screen.scn"
+run/main_scene="res://Files/scenes/Splash_screen/splash_screen.scn"
 config/features=PackedStringArray("4.4")
 run/max_fps=60
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.png"
+config/icon="uid://ba6ovj2sh64g3"
 
 [autoload]
 
-Corec="*res://resources/scenes/Autoloads/corec.gd"
+Corec="*res://Files/Autoloads/corec.gd"
 
 [display]
 
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://resources/sprites/cursor.png"
+mouse_cursor/custom_image="res://Files/sprites/cursor.png"
 
 [editor_plugins]
 
