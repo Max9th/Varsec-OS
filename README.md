@@ -2,10 +2,6 @@
 
 ![icon](https://github.com/user-attachments/assets/65a14560-15db-4d34-b16b-93886c1dc837)
 
-# 🎮 VARSEC OS 🎮
-
-## Warning: This game is still under development and is not in playable state. Expect daily commits by the dev team.
-
 ### 🏗️ Description  
 Varsec OS is a fantasy OS (operating system) made as an art portfolio for school.
 
