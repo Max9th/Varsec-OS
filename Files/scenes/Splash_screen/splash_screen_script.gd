@@ -3,8 +3,6 @@ extends CanvasLayer
 
 @onready var panel: Panel = $Panel
 
-@onready var audioplayer: AudioStreamPlayer = $Other_components/Audioplayer
-
 @export var interpolation_speed: float = 3.0
 @export var blank_screen_start: bool
 @export var timers: Array[Timer] = []
@@ -17,7 +15,8 @@ var fading_out: bool = false
 
 func _ready() -> void:
 	change_panel_colors(Color.BLACK)
-	audioplayer.play()
+	#audioplayer.play()
+	Corec.play_secondary_track("uid://wrlc801ukxib")
 	hide_all_screens()
 	Corec.is_in_splash = true
 	for timer in timers:
@@ -86,7 +85,6 @@ func _on_timer_timeout() -> void:
 var bus_name = "sfx_1"
 var fade_duration = 9.0
 var target_volume = -80.0
-@onready var node: Node = $Node
 
 func fade_out_sfx():
 	var current_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))

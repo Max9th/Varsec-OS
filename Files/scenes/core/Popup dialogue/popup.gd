@@ -6,6 +6,9 @@ class_name popup_window_vos extends window_vos
 @export_multiline var window_text: String
 @export var window_text_label: Label
 
+@onready var incorrect_message: HBoxContainer = %IncorrectMsg
+@onready var timer: Timer = $Other_components/Timer
+
 func _ready() -> void:
 	super._ready()
 	configure_popup()
@@ -28,31 +31,47 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 func verify(user_input: String):
 		match user_input:
 			"cubigor":
-				Corec.start_event()
-				Corec.stop_event_x()
+				Corec.stop_event()
+				Corec.clear_popups.emit()
+				Corec.start_event(Corec.crt_shader, Corec.default_background, "res://Files/audio/Cubigor theme.mp3", Color("1b2130"), true, "res://Files/scenes/others/easter/Donigor.scn")
+				Corec.hide_os_billboards_signal.emit()
+
 			"max9th":
+				Corec.stop_event()
+				Corec.clear_popups.emit()
 				Corec.start_event()
-				Corec.stop_event_x()
+
 			"nightcity":
+				Corec.stop_event()
+				Corec.clear_popups.emit()
 				Corec.start_event()
-				Corec.stop_event_x()
+
+			"the silent remains":
+				Corec.stop_event()
+				Corec.clear_popups.emit()
+				Corec.start_event("res://Files/shaders/vignette.tres", "res://Files/sprites/belathazar.png", "res://Files/audio/morse.wav" )
+
 			"labobarco":
-				pass
+				Corec.play_secondary_track("res://Files/audio/Building_Stuff.mp3")
 			"deziangle":
+				Corec.stop_event()
 				Corec.start_event()
-				Corec.stop_event_x()
+
 			"fuck":
 				pass
 			"no u":
 				pass
 			"bitch":
 				pass
-			#_:
-				#incorrect.visible = true
-				#timer.start()
-				#line_edit.text = ""
+			_:
+				incorrect_message.visible = true
+				timer.start()
+				pwd_input_box.text = ""
 				#if can_play == true:
-					#wrong.play()
-				#timer_incorrect.start()
+				audioplayer.play()
 				#line_edit.editable = false
 				#can_play = false
+
+
+func _on_timer_timeout() -> void:
+	incorrect_message.hide()
