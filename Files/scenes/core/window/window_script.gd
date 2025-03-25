@@ -1,16 +1,26 @@
-@icon("res://resources/sprites/window_icon.png")
-class_name window_vos extends Panel
+@tool
+@icon("uid://cx0s8jijvshei")
+class_name window_vos extends NinePatchRect
 
-@export_category("Necessary children:")
+@export_category("Necessary children")
+
 @export var window_name_label: Label
+
+@export var drag_handle: Control:
+	set = set_drag_handle
+
+@export var resize_handle: Control:
+	set = set_resize_handle
+
+@export var maximize: Button:
+	set = set_maximize_button
+
+@export var close: Button:
+	set = set_close_button
+
 @export var audioplayer: AudioStreamPlayer
-@export var drag_handle: Control
-@export var resize_handle: Control
-@export var maximize: Button
-@export var close: Button
 
 @export_category("Window properties")
-@export var show_window: bool
 @export var can_drag: bool
 @export var can_maximize: bool
 @export var can_close: bool
@@ -23,47 +33,53 @@ class_name window_vos extends Panel
 
 signal closed
 
-func _ready() -> void:
-#region Conects signals
-	drag_handle.gui_input.connect(_on_drag_handle_gui_input)
-	resize_handle.gui_input.connect(_on_resize_handle_gui_input)
-	maximize.pressed.connect(_on_maximize_pressed)
-	close.pressed.connect(_on_close_pressed)
-#endregion
-	if show_window == true:
-		self.show()
+func _init() -> void:
+	self.custom_minimum_size = Vector2(258, 144)
+	self.texture = load("uid://u37075llycfy")
+	self.region_rect = Rect2(0,0, 150, 150)
+	self.patch_margin_left = 12
+	self.patch_margin_top = 33
+	self.patch_margin_right = 61
+	self.patch_margin_bottom = 25
+	self.connect("gui_input", _on_gui_input)
+	#Corec.opened_programs.append(self)
+	if self not in Corec.opened_programs:
+		Corec.opened_programs.append(self)
+
+func set_drag_handle(value):
+	if value:
+		value.gui_input.connect(_on_drag_handle_gui_input)
+		drag_handle = value
 	else:
-		self.hide()
-	#debugready()
+		print("Drag handle was not defined for window " + name)
 
-func _process(_delta: float) -> void:
-	drag_process()
-	resize_process()
+func set_resize_handle(value):
+	if value:
+		value.gui_input.connect(_on_resize_handle_gui_input)
+		resize_handle = value
+	else:
+		print("Resize handle was not defined for window " + name)
+	#return value
 
-	#debugproc()
+func set_maximize_button(value):
+	if value:
+		value.pressed.connect(_on_maximize_pressed)
+		maximize = value
+	else:
+		print("Maximize button was not defined for window " + name)
+	#return value
 
-##region Debug
-#func debugready():
-	#if OS.is_debug_build():
-		#maximize.self_modulate.a = 1
-		#close.self_modulate.a = 1
-		#$Drag_handle/Panel.visible = true
-		#$Resize_handle/Panel.visible = true
-	#else:
-		#maximize.self_modulate.a = 0
-		#close.self_modulate.a = 0
-		#$Drag_handle/Panel.visible = false
-		#$Resize_handle/Panel.visible = false
-#
-#func debugproc():
-	#if OS.is_debug_build():
-		#$Drag_handle/Panel.size.x = drag_handle.size.x
-		#$Drag_handle/Panel.global_position.x = drag_handle.global_position.x
-##endregion
+func set_close_button(value):
+	if value:
+		value.pressed.connect(_on_close_pressed)
+		close = value
+	else:
+		print("Close button was not defined for window " + name)
+	#return value
 
 #region Logic for maximizing and closing
 
-var panel_height: int = 80 #shared with drag logic
+var panel_height: int = Corec.panel_height #shared with drag logic
 var animation_velocity: float = 0.25 # Bigger is slower
 var is_maximized: bool
 var unmaximized_position: Vector2
@@ -83,7 +99,7 @@ func _on_maximize_pressed() -> void:
 		is_maximized = !is_maximized
 
 #region I don't fucking know what is going on inside these two functions, but they work perfectly, so, that's great O_O
-func maximize_window(target: Panel) -> void:
+func maximize_window(target: window_vos) -> void:
 	var tween: Tween = target.create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -93,7 +109,7 @@ func maximize_window(target: Panel) -> void:
 	tween.tween_property(target, "global_position", new_position, animation_velocity)
 	await tween.tween_property(target, "size", new_size, animation_velocity).finished
 
-func restore_window(target: Panel, unmaxed_position: Vector2, unmaxed_size: Vector2) -> void:
+func restore_window(target: window_vos, unmaxed_position: Vector2, unmaxed_size: Vector2) -> void:
 	var tween: Tween = target.create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -102,6 +118,7 @@ func restore_window(target: Panel, unmaxed_position: Vector2, unmaxed_size: Vect
 #endregion
 
 func close_window():
+	Corec.opened_programs.erase(self)
 	audioplayer.play()
 	await audioplayer.finished
 	if can_close:
@@ -110,9 +127,21 @@ func close_window():
 			self.queue_free()
 		else:
 			self.visible = false
+	else:
+		print("Closing this window is not possible " + name)
 
 
 #endregion
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == 1:
+		select()
+
+func select():
+	get_parent().move_child(self, Corec.opened_programs.size())
+
+func deselect():
+	pass
 
 #region Drag logic (reusable)
 
@@ -124,6 +153,7 @@ var start_drag_position: Vector2
 
 func _on_drag_handle_gui_input(event: InputEvent) -> void:
 	detect_start_dragging(event)
+	drag_process()
 
 func detect_start_dragging(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == 1:
@@ -137,7 +167,7 @@ func detect_start_dragging(event: InputEvent):
 
 
 func drag_process() -> void:
-	drag_handle.size.x = self.size.x - 60
+	#drag_handle.size.x = self.size.x - 60
 	if is_dragging and can_drag:
 		global_position = start_drag_position + (get_global_mouse_position() - mouse_start_drag_position)
 		global_position.x = clamp(global_position.x, 0, viewport_size.x - self.size.x)
@@ -166,8 +196,9 @@ func detect_start_resizing(event: InputEvent) -> void:
 
 func _on_resize_handle_gui_input(event: InputEvent) -> void:
 	detect_start_resizing(event)
+	resize_process()
 
-func handle_aspect_ratio_resize(window: Panel, mouse_pos: Vector2, starting_size: Vector2, mouse_start_drag_pos: Vector2) -> void:
+func handle_aspect_ratio_resize(window: window_vos, mouse_pos: Vector2, starting_size: Vector2, mouse_start_drag_pos: Vector2) -> void:
 	var aspect_ratio: float = starting_size.x / starting_size.y
 	var new_width = starting_size.x + (mouse_pos.x - mouse_start_drag_pos.x)
 	window.size.x = new_width

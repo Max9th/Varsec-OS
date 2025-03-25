@@ -1,3 +1,4 @@
+@icon("uid://4hlbl2jngrh7")
 class_name splash_screen_vos
 extends CanvasLayer
 

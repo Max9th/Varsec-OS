@@ -1,4 +1,4 @@
-@icon("res://resources/sprites/Themaxwellcompany_dark.png")
+@icon("uid://ba6ovj2sh64g3")
 class_name Desktop_vos
 extends Node
 
@@ -11,11 +11,28 @@ extends Node
 @onready var popup_storage: CanvasLayer = $Popups/CanvasLayer
 @onready var os_billboards: Control = $Contents/Core_components/Os_billboards
 @onready var _3d_bk: SubViewport = $"Contents/Core_components/3d_bk/3d_bk"
+@onready var notification_box := $Contents/Others/NotificationBoxPivot
+@onready var notification_label: Label = $Contents/Others/NotificationBoxPivot/notification_box/NotificationLabel
+@onready var notification_timer: Timer = $Contents/Others/NotificationBoxPivot/notification_box/NotificationTimer
 
 var vfx_status: bool = true
 
-#var default_vfx_shader = preload("res://Files/shaders/shader_crt.tres")
-var popup_scene = load("uid://gbtor40k4ppf")
+#region Connect to Corec
+
+func connect_to_corec():
+	Corec.connect("change_wallpaper_signal", change_wallpaper,)
+	Corec.connect("switch_vfx_status_signal", switch_vfx_status)
+	Corec.connect("change_vfx_shader_signal", change_vfx_shader)
+	Corec.connect("change_panel_colors_signal", change_panel_colors)
+	Corec.connect("spawn_window_signal", spawn_window)
+	Corec.connect("spawn_popup_signal", spawn_popup)
+	Corec.connect("spawn_file_dialog_signal", spawn_file_dialog)
+	Corec.connect("hide_billboards_signal", hide_billboards)
+	Corec.connect("send_notification_signal", send_notification)
+	Corec.connect("clear_popups", clear_popups)
+	Corec.connect("clear_windows", clear_windows)
+
+#endregion
 
 func _ready() -> void:
 	#audioplayer.play()
@@ -25,10 +42,12 @@ func _ready() -> void:
 	change_vfx_shader()
 	Corec.change_background_music()
 	Corec.stop_secondary_track()
+	Corec.play_secondary_track("res://Files/audio/The fire is gone.mp3")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx_1"), 0)
 	#print(Corec.Database["class_data"][1][1]["title"] + "Testing database")
 	#print(Corec.Database["class_data"][1][1]["text"] + "Testing database")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Corec.is_in_event == true:
 		pass
 
@@ -44,25 +63,23 @@ func spawn_window(window_path: StringName, window_pos: Vector2):
 		new_window.position = window_pos
 		new_window.show()
 		new_window.is_instance_type = true
-		print("A window was spawned via corec!")
 
 func spawn_popup(popup_text: StringName, popup_name: StringName, has_pwd_query: bool):
-	var destination_node = popup_storage
-	if destination_node:
-		var popup = popup_scene.instantiate()
-		destination_node.add_child(popup)
+	if popup_storage:
+		var popup: popup_window_vos = load(Corec.popup_scene).instantiate()
+		popup.show_window = true
+		popup.is_instance_type = true
+		popup.can_close = true
 		popup.show()
-		popup.window_name = popup_name
-		popup.window_text = popup_text
+		popup.window_name_label.text = popup_name
+		popup.popup_text_label.text = popup_text
 		popup.has_pwd_query = has_pwd_query
-		popup.configure_popup()
-		print("A popup was spawned via corec!")
+		popup_storage.add_child(popup)
 
 func spawn_file_dialog():
-	var destination_node = popup_storage
-	if destination_node:
+	if popup_storage:
 		var window = FileDialog.new()
-		destination_node.add_child(window)
+		popup_storage.add_child(window)
 		window.filters = ["*.png", "*.jpeg"]
 		window.show()
 		window.access = FileDialog.ACCESS_FILESYSTEM
@@ -82,14 +99,13 @@ func change_panel_colors(color: Color):
 		new_stylebox.bg_color = color
 		panel.add_theme_stylebox_override("panel", new_stylebox)
 
+var default_background_image = preload("uid://cmcpsmaw4gejf")
 func change_wallpaper(path: StringName, is_3d: bool = false, path_to_3d_scene: StringName = &"uid://ctm4fp4tnsvm6"):
-	var img = Image.new()
-	var err = img.load(path)
-	if err == OK:
-		var texture = ImageTexture.create_from_image(img)
-		background.texture = texture
+	if not path.is_empty():
+		background.texture = load(path)
 	else:
-		print("Failed to load image:", path)
+		print("Failed to load image:", path + " Loading default.")
+		background.texture = default_background_image
 	if is_3d:
 		background.hide()
 		for child in _3d_bk.get_children():
@@ -98,12 +114,15 @@ func change_wallpaper(path: StringName, is_3d: bool = false, path_to_3d_scene: S
 	else:
 		background.show()
 
-func send_notification(content: StringName):
-	pass
 
-#func change_background_music(audio:StringName):
-	#audioplayer.stream = load(audio)
-	#audioplayer.play()
+func send_notification(content: StringName):
+	notification_label.text = content
+	var tween = create_tween()
+	var target_position = Vector2(576 , 160)
+	tween.tween_property(notification_box, "position", target_position, .2)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_ELASTIC)
+	notification_timer.start()
 
 func change_vfx_shader(path_to_shader: StringName = &"uid://c7vnw4dnik7g3"):
 	if !path_to_shader.is_empty():
@@ -116,32 +135,21 @@ func switch_vfx_status():
 	else:
 		canvas_layer.hide()
 
-func trigger_evx():
-	vfx_node.material = load("uid://cwuwsinbkkmii")
-	Corec.spawn_popup("Auth required", "insert passcode", true)
-
-func stop_evx():
-	if Corec.is_in_event:
-		change_vfx_shader()
-		for popup in popup_storage.get_children():
-			popup.queue_free()
-
 var music_status: bool = true
 
-#func switch_background_music():
-	#music_status = !music_status
-	#if !music_status:
-		#audioplayer.stop()
-	#else:
-		#audioplayer.play()
-
 func clear_popups():
-	for popup in $Popups/CanvasLayer.get_children():
-		popup.queue_free()
+	for popup in popup_storage.get_children():
+		if popup is popup_window_vos:
+			popup.close_window()
+
+func clear_windows():
+	for window in window_storage.get_children():
+		if window is window_vos:
+			window.close_window()
 
 var billboard_status: bool = true
 
-func hide_os_billboards():
+func hide_billboards():
 	billboard_status = !billboard_status
 	if !billboard_status:
 		os_billboards.hide()
@@ -151,26 +159,6 @@ func hide_os_billboards():
 #endregion
 
 #region Core components
-
-#region Connect to Corec
-
-func connect_to_corec():
-	Corec.connect("change_wallpaper_signal", change_wallpaper,)
-	#Corec.connect("change_background_music_signal", change_background_music)
-	Corec.connect("switch_vfx_status_signal", switch_vfx_status)
-	Corec.connect("change_vfx_shader_signal", change_vfx_shader)
-	Corec.connect("trigger_event_x", trigger_evx)
-	Corec.connect("interrupt_event_x", stop_evx)
-	Corec.connect("change_panel_colors_signal", change_panel_colors)
-	Corec.connect("spawn_window_signal", spawn_window)
-	Corec.connect("spawn_popup_signal", spawn_popup)
-	Corec.connect("spawn_file_dialog_signal", spawn_file_dialog)
-	#Corec.connect("switch_background_music_signal", switch_background_music)
-	Corec.connect("hide_os_billboards_signal", hide_os_billboards)
-	Corec.connect("send_notification_signal", send_notification)
-	Corec.connect("clear_popups", clear_popups)
-
-#endregion
 
 #region Time manager
 
@@ -189,3 +177,11 @@ func _on_time_update_timer_timeout() -> void:
 #endregion
 
 #endregion
+
+
+func _on_notification_timer_timeout() -> void:
+	var tween = create_tween()
+	var target_position = Vector2(576, -48)
+	tween.tween_property(notification_box, "position", target_position, .2)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_ELASTIC)

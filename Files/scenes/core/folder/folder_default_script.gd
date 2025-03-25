@@ -1,16 +1,17 @@
-@icon("res://resources/sprites/folder.png")
+#@tool
+@icon("uid://ch8stip28flkd")
 class_name Folder_vos extends TextureButton
 
 @onready var audioplayer: AudioStreamPlayer = $Other_components/Audioplayer
 @onready var filename_label: Label = $Panel/HBoxContainer/Filename
 @onready var timer: Timer = $Other_components/Timer
 @onready var panel: PanelContainer = $Panel
-@onready var text_icon: TextureRect = $Panel/HBoxContainer/Text_icon
-@onready var file_icon: TextureRect = $file_icon
+@onready var text_icon: TextureRect = $Panel/HBoxContainer/TextIcon
+@onready var file_icon: TextureRect = $FileIcon
 
 @export_category("Folder settings")
 @export_multiline var file_name: String
-@export var file_icon_var: Texture
+@export var file_icon_var: Texture = null
 @export var text_icon_var: Texture = null
 @export var default_filename_color_primary = Color(1, 1, 1, 1)
 @export var default_filename_color_secondary = Color(0, 0, 0, 1)
@@ -26,9 +27,11 @@ enum Doc_type {Instance, pre_existent, link_type = -1}
 @export_subgroup("Instantiated Window")
 @export var window_path: String
 
-var selected: bool = false
+var is_selected: bool = false
 
 signal opened
+signal selected
+signal deselected
 
 func _ready() -> void:
 	filename_label.label_settings = filename_label.label_settings.duplicate(false)
@@ -50,26 +53,32 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	var timer_running = not timer.is_stopped()
 	if !timer_running:
-		if !selected:
-			selected = true
-			if text_icon:
-				text_icon.show()
-			panel.self_modulate.a = 1
-			filename_label.label_settings.font_color = default_filename_color_secondary
-			timer.start()
-			audioplayer.play()
-			print(str(filename_label.text) + " Was selected! Ermager :O")
+		if !is_selected:
+			select()
 		else:
 			deselect()
 			if text_icon:
 				text_icon.hide()
-	elif selected and timer_running:
+	elif is_selected and timer_running:
 		open()
-		opened.emit()
 		deselect()
 
+func select():
+	is_selected = true
+	selected.emit()
+	if text_icon:
+		text_icon.show()
+	panel.self_modulate.a = 1
+	filename_label.label_settings.font_color = default_filename_color_secondary
+	timer.start()
+	audioplayer.play()
+	print(str(filename_label.text) + " Was is_selected! Ermager :O")
+
 func deselect():
-	selected = false
+	if text_icon:
+		text_icon.hide()
+	deselected.emit()
+	is_selected = false
 	panel.self_modulate.a = 0
 	filename_label.label_settings.font_color = default_filename_color_primary
 
@@ -86,9 +95,15 @@ func _on_mouse_exited() -> void:
 	is_mouse_hover = false
 
 func open():
+	opened.emit()
 	match Type_of_doc:
 		Doc_type.Instance:
-			Corec.spawn_window(window_path, Vector2(self.position.x + self.size.x + 10, 80))
+			if not window_path.is_empty():
+				Corec.open_program(window_path, Vector2(self.position.x + self.size.x + 80, Corec.panel_height))
+				print("A window was spawned! by " + name)
+			else:
+				print("Failed to open window! " + name)
+				Corec.send_notification("Failed to open window!")
 		Doc_type.pre_existent:
 			get_node(window_link).show()
 			print("A window was opened! (pre-existent)")

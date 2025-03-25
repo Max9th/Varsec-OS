@@ -1,6 +1,6 @@
 res://Files/scenes/core/desktop/desktop.scn
 res://Files/scenes/core/window/window.scn
 res://Files/scenes/Splash_screen/splash_screen.scn
-res://Files/scenes/core/Popup dialogue/popup.scn
+res://Files/scenes/core/Popup dialogue/PopupWindow.scn
 res://Files/scenes/core/folder/folder_default.scn
-res://Files/Autoloads/corec.gd
+res://Files/Autoloads/core.gd

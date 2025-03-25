@@ -1,22 +1,30 @@
-class_name corecoms extends Node
+@icon("uid://dq3u5uprgstxv")
+extends Node
 
-#MMMMMMMMMMNdddddddxxxKMMMMMMXxxxxddddddXMMMMMMMMMM
-#MMMMMMMMMMO          dMMMMMMk          xMMMMMMMMMM
-#MMMMMMMMMMO   lkkkkkkXMMMMMMNkkkkkko   xMMMMMMMMMM
-#MMMMMMMMMMO   OMMMMMMMMMMMMMMMMMMMMK   xMMMMMMMMMM
-#MMMMMMMMMMO   OMMMMMMMMMM.  :MMMMMMK   xMMMMMMMMMM
-#MMMMMMMMMMK,,,KMMWOOOOOOO   ;MMMMMMX,,,OMMMMMMMMMM
-#MMMMMMMMMMMMMMMMMX          ;MMMMMMMMMMMMMMMMMMMMM
-#MMMMMMMMMMMMMMMMMWooo'      .lllXMMMMMMMMMMMMMMMMM
-#MMMMMMMMMMMMMMMMMMMMMc          0MMMMMMMMMMMMMMMMM
-#MMMMMMMMMM0'''0MMMMMMc   O000000WMMX'''OMMMMMMMMMM
-#MMMMMMMMMMO   OMMMMMMl...NMMMMMMMMMK   xMMMMMMMMMM
-#MMMMMMMMMMO   OMMMMMMMMMMMMMMMMMMMMK   xMMMMMMMMMM
-#MMMMMMMMMMO   cxxxkkkXMMMMMMXxkkxxxo   xMMMMMMMMMM
-#MMMMMMMMMMO          dMMMMMMk          xMMMMMMMMMM
-#MMMMMMMMMMNxxxxxxxkkkXMMMMMMNkkkxxxxxxxXMMMMMMMMMM
+			  #.,ldxkxdo:,..                          ..,:ldkkxdl;.
+			  #'oKWMMNKOdc,.                          .'cdkKNMMWXd'
+			  #'dNMXx;'...                              ...';dKMNk,
+			  #'dXNk;                                        ,xXXx,
+			  #.ckko'                                        .lkkl'
+			   #.',..         .......        .......         ..,,.
+						  #,d0NNNXNNN0o'  .lOXNXXNNNKx;.
+						 #.cOWMN0k0NMWk;  'xWMW0kONMW0l.
+						 #.c0WXl. .oNWO;  ,kNNd' .cKWKl.
+						  #:kXk;   cOXx,  'dKOl.  ;kXOc.
+						  #'coc'   ,lo:.  .;ol,.  'coc'.
+					   #..',::;.   .;::,'',;:;'   .;::;'..
+					  #.';ccc:,.   .,cc::::cc;.   .,:ccc:,.
+						#......     ..........      .....
+					  #,dOk:   .','    ckOl.   .,'.   ;xOx;.
+					  #;xK0o.  .,;,.  .oKKd'   ';,.  .l0Kk:.
+			   #.''..   ....           ....           ....    .''.
+			  #.,cc,.                                        .,cc,.
+			  #.cxOl'                                        .lxkl.
+			  #'dXWXx;....                               ...,dKWNk,
+			  #'dXMMMWX0dc,.                          .'cdOXWMMMNx,
+			  #.'codxdol;'..                          ..';codxdoc,.
 
-# Max9th
+# ForgeWorks
 
 	#',,,,.  'cccccc, .cccccc;
  #,,,,,,,, ,cccccc; 'cccccc:
@@ -74,32 +82,47 @@ signal change_panel_colors_signal(color: Color)
 signal spawn_window_signal(path_to_window: String, window_position: Vector2)
 signal spawn_popup_signal(popup_title: String, popup_text: String, has_pwd_query: bool)
 signal spawn_file_dialog_signal
-signal hide_os_billboards_signal
-signal changed_easter_state
+signal hide_billboards_signal
 signal send_notification_signal(content: String)
 signal clear_popups
+signal clear_windows
 
 var is_in_splash: bool = false
-var is_in_event: bool = false
+var is_in_event: bool = false:
+	set = hide_billboards
 var music_status: bool = true
 var audioplayer_one = AudioStreamPlayer.new()
 var audioplayer_two = AudioStreamPlayer.new()
 
-var crt_shader := &"uid://c7vnw4dnik7g3"
-var default_background := &"uid://cmcpsmaw4gejf"
+const default_panel_color := Color("1b2130")
+const crt_shader := &"uid://c7vnw4dnik7g3"
+const default_background := &"uid://cmcpsmaw4gejf"
+const default_3d_scene := &"uid://ctm4fp4tnsvm6"
+const default_audio := &"uid://fm0ge4ls8qmc"
+const default_secondary_track := &"uid://itth0n1hb0dj"
+const popup_scene:= &"uid://gbtor40k4ppf"
+
+var opened_programs: Array = []
+
+var panel_height: int = 80
+
+func hide_billboards(value):
+	print("a")
+	is_in_event = value
+	hide_billboards_signal.emit()
 
 func _ready() -> void:
-	#Desktop_vos.connect("file_selected", on_file_selected)
 	audioplayer_one.name = "AudioPlayer_one"
 	self.add_child(audioplayer_one)
 	audioplayer_two.name = "AudioPlayer_two"
 	audioplayer_two.bus = "sfx_1"
 	self.add_child(audioplayer_two)
 
-func on_file_selected():
-	pass
+func send_notification(content: String = "Test notification"):
+	if !content.is_empty():
+		emit_signal("send_notification_signal", content)
 
-func change_wallpaper(path_to_texture: StringName = &"uid://cmcpsmaw4gejf", is_3d: bool = false, path_to_3d_scene: StringName = &"uid://ctm4fp4tnsvm6"):
+func change_wallpaper(path_to_texture: StringName = default_background, is_3d: bool = false, path_to_3d_scene: StringName = default_3d_scene):
 	if !path_to_texture.is_empty():
 		emit_signal("change_wallpaper_signal", path_to_texture, is_3d, path_to_3d_scene)
 		print("CorecCHANGEWALLPAPER")
@@ -109,10 +132,10 @@ func change_vfx_shader(path_to_shader: StringName = crt_shader):
 		emit_signal("change_vfx_shader_signal", path_to_shader)
 		print("CorecCHANGEVFXSHADER")
 
-func change_panel_colors(color: Color = Color("1b2130")):
+func change_panel_colors(color: Color = default_panel_color):
 	emit_signal("change_panel_colors_signal", color)
 
-func change_background_music(audio: StringName = &"uid://fm0ge4ls8qmc"):
+func change_background_music(audio: StringName = default_audio):
 	if !audio.is_empty():
 		#emit_signal("change_background_music_signal", audio)
 		audioplayer_one.stream = load(audio)
@@ -120,16 +143,19 @@ func change_background_music(audio: StringName = &"uid://fm0ge4ls8qmc"):
 		audioplayer_one.play()
 		print("CorecCHANGEBACKGROUNDMUSIC")
 
-func play_secondary_track(path_to_audio: StringName = &"uid://bqnj3h6bpdg57"):
+func play_secondary_track(path_to_audio: StringName = default_secondary_track, loop: bool = false):
 	if !path_to_audio.is_empty():
-		#emit_signal("change_background_music_signal", audio)
 		audioplayer_two.stream = load(path_to_audio)
-		#audioplayer_one.stream.loop = true
 		audioplayer_two.play()
+		if loop:
+			audioplayer_two.stream.loop = true
+		else:
+			audioplayer_two.stream.loop = false
 		print("CorecPLAYSECONDARYTRACK")
 
 func stop_secondary_track():
 	audioplayer_two.stop()
+	print("CorecSTOPSECONDARYTRACK")
 
 func switch_background_music():
 	music_status = !music_status
@@ -138,31 +164,40 @@ func switch_background_music():
 	else:
 		audioplayer_one.play()
 
-func spawn_window(path_to_window: StringName, window_position: Vector2 = Vector2(0, 80)):
+func create_window(window_name: StringName = &"Lorem"):
+	var window = window_vos.new()
+
+func open_program(path_to_window: StringName = &"uid://itth0n1hb0dj", window_position: Vector2 = Vector2(0, 80)):
 	if !path_to_window.is_empty():
 		emit_signal("spawn_window_signal", path_to_window, window_position)
 		print("CorecSPAWNWINDOW")
-	else:
-		print("Error: No window path provided.")
 
-func send_notification(content: String):
-	if !content.is_empty():
-		emit_signal("send_notification_signal", content)
-
-func spawn_popup(popup_title: StringName = "Warning", popup_text: String = "Test", has_pwd_query: bool = false):
+func spawn_popup(popup_title: StringName = "Test", popup_text: String = "Test", has_pwd_query: bool = false):
+	clear_popups.emit()
 	emit_signal("spawn_popup_signal", popup_title, popup_text, has_pwd_query)
+	print("CorecSPAWNPOPUP")
 
 func spawn_file_dialog():
 	emit_signal("spawn_file_dialog_signal")
+	print("CorecSPAWNFILEDIALOG")
 
-func start_event(shader: StringName = crt_shader, background_image: String = default_background, background_music: String = &"res://Files/audio/eek.mp3", panel_color: Color = Color("1b2130"), has_3d_wallpaper: bool = false,_3d_bk_path: StringName = &"uid://ctm4fp4tnsvm6"):
-	play_secondary_track(background_music)
-	change_panel_colors(panel_color)
-	change_vfx_shader(shader)
-	change_wallpaper(background_image, has_3d_wallpaper, _3d_bk_path)
-	hide_os_billboards_signal.emit()
-	changed_easter_state.emit()
-	is_in_event = true
+func start_event(
+	shader: StringName = crt_shader,
+	background_image: String = default_background,
+	background_music: String = default_secondary_track,
+	panel_color: Color = default_panel_color,
+	has_3d_wallpaper: bool = false,
+	_3d_bk_path: StringName = default_3d_scene
+):
+	if not is_in_event:
+		is_in_event = true
+		play_secondary_track(background_music, true)
+		change_panel_colors(panel_color)
+		change_vfx_shader(shader)
+		change_wallpaper(background_image, has_3d_wallpaper, _3d_bk_path)
+	else:
+		send_notification("Error: Can't activate even while in event")
+
 	print("CorecSTARTEVENT")
 
 func stop_event():
@@ -171,10 +206,8 @@ func stop_event():
 	change_vfx_shader()
 	change_wallpaper()
 	stop_secondary_track()
-	#hide_os_billboards_signal.emit()
 	is_in_event = false
-	changed_easter_state.emit()
-	print("CorecSTARTEVENT")
+	print("CorecSTOPEVENT")
 
 func switch_vfx_status():
 	switch_vfx_status_signal.emit()
@@ -185,15 +218,24 @@ func _input(_event: InputEvent) -> void:
 		if is_in_event == true:
 			stop_event()
 			clear_popups.emit()
-			is_in_event = false
 		else:
 			start_event("uid://cwuwsinbkkmii", "uid://cmcpsmaw4gejf", "uid://bqnj3h6bpdg57", Color(27, 33, 48, 255), true)
 			spawn_popup("Insert passcode", "", true)
-			is_in_event = true
-			print("Triggered event X")
+			clear_windows.emit() # TODO Revamp this based on opened_programs list
+			print("Triggered Backspace log")
 
 func export_database(path: String):
+	if not path.ends_with(".json"):
+		path += ".json"
+
 	var file = FileAccess.open(path, FileAccess.WRITE)
+	if file:
+		var json_string = JSON.stringify(Database, "\t")
+		file.store_string(json_string)
+		file.close()
+		print("Database exported to %s :D" % path)
+	else:
+		print(":c Failed to open file for writing: ", path)
 
 func import_database(path: String):
 	var file = FileAccess.open(path, FileAccess.READ)
