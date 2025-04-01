@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjl1j6vsbilsg"
+path="res://.godot/imported/Cubigor theme.mp3-6eb0b4cf01e5b1816f9df319ac17195f.mp3str"
+
+[deps]
+
+source_file="res://Files/Audio/Cubigor theme.mp3"
+dest_files=["res://.godot/imported/Cubigor theme.mp3-6eb0b4cf01e5b1816f9df319ac17195f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

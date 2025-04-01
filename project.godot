@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Varsec Fantasy OS"
+config/name="Varsec OS"
 config/description="Varsec OS is a fantasy Operating System made as an art project. It serves as a portfolio for his school and personal projects"
 config/version="1.10: The Silent Remains"
-run/main_scene="res://Files/scenes/Splash_screen/splash_screen.scn"
+run/main_scene="res://Files/Scenes/Core/SplashScreen/SplashScreen.scn"
 config/features=PackedStringArray("4.4")
 run/max_fps=60
 boot_splash/show_image=false
@@ -23,7 +23,7 @@ config/icon="uid://ba6ovj2sh64g3"
 
 [autoload]
 
-Corec="*res://Files/Autoloads/core.gd"
+Core="*res://Files/Autoloads/Core.gd"
 
 [debug]
 
@@ -34,9 +34,7 @@ gdscript/warnings/unused_parameter=0
 
 [display]
 
-window/size/always_on_top=true
-window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://Files/sprites/cursor.png"
+mouse_cursor/custom_image="res://Files/Sprites/cursor.png"
 
 [editor_plugins]
 
@@ -48,14 +46,22 @@ folder_colors={
 "res://Files/": "orange",
 "res://Files/3d models/": "red",
 "res://Files/Autoloads/": "yellow",
-"res://Files/apps/": "blue",
-"res://Files/fonts/": "green",
-"res://Files/others/": "teal",
-"res://Files/scenes/": "blue",
-"res://Files/shaders/": "purple",
-"res://Files/sprites/": "pink",
+"res://Files/Resources/": "green",
+"res://Files/Resources/Shaders/": "orange",
+"res://Files/Resources/fonts/": "red",
+"res://Files/Scenes/": "teal",
+"res://Files/Sprites/": "purple",
+"res://Files/apps/": "red",
 "res://addons/": "red"
 }
+
+[global_group]
+
+Folders=""
+
+[gui]
+
+theme/custom="uid://c0m3h3eg0l17i"
 
 [input]
 
@@ -91,6 +97,16 @@ down={
 escape={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+mouse_button_right={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(82, 18),"global_position":Vector2(86, 55),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+mouse_button_left={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(278, 9),"global_position":Vector2(282, 46),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
